@@ -20,6 +20,9 @@
 <meta name="twitter:description" content="Have an idea? We turn it into working software. Built by the next generation, accelerated by AI.">
 <meta name="twitter:image" content="assets/images/og-image.png">
 
+<!-- Instant meta refresh fallback for bots / fast redirect -->
+<meta http-equiv="refresh" content="1;url=pages/home.html">
+
 <!-- Google Search Console verification -->
 <meta name="google-site-verification" content="hUuqrSM6DO2-IPt-vKFLi6_DoScVl3sxZFX5Q328wno" />
 
@@ -66,17 +69,15 @@ html, body {
   border-radius: 100px;
   cursor: pointer;
   backdrop-filter: blur(12px);
-  transition: all 0.25s ease;
+  transition: all 0.15s ease;
   display: flex; align-items: center; gap: 6px;
-  opacity: 0;
-  animation: fadeInBtn 0.6s ease 0.8s forwards;
+  opacity: 1;
 }
 #skip-btn:hover {
   background: rgba(0,0,0,0.1);
   color: #000;
   border-color: rgba(255,107,74,0.4);
 }
-@keyframes fadeInBtn { to { opacity: 1; } }
 
 /* ── ANIMATED GRID BACKGROUND ── */
 #canvas-bg {
@@ -127,8 +128,8 @@ html, body {
 /* ── LOGO IMAGE ── */
 .logo-wrap {
   opacity: 0;
-  transform: scale(0.88);
-  animation: logoReveal 0.9s cubic-bezier(0.22,1,0.36,1) 0.3s forwards;
+  transform: scale(0.92);
+  animation: logoReveal 0.3s cubic-bezier(0.22,1,0.36,1) forwards;
 }
 .logo-wrap img {
   height: clamp(60px, 10vw, 96px);
@@ -149,7 +150,7 @@ html, body {
   letter-spacing: -0.025em;
   opacity: 0;
   transform: translateY(18px);
-  animation: fadeUp 0.7s ease 0.9s forwards;
+  animation: fadeUp 0.3s ease 0.05s forwards;
   text-align: center;
 }
 .brand-name span {
@@ -166,7 +167,7 @@ html, body {
 .tagline-wrap {
   min-height: 2rem;
   opacity: 0;
-  animation: fadeInTag 0.5s ease 1.4s forwards;
+  animation: fadeInTag 0.25s ease 0.08s forwards;
 }
 .tagline {
   font-size: clamp(0.9rem, 2.5vw, 1.15rem);
@@ -182,7 +183,7 @@ html, body {
   background: var(--coral);
   margin-left: 2px;
   vertical-align: middle;
-  animation: blink 0.9s step-end infinite;
+  animation: blink 0.5s step-end infinite;
 }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 @keyframes fadeInTag { to { opacity: 1; } }
@@ -191,7 +192,7 @@ html, body {
 .progress-wrap {
   width: clamp(200px, 40vw, 320px);
   opacity: 0;
-  animation: fadeInBar 0.5s ease 1.5s forwards;
+  animation: fadeInBar 0.2s ease 0.1s forwards;
 }
 .progress-track {
   height: 3px;
@@ -205,7 +206,7 @@ html, body {
   width: 0;
   background: linear-gradient(90deg, var(--coral), var(--orange), var(--amber));
   border-radius: 3px;
-  animation: fillBar 2s cubic-bezier(0.4,0,0.2,1) 1.6s forwards;
+  animation: fillBar 0.5s cubic-bezier(0.4,0,0.2,1) 0.12s forwards;
   box-shadow: 0 0 10px rgba(255,107,74,0.3);
 }
 @keyframes fillBar { to { width: 100%; } }
@@ -215,7 +216,7 @@ html, body {
   top: -3px; left: 0;
   width: 60px; height: 9px;
   background: radial-gradient(ellipse, rgba(255,107,74,0.5) 0%, transparent 70%);
-  animation: glowMove 2s cubic-bezier(0.4,0,0.2,1) 1.6s forwards;
+  animation: glowMove 0.5s cubic-bezier(0.4,0,0.2,1) 0.12s forwards;
   border-radius: 50%;
   filter: blur(4px);
 }
@@ -229,7 +230,7 @@ html, body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   opacity: 0;
-  animation: fadeInTag 0.5s ease 1.8s forwards;
+  animation: fadeInTag 0.25s ease 0.15s forwards;
 }
 
 /* ── PAGE TRANSITION OVERLAY ── */
@@ -240,11 +241,24 @@ html, body {
   z-index: 1000;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.6s cubic-bezier(0.4,0,0.2,1);
+  transition: opacity 0.2s cubic-bezier(0.4,0,0.2,1);
 }
 #transition-overlay.fade-out {
   opacity: 1;
   pointer-events: all;
+}
+
+/* ── ACCESSIBLE / BOT CRAWLER INDEX CONTENT ── */
+.bot-crawl-index {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: normal;
+  border: 0;
 }
 
 /* ── RESPONSIVE ── */
@@ -308,10 +322,60 @@ html, body {
 
 </div>
 
+<!-- Bot Crawlable Semantic Content & No-JS Fallback -->
+<noscript>
+  <div style="padding: 2.5rem 1.5rem; max-width: 900px; margin: 0 auto; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #111;">
+    <h1 style="color: #FF6B4A; font-size: 2rem; margin-bottom: 0.5rem;">Site2Success — University-Powered AI Software Studio</h1>
+    <p style="font-size: 1.1rem; color: #444; margin-bottom: 1.5rem;">Have an idea? We turn it into working software. Built by the next generation, accelerated by AI. Rapid MVPs, research platforms, student portfolios, and enterprise workflow automations.</p>
+    <p><a href="pages/home.html" style="display: inline-block; background: #FF6B4A; color: #fff; text-decoration: none; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600;">Enter Site2Success &rarr;</a></p>
+    <h2 style="font-size: 1.25rem; margin-top: 2rem; color: #222;">Explore Our Studio</h2>
+    <ul>
+      <li><a href="pages/home.html">Home / Dashboard</a></li>
+      <li><a href="pages/services.html">Services &amp; Pricing</a></li>
+      <li><a href="pages/projects.html">Verified Case Studies</a></li>
+      <li><a href="pages/automation.html">KIRA AI Automation Engine</a></li>
+      <li><a href="pages/internships.html">Trained Student Builder Program</a></li>
+      <li><a href="pages/about.html">About &amp; Operating Model</a></li>
+      <li><a href="pages/contact.html">Get in Touch</a></li>
+    </ul>
+  </div>
+</noscript>
+
+<!-- Hidden crawlable index for search engine bots -->
+<header class="bot-crawl-index" aria-label="Site Navigation">
+  <h1>Site2Success — University-Powered AI Software Studio</h1>
+  <p>Site2Success combines AI-native development with university talent to help founders, researchers, students, and small businesses turn software ideas into real products quickly and affordably.</p>
+  <nav aria-label="Main Navigation Links">
+    <ul>
+      <li><a href="pages/home.html">Home Dashboard</a></li>
+      <li><a href="pages/services.html">All Services</a></li>
+      <li><a href="pages/services/mvp-prototypes.html">MVP &amp; Prototype Development</a></li>
+      <li><a href="pages/services/research-software.html">Research Software &amp; Academic Tools</a></li>
+      <li><a href="pages/services/portfolios-branding.html">Portfolio &amp; Brand Websites</a></li>
+      <li><a href="pages/services/automation.html">Workflow Automation &amp; Bots</a></li>
+      <li><a href="pages/services/ai-solutions.html">Custom AI &amp; LLM Integrations</a></li>
+      <li><a href="pages/projects.html">Client Case Studies &amp; Verified Deployments</a></li>
+      <li><a href="pages/automation.html">KIRA AI Platform</a></li>
+      <li><a href="pages/internships.html">Student Builder Internships</a></li>
+      <li><a href="pages/about.html">About Site2Success</a></li>
+      <li><a href="pages/contact.html">Contact &amp; Project Inquiry</a></li>
+    </ul>
+  </nav>
+</header>
+
 <script>
+/* ── Immediate redirect for bots or returning session visitors ── */
+(function() {
+  const isBot = /bot|crawler|spider|robot|crawling|slurp/i.test(navigator.userAgent);
+  if (isBot || sessionStorage.getItem('s2s_intro_seen')) {
+    window.location.replace('pages/home.html');
+  }
+})();
+
 /* ── Canvas: animated glowing grid ── */
 (function() {
   const canvas = document.getElementById('canvas-bg');
+  if (!canvas) return;
   const ctx = canvas.getContext('2d');
   let W, H, t = 0;
 
@@ -361,38 +425,34 @@ html, body {
   draw();
 })();
 
-/* ── Typewriter effect ── */
+/* ── Swift Tagline Display ── */
 (function() {
   const text = "Have an idea? We turn it into working software.";
   const el = document.getElementById('typewriter-text');
-  let i = 0;
-  function type() {
-    if (i <= text.length) {
-      el.textContent = text.slice(0, i);
-      i++;
-      setTimeout(type, 45);
-    }
+  if (el) {
+    el.textContent = text;
   }
-  // Start after logo animation delay
-  setTimeout(type, 1400);
 })();
 
-/* ── Navigate with smooth fade ── */
+/* ── Navigate to Home (< 1s total duration) ── */
+let hasNavigated = false;
 function navigateToHome() {
+  if (hasNavigated) return;
+  hasNavigated = true;
+  try { sessionStorage.setItem('s2s_intro_seen', '1'); } catch(e){}
   const overlay = document.getElementById('transition-overlay');
-  overlay.classList.add('fade-out');
+  if (overlay) overlay.classList.add('fade-out');
   setTimeout(() => {
-    window.location.href = 'pages/home.html';
-  }, 600);
+    window.location.replace('pages/home.html');
+  }, 150);
 }
 
-/* ── Auto-dismiss after 3.2s ── */
-setTimeout(navigateToHome, 3200);
+/* ── Auto-transition: ~650ms delay + 150ms fade = 800ms total ── */
+setTimeout(navigateToHome, 650);
 
-/* ── Click anywhere to skip ── */
-document.addEventListener('click', function(e) {
-  if (e.target.id !== 'skip-btn') navigateToHome();
-});
+/* ── Click or keypress anywhere to skip immediately ── */
+document.addEventListener('click', navigateToHome);
+document.addEventListener('keydown', navigateToHome);
 </script>
 
 <!-- Organization Schema -->
