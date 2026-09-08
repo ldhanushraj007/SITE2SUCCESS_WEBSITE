@@ -31,8 +31,8 @@ services.forEach(s => {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${s.title} — AI &amp; Automation Services | Site2Success</title>
-    <meta name="description" content="${s.subtitle} Custom-engineered by Site2Success, Bengaluru's premier AI-first startup.">
+    <title>${s.title} | Site2Success — University-Powered AI Software Studio</title>
+    <meta name="description" content="${s.subtitle} Turn ideas into working software with Site2Success's university studio squads.">
     <meta name="keywords" content="${s.title}, Site2Success, AI agent, business automation, Bengaluru, India, startup, workflow automation">
     <link rel="canonical" href="https://site2success.online/pages/services/${s.id}.html">
     <meta name="robots" content="index, follow">
@@ -115,10 +115,10 @@ services.forEach(s => {
         <div class="nav-links" id="nav-links">
             <a href="../home.html" class="nav-item">Home</a>
             <a href="../services.html" class="nav-item active">Services</a>
-            <a href="../automation.html" class="nav-item">KIRA<span class="early-tag">Early Access</span></a>
-            <a href="../internships.html" class="nav-item">Internships</a>
             <a href="../projects.html" class="nav-item">Projects</a>
             <a href="../about.html" class="nav-item">About</a>
+            <a href="../internships.html" class="nav-item">Builders</a>
+            <a href="../automation.html" class="nav-item">KIRA AI</a>
             <a href="../contact.html" class="nav-item">Contact</a>
         </div>
         <div class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></div>
@@ -168,7 +168,7 @@ services.forEach(s => {
         <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto 3rem;">
             <div>
                 <img src="../../assets/images/logo.png" alt="Site2Success Logo" style="height:44px;width:auto;border-radius:0;filter:brightness(1.2);margin-bottom:1rem;opacity:1;">
-                <p style="font-size:0.9rem;line-height:1.7;color:rgba(255,255,255,0.5);max-width:280px;">AI-first tech startup building AI agents, chatbots, and automation for Indian SMBs.</p>
+                <p style="font-size:0.9rem;line-height:1.7;color:rgba(255,255,255,0.5);max-width:280px;">University-powered AI software studio combining AI-native development with university talent to turn ideas into working software.</p>
             </div>
             <div>
                 <h4 style="font-size:0.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;">Pages</h4>
@@ -192,8 +192,15 @@ services.forEach(s => {
                 </div>
             </div>
         </div>
-        <div style="max-width:1200px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
-            <p style="font-size:0.875rem;color:rgba(255,255,255,0.3);">&copy; 2024–2025 Site2Success. All rights reserved.</p>
+        <!-- Section 12 Governance & Scope Note -->
+        <div style="max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem;margin-bottom:2rem;">
+            <p style="font-size:0.775rem;line-height:1.7;color:rgba(255,255,255,0.38);margin:0;">
+                <strong style="color:rgba(255,255,255,0.55);">Scope &amp; Governance Note:</strong> This rebuild is based on a strategic operating plan, not legal, tax, employment, or university-policy advice. Before finalizing client contracts, stipend terms, IP ownership language, data handling policy, or any CHRIST University branding/endorsement claims, appropriate legal and institutional review should be obtained separately — this should not be assumed to be covered by the website content itself.
+            </p>
+        </div>
+
+        <div style="max-width:1200px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+            <p style="font-size:0.875rem;color:rgba(255,255,255,0.3);">&copy; 2024–2026 Site2Success. All rights reserved.</p>
             <div style="display:flex;gap:1rem;">
                 <a href="https://linkedin.com/company/site2success" rel="noopener" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.875rem;">LinkedIn</a>
                 <a href="https://github.com/site2success" rel="noopener" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.875rem;">GitHub</a>
@@ -254,7 +261,7 @@ services.forEach(s => {
       "name": "Site2Success",
       "url": "https://site2success.online",
       "logo": "https://site2success.online/assets/images/logo.png",
-      "description": "AI-first tech startup building agents, chatbots and automation for Indian SMBs. Incubated at Christ University, Bengaluru.",
+      "description": "University-powered AI software studio combining AI-native development with university talent to help founders, researchers, and students turn ideas into working software.",
       "foundingDate": "2024-10",
       "founders": [
         {"@type":"Person","name":"Rahul R"},
