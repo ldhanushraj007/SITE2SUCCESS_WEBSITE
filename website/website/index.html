@@ -21,7 +21,11 @@
 <meta name="twitter:image" content="assets/images/og-image.png">
 
 <!-- Instant meta refresh fallback for bots / fast redirect -->
-<meta http-equiv="refresh" content="1;url=pages/home.html">
+<meta http-equiv="refresh" content="0;url=pages/home.html">
+
+<!-- Prefetch and Pre-render home.html for instant dashboard transition -->
+<link rel="prefetch" href="pages/home.html">
+<link rel="prerender" href="pages/home.html">
 
 <!-- Google Search Console verification -->
 <meta name="google-site-verification" content="hUuqrSM6DO2-IPt-vKFLi6_DoScVl3sxZFX5Q328wno" />
@@ -192,7 +196,7 @@ html, body {
 .progress-wrap {
   width: clamp(200px, 40vw, 320px);
   opacity: 0;
-  animation: fadeInBar 0.2s ease 0.1s forwards;
+  animation: fadeInBar 0.1s ease forwards;
 }
 .progress-track {
   height: 3px;
@@ -206,7 +210,7 @@ html, body {
   width: 0;
   background: linear-gradient(90deg, var(--coral), var(--orange), var(--amber));
   border-radius: 3px;
-  animation: fillBar 0.5s cubic-bezier(0.4,0,0.2,1) 0.12s forwards;
+  animation: fillBar 0.35s cubic-bezier(0.2,0,0.2,1) forwards;
   box-shadow: 0 0 10px rgba(255,107,74,0.3);
 }
 @keyframes fillBar { to { width: 100%; } }
@@ -216,7 +220,7 @@ html, body {
   top: -3px; left: 0;
   width: 60px; height: 9px;
   background: radial-gradient(ellipse, rgba(255,107,74,0.5) 0%, transparent 70%);
-  animation: glowMove 0.5s cubic-bezier(0.4,0,0.2,1) 0.12s forwards;
+  animation: glowMove 0.35s cubic-bezier(0.2,0,0.2,1) forwards;
   border-radius: 50%;
   filter: blur(4px);
 }
@@ -230,7 +234,7 @@ html, body {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   opacity: 0;
-  animation: fadeInTag 0.25s ease 0.15s forwards;
+  animation: fadeInTag 0.15s ease forwards;
 }
 
 /* ── PAGE TRANSITION OVERLAY ── */
@@ -241,7 +245,7 @@ html, body {
   z-index: 1000;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s cubic-bezier(0.4,0,0.2,1);
+  transition: opacity 0.1s cubic-bezier(0.4,0,0.2,1);
 }
 #transition-overlay.fade-out {
   opacity: 1;
@@ -305,11 +309,9 @@ html, body {
 
   <!-- Brand name text removed to avoid duplicate logo display -->
 
-  <!-- Typewriter tagline -->
+  <!-- Tagline -->
   <div class="tagline-wrap">
-    <p class="tagline">
-      <span id="typewriter-text"></span><span class="typewriter-cursor"></span>
-    </p>
+    <p class="tagline">Have an idea? We turn it into working software.</p>
   </div>
 
   <!-- Glowing progress bar -->
@@ -425,16 +427,7 @@ html, body {
   draw();
 })();
 
-/* ── Swift Tagline Display ── */
-(function() {
-  const text = "Have an idea? We turn it into working software.";
-  const el = document.getElementById('typewriter-text');
-  if (el) {
-    el.textContent = text;
-  }
-})();
-
-/* ── Navigate to Home (< 1s total duration) ── */
+/* ── Navigate to Home (Strictly 0.5s total duration) ── */
 let hasNavigated = false;
 function navigateToHome() {
   if (hasNavigated) return;
@@ -444,11 +437,11 @@ function navigateToHome() {
   if (overlay) overlay.classList.add('fade-out');
   setTimeout(() => {
     window.location.replace('pages/home.html');
-  }, 150);
+  }, 100);
 }
 
-/* ── Auto-transition: ~650ms delay + 150ms fade = 800ms total ── */
-setTimeout(navigateToHome, 650);
+/* ── Auto-transition at 380ms + 100ms fade = ~480ms (0.5s total) ── */
+setTimeout(navigateToHome, 380);
 
 /* ── Click or keypress anywhere to skip immediately ── */
 document.addEventListener('click', navigateToHome);
