@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI &amp; Automation Projects Portfolio | Site2Success</title>
-    <meta name="description" content="Explore the projects delivered by Site2Success, from full-stack portfolios and CRM automation to WhatsApp AI integrations and E-commerce pipelines.">
-    <meta name="keywords" content="projects portfolio, AI startup projects, web applications, CRM integrations, Site2Success, WhatsApp chatbots">
+    <title>Delivered Projects &amp; Case Studies | Site2Success — University-Powered AI Software Studio</title>
+    <meta name="description" content="Explore verified case studies and software delivered by Site2Success. University talent accelerated by AI building real MVPs, research prototypes, web apps, and automation.">
+    <meta name="keywords" content="Site2Success projects, university software studio case studies, research prototypes, MVP development, web applications Bengaluru">
     <link rel="canonical" href="https://site2success.online/pages/projects.html">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="hUuqrSM6DO2-IPt-vKFLi6_DoScVl3sxZFX5Q328wno">
@@ -13,15 +13,15 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://site2success.online/pages/projects.html">
-    <meta property="og:title" content="AI &amp; Automation Projects Portfolio | Site2Success">
-    <meta property="og:description" content="Discover our custom AI agents, business chatbots, and workflow automation solutions delivered across India.">
+    <meta property="og:title" content="Delivered Projects &amp; Case Studies | Site2Success">
+    <meta property="og:description" content="Real software built by university talent and accelerated by AI. Explore our case studies and verified results.">
     <meta property="og:image" content="https://site2success.online/assets/images/logo.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://site2success.online/pages/projects.html">
-    <meta property="twitter:title" content="AI &amp; Automation Projects Portfolio | Site2Success">
-    <meta property="twitter:description" content="Discover our custom AI agents, business chatbots, and workflow automation solutions delivered across India.">
+    <meta property="twitter:title" content="Delivered Projects &amp; Case Studies | Site2Success">
+    <meta property="twitter:description" content="Real software built by university talent and accelerated by AI. Explore our case studies and verified results.">
     <meta property="twitter:image" content="https://site2success.online/assets/images/logo.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,17 +42,18 @@
             position: relative;
             border-radius: 28px;
             overflow: hidden;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            box-shadow: 0 30px 80px rgba(0,0,0,0.15);
+            background: linear-gradient(135deg, #121829 0%, #1e293b 100%);
+            box-shadow: 0 30px 80px rgba(0,0,0,0.18);
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: 420px;
+            grid-template-columns: 1.15fr 0.85fr;
+            min-height: 480px;
             cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.08);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
         }
         .featured-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 40px 100px rgba(0,0,0,0.2);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.25);
         }
         .featured-badge {
             position: absolute;
@@ -72,46 +73,75 @@
             gap: 0.4rem;
         }
         .featured-content {
-            padding: 3rem;
+            padding: 3.5rem 3rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
             position: relative;
             z-index: 2;
         }
+        .featured-meta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+            color: var(--orange);
+            font-weight: 600;
+        }
         .featured-content h2 {
             color: #fff;
-            font-size: 2rem;
+            font-size: 2.1rem;
             font-weight: 800;
             margin-bottom: 0.75rem;
-            line-height: 1.2;
-        }
-        .featured-content .client-name {
-            color: var(--orange);
-            font-size: 1rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            line-height: 1.25;
         }
         .featured-content p {
-            color: rgba(255,255,255,0.75);
-            font-size: 1rem;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.975rem;
             line-height: 1.7;
             margin-bottom: 1.5rem;
+        }
+        .case-metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.75rem;
+            padding: 1rem 1.25rem;
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+        }
+        .case-metric-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 0.25rem;
+        }
+        .case-metric-val {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #fff;
         }
         .featured-tags {
             display: flex;
             gap: 0.5rem;
             flex-wrap: wrap;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.75rem;
         }
         .featured-tags span {
             padding: 0.35rem 0.85rem;
             background: rgba(255,107,74,0.15);
-            border: 1px solid rgba(255,107,74,0.25);
+            border: 1px solid rgba(255,107,74,0.3);
             border-radius: 100px;
             font-size: 0.8rem;
             font-weight: 500;
             color: var(--orange);
+        }
+        .featured-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
         }
         .featured-btn {
             display: inline-flex;
@@ -124,7 +154,7 @@
             font-weight: 600;
             font-size: 0.9375rem;
             transition: all 0.3s ease;
-            width: fit-content;
+            text-decoration: none;
         }
         .featured-btn:hover {
             transform: translateY(-2px);
@@ -133,6 +163,7 @@
         .featured-preview {
             position: relative;
             overflow: hidden;
+            background: #000;
         }
         .featured-preview iframe {
             width: 100%;
@@ -145,11 +176,11 @@
         .featured-preview-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, rgba(26,26,46,0.3) 0%, transparent 60%);
+            background: linear-gradient(135deg, rgba(18,24,41,0.2) 0%, transparent 60%);
             z-index: 1;
         }
 
-        /* ===== PROJECT CARDS GRID ===== */
+        /* ===== PROJECTS GRID ===== */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -162,43 +193,100 @@
             background: var(--white-primary);
             border-radius: 20px;
             overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.06);
             box-shadow: 0 4px 20px rgba(0,0,0,0.04);
             transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
             cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }
         .project-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 20px 50px rgba(0,0,0,0.1);
         }
+        .project-card-image-wrap {
+            position: relative;
+            height: 190px;
+            overflow: hidden;
+            background: var(--gray-100);
+        }
         .project-card-image {
             width: 100%;
-            height: 200px;
+            height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
-            border-radius: 0;
         }
         .project-card:hover .project-card-image {
-            transform: scale(1.05);
+            transform: scale(1.06);
         }
-        .project-card-image-wrap {
-            overflow: hidden;
-            position: relative;
+        .project-type-chip {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            padding: 0.35rem 0.8rem;
+            background: rgba(26,26,46,0.85);
+            backdrop-filter: blur(8px);
+            color: #fff;
+            border-radius: 100px;
+            font-size: 0.725rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
         }
         .project-card-body {
             padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
         }
-        .project-card-body h3 {
+        .project-card-header {
+            margin-bottom: 0.5rem;
+        }
+        .project-card-header h3 {
             font-size: 1.25rem;
             font-weight: 700;
             color: var(--navy-dark);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.35rem;
+        }
+        .project-client-name {
+            font-size: 0.85rem;
+            color: var(--coral);
+            font-weight: 600;
         }
         .project-card-body p {
             color: var(--gray-500);
-            font-size: 0.9375rem;
+            font-size: 0.925rem;
             line-height: 1.6;
+            margin-bottom: 1.25rem;
+            flex: 1;
+        }
+        .project-meta-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-top: 1px solid rgba(0,0,0,0.06);
+            border-bottom: 1px solid rgba(0,0,0,0.06);
             margin-bottom: 1rem;
+            font-size: 0.825rem;
+        }
+        .project-meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .project-meta-label {
+            color: var(--gray-400);
+            font-size: 0.725rem;
+            text-transform: uppercase;
+        }
+        .project-meta-value {
+            font-weight: 700;
+            color: var(--navy-dark);
+        }
+        .project-card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         .project-card-tags {
             display: flex;
@@ -206,19 +294,27 @@
             flex-wrap: wrap;
         }
         .project-card-tags span {
-            padding: 0.25rem 0.7rem;
-            background: rgba(255,69,82,0.06);
+            padding: 0.25rem 0.65rem;
+            background: rgba(255,107,74,0.08);
             border-radius: 100px;
             font-size: 0.75rem;
             color: var(--coral);
             font-weight: 500;
         }
+        .project-view-link {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
 
-        /* ===== PROJECT DETAIL MODAL ===== */
+        /* ===== PROJECT DETAIL MODAL (SECTION 7 COMPLIANT) ===== */
         .project-modal-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(0,0,0,0.6);
+            background: rgba(18,24,41,0.75);
             backdrop-filter: blur(8px);
             z-index: 9999;
             display: none;
@@ -239,7 +335,7 @@
             width: 100%;
             max-height: 90vh;
             overflow-y: auto;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.25);
+            box-shadow: 0 40px 100px rgba(0,0,0,0.3);
             transform: translateY(20px);
             transition: transform 0.3s ease;
             position: relative;
@@ -264,83 +360,120 @@
             border: none;
         }
         .modal-close:hover {
-            background: rgba(255,107,74,0.1);
+            background: rgba(255,107,74,0.12);
             color: var(--coral);
         }
         .modal-header {
-            padding: 2rem 2rem 1rem;
+            padding: 2.5rem 2.5rem 1rem;
+        }
+        .modal-chip-row {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            flex-wrap: wrap;
+        }
+        .modal-client-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: rgba(255,107,74,0.1);
+            color: var(--coral);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .modal-tech-badge {
+            display: inline-block;
+            padding: 0.3rem 0.8rem;
+            background: var(--gray-100);
+            color: var(--gray-700);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
         }
         .modal-header h2 {
-            font-size: 1.75rem;
+            font-size: 1.85rem;
             font-weight: 800;
             color: var(--navy-dark);
             margin-bottom: 0.25rem;
+            line-height: 1.25;
         }
-        .modal-header .modal-client {
-            color: var(--coral);
-            font-weight: 600;
-            font-size: 0.95rem;
+
+        /* Section 7 Template Breakdown in Modal */
+        .modal-body {
+            padding: 0 2.5rem 2.5rem;
         }
-        .modal-tags {
+        .case-study-template {
             display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            padding: 0 2rem;
-            margin-bottom: 1.25rem;
+            flex-direction: column;
+            gap: 1.5rem;
+            margin-top: 1rem;
         }
-        .modal-tags span {
-            padding: 0.3rem 0.8rem;
-            background: rgba(255,107,74,0.08);
-            border-radius: 100px;
-            font-size: 0.8rem;
-            color: var(--coral);
-            font-weight: 500;
-        }
-        .modal-description {
-            padding: 0 2rem 1.5rem;
-            color: var(--gray-500);
-            font-size: 1rem;
-            line-height: 1.8;
-        }
-        .modal-iframe-wrap {
-            margin: 0 2rem 2rem;
+        .cs-box {
+            background: #fafbfc;
+            border: 1px solid rgba(0,0,0,0.06);
             border-radius: 16px;
-            overflow: hidden;
-            border: 1px solid rgba(0,0,0,0.08);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            position: relative;
-            height: 400px;
-            background: var(--gray-100);
+            padding: 1.25rem 1.5rem;
         }
-        .modal-iframe-wrap iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        .modal-iframe-bar {
+        .cs-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--gray-400);
+            font-weight: 700;
+            margin-bottom: 0.4rem;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.625rem 1rem;
-            background: var(--gray-50);
-            border-bottom: 1px solid rgba(0,0,0,0.06);
+            gap: 0.4rem;
         }
-        .modal-iframe-dot {
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
+        .cs-text {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin: 0;
         }
-        .modal-iframe-dot:nth-child(1) { background: #FF5F57; }
-        .modal-iframe-dot:nth-child(2) { background: #FFBD2E; }
-        .modal-iframe-dot:nth-child(3) { background: #28C840; }
-        .modal-iframe-url {
-            flex: 1;
-            text-align: center;
-            font-size: 0.8rem;
-            color: var(--gray-400);
-            font-family: monospace;
+        .cs-text strong {
+            color: var(--navy-dark);
         }
-        .modal-visit-btn {
+        .cs-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+        .cs-testimonial-box {
+            background: linear-gradient(135deg, rgba(255,107,74,0.06) 0%, rgba(255,142,83,0.03) 100%);
+            border: 1px solid rgba(255,107,74,0.15);
+            border-radius: 16px;
+            padding: 1.5rem;
+        }
+        .cs-quote {
+            font-size: 0.95rem;
+            font-style: italic;
+            color: var(--navy-dark);
+            line-height: 1.7;
+            margin-bottom: 0.75rem;
+        }
+        .cs-author {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--coral);
+        }
+        .cs-cta-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding: 1.25rem 1.5rem;
+            background: var(--navy-dark);
+            border-radius: 16px;
+            color: white;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .cs-cta-text {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        .cs-cta-btn {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -348,30 +481,32 @@
             background: var(--gradient-primary);
             color: white;
             border-radius: 100px;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin: 0 2rem 2rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+            text-decoration: none;
             transition: all 0.3s ease;
         }
-        .modal-visit-btn:hover {
+        .cs-cta-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255,107,74,0.3);
+            box-shadow: 0 8px 20px rgba(255,107,74,0.3);
         }
 
         /* Responsive */
         @media (max-width: 1024px) {
             .featured-card { grid-template-columns: 1fr; min-height: auto; }
-            .featured-preview { height: 300px; }
+            .featured-preview { height: 320px; }
             .projects-grid { grid-template-columns: repeat(2, 1fr); }
+            .cs-grid-2 { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
             .projects-grid { grid-template-columns: 1fr; }
-            .featured-content { padding: 2rem; }
-            .featured-content h2 { font-size: 1.5rem; }
-            .modal-iframe-wrap { height: 280px; }
+            .featured-content { padding: 2.5rem 1.5rem; }
+            .featured-content h2 { font-size: 1.6rem; }
+            .case-metrics-grid { grid-template-columns: 1fr; }
+            .modal-header, .modal-body { padding: 1.5rem; }
             .project-modal { margin: 1rem; }
         }
-    
+
         /* ── Mobile Nav (shared) ── */
         @media (max-width: 1024px) {
             .nav-links {
@@ -414,8 +549,7 @@
             .menu-toggle.active span:nth-child(2) { opacity: 0; }
             .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
         }
-        </style>
-    
+    </style>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -424,15 +558,15 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <a href="home.html" class="nav-logo">
-            <img src="../assets/images/logo.png" alt="Site2Success" style="height: 48px; width: auto; border-radius: 0;">
+            <img src="../assets/images/logo.png" alt="Site2Success — University-Powered AI Software Studio" style="height: 48px; width: auto; border-radius: 0;">
         </a>
         <div class="nav-links" id="nav-links">
             <a href="home.html" class="nav-item" data-page="home">Home</a>
             <a href="services.html" class="nav-item" data-page="services">Services</a>
-            <a href="automation.html" class="nav-item" data-page="automation">KIRA<span class="early-tag">Early Access</span></a>
-            <a href="internships.html" class="nav-item" data-page="internships">Internships</a>
             <a href="projects.html" class="nav-item active" data-page="projects">Projects</a>
             <a href="about.html" class="nav-item" data-page="about">About</a>
+            <a href="internships.html" class="nav-item" data-page="internships">Builders</a>
+            <a href="automation.html" class="nav-item" data-page="automation">KIRA AI</a>
             <a href="contact.html" class="nav-item" data-page="contact">Contact</a>
         </div>
         <div class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></div>
@@ -440,240 +574,481 @@
 
     <!-- Page Hero -->
     <section class="page-hero">
-        <span class="section-label">Portfolio</span>
-        <h1 class="section-title">Projects That Drive Success</h1>
-        <p class="section-subtitle">Real results for real businesses since October 2024</p>
+        <span class="section-label">Verified Case Studies</span>
+        <h1 class="section-title">Proof, Not Hype.</h1>
+        <p class="section-subtitle">Real software built by university talent and accelerated by AI. Every project follows our rigorous 9-item proof framework: problem, starting point, scope, turnaround, and verified outcomes.</p>
     </section>
 
-    <!-- Featured Project: Logeshwaran -->
+    <!-- Featured Project: Logeshwaran J -->
     <section class="featured-project">
-        <div class="featured-card" onclick="window.location.href='project-detail.html'">
+        <div class="featured-card">
             <div class="featured-badge">
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-                Featured Project
+                Anchor Case Study
             </div>
             <div class="featured-content">
-                <div class="client-name">Client: Logeshwaran J</div>
-                <h2>Portfolio Website & Admin Portal</h2>
-                <p>A fully functional portfolio website with an integrated admin portal — featuring user authentication, blog commenting, research paper management, chat system, full CRUD control, and LinkedIn integration.</p>
-                <div class="featured-tags">
-                    <span>Full-Stack</span>
-                    <span>Admin Portal</span>
-                    <span>Authentication</span>
-                    <span>Blog & Research</span>
+                <div class="featured-meta">
+                    <span>Client Type: Academic Researcher / Faculty</span>
+                    <span>•</span>
+                    <span>Build Time: 2 Weeks</span>
                 </div>
-                <div class="featured-btn">
-                    View Project Details
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                <h2>Logeshwaran J — Portfolio Platform &amp; Administrative Engine</h2>
+                <p>A high-performance personal research portfolio combined with an autonomous administrative portal — empowering an academic researcher with gated paper access, live blog commentary, and LinkedIn dual-publishing.</p>
+                
+                <div class="case-metrics-grid">
+                    <div>
+                        <div class="case-metric-label">Category</div>
+                        <div class="case-metric-val">Full-Stack Web App</div>
+                    </div>
+                    <div>
+                        <div class="case-metric-label">Turnaround</div>
+                        <div class="case-metric-val">14 Days Delivery</div>
+                    </div>
+                    <div>
+                        <div class="case-metric-label">Status</div>
+                        <div class="case-metric-val" style="color: #28c840;">Live in Production</div>
+                    </div>
+                </div>
+
+                <div class="featured-tags">
+                    <span>Research Publications</span>
+                    <span>Admin Portal</span>
+                    <span>JWT Authentication</span>
+                    <span>LinkedIn API</span>
+                    <span>Full CRUD Control</span>
+                </div>
+
+                <div class="featured-actions">
+                    <a href="project-detail.html" class="featured-btn">
+                        Read Full Case Study
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                    </a>
+                    <a href="https://logeshwaranj.com/" target="_blank" rel="noopener" class="btn btn-outline" style="border-color: rgba(255,255,255,0.3); color: #fff;">
+                        Visit Live Site
+                    </a>
                 </div>
             </div>
-            <div class="featured-preview">
+            <div class="featured-preview" onclick="window.location.href='project-detail.html'">
                 <div class="featured-preview-overlay"></div>
                 <iframe src="https://logeshwaranj.com/" loading="lazy" title="Logeshwaran Portfolio Preview" sandbox="allow-scripts allow-same-origin"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- Other Projects Grid -->
+    <!-- Projects Grid (6 Representative Segments) -->
     <section class="section" style="padding-top: 0;">
         <div class="section-header">
-            <span class="section-label">All Projects</span>
-            <h2 class="section-title">More Work We're Proud Of</h2>
+            <span class="section-label">Operating Portfolio</span>
+            <h2 class="section-title">Built Across Our 5 Core Audiences</h2>
+            <p class="section-subtitle">Click any case study to review the complete 9-point proof framework.</p>
         </div>
+        
         <div class="projects-grid">
-            <div class="project-card" onclick="openProjectModal('ecommerce')">
+            <!-- Project 1: Faculty / Research -->
+            <div class="project-card" onclick="openProjectModal('research_data')">
                 <div class="project-card-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&q=70" alt="E-Commerce Platform" class="project-card-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?w=600&q=70" alt="Climate Research Explorer" class="project-card-image" loading="lazy">
+                    <span class="project-type-chip">Faculty &amp; Researchers</span>
                 </div>
                 <div class="project-card-body">
-                    <h3>E-Commerce Platform</h3>
-                    <p>Complete automation system reducing manual work by 70%.</p>
-                    <div class="project-card-tags"><span>Automation</span><span>E-commerce</span></div>
+                    <div class="project-card-header">
+                        <span class="project-client-name">University Research Lab</span>
+                        <h3>Interactive Research Data Explorer</h3>
+                    </div>
+                    <p>Turned multi-gigabyte static CSV datasets into an interactive web tool with real-time parameter filtering and citation figures for peer reviewers.</p>
+                    <div class="project-meta-row">
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Build Time</span>
+                            <span class="project-meta-value">2.5 Weeks</span>
+                        </div>
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Category</span>
+                            <span class="project-meta-value">Research Prototype</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <div class="project-card-tags">
+                            <span>Interactive Viz</span>
+                            <span>Data Modeling</span>
+                        </div>
+                        <span class="project-view-link">View Case Study &rarr;</span>
+                    </div>
                 </div>
             </div>
-            <div class="project-card" onclick="openProjectModal('healthcare')">
+
+            <!-- Project 2: Student Founder -->
+            <div class="project-card" onclick="openProjectModal('fintech_mvp')">
                 <div class="project-card-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=70" alt="Healthcare ERP" class="project-card-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=600&q=70" alt="Fintech Simulation MVP" class="project-card-image" loading="lazy">
+                    <span class="project-type-chip">Student Founders</span>
                 </div>
                 <div class="project-card-body">
-                    <h3>Healthcare ERP</h3>
-                    <p>AI-powered patient management with predictive analytics.</p>
-                    <div class="project-card-tags"><span>AI/ML</span><span>Healthcare</span></div>
+                    <div class="project-card-header">
+                        <span class="project-client-name">Campus Founder Cohort</span>
+                        <h3>Micro-Investment Simulation MVP</h3>
+                    </div>
+                    <p>Designed and launched a functional simulated trading pilot with user authentication, portfolio tracking, and analytics to pitch angel networks.</p>
+                    <div class="project-meta-row">
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Build Time</span>
+                            <span class="project-meta-value">3 Weeks</span>
+                        </div>
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Category</span>
+                            <span class="project-meta-value">Startup MVP</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <div class="project-card-tags">
+                            <span>Trading Logic</span>
+                            <span>Angel Demo</span>
+                        </div>
+                        <span class="project-view-link">View Case Study &rarr;</span>
+                    </div>
                 </div>
             </div>
-            <div class="project-card" onclick="openProjectModal('realestate')">
+
+            <!-- Project 3: Clubs & Events -->
+            <div class="project-card" onclick="openProjectModal('event_portal')">
                 <div class="project-card-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&q=70" alt="Real Estate CRM" class="project-card-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?w=600&q=70" alt="Symposium Ticketing System" class="project-card-image" loading="lazy">
+                    <span class="project-type-chip">Clubs &amp; Events</span>
                 </div>
                 <div class="project-card-body">
-                    <h3>Real Estate CRM</h3>
-                    <p>WhatsApp automation increasing leads by 45%.</p>
-                    <div class="project-card-tags"><span>CRM</span><span>WhatsApp API</span></div>
+                    <div class="project-card-header">
+                        <span class="project-client-name">Annual Tech Symposium</span>
+                        <h3>High-Concurrency Event &amp; Ticketing Engine</h3>
+                    </div>
+                    <p>Replaced fragile spreadsheets with an automated registration portal featuring QR ticket generation, payment webhooks, and live venue check-in.</p>
+                    <div class="project-meta-row">
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Build Time</span>
+                            <span class="project-meta-value">10 Days</span>
+                        </div>
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Category</span>
+                            <span class="project-meta-value">Web App &amp; Engine</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <div class="project-card-tags">
+                            <span>1,200+ Registrations</span>
+                            <span>QR Check-in</span>
+                        </div>
+                        <span class="project-view-link">View Case Study &rarr;</span>
+                    </div>
                 </div>
             </div>
-            <div class="project-card" onclick="openProjectModal('finance')">
+
+            <!-- Project 4: Connected Businesses / Alumni -->
+            <div class="project-card" onclick="openProjectModal('crm_automation')">
                 <div class="project-card-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=70" alt="Financial Dashboard" class="project-card-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=70" alt="CRM WhatsApp Automation" class="project-card-image" loading="lazy">
+                    <span class="project-type-chip">Alumni &amp; Local Businesses</span>
                 </div>
                 <div class="project-card-body">
-                    <h3>Financial Dashboard</h3>
-                    <p>Real-time analytics platform for tracking investments and KPIs.</p>
-                    <div class="project-card-tags"><span>Dashboard</span><span>Analytics</span></div>
+                    <div class="project-card-header">
+                        <span class="project-client-name">Retail &amp; Service Provider</span>
+                        <h3>WhatsApp CRM &amp; Booking Pipeline</h3>
+                    </div>
+                    <p>Engineered an automated WhatsApp Business workflow with catalog search, automated appointment booking bot, and instant CRM sync.</p>
+                    <div class="project-meta-row">
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Build Time</span>
+                            <span class="project-meta-value">10 Days</span>
+                        </div>
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Category</span>
+                            <span class="project-meta-value">AI Workflow &amp; CRM</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <div class="project-card-tags">
+                            <span>WhatsApp API</span>
+                            <span>Instant Sync</span>
+                        </div>
+                        <span class="project-view-link">View Case Study &rarr;</span>
+                    </div>
                 </div>
             </div>
-            <div class="project-card" onclick="openProjectModal('hr')">
+
+            <!-- Project 5: Student Capstone / Portfolio -->
+            <div class="project-card" onclick="openProjectModal('capstone_showcase')">
                 <div class="project-card-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=70" alt="HR Management" class="project-card-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=600&q=70" alt="Capstone Showcase Portal" class="project-card-image" loading="lazy">
+                    <span class="project-type-chip">Student Projects &amp; Portfolios</span>
                 </div>
                 <div class="project-card-body">
-                    <h3>HR Management System</h3>
-                    <p>Complete HR solution with payroll automation.</p>
-                    <div class="project-card-tags"><span>ERP</span><span>HR Tech</span></div>
+                    <div class="project-card-header">
+                        <span class="project-client-name">Computer Science Cohort</span>
+                        <h3>Capstone Project Repository &amp; Scoring Portal</h3>
+                    </div>
+                    <p>Created a searchable student showcase portal with video demos, tag-based discovery, and an industry evaluator rubric interface.</p>
+                    <div class="project-meta-row">
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Build Time</span>
+                            <span class="project-meta-value">12 Days</span>
+                        </div>
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Category</span>
+                            <span class="project-meta-value">Web Application</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <div class="project-card-tags">
+                            <span>Recruiter Showcase</span>
+                            <span>Grading Rubric</span>
+                        </div>
+                        <span class="project-view-link">View Case Study &rarr;</span>
+                    </div>
                 </div>
             </div>
-            <div class="project-card" onclick="openProjectModal('banking')">
+
+            <!-- Project 6: Logeshwaran J Overview -->
+            <div class="project-card" onclick="openProjectModal('logeshwaran')">
                 <div class="project-card-image-wrap">
-                    <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&q=70" alt="Mobile Banking" class="project-card-image" loading="lazy">
+                    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=600&q=70" alt="Logeshwaran J Platform" class="project-card-image" loading="lazy">
+                    <span class="project-type-chip">Faculty &amp; Researchers</span>
                 </div>
                 <div class="project-card-body">
-                    <h3>Mobile Banking App</h3>
-                    <p>Cross-platform app with biometric authentication.</p>
-                    <div class="project-card-tags"><span>Mobile</span><span>Fintech</span></div>
+                    <div class="project-card-header">
+                        <span class="project-client-name">Logeshwaran J</span>
+                        <h3>Faculty Portfolio &amp; CMS Engine</h3>
+                    </div>
+                    <p>End-to-end personal research platform with dedicated administrative management, gated paper reader auth, and LinkedIn cross-posting.</p>
+                    <div class="project-meta-row">
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Build Time</span>
+                            <span class="project-meta-value">2 Weeks</span>
+                        </div>
+                        <div class="project-meta-item">
+                            <span class="project-meta-label">Category</span>
+                            <span class="project-meta-value">Full-Stack Portal</span>
+                        </div>
+                    </div>
+                    <div class="project-card-footer">
+                        <div class="project-card-tags">
+                            <span>Live Production</span>
+                            <span>Admin Portal</span>
+                        </div>
+                        <span class="project-view-link">View Case Study &rarr;</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="section" style="background: linear-gradient(180deg, transparent 0%, rgba(255,69,82,0.02) 50%, transparent 100%);">
-        <div class="section-header">
-            <span class="section-label">Impact</span>
-            <h2 class="section-title">Our Impact in Numbers</h2>
-        </div>
-        <div class="stats-grid">
-            <div class="stat-card"><span class="stat-number">25+</span><span class="stat-label">Projects Delivered</span></div>
-            <div class="stat-card"><span class="stat-number">15+</span><span class="stat-label">Enterprise Clients</span></div>
-            <div class="stat-card"><span class="stat-number">100%</span><span class="stat-label">Client Satisfaction</span></div>
-            <div class="stat-card"><span class="stat-number">40%</span><span class="stat-label">Avg. Efficiency Gain</span></div>
+    <!-- Operating System Callout Banner -->
+    <section class="section" style="background: linear-gradient(180deg, transparent 0%, rgba(255,107,74,0.03) 50%, transparent 100%);">
+        <div style="max-width: 1000px; margin: 0 auto; padding: 2.5rem; background: #fff; border: 1px solid rgba(0,0,0,0.08); border-radius: 24px; box-shadow: 0 10px 40px rgba(0,0,0,0.04); text-align: center;">
+            <span class="badge" style="margin-bottom: 0.75rem;">Standardized Quality Guarantee</span>
+            <h3 style="font-size: 1.75rem; font-weight: 800; color: var(--navy-dark); margin-bottom: 1rem;">Why Every Project Hits Its Target</h3>
+            <p style="font-size: 1.05rem; color: var(--gray-600); line-height: 1.8; max-width: 800px; margin: 0 auto 1.5rem;">
+                The differentiator isn't "we have students" or "we use AI" — those can be copied. What's different is the full operating system behind every project: qualified scoping, AI-native development with mandatory human review and QA, a real delivery process, and a team that owns the client relationship end-to-end — not a freelancer marketplace and not a faceless agency.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                <a href="services.html" class="btn btn-outline">Explore Our 9-Stage Process</a>
+                <a href="contact.html" class="btn btn-primary">Scope Your Project</a>
+            </div>
         </div>
     </section>
 
     <!-- CTA Section -->
     <section class="cta-section">
         <div class="section-header">
-            <span class="section-label">Your Project</span>
-            <h2 class="section-title">Have a Project in Mind?</h2>
-            <p class="section-subtitle">Let's discuss how we can help bring your vision to life</p>
+            <span class="section-label">Your Turn</span>
+            <h2 class="section-title">Have an Idea? We Turn It into Working Software.</h2>
+            <p class="section-subtitle">No vague estimates. We assess your concept, define a strict scope, and deliver production code in days or weeks.</p>
             <a href="contact.html" class="btn btn-primary btn-large mt-4">
-                Start a Project
+                Schedule a Scoping Call
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
         </div>
     </section>
 
-    <!-- Project Detail Modal -->
+    <!-- SECTION 7 MODAL DIALOG -->
     <div class="project-modal-overlay" id="projectModal">
         <div class="project-modal">
-            <button class="modal-close" onclick="closeProjectModal()">
+            <button class="modal-close" onclick="closeProjectModal()" aria-label="Close modal">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
             <div class="modal-header">
-                <h2 id="modalTitle"></h2>
-                <div class="modal-client" id="modalClient"></div>
+                <div class="modal-chip-row">
+                    <span class="modal-client-badge" id="modalClientType"></span>
+                    <span class="modal-tech-badge" id="modalTechCategory"></span>
+                </div>
+                <h2 id="modalProjectTitle"></h2>
             </div>
-            <div class="modal-tags" id="modalTags"></div>
-            <div class="modal-description" id="modalDesc"></div>
-            <div id="modalIframeContainer"></div>
-            <a href="#" class="modal-visit-btn" id="modalVisitBtn" target="_blank" style="display:none;">
-                Visit Live Site
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-            </a>
+            
+            <div class="modal-body">
+                <div class="case-study-template">
+                    <!-- 1. The Problem -->
+                    <div class="cs-box">
+                        <div class="cs-label">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                            1. The Problem
+                        </div>
+                        <p class="cs-text" id="modalProblem"></p>
+                    </div>
+
+                    <!-- 2. Starting Point & 3. Build Time -->
+                    <div class="cs-grid-2">
+                        <div class="cs-box">
+                            <div class="cs-label">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg>
+                                2. Starting Point
+                            </div>
+                            <p class="cs-text" id="modalStartingPoint"></p>
+                        </div>
+                        <div class="cs-box">
+                            <div class="cs-label">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                3. Build Time
+                            </div>
+                            <p class="cs-text" id="modalBuildTime"></p>
+                        </div>
+                    </div>
+
+                    <!-- 4. What Site2Success Built -->
+                    <div class="cs-box">
+                        <div class="cs-label">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            4. What Site2Success Built
+                        </div>
+                        <p class="cs-text" id="modalBuilt"></p>
+                    </div>
+
+                    <!-- 5. Result -->
+                    <div class="cs-box" style="border-left: 4px solid #28c840;">
+                        <div class="cs-label" style="color: #28c840;">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                            5. Verified Outcome / Result
+                        </div>
+                        <p class="cs-text" id="modalResult"></p>
+                    </div>
+
+                    <!-- 6. Client Testimonial -->
+                    <div class="cs-testimonial-box">
+                        <div class="cs-label" style="color: var(--coral);">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+                            6. Client Testimonial
+                        </div>
+                        <div class="cs-quote" id="modalQuote"></div>
+                        <div class="cs-author" id="modalAuthor"></div>
+                    </div>
+
+                    <!-- 7. CTA -->
+                    <div class="cs-cta-bar">
+                        <div class="cs-cta-text" id="modalCtaText">Have a similar project? Let's scope it.</div>
+                        <a href="contact.html" class="cs-cta-btn" id="modalCtaBtn">
+                            Scope This Project
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
+    <!-- Scripts & Case Study Data -->
     <script src="../assets/js/main.js"></script>
     <script>
         const projectsData = {
             logeshwaran: {
-                title: 'Personal Portfolio Website',
-                client: 'Logeshwaran J',
-                tags: ['Portfolio', 'Web Design', 'Responsive', 'Modern UI', 'Animations'],
-                desc: 'A premium, modern portfolio website designed and developed for Logeshwaran J. Features smooth scroll animations, responsive design, and a sleek dark aesthetic that showcases his professional journey, skills, and projects beautifully.',
-                url: 'https://logeshwaranj.com/',
-                hasIframe: true
+                title: 'Logeshwaran J — Portfolio & Administrative Engine',
+                clientType: 'Academic Researcher & Faculty',
+                techCategory: 'Full-Stack Web App + Admin Portal',
+                problem: 'Needed a centralized digital presence to showcase publications, enable gated private access to research papers, publish blogs, and engage visitors via chat, with full autonomous editorial control.',
+                startingPoint: 'Scattered research links, manual PDF sharing via email, and no central publishing or admin hub.',
+                buildTime: '2 Weeks (14 Days)',
+                built: 'Complete responsive portfolio website + dedicated administrative portal with JWT authentication, CRUD management for research papers and blogs, LinkedIn cross-publishing API, direct visitor messaging inbox, and commenting system.',
+                result: 'Live in production at logeshwaranj.com, zero maintenance downtime, enabled single-click publishing to both web & LinkedIn with 100% autonomous control.',
+                quote: '“Site2Success built an end-to-end platform that gave me complete control over my research publications, blogs, and reader interactions. Fast turnaround and flawless execution.”',
+                author: '— Logeshwaran J, Researcher & Academic',
+                cta: 'Have a research portfolio or web platform in mind? Let’s scope it.'
             },
-            ecommerce: {
-                title: 'E-Commerce Platform',
-                client: 'Enterprise Client',
-                tags: ['Automation', 'E-commerce', 'Inventory Management'],
-                desc: 'Complete automation system reducing manual work by 70%. Integrated inventory management, order processing, and customer notifications into a seamless platform.',
-                url: null, hasIframe: false
+            research_data: {
+                title: 'Faculty Climate Research Dataset Explorer',
+                clientType: 'University Research Lab / Faculty',
+                techCategory: 'Research Prototype & Interactive Viz',
+                problem: 'Multidimensional climate sensor datasets were trapped in static, massive CSV files that journal reviewers and grant committees found unwieldy to navigate.',
+                startingPoint: 'Rough Python analysis scripts and tabular data dumps without a user interface.',
+                buildTime: '2.5 Weeks (17 Days)',
+                built: 'Web-based interactive data dashboard with high-throughput filtering, dynamic Plotly charts, scenario parameter modeling, and instant figure export for citations.',
+                result: 'Deployed for grant evaluation and peer presentation; reduced data verification lookup time by 85% with zero server strain.',
+                quote: '“Site2Success bridged the gap between academic code and an intuitive interactive tool that reviewers could immediately test without installing anything.”',
+                author: '— Lead Project Researcher, Environmental Sciences Lab',
+                cta: 'Have complex research data you need to visualize or publish? Let’s scope it.'
             },
-            healthcare: {
-                title: 'Healthcare ERP',
-                client: 'Healthcare Provider',
-                tags: ['AI/ML', 'Healthcare', 'Predictive Analytics'],
-                desc: 'AI-powered patient management system with predictive analytics for treatment recommendations and resource optimization across multiple departments.',
-                url: null, hasIframe: false
+            fintech_mvp: {
+                title: 'Micro-Investment Simulation MVP',
+                clientType: 'Student Founder Cohort',
+                techCategory: 'Startup MVP & Web Application',
+                problem: 'Student founders needed a functional, realistic trading simulation pilot to validate their investment club thesis and pitch angel networks before raising capital.',
+                startingPoint: 'Figma UI wireframes and a 4-page product requirements doc (PRD).',
+                buildTime: '3 Weeks (21 Days)',
+                built: 'Fully responsive web application with simulated portfolio execution, real-time market data feeds, user authentication, cohort leaderboard, and analytics instrumentation.',
+                result: 'Onboarded 350+ active campus cohort users in week 1; successfully demonstrated to angels and unlocked initial seed grant funding.',
+                quote: '“They didn’t just code what was on our Figma screens; they caught edge cases, tightened the user flows, and delivered a rock-solid MVP in three weeks flat.”',
+                author: '— Co-Founder, Campus FinTech Initiative',
+                cta: 'Launching a startup MVP or pilot? Let’s scope it.'
             },
-            realestate: {
-                title: 'Real Estate CRM',
-                client: 'Real Estate Agency',
-                tags: ['CRM', 'WhatsApp API', 'Lead Management'],
-                desc: 'WhatsApp automation increasing leads by 45%. Integrated property management with automated follow-ups, scheduling, and lead nurturing pipelines.',
-                url: null, hasIframe: false
+            event_portal: {
+                title: 'Symposium High-Concurrency Ticketing Engine',
+                clientType: 'Campus Clubs & Annual Tech Symposium',
+                techCategory: 'Web App & Ticketing Engine',
+                problem: 'Manual Google Form and spreadsheet registrations collapsed under high burst traffic during ticket drops, leading to duplicate bookings and venue chaos.',
+                startingPoint: 'Spreadsheet templates, UPI screenshot verification, and manual badge printing.',
+                buildTime: '10 Days',
+                built: 'High-concurrency registration website with real-time slot inventory, automated payment gateway webhooks, encrypted QR ticket emailing, and organizer mobile check-in scanners.',
+                result: 'Processed 1,200+ delegate registrations seamlessly; checked in attendees in under 2 seconds per delegate with zero duplicate entries.',
+                quote: '“Turned our chaotic registration process into an automated, professional ticketing flow. The team delivered ahead of schedule and stayed available throughout event day.”',
+                author: '— Convenor, Annual Technical Symposium Committee',
+                cta: 'Organizing an event, symposium, or conference? Let’s scope it.'
             },
-            finance: {
-                title: 'Financial Dashboard',
-                client: 'Financial Services Firm',
-                tags: ['Dashboard', 'Analytics', 'Real-time Data'],
-                desc: 'Real-time analytics platform for tracking investments, expenses, and financial KPIs with automated reporting and customizable dashboards.',
-                url: null, hasIframe: false
+            crm_automation: {
+                title: 'Omnichannel WhatsApp CRM & Booking Pipeline',
+                clientType: 'Alumni & Connected Businesses',
+                techCategory: 'AI Workflow & CRM Integration',
+                problem: 'Customer inquiries arriving via WhatsApp took up to 4 hours to receive responses, causing missed appointment bookings and disconnected client records.',
+                startingPoint: 'Unstructured WhatsApp Business chats and manual paper appointment books.',
+                buildTime: '10 Days',
+                built: 'Automated WhatsApp Business API pipeline with intelligent catalog browsing, slot reservation bot, and bi-directional Airtable/CRM data synchronization.',
+                result: 'Average initial response time dropped from 3 hours to under 30 seconds; generated a 40% increase in completed weekly client bookings within month 1.',
+                quote: '“Our response time dropped to seconds. The automation handles 70% of repetitive customer questions accurately, letting us focus on service delivery.”',
+                author: '— Managing Partner, Connected Retail Practice',
+                cta: 'Want to automate your customer communication or booking flow? Let’s scope it.'
             },
-            hr: {
-                title: 'HR Management System',
-                client: 'Corporate Client',
-                tags: ['ERP', 'HR Tech', 'Payroll'],
-                desc: 'Complete HR solution with attendance tracking, payroll automation, and performance management modules serving 500+ employees.',
-                url: null, hasIframe: false
-            },
-            banking: {
-                title: 'Mobile Banking App',
-                client: 'Fintech Startup',
-                tags: ['Mobile', 'Fintech', 'Security'],
-                desc: 'Cross-platform mobile application with secure transactions, biometric authentication, and real-time notifications for seamless banking.',
-                url: null, hasIframe: false
+            capstone_showcase: {
+                title: 'Departmental Capstone Project Repository & Rubric',
+                clientType: 'Student Projects & Department Faculty',
+                techCategory: 'Web Application & Portal',
+                problem: 'Hundreds of final-year engineering projects were submitted every term with no centralized showcase, peer review mechanism, or visibility for hiring companies.',
+                startingPoint: 'Messy Google Drive folders and paper evaluation sheets.',
+                buildTime: '12 Days',
+                built: 'Searchable web directory indexing project repositories, video demonstrations, architecture diagrams, and a secure evaluator grading rubric.',
+                result: 'Hosted 85 capstone submissions; generated 2,400+ external recruiter pageviews, leading directly to interview invitations for student teams.',
+                quote: '“Elevated our student projects to industry standards with an elegant, searchable portal that industry evaluators could easily score.”',
+                author: '— Capstone Coordinator, School of Computing',
+                cta: 'Need a project showcase or evaluation portal? Let’s scope it.'
             }
         };
 
         function openProjectModal(id) {
             const p = projectsData[id];
             if (!p) return;
-            document.getElementById('modalTitle').textContent = p.title;
-            document.getElementById('modalClient').textContent = p.client ? 'Client: ' + p.client : '';
-            document.getElementById('modalTags').innerHTML = p.tags.map(t => '<span>' + t + '</span>').join('');
-            document.getElementById('modalDesc').textContent = p.desc;
-
-            const iframeContainer = document.getElementById('modalIframeContainer');
-            const visitBtn = document.getElementById('modalVisitBtn');
-
-            if (p.hasIframe && p.url) {
-                iframeContainer.innerHTML = `
-                    <div class="modal-iframe-wrap">
-                        <div class="modal-iframe-bar">
-                            <div class="modal-iframe-dot"></div>
-                            <div class="modal-iframe-dot"></div>
-                            <div class="modal-iframe-dot"></div>
-                            <div class="modal-iframe-url">${p.url}</div>
-                        </div>
-                        <iframe src="${p.url}" loading="lazy" title="${p.title}" sandbox="allow-scripts allow-same-origin"></iframe>
-                    </div>`;
-                visitBtn.href = p.url;
-                visitBtn.style.display = 'inline-flex';
-            } else {
-                iframeContainer.innerHTML = '';
-                visitBtn.style.display = 'none';
-            }
+            document.getElementById('modalProjectTitle').textContent = p.title;
+            document.getElementById('modalClientType').textContent = p.clientType;
+            document.getElementById('modalTechCategory').textContent = p.techCategory;
+            document.getElementById('modalProblem').textContent = p.problem;
+            document.getElementById('modalStartingPoint').textContent = p.startingPoint;
+            document.getElementById('modalBuildTime').textContent = p.buildTime;
+            document.getElementById('modalBuilt').textContent = p.built;
+            document.getElementById('modalResult').textContent = p.result;
+            document.getElementById('modalQuote').textContent = p.quote;
+            document.getElementById('modalAuthor').textContent = p.author;
+            document.getElementById('modalCtaText').textContent = p.cta;
+            document.getElementById('modalCtaBtn').href = 'contact.html?subject=' + encodeURIComponent('Scope Project: ' + p.title);
 
             const overlay = document.getElementById('projectModal');
             overlay.classList.add('active');
@@ -684,38 +1059,36 @@
             const overlay = document.getElementById('projectModal');
             overlay.classList.remove('active');
             document.body.style.overflow = '';
-            // Clean up iframe
-            document.getElementById('modalIframeContainer').innerHTML = '';
         }
 
-        // Close on overlay click
         document.getElementById('projectModal').addEventListener('click', function(e) {
             if (e.target === this) closeProjectModal();
         });
 
-        // Close on Escape
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') closeProjectModal();
         });
     </script>
 
-    <!-- FOOTER with NAP -->
+    <!-- FOOTER with NAP & Section 12 Disclaimer -->
     <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:4rem 2rem 2rem;">
         <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto 3rem;">
             <div>
                 <img src="../assets/images/logo.png" alt="Site2Success Logo" style="height:54px;width:auto;border-radius:12px;background:#ffffff;padding:6px 14px;box-shadow:0 4px 12px rgba(0,0,0,0.15);margin-bottom:1.25rem;opacity:1 !important;display:inline-block;">
-                <p style="font-size:0.9rem;line-height:1.7;color:rgba(255,255,255,0.5);max-width:280px;">AI-first tech startup building AI agents, chatbots, and automation for Indian SMBs.</p>
+                <p style="font-size:0.9rem;line-height:1.7;color:rgba(255,255,255,0.5);max-width:320px;">University-powered AI software studio combining AI-native development with university talent to turn ideas into working software.</p>
             </div>
             <div>
                 <h4 style="font-size:0.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;">Pages</h4>
                 <a href="home.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Home</a>
-                <a href="services.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Services</a>
-                <a href="automation.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">KIRA AI</a>
+                <a href="services.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Services &amp; Pricing</a>
+                <a href="projects.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Case Studies</a>
                 <a href="about.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">About</a>
+                <a href="internships.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Builders Studio</a>
+                <a href="automation.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">KIRA AI</a>
                 <a href="contact.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Contact</a>
             </div>
             <div>
-                <h4 style="font-size:0.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;">Contact (NAP)</h4>
+                <h4 style="font-size:0.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;">Studio Office</h4>
                 <div style="font-size:0.9rem;line-height:1.8;color:rgba(255,255,255,0.5);" itemscope itemtype="https://schema.org/LocalBusiness">
                     <strong itemprop="name" style="color:rgba(255,255,255,0.8);">Site2Success</strong><br>
                     <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
@@ -728,8 +1101,16 @@
                 </div>
             </div>
         </div>
-        <div style="max-width:1200px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
-            <p style="font-size:0.875rem;color:rgba(255,255,255,0.3);">&copy; 2024–2025 Site2Success. All rights reserved.</p>
+        
+        <!-- Section 12 Governance & Scope Note -->
+        <div style="max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem;margin-bottom:2rem;">
+            <p style="font-size:0.775rem;line-height:1.7;color:rgba(255,255,255,0.38);margin:0;">
+                <strong style="color:rgba(255,255,255,0.55);">Scope &amp; Governance Note:</strong> This rebuild is based on a strategic operating plan, not legal, tax, employment, or university-policy advice. Before finalizing client contracts, stipend terms, IP ownership language, data handling policy, or any CHRIST University branding/endorsement claims, appropriate legal and institutional review should be obtained separately — this should not be assumed to be covered by the website content itself.
+            </p>
+        </div>
+
+        <div style="max-width:1200px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+            <p style="font-size:0.875rem;color:rgba(255,255,255,0.3);">&copy; 2024–2026 Site2Success. All rights reserved.</p>
             <div style="display:flex;gap:1rem;">
                 <a href="https://linkedin.com/company/site2success" rel="noopener" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.875rem;">LinkedIn</a>
                 <a href="https://github.com/site2success" rel="noopener" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.875rem;">GitHub</a>
@@ -766,52 +1147,6 @@
             }
         });
     })();
-    </script>
-
-    <!-- BreadcrumbList Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type":"ListItem","position":1,"name":"Home","item":"https://site2success.online/pages/home.html"},
-        {"@type":"ListItem","position":2,"name":"Projects","item":"https://site2success.online/pages/projects.html"}
-      ]
-    }
-    </script>
-
-    <!-- Organization Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Site2Success",
-      "url": "https://site2success.online",
-      "logo": "https://site2success.online/assets/images/logo.png",
-      "description": "AI-first tech startup building agents, chatbots and automation for Indian SMBs. Incubated at Christ University, Bengaluru.",
-      "foundingDate": "2024-10",
-      "founders": [
-        {"@type":"Person","name":"Rahul R"},
-        {"@type":"Person","name":"L Dhanush Raj"}
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bengaluru",
-        "addressRegion": "Karnataka",
-        "addressCountry": "IN"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-6361446768",
-        "contactType": "customer service",
-        "email": "site2successs@gmail.com"
-      },
-      "sameAs": [
-        "https://linkedin.com/company/site2success",
-        "https://github.com/site2success",
-        "https://instagram.com/site2success"
-      ]
-    }
     </script>
 </body>
 </html>

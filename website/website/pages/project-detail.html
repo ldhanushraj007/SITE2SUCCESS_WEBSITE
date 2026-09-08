@@ -3,25 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Logeshwaran J Portfolio Case Study | Site2Success Projects</title>
-    <meta name="description" content="Case study of the fully functional portfolio website and admin portal built for Logeshwaran J by Site2Success Bengaluru. Featuring full CRUD and LinkedIn API.">
-    <meta name="keywords" content="portfolio website, case study, admin portal, Logeshwaran J, Site2Success, web development Bengaluru">
+    <title>Case Study: Logeshwaran J Academic Platform | Site2Success</title>
+    <meta name="description" content="In-depth case study of the academic portfolio platform and autonomous administrative portal built for Logeshwaran J by Site2Success in 14 days.">
+    <meta name="keywords" content="academic portfolio, case study, admin portal, Logeshwaran J, Site2Success, university software studio">
     <link rel="canonical" href="https://site2success.online/pages/project-detail.html">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="hUuqrSM6DO2-IPt-vKFLi6_DoScVl3sxZFX5Q328wno">
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
+    <meta property="og:type" content="article">
     <meta property="og:url" content="https://site2success.online/pages/project-detail.html">
-    <meta property="og:title" content="Logeshwaran J Portfolio Case Study | Site2Success Projects">
-    <meta property="og:description" content="Case study of the fully functional portfolio website and admin portal built for Logeshwaran J by Site2Success Bengaluru.">
+    <meta property="og:title" content="Case Study: Logeshwaran J Academic Platform | Site2Success">
+    <meta property="og:description" content="Read how Site2Success built an academic portfolio and administrative engine in 14 days, featuring research gating, blog comments, and LinkedIn sync.">
     <meta property="og:image" content="https://site2success.online/assets/images/logo.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://site2success.online/pages/project-detail.html">
-    <meta property="twitter:title" content="Logeshwaran J Portfolio Case Study | Site2Success Projects">
-    <meta property="twitter:description" content="Case study of the fully functional portfolio website and admin portal built for Logeshwaran J by Site2Success Bengaluru.">
+    <meta property="twitter:title" content="Case Study: Logeshwaran J Academic Platform | Site2Success">
+    <meta property="twitter:description" content="Read how Site2Success built an academic portfolio and administrative engine in 14 days, featuring research gating, blog comments, and LinkedIn sync.">
     <meta property="twitter:image" content="https://site2success.online/assets/images/logo.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,7 +31,7 @@
     <link rel="stylesheet" href="../assets/css/pages.css">
     <style>
         .detail-hero {
-            padding: 8rem 2rem 3rem;
+            padding: 8rem 2rem 2rem;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -46,6 +46,7 @@
         .detail-breadcrumb a {
             color: var(--gray-400);
             transition: color 0.2s;
+            text-decoration: none;
         }
         .detail-breadcrumb a:hover { color: var(--coral); }
         .detail-breadcrumb svg { width: 14px; height: 14px; opacity: 0.5; }
@@ -59,17 +60,20 @@
             flex-wrap: wrap;
         }
         .detail-header-left h1 {
-            font-size: 2.75rem;
+            font-size: 2.6rem;
             font-weight: 800;
             color: var(--navy-dark);
             margin-bottom: 0.5rem;
-            line-height: 1.15;
+            line-height: 1.2;
         }
         .detail-header-left .detail-client {
             font-size: 1.125rem;
             color: var(--coral);
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         .detail-tags {
             display: flex;
@@ -104,10 +108,68 @@
             box-shadow: 0 12px 30px rgba(255,107,74,0.35);
         }
 
+        /* 9-Part Case Study Grid */
+        .framework-summary {
+            max-width: 1200px;
+            margin: 0 auto 3.5rem;
+            padding: 0 2rem;
+        }
+        .framework-card {
+            background: #fff;
+            border-radius: 24px;
+            border: 1px solid rgba(0,0,0,0.08);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+            padding: 2.5rem;
+        }
+        .framework-card-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+        .nine-points-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+        .point-item {
+            padding: 1.25rem;
+            background: #fafbfc;
+            border-radius: 16px;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .point-item.highlight-point {
+            background: linear-gradient(135deg, rgba(255,107,74,0.06) 0%, rgba(255,142,83,0.02) 100%);
+            border-color: rgba(255,107,74,0.2);
+        }
+        .point-num {
+            font-size: 0.725rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--coral);
+            margin-bottom: 0.35rem;
+        }
+        .point-title {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 0.5rem;
+        }
+        .point-desc {
+            font-size: 0.875rem;
+            line-height: 1.6;
+            color: var(--gray-600);
+            margin: 0;
+        }
+
         /* Live Preview Browser */
         .live-preview-section {
             max-width: 1200px;
-            margin: 0 auto 3rem;
+            margin: 0 auto 3.5rem;
             padding: 0 2rem;
         }
         .browser-frame {
@@ -182,7 +244,7 @@
             margin-bottom: 1.25rem;
         }
         .project-overview p {
-            font-size: 1.0625rem;
+            font-size: 1.05rem;
             color: var(--gray-500);
             line-height: 1.85;
             margin-bottom: 1.25rem;
@@ -193,8 +255,8 @@
             margin: 1.25rem 0;
         }
         .project-overview ul li {
-            padding: 0.6rem 0;
-            color: var(--gray-500);
+            padding: 0.65rem 0;
+            color: var(--gray-600);
             font-size: 1rem;
             display: flex;
             align-items: flex-start;
@@ -230,7 +292,7 @@
         .sidebar-item {
             display: flex;
             justify-content: space-between;
-            padding: 0.6rem 0;
+            padding: 0.65rem 0;
             border-bottom: 1px solid rgba(0,0,0,0.04);
             font-size: 0.95rem;
         }
@@ -251,6 +313,37 @@
             font-weight: 500;
         }
 
+        /* Testimonial Quote Banner */
+        .testimonial-banner {
+            max-width: 1200px;
+            margin: 0 auto 3.5rem;
+            padding: 0 2rem;
+        }
+        .testimonial-box {
+            background: linear-gradient(135deg, #121829 0%, #1e293b 100%);
+            border-radius: 24px;
+            padding: 3rem;
+            color: white;
+            position: relative;
+            border: 1px solid rgba(255,255,255,0.08);
+        }
+        .testimonial-quote-text {
+            font-size: 1.25rem;
+            line-height: 1.75;
+            font-style: italic;
+            color: rgba(255,255,255,0.92);
+            margin-bottom: 1.5rem;
+        }
+        .testimonial-author-name {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--orange);
+        }
+        .testimonial-author-role {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.55);
+        }
+
         /* CTA Banner */
         .detail-cta {
             max-width: 1200px;
@@ -258,7 +351,7 @@
             padding: 0 2rem;
         }
         .detail-cta-card {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            background: linear-gradient(135deg, #121829 0%, #1a1a2e 100%);
             border-radius: 24px;
             padding: 3rem;
             display: flex;
@@ -266,6 +359,7 @@
             align-items: center;
             gap: 2rem;
             flex-wrap: wrap;
+            border: 1px solid rgba(255,255,255,0.08);
         }
         .detail-cta-card h2 {
             color: white;
@@ -274,18 +368,24 @@
             margin-bottom: 0.5rem;
         }
         .detail-cta-card p {
-            color: rgba(255,255,255,0.65);
+            color: rgba(255,255,255,0.7);
             font-size: 1rem;
         }
 
+        @media (max-width: 1024px) {
+            .nine-points-grid { grid-template-columns: repeat(2, 1fr); }
+            .project-info-section { grid-template-columns: 1fr; }
+        }
         @media (max-width: 768px) {
             .detail-header { flex-direction: column; }
             .detail-header-left h1 { font-size: 2rem; }
-            .project-info-section { grid-template-columns: 1fr; }
+            .nine-points-grid { grid-template-columns: 1fr; }
             .browser-iframe-wrap { height: 350px; }
             .detail-cta-card { flex-direction: column; text-align: center; }
+            .testimonial-box { padding: 2rem 1.5rem; }
+            .testimonial-quote-text { font-size: 1.05rem; }
         }
-    
+
         /* ── Mobile Nav (shared) ── */
         @media (max-width: 1024px) {
             .nav-links {
@@ -328,8 +428,7 @@
             .menu-toggle.active span:nth-child(2) { opacity: 0; }
             .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
         }
-        </style>
-    
+    </style>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -338,50 +437,128 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <a href="home.html" class="nav-logo">
-            <img src="../assets/images/logo.png" alt="Site2Success" style="height: 48px; width: auto; border-radius: 0;">
+            <img src="../assets/images/logo.png" alt="Site2Success — University-Powered AI Software Studio" style="height: 48px; width: auto; border-radius: 0;">
         </a>
         <div class="nav-links" id="nav-links">
             <a href="home.html" class="nav-item" data-page="home">Home</a>
             <a href="services.html" class="nav-item" data-page="services">Services</a>
-            <a href="automation.html" class="nav-item" data-page="automation">KIRA<span class="early-tag">Early Access</span></a>
-            <a href="internships.html" class="nav-item" data-page="internships">Internships</a>
             <a href="projects.html" class="nav-item active" data-page="projects">Projects</a>
             <a href="about.html" class="nav-item" data-page="about">About</a>
+            <a href="internships.html" class="nav-item" data-page="internships">Builders</a>
+            <a href="automation.html" class="nav-item" data-page="automation">KIRA AI</a>
             <a href="contact.html" class="nav-item" data-page="contact">Contact</a>
         </div>
         <div class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></div>
     </nav>
 
-    <!-- Breadcrumb -->
+    <!-- Breadcrumb & Header -->
     <div class="detail-hero">
         <div class="detail-breadcrumb">
             <a href="home.html">Home</a>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            <a href="projects.html">Projects</a>
+            <a href="projects.html">Case Studies</a>
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 18 15 12 9 6"></polyline></svg>
             <span style="color: var(--navy-dark); font-weight: 600;">Logeshwaran J</span>
         </div>
 
-        <!-- Header -->
         <div class="detail-header">
             <div class="detail-header-left">
-                <div class="detail-client">Client: Logeshwaran J</div>
-                <h1>Portfolio Website & Admin Portal</h1>
+                <div class="detail-client">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    Client: Logeshwaran J (Academic Researcher &amp; Faculty)
+                </div>
+                <h1>Academic Research Portfolio &amp; Autonomous Admin Engine</h1>
                 <div class="detail-tags">
-                    <span>Full-Stack</span>
-                    <span>Portfolio</span>
-                    <span>Admin Portal</span>
-                    <span>Authentication</span>
-                    <span>Blog & Research</span>
-                    <span>LinkedIn Integration</span>
+                    <span>Full-Stack Web App</span>
+                    <span>Admin Engine</span>
+                    <span>JWT Authentication</span>
+                    <span>Blog &amp; Research CMS</span>
+                    <span>LinkedIn API Integration</span>
+                    <span>Delivered in 14 Days</span>
                 </div>
             </div>
-            <a href="https://logeshwaranj.com/" target="_blank" class="detail-visit-btn">
+            <a href="https://logeshwaranj.com/" target="_blank" rel="noopener" class="detail-visit-btn">
                 Visit Live Site
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
             </a>
         </div>
     </div>
+
+    <!-- 9-Part Case Study Specification Framework (Section 7 Verbatim) -->
+    <section class="framework-summary">
+        <div class="framework-card">
+            <div class="framework-card-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--coral)" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                Complete 9-Point Case Study Breakdown
+            </div>
+            <div class="nine-points-grid">
+                <!-- 1. Client Type -->
+                <div class="point-item">
+                    <div class="point-num">1. Client Type</div>
+                    <div class="point-title">Academic Researcher &amp; Faculty</div>
+                    <p class="point-desc">Independent researcher publishing peer-reviewed papers requiring direct engagement with academic peers and student mentees.</p>
+                </div>
+
+                <!-- 2. The Problem -->
+                <div class="point-item">
+                    <div class="point-num">2. The Problem</div>
+                    <div class="point-title">Scattered Publishing &amp; Gating</div>
+                    <p class="point-desc">Needed a centralized digital home to showcase citations, gate private pre-prints, host interactive discussions, and communicate directly with readers.</p>
+                </div>
+
+                <!-- 3. Starting Point -->
+                <div class="point-item">
+                    <div class="point-num">3. Starting Point</div>
+                    <div class="point-title">Fragmented Links &amp; PDFs</div>
+                    <p class="point-desc">No central portal; publications were hosted on external repositories with manual email sharing for drafts and no direct visitor touchpoint.</p>
+                </div>
+
+                <!-- 4. What We Built -->
+                <div class="point-item">
+                    <div class="point-num">4. What Site2Success Built</div>
+                    <div class="point-title">Dual-Layer Web Platform + CMS</div>
+                    <p class="point-desc">Responsive public-facing portfolio with gated reader authentication, plus a secure custom admin portal with full CRUD controls and LinkedIn API sync.</p>
+                </div>
+
+                <!-- 5. Build Time -->
+                <div class="point-item">
+                    <div class="point-num">5. Build Time</div>
+                    <div class="point-title">2 Weeks (14 Days)</div>
+                    <p class="point-desc">From initial technical scoping session and UX wireframes to end-to-end deployment, verification, and client handover.</p>
+                </div>
+
+                <!-- 6. Technology Category -->
+                <div class="point-item">
+                    <div class="point-num">6. Technology Category</div>
+                    <div class="point-title">Full-Stack Web App + Admin Portal</div>
+                    <p class="point-desc">Secure client-side front-end, Node.js API backend, JWT authentication, RESTful database endpoints, and social API integrations.</p>
+                </div>
+
+                <!-- 7. Result -->
+                <div class="point-item highlight-point">
+                    <div class="point-num">7. Result</div>
+                    <div class="point-title">100% Autonomous Control</div>
+                    <p class="point-desc">Live at <a href="https://logeshwaranj.com/" target="_blank" style="color:var(--coral);font-weight:700;">logeshwaranj.com</a> with zero downtime. 1-click cross-publishing to LinkedIn; automated visitor inquiries.</p>
+                </div>
+
+                <!-- 8. Testimonial -->
+                <div class="point-item highlight-point">
+                    <div class="point-num">8. Testimonial</div>
+                    <div class="point-title">Verified Client Endorsement</div>
+                    <p class="point-desc">"Site2Success built an end-to-end platform that gave me complete control over my research publications, blogs, and reader interactions."</p>
+                </div>
+
+                <!-- 9. CTA -->
+                <div class="point-item highlight-point" style="display:flex;flex-direction:column;justify-content:center;">
+                    <div class="point-num">9. Action</div>
+                    <div class="point-title">Scope Your Project</div>
+                    <a href="contact.html?subject=Scope+Research+Platform" class="btn btn-primary" style="font-size:0.85rem;padding:0.6rem 1rem;text-align:center;margin-top:0.5rem;">
+                        Have a Similar Project? Let's Scope It &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Live Preview -->
     <section class="live-preview-section">
@@ -394,111 +571,117 @@
                 </div>
                 <div class="browser-url-bar">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                    logeshwaranj.com
+                    https://logeshwaranj.com/
                 </div>
             </div>
             <div class="browser-iframe-wrap">
-                <iframe src="https://logeshwaranj.com/" loading="lazy" title="Logeshwaran Portfolio" sandbox="allow-scripts allow-same-origin"></iframe>
+                <iframe src="https://logeshwaranj.com/" loading="lazy" title="Logeshwaran Portfolio Live Preview" sandbox="allow-scripts allow-same-origin"></iframe>
             </div>
         </div>
     </section>
 
-    <!-- Project Details -->
+    <!-- Deep-Dive Features & Architecture -->
     <section class="project-info-section">
         <div class="project-overview">
-            <h2>Project Overview</h2>
-            <p>This project was assigned by our client with the objective of developing a fully functional portfolio website along with an integrated admin portal. The portfolio website is designed to showcase his professional profile, including sections such as About Me, experience, education, research work, publications, blogs, collaborators, and contact details.</p>
-            <p>It serves as a comprehensive platform to present all his achievements and contributions, particularly highlighting his research papers and blog posts in an organized and accessible manner.</p>
-            <p>The website includes dynamic features such as user authentication, allowing visitors to sign up and log in to access private research papers. Users can interact with the platform by viewing and commenting on blog posts. A chat/contact system is also integrated, enabling visitors to send messages directly through the website — helping them connect with him easily.</p>
+            <h2>Detailed Scope &amp; Architecture</h2>
+            <p>Our client needed an author platform that could serve both as an authoritative public showcase of academic work and as a daily operational workspace for publishing, managing reader inquiries, and cross-promoting content across professional networks.</p>
+            
+            <p>Site2Success paired an AI-assisted engineering team with senior QA oversight to design, develop, test, and deploy the entire dual-portal architecture in two weeks.</p>
 
-            <h2 style="margin-top: 2rem;">Portfolio Website — Key Features</h2>
+            <h2 style="margin-top: 2.5rem;">Client-Facing Platform Highlights</h2>
             <ul>
                 <li>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Comprehensive profile sections: About Me, Experience, Education, Research, Publications, Blogs, Collaborators & Contact
+                    <span><strong>Structured Academic Showcase:</strong> Dedicated modules for About, Experience, Education, Research Projects, Citations, Publications, and Collaborators.</span>
                 </li>
                 <li>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    User authentication — sign up and log in to access private research papers
+                    <span><strong>Gated Paper Access:</strong> User authentication allows visitors to register and log in to request and read restricted pre-prints.</span>
                 </li>
                 <li>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Interactive blog section with commenting system for audience engagement
+                    <span><strong>Interactive Reader Discussions:</strong> Integrated commenting engine under blog articles for direct academic peer review.</span>
                 </li>
                 <li>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Integrated chat/contact system for direct visitor communication
-                </li>
-                <li>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Research section with detailed insights into all completed work
+                    <span><strong>Direct Inquiry Inbox:</strong> Embedded contact system routing reader messages directly to the client's administrative panel.</span>
                 </li>
             </ul>
 
-            <h2 style="margin-top: 2rem;">Admin Portal — Full Control</h2>
+            <h2 style="margin-top: 2.5rem;">Autonomous Administrative Portal (Back-Office)</h2>
             <ul>
                 <li>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Complete CRUD functionality — Create, Read, Update, Delete all website content
+                    <span><strong>Complete CRUD Management:</strong> Add, edit, publish, or unpublish publications and research articles in real time without touching code.</span>
                 </li>
                 <li>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Publish and manage research papers and blog posts with full editorial control
+                    <span><strong>LinkedIn API Syndication:</strong> One-click publishing broadcasts new blog posts and paper updates simultaneously to LinkedIn.</span>
                 </li>
                 <li>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    View and manage visitor messages received through the contact system
+                    <span><strong>Reader Communications Hub:</strong> Manage reader comments, review access requests, and respond to incoming inquiries from one screen.</span>
                 </li>
                 <li>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    LinkedIn integration — publish content simultaneously on portfolio and LinkedIn
-                </li>
-                <li>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                    Edit all portfolio sections in real-time — full control over what to post and when
+                    <span><strong>Session Security:</strong> Role-based access control with secure token generation to protect unpublished manuscripts.</span>
                 </li>
             </ul>
         </div>
 
         <div class="project-sidebar">
             <div class="sidebar-card">
-                <h3>Project Details</h3>
+                <h3>Project Metadata</h3>
                 <div class="sidebar-item">
                     <span class="label">Client</span>
                     <span class="value">Logeshwaran J</span>
                 </div>
                 <div class="sidebar-item">
-                    <span class="label">Category</span>
-                    <span class="value">Portfolio + Admin</span>
+                    <span class="label">Client Type</span>
+                    <span class="value">Academic Researcher</span>
                 </div>
                 <div class="sidebar-item">
-                    <span class="label">Duration</span>
-                    <span class="value">2 Weeks</span>
+                    <span class="label">Delivery Model</span>
+                    <span class="value">University Studio Squad</span>
                 </div>
                 <div class="sidebar-item">
-                    <span class="label">Status</span>
-                    <span class="value" style="color: #28C840;">✓ Live</span>
+                    <span class="label">Build Time</span>
+                    <span class="value">14 Calendar Days</span>
                 </div>
                 <div class="sidebar-item">
-                    <span class="label">Website</span>
-                    <a href="https://logeshwaranj.com/" target="_blank" class="value" style="color: var(--coral);">logeshwaranj.com</a>
+                    <span class="label">Production URL</span>
+                    <a href="https://logeshwaranj.com/" target="_blank" rel="noopener" class="value" style="color: var(--coral);">logeshwaranj.com</a>
+                </div>
+                <div class="sidebar-item">
+                    <span class="label">Deployment Status</span>
+                    <span class="value" style="color: #28C840;">✓ Verified Live</span>
                 </div>
             </div>
 
             <div class="sidebar-card">
-                <h3>Technologies Used</h3>
+                <h3>Technology Stack</h3>
                 <div class="tech-tags">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
+                    <span>JavaScript (ES6+)</span>
                     <span>Node.js</span>
-                    <span>Authentication</span>
-                    <span>REST APIs</span>
-                    <span>CRUD</span>
-                    <span>LinkedIn API</span>
-                    <span>Responsive Design</span>
+                    <span>Express REST API</span>
+                    <span>JWT Auth</span>
+                    <span>LinkedIn REST API</span>
+                    <span>CRUD CMS Engine</span>
+                    <span>CSS Grid / Flexbox</span>
+                    <span>SSL / HTTPS</span>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Quote Banner -->
+    <section class="testimonial-banner">
+        <div class="testimonial-box">
+            <div class="testimonial-quote-text">
+                “Site2Success built an end-to-end platform that gave me complete control over my research publications, blogs, and reader interactions. Fast turnaround and flawless execution.”
+            </div>
+            <div class="testimonial-author-name">Logeshwaran J</div>
+            <div class="testimonial-author-role">Academic Researcher &amp; Faculty Member</div>
         </div>
     </section>
 
@@ -506,33 +689,35 @@
     <section class="detail-cta">
         <div class="detail-cta-card">
             <div>
-                <h2>Want a Website Like This?</h2>
-                <p>Let's build something amazing for your brand or portfolio.</p>
+                <h2>Have a Similar Project? Let's Scope It.</h2>
+                <p>Tell us what you're trying to build. We'll turn your idea into working software.</p>
             </div>
-            <a href="contact.html" class="detail-visit-btn">
-                Start Your Project
+            <a href="contact.html?subject=Scope+Research+Platform" class="detail-visit-btn">
+                Schedule Technical Scoping Call
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
         </div>
     </section>
 
-    <!-- FOOTER with NAP -->
+    <!-- FOOTER with NAP & Section 12 Disclaimer -->
     <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:4rem 2rem 2rem;">
         <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto 3rem;">
             <div>
                 <img src="../assets/images/logo.png" alt="Site2Success Logo" style="height:54px;width:auto;border-radius:12px;background:#ffffff;padding:6px 14px;box-shadow:0 4px 12px rgba(0,0,0,0.15);margin-bottom:1.25rem;opacity:1 !important;display:inline-block;">
-                <p style="font-size:0.9rem;line-height:1.7;color:rgba(255,255,255,0.5);max-width:280px;">AI-first tech startup building AI agents, chatbots, and automation for Indian SMBs.</p>
+                <p style="font-size:0.9rem;line-height:1.7;color:rgba(255,255,255,0.5);max-width:320px;">University-powered AI software studio combining AI-native development with university talent to turn ideas into working software.</p>
             </div>
             <div>
                 <h4 style="font-size:0.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;">Pages</h4>
                 <a href="home.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Home</a>
-                <a href="services.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Services</a>
-                <a href="automation.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">KIRA AI</a>
+                <a href="services.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Services &amp; Pricing</a>
+                <a href="projects.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Case Studies</a>
                 <a href="about.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">About</a>
+                <a href="internships.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Builders Studio</a>
+                <a href="automation.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">KIRA AI</a>
                 <a href="contact.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Contact</a>
             </div>
             <div>
-                <h4 style="font-size:0.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;">Contact (NAP)</h4>
+                <h4 style="font-size:0.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;">Studio Office</h4>
                 <div style="font-size:0.9rem;line-height:1.8;color:rgba(255,255,255,0.5);" itemscope itemtype="https://schema.org/LocalBusiness">
                     <strong itemprop="name" style="color:rgba(255,255,255,0.8);">Site2Success</strong><br>
                     <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
@@ -545,8 +730,16 @@
                 </div>
             </div>
         </div>
-        <div style="max-width:1200px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
-            <p style="font-size:0.875rem;color:rgba(255,255,255,0.3);">&copy; 2024–2025 Site2Success. All rights reserved.</p>
+
+        <!-- Section 12 Governance & Scope Note -->
+        <div style="max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem;margin-bottom:2rem;">
+            <p style="font-size:0.775rem;line-height:1.7;color:rgba(255,255,255,0.38);margin:0;">
+                <strong style="color:rgba(255,255,255,0.55);">Scope &amp; Governance Note:</strong> This rebuild is based on a strategic operating plan, not legal, tax, employment, or university-policy advice. Before finalizing client contracts, stipend terms, IP ownership language, data handling policy, or any CHRIST University branding/endorsement claims, appropriate legal and institutional review should be obtained separately — this should not be assumed to be covered by the website content itself.
+            </p>
+        </div>
+
+        <div style="max-width:1200px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+            <p style="font-size:0.875rem;color:rgba(255,255,255,0.3);">&copy; 2024–2026 Site2Success. All rights reserved.</p>
             <div style="display:flex;gap:1rem;">
                 <a href="https://linkedin.com/company/site2success" rel="noopener" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.875rem;">LinkedIn</a>
                 <a href="https://github.com/site2success" rel="noopener" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.875rem;">GitHub</a>
@@ -584,53 +777,6 @@
             }
         });
     })();
-    </script>
-
-    <!-- BreadcrumbList Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type":"ListItem","position":1,"name":"Home","item":"https://site2success.online/pages/home.html"},
-        {"@type":"ListItem","position":2,"name":"Projects","item":"https://site2success.online/pages/projects.html"},
-        {"@type":"ListItem","position":3,"name":"Logeshwaran J","item":"https://site2success.online/pages/project-detail.html"}
-      ]
-    }
-    </script>
-
-    <!-- Organization Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Site2Success",
-      "url": "https://site2success.online",
-      "logo": "https://site2success.online/assets/images/logo.png",
-      "description": "AI-first tech startup building agents, chatbots and automation for Indian SMBs. Incubated at Christ University, Bengaluru.",
-      "foundingDate": "2024-10",
-      "founders": [
-        {"@type":"Person","name":"Rahul R"},
-        {"@type":"Person","name":"L Dhanush Raj"}
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bengaluru",
-        "addressRegion": "Karnataka",
-        "addressCountry": "IN"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-6361446768",
-        "contactType": "customer service",
-        "email": "site2successs@gmail.com"
-      },
-      "sameAs": [
-        "https://linkedin.com/company/site2success",
-        "https://github.com/site2success",
-        "https://instagram.com/site2success"
-      ]
-    }
     </script>
 </body>
 </html>
