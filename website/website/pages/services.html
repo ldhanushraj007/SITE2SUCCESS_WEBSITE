@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agentic AI &amp; Automation Services for Indian Businesses | Site2Success</title>
-    <meta name="description" content="Site2Success builds agentic AI agents, WhatsApp bots, workflow automation, and CRM automation for Indian SMBs. AI-first solutions from Bengaluru. Pure AI &amp; automation — not website or app development.">
-    <meta name="keywords" content="agentic AI, AI automation, Site2Success, WhatsApp AI agent, CRM automation, AI chatbot India, workflow automation Bengaluru, lead qualification AI, autonomous AI agents India">
+    <title>Services &amp; Packages Ladder | Site2Success Software Studio</title>
+    <meta name="description" content="Explore Site2Success software packages and delivery operating system: Starter, MVP, Research Prototype, Custom Product, and Maintenance. University-powered AI studio.">
+    <meta name="keywords" content="Site2Success packages, MVP pricing, software studio services, research prototypes, university-powered studio, AI-native development">
     <link rel="canonical" href="https://site2success.online/pages/services.html">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="hUuqrSM6DO2-IPt-vKFLi6_DoScVl3sxZFX5Q328wno">
@@ -14,15 +14,15 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://site2success.online/pages/services.html">
-    <meta property="og:title" content="Agentic AI &amp; Automation Services for Indian Businesses | Site2Success">
-    <meta property="og:description" content="Custom Agentic AI Agents, WhatsApp automation, CRM automation, and intelligent workflow systems built for Indian SMBs.">
+    <meta property="og:title" content="Services &amp; Packages Ladder | Site2Success Software Studio">
+    <meta property="og:description" content="Turn your idea into working software with Site2Success's packages ladder: Starter, MVP, Research Prototype, Custom Product, and Maintenance.">
     <meta property="og:image" content="https://site2success.online/assets/images/logo.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://site2success.online/pages/services.html">
-    <meta property="twitter:title" content="Agentic AI &amp; Automation Services for Indian Businesses | Site2Success">
-    <meta property="twitter:description" content="Custom Agentic AI Agents, WhatsApp automation, and intelligent workflow automation for Indian SMBs.">
+    <meta property="twitter:title" content="Services &amp; Packages Ladder | Site2Success Software Studio">
+    <meta property="twitter:description" content="Turn your idea into working software with Site2Success's packages ladder. Built by the next generation, accelerated by AI.">
     <meta property="twitter:image" content="https://site2success.online/assets/images/logo.png">
 
     <!-- Fonts -->
@@ -634,54 +634,473 @@
             .services-hero-stats { flex-direction: column; gap: 1.5rem; }
             .features-grid-modern { grid-template-columns: 1fr; }
             .service-image-container { height: 280px; border-radius: 24px; }
-            .service-content h2 { font-size: 1.75rem; }
-            .service-content p { font-size: 1rem; }
-            .cta-section-modern { margin: 2rem 1rem; padding: 4rem 1.5rem; }
+        /* Packages Ladder Styles */
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed; top: 20px; left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 48px); max-width: 1200px;
+            z-index: 1000;
+            background: rgba(255,255,255,0.78);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            background-image: linear-gradient(135deg, rgba(255,107,74,0.04) 0%, rgba(255,138,91,0.02) 50%, rgba(255,176,136,0.03) 100%);
+            border: 1px solid rgba(255,255,255,0.7);
+            border-radius: 100px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.9);
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0.75rem 1.25rem;
+            transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+        }
+        .navbar.scrolled { top: 12px; background: rgba(255,255,255,0.92); box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
+        .nav-logo { transition: transform 0.3s ease; }
+        .nav-logo:hover { transform: scale(1.02); }
+        .nav-item { position: relative; opacity: 0.85; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .nav-item:hover { opacity: 1; background: rgba(255,107,74,0.06); color: var(--coral); }
+        .nav-item.active { opacity: 1; background: rgba(255,107,74,0.1); color: var(--coral); font-weight: 600; }
+        .nav-item::after { content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%) scaleX(0); width: 20px; height: 2px; background: linear-gradient(90deg,var(--coral),var(--orange)); border-radius: 2px; transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); }
+        .nav-item:hover::after, .nav-item.active::after { transform: translateX(-50%) scaleX(1); }
+        @media (max-width: 1024px) {
+            .navbar { width: calc(100% - 32px); top: 16px; padding: 0.6rem 1rem; }
+            .nav-links { position: fixed; top: 80px; left: 50%; transform: translateX(-50%) translateY(-20px); width: calc(100% - 48px); max-width: 400px; flex-direction: column; gap: 0.5rem; padding: 1.5rem; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-radius: 24px; border: 1px solid rgba(255,255,255,0.6); box-shadow: 0 8px 32px rgba(0,0,0,0.06); opacity: 0; visibility: hidden; pointer-events: none; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); z-index: 1000; }
+            .nav-links.mobile-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
+            .nav-item { width: 100%; text-align: center; padding: 0.875rem 1.25rem; border-radius: 12px; }
+            .nav-item::after { bottom: 8px; }
+            .menu-toggle { display: flex !important; }
+            .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg) !important; }
+            .menu-toggle.active span:nth-child(2) { opacity: 0 !important; transform: scaleX(0) !important; }
+            .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg) !important; }
         }
 
-        /* Mobile Nav */
-        @media (max-width: 1024px) {
-            .nav-links {
-                position: fixed; top: 80px; left: 50%;
-                transform: translateX(-50%) translateY(-20px);
-                width: calc(100% - 48px); max-width: 400px;
-                flex-direction: column; gap: 0.5rem; padding: 1.5rem;
-                background: rgba(255,255,255,0.97);
-                backdrop-filter: blur(20px) saturate(180%);
-                -webkit-backdrop-filter: blur(20px) saturate(180%);
-                border-radius: 24px; border: 1px solid rgba(255,255,255,0.6);
-                box-shadow: 0 8px 32px rgba(0,0,0,0.06);
-                opacity: 0; visibility: hidden; pointer-events: none;
-                transition: all 0.4s cubic-bezier(0.4,0,0.2,1); z-index: 999;
-            }
-            .nav-links.mobile-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
-            .nav-item { width: 100%; text-align: center; padding: 0.875rem 1.25rem; }
-            .menu-toggle { display: flex !important; }
-            .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-            .menu-toggle.active span:nth-child(2) { opacity: 0; }
-            .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+        /* ===== HERO ===== */
+        .services-hero {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            padding: 9rem 2rem 4rem;
+            background: linear-gradient(135deg, #ffffff 0%, rgba(255, 107, 74, 0.03) 50%, #fbf9f8 100%);
+            position: relative;
+            text-align: center;
         }
+        .services-hero-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .services-hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.45rem 1.1rem;
+            background: rgba(255, 107, 74, 0.08);
+            border: 1px solid rgba(255, 107, 74, 0.2);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--coral);
+            margin-bottom: 1.25rem;
+        }
+        .services-hero-title {
+            font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+            font-weight: 800;
+            line-height: 1.15;
+            color: var(--navy-dark);
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.02em;
+        }
+        .services-hero-title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .services-hero-description {
+            font-size: 1.15rem;
+            color: var(--gray-500);
+            line-height: 1.8;
+            margin: 0 auto 2.5rem;
+            max-width: 750px;
+        }
+        .services-hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+        }
+        .hero-stat-number {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--coral);
+            line-height: 1;
+            margin-bottom: 0.35rem;
+        }
+        .hero-stat-label {
+            font-size: 0.85rem;
+            color: var(--gray-500);
+            font-weight: 600;
+        }
+
+        /* ===== SECTION HEADER ===== */
+        .section-header-center {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 0 1.5rem;
+        }
+        .section-label {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--coral);
+            margin-bottom: 0.75rem;
+        }
+        .section-header-center h2 {
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 1rem;
+        }
+        .section-header-center p {
+            font-size: 1.05rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+        }
+
+        /* ===== SECTION 5: PRICING LADDER ===== */
+        .ladder-section {
+            padding: 5rem 1.5rem;
+            background: #fdfdfd;
+        }
+        .ladder-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.75rem;
+        }
+        .ladder-card {
+            background: #ffffff;
+            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 24px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            display: grid;
+            grid-template-columns: 1.2fr 2fr 1.2fr;
+            gap: 2.5rem;
+            align-items: center;
+            transition: all 0.35s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .ladder-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 16px 45px rgba(0,0,0,0.07);
+            border-color: rgba(255,107,74,0.25);
+        }
+        .ladder-card.featured-tier {
+            border: 2px solid var(--coral);
+            box-shadow: 0 8px 30px rgba(255,107,74,0.08);
+            background: linear-gradient(135deg, #ffffff 0%, rgba(255,107,74,0.02) 100%);
+        }
+        .ladder-card.featured-tier::before {
+            content: 'Core Startup Offering';
+            position: absolute;
+            top: 1.25rem;
+            right: 1.5rem;
+            background: var(--gradient-primary);
+            color: #fff;
+            padding: 0.25rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .ladder-info h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 0.35rem;
+        }
+        .ladder-tier-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--coral);
+            margin-bottom: 0.75rem;
+        }
+        .ladder-info p {
+            font-size: 0.95rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+            margin-bottom: 0.5rem;
+        }
+        .ladder-purpose {
+            font-size: 0.85rem;
+            color: var(--navy-dark);
+            font-weight: 600;
+            background: rgba(0,0,0,0.03);
+            padding: 0.4rem 0.75rem;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        .ladder-features h4 {
+            font-size: 0.82rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--gray-400);
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        .ladder-features ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .ladder-features li {
+            font-size: 0.92rem;
+            color: var(--navy-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            line-height: 1.5;
+        }
+        .ladder-features li svg {
+            color: var(--coral);
+            flex-shrink: 0;
+        }
+        .ladder-action {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 0.75rem;
+            text-align: right;
+        }
+        .ladder-action-note {
+            font-size: 0.8rem;
+            color: var(--gray-400);
+        }
+        @media (max-width: 992px) {
+            .ladder-card {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            .ladder-action {
+                align-items: flex-start;
+                text-align: left;
+            }
+        }
+
+        /* ===== SECTION 8: SERVICE CATALOGUE ===== */
+        .catalogue-section {
+            padding: 5rem 1.5rem;
+            background: var(--white-secondary);
+        }
+        .catalogue-grid-custom {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .catalogue-item-card {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.25rem;
+            border: 1px solid rgba(0,0,0,0.05);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .catalogue-item-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+            border-color: rgba(255,107,74,0.25);
+        }
+        .catalogue-item-card h3 {
+            font-size: 1.35rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 0.75rem;
+        }
+        .catalogue-item-card p {
+            font-size: 0.95rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        .catalogue-outcome-box {
+            background: rgba(255,107,74,0.04);
+            border-left: 3px solid var(--coral);
+            padding: 0.75rem 1rem;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.88rem;
+            color: var(--navy-dark);
+            font-weight: 500;
+        }
+
+        /* ===== SECTION 6: 9-STAGE PROCESS ===== */
+        .process-full-section {
+            padding: 6rem 1.5rem;
+            background: #ffffff;
+        }
+        .process-grid-nine {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .nine-stage-card {
+            background: #faf8f7;
+            border-radius: 20px;
+            padding: 2rem;
+            border: 1px solid rgba(0,0,0,0.04);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .nine-stage-card:hover {
+            transform: translateY(-4px);
+            background: #ffffff;
+            box-shadow: 0 12px 35px rgba(0,0,0,0.05);
+            border-color: rgba(255,107,74,0.2);
+        }
+        .nine-stage-header {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+            margin-bottom: 1rem;
+        }
+        .nine-stage-badge {
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            background: var(--gradient-primary);
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .nine-stage-card h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin: 0;
+        }
+        .nine-stage-card p {
+            font-size: 0.9rem;
+            color: var(--gray-500);
+            line-height: 1.65;
+            margin: 0;
+        }
+        @media (max-width: 1024px) {
+            .process-grid-nine { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 650px) {
+            .process-grid-nine { grid-template-columns: 1fr; }
+        }
+
+        /* ===== CTA BANNER ===== */
+        .cta-banner-services {
+            background: linear-gradient(135deg, #0f1120 0%, #1a1e36 100%);
+            border-top: 1px solid rgba(255,107,74,0.25);
+            padding: 5rem 1.5rem;
+            text-align: center;
+            color: #ffffff;
+        }
+        .cta-banner-services h2 {
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .cta-banner-services p {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.7);
+            max-width: 650px;
+            margin: 0 auto 2.5rem;
+            line-height: 1.7;
+        }
+
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: #0c0e18;
+            color: rgba(255,255,255,0.7);
+            padding: 5rem 2rem 2.5rem;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.2fr;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto 3rem;
+        }
+        .footer-brand img {
+            height: 48px; width: auto; border-radius: 12px; margin-bottom: 1.25rem;
+            background: #ffffff; padding: 6px 14px; display: inline-block;
+        }
+        .footer-brand p {
+            font-size: 0.92rem; line-height: 1.75; color: rgba(255,255,255,0.55); max-width: 320px;
+        }
+        .footer-col h4 {
+            font-size: 0.82rem; font-weight: 700; text-transform: uppercase;
+            letter-spacing: 0.08em; color: rgba(255,255,255,0.45); margin-bottom: 1.25rem;
+        }
+        .footer-col a {
+            display: block; font-size: 0.92rem; color: rgba(255,255,255,0.65);
+            margin-bottom: 0.65rem; transition: color 0.25s; text-decoration: none;
+        }
+        .footer-col a:hover { color: var(--coral); }
+        .legal-scope-disclaimer {
+            max-width: 1200px; margin: 0 auto 2.5rem; padding: 1.5rem 2rem;
+            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+            border-radius: 16px; font-size: 0.8rem; line-height: 1.7; color: rgba(255,255,255,0.45);
+        }
+        .legal-scope-disclaimer strong { color: rgba(255,255,255,0.75); }
+        .footer-bottom {
+            max-width: 1200px; margin: 0 auto; padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.06); display: flex;
+            justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+        }
+        @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } }
     </style>
 </head>
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <a href="home.html" class="nav-logo">
-            <img src="../assets/images/logo.png" alt="Site2Success" style="height: 48px; width: auto; border-radius: 0;">
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
+        <a href="home.html" class="nav-logo" aria-label="Site2Success Home">
+            <img src="../assets/images/logo.png" alt="Site2Success Logo" style="height: 48px; width: auto; border-radius: 0;">
         </a>
 
-        <div class="nav-links" id="nav-links">
-            <a href="home.html" class="nav-item" data-page="home">Home</a>
-            <a href="services.html" class="nav-item active" data-page="services">Services</a>
-            <a href="automation.html" class="nav-item" data-page="automation">KIRA<span class="early-tag">Early Access</span></a>
-            <a href="internships.html" class="nav-item" data-page="internships">Internships</a>
-            <a href="projects.html" class="nav-item" data-page="projects">Projects</a>
-            <a href="about.html" class="nav-item" data-page="about">About</a>
-            <a href="contact.html" class="nav-item" data-page="contact">Contact</a>
+        <div class="nav-links" id="nav-links" role="menubar">
+            <a href="home.html" class="nav-item" data-page="home" role="menuitem">Home</a>
+            <a href="services.html" class="nav-item active" data-page="services" role="menuitem">Services &amp; Pricing</a>
+            <a href="projects.html" class="nav-item" data-page="projects" role="menuitem">Projects</a>
+            <a href="about.html" class="nav-item" data-page="about" role="menuitem">About</a>
+            <a href="internships.html" class="nav-item" data-page="internships" role="menuitem">Builders</a>
+            <a href="contact.html" class="nav-item" data-page="contact" role="menuitem">Contact</a>
         </div>
 
-        <div class="menu-toggle" id="menu-toggle">
+        <div class="menu-toggle" id="menu-toggle" role="button" aria-label="Toggle menu" aria-expanded="false" tabindex="0">
             <span></span>
             <span></span>
             <span></span>
@@ -691,389 +1110,414 @@
     <!-- Services Hero Section -->
     <section class="services-hero">
         <div class="services-hero-container">
-            <div class="services-hero-content">
-                <div class="services-hero-label">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-                    </svg>
-                    <span>Our Expertise</span>
-                </div>
-                <h1 class="services-hero-title">
-                    Agentic AI &amp; <span>Automation</span> for Indian Businesses
-                </h1>
-                <p class="services-hero-description">
-                    Autonomous AI agents, intelligent chatbots, and end-to-end workflow automation — everything your business needs to scale smarter, not harder. No website or app dev. Pure AI.
-                </p>
-                <div class="services-hero-stats">
-                    <div class="hero-stat">
-                        <span class="hero-stat-number">25+</span>
-                        <span class="hero-stat-label">Projects Delivered</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-number">15+</span>
-                        <span class="hero-stat-label">Enterprise Clients</span>
-                    </div>
-                    <div class="hero-stat">
-                        <span class="hero-stat-number">100%</span>
-                        <span class="hero-stat-label">Client Satisfaction</span>
-                    </div>
-                </div>
+            <div class="services-hero-label">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                </svg>
+                <span>Studio Packages &amp; Offerings</span>
             </div>
-            <div class="services-hero-visual">
-                <div class="hero-visual-decoration"></div>
-                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
-                    alt="Team collaboration" class="hero-image-main">
-                <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&q=80" alt="AI solutions"
-                    class="hero-image-accent">
-            </div>
-        </div>
-    </section>
-
-    <!-- Section Header -->
-    <div class="section-header-center">
-        <span class="section-label">Core Services</span>
-        <h2>AI &amp; Automation Solutions That Drive Results</h2>
-        <p>End-to-end agentic AI and automation services designed to accelerate your business growth and operational efficiency.</p>
-    </div>
-
-    <!-- Scroll-Based Services Section -->
-    <section class="services-scroll-section">
-        <div class="services-scroll-container" id="services-container">
-            <div class="services-fixed-wrapper">
-                <div class="services-scroll-layout">
-                    <!-- Image Side -->
-                    <div class="service-image-container">
-                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=75"
-                            alt="AI Agents &amp; Chatbots" class="service-image" data-index="0" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=75"
-                            alt="Automation &amp; Integrations" class="service-image" data-index="1" loading="lazy">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=75"
-                            alt="AI-Powered Business Systems" class="service-image" data-index="2" loading="lazy">
-                    </div>
-
-                    <!-- Content Side -->
-                    <div class="service-content-container">
-                        <!-- Service 1: AI Agents & Chatbots -->
-                        <div class="service-content" data-index="0">
-                            <div class="service-number">01 / 03</div>
-                            <h2>AI Agents &amp; Chatbots</h2>
-                            <p>Intelligent AI agents that work 24/7 — handling customer enquiries, capturing leads, booking appointments, and qualifying prospects automatically.</p>
-                            <div class="service-tags">
-                                <span class="service-tag">WhatsApp AI Agent</span>
-                                <span class="service-tag">Lead Capture Bot</span>
-                                <span class="service-tag">Appointment Booking</span>
-                                <span class="service-tag">Customer Support</span>
-                                <span class="service-tag">Sales Qualification</span>
-                                <span class="service-tag">Knowledge Bot</span>
-                            </div>
-                        </div>
-
-                        <!-- Service 2: Automation & Integrations -->
-                        <div class="service-content" data-index="1">
-                            <div class="service-number">02 / 03</div>
-                            <h2>Automation &amp; Integrations</h2>
-                            <p>Connect your tools and eliminate manual work — automated lead follow-ups, CRM pipelines, multi-tool workflows, and payment reminders.</p>
-                            <div class="service-tags">
-                                <span class="service-tag">Lead Follow-Up</span>
-                                <span class="service-tag">CRM Automation</span>
-                                <span class="service-tag">Workflow Pipelines</span>
-                                <span class="service-tag">Invoice Reminders</span>
-                            </div>
-                        </div>
-
-                        <!-- Service 3: AI-Powered Business Systems -->
-                        <div class="service-content" data-index="2">
-                            <div class="service-number">03 / 03</div>
-                            <h2>AI-Powered Business Systems</h2>
-                            <p>Custom AI-integrated dashboards, admin portals, CRM systems, and AI-embedded business tools — engineered to make your entire operation smarter and more autonomous.</p>
-                            <div class="service-tags">
-                                <span class="service-tag">AI-Embedded Dashboards</span>
-                                <span class="service-tag">Intelligent CRM Portals</span>
-                                <span class="service-tag">Admin Automation</span>
-                                <span class="service-tag">Business Intelligence</span>
-                            </div>
-                        </div>
-                    </div>
+            <h1 class="services-hero-title">
+                Turn Your Idea Into <span>Working Software</span>
+            </h1>
+            <p class="services-hero-description">
+                Site2Success combines AI-native development workflows with trained university talent to build real products quickly and affordably. Explore our structured packages ladder below.
+            </p>
+            <div class="services-hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">5 Tiers</div>
+                    <div class="hero-stat-label">Structured Packages Ladder</div>
                 </div>
-
-                <!-- Progress Dots -->
-                <div class="scroll-progress">
-                    <div class="progress-dot active" data-index="0"></div>
-                    <div class="progress-dot" data-index="1"></div>
-                    <div class="progress-dot" data-index="2"></div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">100% QA</div>
+                    <div class="hero-stat-label">Mandatory Human Review</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">End-to-End</div>
+                    <div class="hero-stat-label">Studio Ownership</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Detailed Services Section -->
-    <section class="services-detail">
-        <!-- AI Agents & Chatbots -->
-        <div class="service-category">
-            <div class="category-header">
-                <div class="category-dot blue"></div>
-                <h2>AI Agents &amp; Chatbots</h2>
-                <span class="count">6 services</span>
-            </div>
-            <div class="service-cards-grid">
-                <div class="svc-card" onclick="location.href='services/whatsapp-ai-agent.html'">
-                    <h3>WhatsApp AI Agent</h3>
-                    <p>Automatically replies to customer enquiries, captures leads, and answers FAQs on your existing WhatsApp number, 24/7.</p>
-                </div>
-                <div class="svc-card" onclick="location.href='services/website-lead-capture-bot.html'">
-                    <h3>Website Lead Capture Bot</h3>
-                    <p>Engages website visitors instantly, qualifies them, and collects their details — no forms, no drop-offs.</p>
-                </div>
-                <div class="svc-card" onclick="location.href='services/ai-appointment-booking.html'">
-                    <h3>AI Appointment Booking Agent</h3>
-                    <p>Lets customers book, reschedule, and receive reminders automatically without any manual effort.</p>
-                </div>
-                <div class="svc-card" onclick="location.href='services/ai-customer-support.html'">
-                    <h3>AI Customer Support Agent</h3>
-                    <p>Resolves your most common support questions instantly and escalates to a human only when needed.</p>
-                </div>
-                <div class="svc-card" onclick="location.href='services/ai-sales-qualification.html'">
-                    <h3>AI Sales Qualification Agent</h3>
-                    <p>Scores incoming leads and tells your sales team exactly who to prioritise and call first.</p>
-                </div>
-                <div class="svc-card" onclick="location.href='services/internal-knowledge-bot.html'">
-                    <h3>Internal Team Knowledge Bot</h3>
-                    <p>Lets your staff instantly query SOPs, policies, and company information instead of asking a manager.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Automation & Integrations -->
-        <div class="service-category">
-            <div class="category-header">
-                <div class="category-dot green"></div>
-                <h2>Automation &amp; Integrations</h2>
-                <span class="count">4 services</span>
-            </div>
-            <div class="service-cards-grid">
-                <div class="svc-card" onclick="location.href='services/lead-followup-automation.html'">
-                    <h3>Lead Follow-Up Automation</h3>
-                    <p>Sends personalised WhatsApp or email sequences automatically the moment a new lead comes in.</p>
-                </div>
-                <div class="svc-card" onclick="location.href='services/crm-automation.html'">
-                    <h3>CRM Automation</h3>
-                    <p>Auto-logs leads, updates deal stages, and alerts your sales team. Works with Notion, HubSpot, Zoho, and Google Sheets.</p>
-                </div>
-                <div class="svc-card" onclick="location.href='services/workflow-automation.html'">
-                    <h3>Multi-Tool Workflow Automation</h3>
-                    <p>Connects your existing tools — forms, CRM, WhatsApp, email, calendar — into one seamless automated pipeline.</p>
-                </div>
-                <div class="svc-card" onclick="location.href='services/invoice-payment-reminders.html'">
-                    <h3>Invoice &amp; Payment Reminders</h3>
-                    <p>Automatically follows up on pending payments via WhatsApp or email, reducing delays without manual chasing.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- AI-Powered Business Systems -->
-        <div class="service-category">
-            <div class="category-header">
-                <div class="category-dot coral"></div>
-                <h2>AI-Powered Business Systems</h2>
-                <span class="count">3 services</span>
-            </div>
-            <div class="service-cards-grid">
-                <div class="svc-card" onclick="location.href='services/business-website-chatbot.html'">
-                    <h3>AI-Integrated Business Website</h3>
-                    <p>A business website architected around an AI agent from the ground up — captures leads, qualifies prospects, and books appointments automatically, 24/7.</p>
-                </div>
-                <div class="svc-card" onclick="location.href='services/ecommerce-store.html'">
-                    <h3>AI-Powered E-Commerce Platform</h3>
-                    <p>An intelligent online store with AI-driven product recommendations, automated cart recovery, and smart customer support built in from day one.</p>
-                </div>
-                <div class="svc-card" onclick="location.href='services/admin-dashboard-portals.html'">
-                    <h3>AI Admin Dashboard &amp; Business Portal</h3>
-                    <p>Custom-built intelligent dashboards for managing orders, clients, bookings, or teams — with AI insights and automation built into every workflow.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Process Section -->
-    <section class="process-section">
+    <!-- SECTION 5: SERVICES / PRICING LADDER -->
+    <section class="ladder-section" id="packages">
         <div class="section-header-center">
-            <span class="section-label">Our Process</span>
-            <h2>How We Work</h2>
-            <p>A proven methodology that ensures consistent, high-quality delivery every time.</p>
+            <span class="section-label">Packages Ladder</span>
+            <h2>Structured Value Tiers for Every Stage</h2>
+            <p>We believe in transparent, value-aligned tiers rather than flat discount pricing. Every package delivers production-grade software backed by studio oversight.</p>
         </div>
 
-        <div class="process-timeline">
-            <div class="process-step-modern">
-                <div class="step-icon">1</div>
-                <h4>Discovery</h4>
-                <p>Deep dive into your requirements and business objectives</p>
+        <div class="ladder-container">
+            <!-- 1. Starter Package -->
+            <div class="ladder-card">
+                <div class="ladder-info">
+                    <span class="ladder-tier-badge">Tier 01</span>
+                    <h3>Starter</h3>
+                    <p>Portfolio, personal site, or simple high-impact landing page.</p>
+                    <span class="ladder-purpose">Fast entry · Student &amp; Creator Market</span>
+                </div>
+                <div class="ladder-features">
+                    <h4>What's Included</h4>
+                    <ul>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom responsive UI &amp; modern styling</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Contact, inquiry, and lead capture hooks</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> High-speed deployment &amp; custom domain setup</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Handover documentation &amp; self-serve edits</li>
+                    </ul>
+                </div>
+                <div class="ladder-action">
+                    <a href="contact.html?package=starter" class="btn btn-primary">Request Starter Scope</a>
+                    <span class="ladder-action-note">Typically 1–2 week turnaround</span>
+                </div>
             </div>
-            <div class="process-step-modern">
-                <div class="step-icon">2</div>
-                <h4>Strategy</h4>
-                <p>Define the roadmap and technical architecture</p>
+
+            <!-- 2. MVP Package -->
+            <div class="ladder-card featured-tier">
+                <div class="ladder-info">
+                    <span class="ladder-tier-badge">Tier 02 · Most Popular</span>
+                    <h3>MVP</h3>
+                    <p>Early-stage founder product prototype to validate core assumptions.</p>
+                    <span class="ladder-purpose">Core Startup Offering</span>
+                </div>
+                <div class="ladder-features">
+                    <h4>What's Included</h4>
+                    <ul>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> User authentication &amp; secure session control</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Full database models &amp; core CRUD functionality</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Key third-party API integrations (Payment, CRM, Messaging)</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Investor-ready UI and mobile-first responsiveness</li>
+                    </ul>
+                </div>
+                <div class="ladder-action">
+                    <a href="contact.html?package=mvp" class="btn btn-primary">Request MVP Scope</a>
+                    <span class="ladder-action-note">Typically 2–3 week build sprint</span>
+                </div>
             </div>
-            <div class="process-step-modern">
-                <div class="step-icon">3</div>
-                <h4>Development</h4>
-                <p>Agile sprints with regular updates and feedback loops</p>
+
+            <!-- 3. Research / Prototype Package -->
+            <div class="ladder-card">
+                <div class="ladder-info">
+                    <span class="ladder-tier-badge">Tier 03</span>
+                    <h3>Research / Prototype</h3>
+                    <p>Faculty &amp; researcher software, scientific workflows, and academic tools.</p>
+                    <span class="ladder-purpose">Higher-Value Technical Work</span>
+                </div>
+                <div class="ladder-features">
+                    <h4>What's Included</h4>
+                    <ul>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Computational pipelines &amp; interactive research calculators</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Academic dashboards &amp; dataset visualization</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Controlled data access &amp; research paper management</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Reproducible code standards for publication</li>
+                    </ul>
+                </div>
+                <div class="ladder-action">
+                    <a href="contact.html?package=research" class="btn btn-primary">Request Research Scope</a>
+                    <span class="ladder-action-note">Custom academic scoping</span>
+                </div>
             </div>
-            <div class="process-step-modern">
-                <div class="step-icon">4</div>
-                <h4>Launch</h4>
-                <p>Seamless deployment with training and documentation</p>
+
+            <!-- 4. Custom Product Package -->
+            <div class="ladder-card">
+                <div class="ladder-info">
+                    <span class="ladder-tier-badge">Tier 04</span>
+                    <h3>Custom Product</h3>
+                    <p>Complex web app, AI application, or internal operational tool.</p>
+                    <span class="ladder-purpose">High-Value Software Projects</span>
+                </div>
+                <div class="ladder-features">
+                    <h4>What's Included</h4>
+                    <ul>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Multi-role administration portals &amp; role-based access</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Domain-specific AI assistant integration with human QA</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Automated multi-stage business pipelines &amp; reporting</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Architecture design, security audit, and staging checks</li>
+                    </ul>
+                </div>
+                <div class="ladder-action">
+                    <a href="contact.html?package=custom" class="btn btn-primary">Request Custom Scope</a>
+                    <span class="ladder-action-note">Milestone-based delivery</span>
+                </div>
+            </div>
+
+            <!-- 5. Maintenance / Iteration Package -->
+            <div class="ladder-card">
+                <div class="ladder-info">
+                    <span class="ladder-tier-badge">Tier 05</span>
+                    <h3>Maintenance &amp; Iteration</h3>
+                    <p>Post-launch changes, ongoing improvements, and technical support.</p>
+                    <span class="ladder-purpose">Recurring Support &amp; Evolution</span>
+                </div>
+                <div class="ladder-features">
+                    <h4>What's Included</h4>
+                    <ul>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Scheduled dependency updates &amp; security maintenance</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Priority bug resolution &amp; continuous QA monitoring</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Iterative feature sprints based on real user feedback</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Dedicated project communication channel</li>
+                    </ul>
+                </div>
+                <div class="ladder-action">
+                    <a href="contact.html?package=maintenance" class="btn btn-secondary">Inquire About Retainers</a>
+                    <span class="ladder-action-note">Monthly retainer or sprint packs</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 8: SERVICE CATALOGUE (OUTCOME-FOCUSED) -->
+    <section class="catalogue-section" id="catalogue">
+        <div class="section-header-center">
+            <span class="section-label">Service Catalogue</span>
+            <h2>What We Build</h2>
+            <p>Every software solution is framed around concrete outcomes, not technical buzzwords.</p>
+        </div>
+
+        <div class="catalogue-grid-custom">
+            <div class="catalogue-item-card">
+                <div>
+                    <h3>Websites</h3>
+                    <p>Modern, responsive, and performance-tuned web presences engineered for brand credibility and inbound conversions.</p>
+                </div>
+                <div class="catalogue-outcome-box">
+                    <strong>Outcome:</strong> A polished digital hub that inspires trust and clearly communicates your value proposition.
+                </div>
+            </div>
+
+            <div class="catalogue-item-card">
+                <div>
+                    <h3>Web Applications</h3>
+                    <p>Full-stack web applications featuring secure authentication, data persistence, and interactive user interfaces.</p>
+                </div>
+                <div class="catalogue-outcome-box">
+                    <strong>Outcome:</strong> A scalable product platform that users can log into and interact with daily.
+                </div>
+            </div>
+
+            <div class="catalogue-item-card">
+                <div>
+                    <h3>Working MVPs</h3>
+                    <p>Minimum viable products designed to test core assumptions, validate market demand, and pitch early investors.</p>
+                </div>
+                <div class="catalogue-outcome-box">
+                    <strong>Outcome:</strong> A functional product you can show investors and test with your initial cohort of users.
+                </div>
+            </div>
+
+            <div class="catalogue-item-card">
+                <div>
+                    <h3>AI Applications</h3>
+                    <p>Bespoke intelligent assistants, automated summarizers, and domain-specific AI workflows with strict human QA.</p>
+                </div>
+                <div class="catalogue-outcome-box">
+                    <strong>Outcome:</strong> Practical, error-checked AI features that automate business workflows without hallucinations.
+                </div>
+            </div>
+
+            <div class="catalogue-item-card">
+                <div>
+                    <h3>Custom Dashboards</h3>
+                    <p>Centralized business intelligence dashboards consolidating key metrics, data visualizations, and operational indicators.</p>
+                </div>
+                <div class="catalogue-outcome-box">
+                    <strong>Outcome:</strong> A clean real-time view of your organization's performance in one place.
+                </div>
+            </div>
+
+            <div class="catalogue-item-card">
+                <div>
+                    <h3>Internal Tools</h3>
+                    <p>Administrative portals, approval queues, inventory trackers, and staff utilities that eliminate manual spreadsheets.</p>
+                </div>
+                <div class="catalogue-outcome-box">
+                    <strong>Outcome:</strong> Seamless internal operations that save team hours and prevent administrative errors.
+                </div>
+            </div>
+
+            <div class="catalogue-item-card">
+                <div>
+                    <h3>Research Prototypes</h3>
+                    <p>Specialized scientific software, computational calculators, experimental interfaces, and data collection tools for faculty.</p>
+                </div>
+                <div class="catalogue-outcome-box">
+                    <strong>Outcome:</strong> Rigorous, reproducible research software ready for peer publication and citations.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: THE COMPLETE 9-STAGE DELIVERY PROCESS -->
+    <section class="process-full-section" id="process-detail">
+        <div class="section-header-center">
+            <span class="section-label">Delivery Operating System</span>
+            <h2>Our End-to-End Client Process</h2>
+            <p>A transparent 9-stage delivery workflow that keeps your project on time, in scope, and under strict quality control.</p>
+        </div>
+
+        <div class="process-grid-nine">
+            <!-- Stage 1 -->
+            <div class="nine-stage-card">
+                <div class="nine-stage-header">
+                    <div class="nine-stage-badge">01</div>
+                    <h4>Intake</h4>
+                </div>
+                <p>Client submits initial idea or problem statement. Requirements, urgency, and expected outcomes are recorded.</p>
+            </div>
+
+            <!-- Stage 2 -->
+            <div class="nine-stage-card">
+                <div class="nine-stage-header">
+                    <div class="nine-stage-badge">02</div>
+                    <h4>Qualification</h4>
+                </div>
+                <p>Confirm the target user, primary problem, scope boundary, decision-maker, budget range, and delivery timeline.</p>
+            </div>
+
+            <!-- Stage 3 -->
+            <div class="nine-stage-card">
+                <div class="nine-stage-header">
+                    <div class="nine-stage-badge">03</div>
+                    <h4>Technical Scoping</h4>
+                </div>
+                <p>Feasibility review; MVP core features distinguished from optional nice-to-haves; timeline estimated accurately.</p>
+            </div>
+
+            <!-- Stage 4 -->
+            <div class="nine-stage-card">
+                <div class="nine-stage-header">
+                    <div class="nine-stage-badge">04</div>
+                    <h4>Proposal</h4>
+                </div>
+                <p>A clear proposal is shared outlining agreed scope, milestones, pricing tier, and key architectural assumptions.</p>
+            </div>
+
+            <!-- Stage 5 -->
+            <div class="nine-stage-card">
+                <div class="nine-stage-header">
+                    <div class="nine-stage-badge">05</div>
+                    <h4>Kickoff</h4>
+                </div>
+                <p>Single client contact confirmed; shared project channel created; deliverables and acceptance criteria locked in.</p>
+            </div>
+
+            <!-- Stage 6 -->
+            <div class="nine-stage-card">
+                <div class="nine-stage-header">
+                    <div class="nine-stage-badge">06</div>
+                    <h4>Build</h4>
+                </div>
+                <p>AI-native rapid development sprints with weekly internal reviews, regular client demos, and clear progress tracking.</p>
+            </div>
+
+            <!-- Stage 7 -->
+            <div class="nine-stage-card">
+                <div class="nine-stage-header">
+                    <div class="nine-stage-badge">07</div>
+                    <h4>QA</h4>
+                </div>
+                <p>Comprehensive functional testing, responsive cross-device checks, security review, and mandatory human code audit.</p>
+            </div>
+
+            <!-- Stage 8 -->
+            <div class="nine-stage-card">
+                <div class="nine-stage-header">
+                    <div class="nine-stage-badge">08</div>
+                    <h4>Launch &amp; Handover</h4>
+                </div>
+                <p>Production deployment, credentials and repository transfer, full documentation provided, and final acceptance milestone.</p>
+            </div>
+
+            <!-- Stage 9 -->
+            <div class="nine-stage-card">
+                <div class="nine-stage-header">
+                    <div class="nine-stage-badge">09</div>
+                    <h4>Aftercare</h4>
+                </div>
+                <p>Feedback collected; testimonial requested; ongoing maintenance or next-phase sprint offered; outcome packaged as case study.</p>
             </div>
         </div>
     </section>
 
     <!-- CTA Section -->
-    <section class="cta-section-modern">
-        <div class="cta-content">
-            <h2>Ready to Transform Your Business with AI?</h2>
-            <p>Let's discuss how we can deploy agentic AI to scale your business on autopilot.</p>
-            <div class="cta-buttons">
-                <a href="contact.html" class="btn-white">
-                    Start Your AI Project
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <section class="cta-banner-services">
+        <div class="container">
+            <h2>Ready to turn your idea into working software?</h2>
+            <p>Consult with our studio team to scope your project, pick the right package, and get a clear timeline.</p>
+            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+                <a href="contact.html" class="btn btn-primary btn-large">
+                    Tell Us What You Want to Build
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                 </a>
-                <a href="projects.html" class="btn-outline-white">
-                    View Our Work
+                <a href="projects.html" class="btn btn-secondary btn-large">
+                    View Portfolio Case Studies
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Scripts -->
-    <script src="../assets/js/main.js"></script>
-
-    <script>
-        // Scroll-Based Service Transition Logic
-        (function () {
-            const container = document.getElementById('services-container');
-            const images = document.querySelectorAll('.service-image');
-            const contents = document.querySelectorAll('.service-content');
-            const dots = document.querySelectorAll('.progress-dot');
-
-            const totalServices = 3;
-            let currentIndex = 0;
-            let isScrolling = false;
-
-            function init() {
-                updateService(0);
-            }
-
-            function updateService(index) {
-                if (index === currentIndex && index !== 0) return;
-                if (index < 0) index = 0;
-                if (index >= totalServices) index = totalServices - 1;
-
-                currentIndex = index;
-
-                images.forEach((img, i) => {
-                    img.classList.remove('active', 'prev');
-                    if (i === index) {
-                        img.classList.add('active');
-                    } else if (i < index) {
-                        img.classList.add('prev');
-                    }
-                });
-
-                contents.forEach((content, i) => {
-                    content.classList.remove('active', 'prev');
-                    if (i === index) {
-                        content.classList.add('active');
-                    } else if (i < index) {
-                        content.classList.add('prev');
-                    }
-                });
-
-                dots.forEach((dot, i) => {
-                    dot.classList.toggle('active', i === index);
-                });
-            }
-
-            function handleScroll() {
-                const rect = container.getBoundingClientRect();
-                const containerTop = rect.top;
-                const containerHeight = rect.height;
-                const windowHeight = window.innerHeight;
-
-                if (containerTop > windowHeight || containerTop + containerHeight < 0) {
-                    return;
-                }
-
-                const scrollProgress = Math.max(0, Math.min(1,
-                    (-containerTop + windowHeight * 0.3) / (containerHeight - windowHeight)
-                ));
-
-                const newIndex = Math.min(
-                    totalServices - 1,
-                    Math.floor(scrollProgress * totalServices)
-                );
-
-                updateService(newIndex);
-            }
-
-            function onScroll() {
-                if (!isScrolling) {
-                    window.requestAnimationFrame(() => {
-                        handleScroll();
-                        isScrolling = false;
-                    });
-                    isScrolling = true;
-                }
-            }
-
-            init();
-            window.addEventListener('scroll', onScroll, { passive: true });
-            window.addEventListener('resize', handleScroll);
-            handleScroll();
-        })();
-    </script>
-
-    <!-- FOOTER with NAP -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:4rem 2rem 2rem;">
-        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto 3rem;">
-            <div>
-                <img src="../assets/images/logo.png" alt="Site2Success Logo" style="height:54px;width:auto;border-radius:12px;background:#ffffff;padding:6px 14px;box-shadow:0 4px 12px rgba(0,0,0,0.15);margin-bottom:1.25rem;opacity:1 !important;display:inline-block;">
-                <p style="font-size:0.9rem;line-height:1.7;color:rgba(255,255,255,0.5);max-width:280px;margin-top:0.5rem;">AI-first tech startup building agentic AI agents, chatbots, and automation for Indian SMBs.</p>
+    <!-- FOOTER with Section 12 Legal Note & NAP -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="../assets/images/logo.png" alt="Site2Success Logo" loading="lazy">
+                <p>University-powered, AI-first software studio turning early-stage ideas and practical software requirements into working products.</p>
+                <p style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-top:0.75rem;">"Built by the next generation. Accelerated by AI."</p>
             </div>
-            <div>
-                <h4 style="font-size:0.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;">Pages</h4>
-                <a href="home.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Home</a>
-                <a href="services.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Services</a>
-                <a href="automation.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">KIRA AI</a>
-                <a href="about.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">About</a>
-                <a href="contact.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Contact</a>
+
+            <div class="footer-col">
+                <h4>Studio</h4>
+                <a href="home.html">Home</a>
+                <a href="services.html">Services &amp; Packages</a>
+                <a href="projects.html">Projects Portfolio</a>
+                <a href="about.html">About &amp; Operating Model</a>
+                <a href="internships.html">Student Builders</a>
+                <a href="contact.html">Request a Consultation</a>
             </div>
-            <div>
-                <h4 style="font-size:0.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;">Contact (NAP)</h4>
-                <div style="font-size:0.9rem;line-height:1.8;color:rgba(255,255,255,0.5);" itemscope itemtype="https://schema.org/LocalBusiness">
-                    <strong itemprop="name" style="color:rgba(255,255,255,0.8);">Site2Success</strong><br>
+
+            <div class="footer-col">
+                <h4>Packages Ladder</h4>
+                <a href="#packages">Starter Package</a>
+                <a href="#packages">MVP Package</a>
+                <a href="#packages">Research / Prototype</a>
+                <a href="#packages">Custom Product</a>
+                <a href="#packages">Maintenance Retainer</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Studio Contact</h4>
+                <div class="footer-nap" itemscope itemtype="https://schema.org/LocalBusiness">
+                    <strong itemprop="name">Site2Success Studio</strong><br>
                     <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                         <span itemprop="addressLocality">Bengaluru</span>,
                         <span itemprop="addressRegion">Karnataka</span>,
                         <span itemprop="addressCountry">India</span>
                     </span><br>
-                    <a href="tel:+916361446768" itemprop="telephone" style="color:rgba(255,255,255,0.5);text-decoration:none;">+91 6361446768</a><br>
-                    <a href="mailto:site2successs@gmail.com" itemprop="email" style="color:rgba(255,255,255,0.5);text-decoration:none;">site2successs@gmail.com</a>
+                    <a href="tel:+916361446768" itemprop="telephone">+91 6361446768</a><br>
+                    <a href="mailto:site2successs@gmail.com" itemprop="email">site2successs@gmail.com</a>
                 </div>
             </div>
         </div>
-        <div style="max-width:1200px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
-            <p style="font-size:0.875rem;color:rgba(255,255,255,0.3);">&copy; 2024–2025 Site2Success. All rights reserved.</p>
-            <div style="display:flex;gap:1rem;">
-                <a href="https://linkedin.com/company/site2success" rel="noopener" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.875rem;">LinkedIn</a>
-                <a href="https://github.com/site2success" rel="noopener" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.875rem;">GitHub</a>
-                <a href="https://instagram.com/site2success" rel="noopener" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.875rem;">Instagram</a>
+
+        <!-- Section 12 Legal & Scope Note -->
+        <div class="legal-scope-disclaimer">
+            <strong>Legal &amp; Operating Scope Note:</strong> This rebuild is based on a strategic operating plan, not legal, tax, employment, or university-policy advice. Before finalizing client contracts, stipend terms, IP ownership language, data handling policy, or any CHRIST University branding/endorsement claims, appropriate legal and institutional review should be obtained separately — this should not be assumed to be covered by the website content itself.
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024–2026 Site2Success. All rights reserved. University-Powered AI Software Studio.</p>
+            <div class="footer-socials">
+                <a href="https://linkedin.com/company/site2success" rel="noopener" target="_blank" aria-label="Site2Success on LinkedIn">LinkedIn</a>
+                <a href="https://github.com/site2success" rel="noopener" target="_blank" aria-label="Site2Success on GitHub">GitHub</a>
+                <a href="https://instagram.com/site2success" rel="noopener" target="_blank" aria-label="Site2Success on Instagram">Instagram</a>
             </div>
         </div>
     </footer>
 
     <!-- Mobile Nav Script -->
+    <script src="../assets/js/main.js"></script>
     <script>
     (function() {
         var toggle = document.getElementById('menu-toggle');
@@ -1103,197 +1547,51 @@
     })();
     </script>
 
-    <!-- BreadcrumbList Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      "itemListElement": [
-        {"@type":"ListItem","position":1,"name":"Home","item":"https://site2success.online/pages/home.html"},
-        {"@type":"ListItem","position":2,"name":"Services","item":"https://site2success.online/pages/services.html"}
-      ]
-    }
-    </script>
-
-    <!-- Organization Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "name": "Site2Success",
-      "url": "https://site2success.online",
-      "logo": "https://site2success.online/assets/images/logo.png",
-      "description": "AI-first agentic tech startup building autonomous AI agents, chatbots and automation for Indian SMBs. Incubated at Christ University, Bengaluru.",
-      "foundingDate": "2024-10",
-      "founders": [
-        {"@type":"Person","name":"Rahul R"},
-        {"@type":"Person","name":"L Dhanush Raj"}
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Bengaluru",
-        "addressRegion": "Karnataka",
-        "addressCountry": "IN"
-      },
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": "+91-6361446768",
-        "contactType": "customer service",
-        "email": "site2successs@gmail.com"
-      },
-      "sameAs": [
-        "https://linkedin.com/company/site2success",
-        "https://github.com/site2success",
-        "https://instagram.com/site2success"
-      ]
-    }
-    </script>
-
-    <!-- AEO: ServiceList Schema -->
+    <!-- Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "ItemList",
-      "name": "Site2Success Agentic AI & Automation Services",
-      "description": "Site2Success is an agentic AI company offering autonomous AI agents, WhatsApp automation, CRM automation, and intelligent workflow systems for Indian SMBs.",
+      "name": "Site2Success Software Studio Packages Ladder",
+      "description": "University-powered AI software studio packages: Starter, MVP, Research / Prototype, Custom Product, and Maintenance.",
       "itemListElement": [
         {
           "@type": "ListItem", "position": 1,
           "item": {
-            "@type": "Service", "name": "WhatsApp AI Agent",
-            "description": "An autonomous AI agent that automatically replies to customer enquiries, captures leads, and answers FAQs on your existing WhatsApp number, 24/7.",
-            "provider": {"@type": "Organization", "name": "Site2Success"},
-            "areaServed": "India", "serviceType": "Agentic AI"
+            "@type": "Service", "name": "Starter Package",
+            "description": "Portfolio, site, or simple landing page for students, researchers, and creators."
           }
         },
         {
           "@type": "ListItem", "position": 2,
           "item": {
-            "@type": "Service", "name": "AI Lead Capture Bot",
-            "description": "Engages website visitors instantly, qualifies them, and collects their details — no forms, no drop-offs.",
-            "provider": {"@type": "Organization", "name": "Site2Success"},
-            "areaServed": "India", "serviceType": "Agentic AI"
+            "@type": "Service", "name": "MVP Package",
+            "description": "Working product prototype for early-stage founders to validate core assumptions fast."
           }
         },
         {
           "@type": "ListItem", "position": 3,
           "item": {
-            "@type": "Service", "name": "CRM Automation",
-            "description": "Auto-logs leads, updates deal stages, and alerts your sales team. Works with Notion, HubSpot, Zoho, and Google Sheets.",
-            "provider": {"@type": "Organization", "name": "Site2Success"},
-            "areaServed": "India", "serviceType": "Business Automation"
+            "@type": "Service", "name": "Research / Prototype Package",
+            "description": "Custom computational software and academic data workflows for university researchers."
           }
         },
         {
           "@type": "ListItem", "position": 4,
           "item": {
-            "@type": "Service", "name": "Multi-Tool Workflow Automation",
-            "description": "Connects your existing tools — forms, CRM, WhatsApp, email, calendar — into one seamless automated pipeline.",
-            "provider": {"@type": "Organization", "name": "Site2Success"},
-            "areaServed": "India", "serviceType": "Workflow Automation"
+            "@type": "Service", "name": "Custom Product Package",
+            "description": "Complex web application, AI-integrated workflow, or custom internal business tool."
           }
         },
         {
           "@type": "ListItem", "position": 5,
           "item": {
-            "@type": "Service", "name": "AI Customer Support Agent",
-            "description": "Resolves your most common support questions instantly and escalates to a human only when needed.",
-            "provider": {"@type": "Organization", "name": "Site2Success"},
-            "areaServed": "India", "serviceType": "Agentic AI"
-          }
-        },
-        {
-          "@type": "ListItem", "position": 6,
-          "item": {
-            "@type": "Service", "name": "AI Sales Qualification Agent",
-            "description": "Scores incoming leads and tells your sales team exactly who to prioritise and call first.",
-            "provider": {"@type": "Organization", "name": "Site2Success"},
-            "areaServed": "India", "serviceType": "Agentic AI"
+            "@type": "Service", "name": "Maintenance & Iteration Retainer",
+            "description": "Scheduled updates, performance tuning, and post-launch feature iterations."
           }
         }
       ]
-    }
-    </script>
-
-    <!-- AEO: FAQPage Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      "mainEntity": [
-        {
-          "@type": "Question",
-          "name": "What does Site2Success do?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Site2Success is an agentic AI company based in Bengaluru, India. We build autonomous AI agents, WhatsApp automation bots, CRM automation, lead qualification AI, and intelligent workflow systems for Indian SMBs. Our primary focus is AI and automation — not generic website or mobile app development."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What is agentic AI?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Agentic AI refers to autonomous AI systems that can reason, plan, and execute multi-step tasks without human intervention. Site2Success builds agentic AI solutions that autonomously handle customer interactions, qualify leads, book appointments, send follow-ups, and orchestrate complex business workflows."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Is Site2Success a website development company?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "No. Site2Success is an AI-first agentic automation company, not a website development company. Our primary services are agentic AI agents, WhatsApp AI automation, CRM automation, lead qualification AI, and autonomous business workflow systems."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "What AI automation services does Site2Success offer for Indian businesses?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Site2Success offers: 1) WhatsApp AI Agents, 2) Lead Capture Bots, 3) AI Appointment Booking Agents, 4) AI Customer Support Agents, 5) AI Sales Qualification Agents, 6) Internal Knowledge Bots, 7) CRM Automation, 8) Lead Follow-Up Automation, and 9) Multi-Tool Workflow Automation — all designed specifically for Indian SMBs."
-          }
-        },
-        {
-          "@type": "Question",
-          "name": "Where is Site2Success located?",
-          "acceptedAnswer": {
-            "@type": "Answer",
-            "text": "Site2Success is headquartered in Bengaluru, Karnataka, India and is incubated at Christ University. Contact: +91 6361446768, site2successs@gmail.com."
-          }
-        }
-      ]
-    }
-    </script>
-
-    <!-- GEO: Article/Speakable Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Site2Success — Agentic AI & Automation Company for Indian Businesses",
-      "description": "Site2Success is a Bengaluru-based agentic AI startup that builds autonomous AI agents, WhatsApp automation bots, CRM automation pipelines, and intelligent workflow systems exclusively for Indian SMBs. Founded in October 2024 by Rahul R and L Dhanush Raj, incubated at Christ University. Primary services: agentic AI, workflow automation, WhatsApp AI agent, CRM automation, lead qualification AI. NOT a website or mobile app development company.",
-      "author": {"@type": "Organization", "name": "Site2Success"},
-      "publisher": {
-        "@type": "Organization",
-        "name": "Site2Success",
-        "logo": {"@type": "ImageObject", "url": "https://site2success.online/assets/images/logo.png"}
-      },
-      "mainEntityOfPage": {"@type": "WebPage", "@id": "https://site2success.online/pages/services.html"},
-      "speakable": {
-        "@type": "SpeakableSpecification",
-        "cssSelector": [".services-hero-description", ".service-content.active p"]
-      },
-      "about": [
-        {"@type": "Thing", "name": "Agentic AI"},
-        {"@type": "Thing", "name": "AI Automation"},
-        {"@type": "Thing", "name": "WhatsApp AI Agent"},
-        {"@type": "Thing", "name": "Workflow Automation India"},
-        {"@type": "Thing", "name": "CRM Automation"},
-        {"@type": "Thing", "name": "Lead Qualification AI"}
-      ],
-      "keywords": "agentic AI, AI automation India, Site2Success, WhatsApp AI bot, CRM automation Bengaluru, autonomous AI agents, lead qualification AI, workflow automation SMB"
     }
     </script>
 </body>
-
 </html>

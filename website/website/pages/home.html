@@ -5,16 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- ═══ PRIMARY SEO ═══ -->
-<title>Site2Success | AI Agents &amp; Automation for Indian Businesses</title>
-<meta name="description" content="Site2Success builds AI agents, chatbots &amp; automation tools for Indian SMBs. Based in Bengaluru. Powered by cutting-edge AI.">
-<meta name="keywords" content="Site2Success, agentic AI India, AI agents Bengaluru, AI chatbot Indian SMBs, workflow automation India, autonomous AI agents, WhatsApp AI bot, CRM automation India, agentic automation startup, KIRA AI, lead qualification AI, AI-first tech company India">
+<title>Site2Success | University-Powered AI Software Studio</title>
+<meta name="description" content="Have an idea? We turn it into working software. Site2Success combines AI-native development with university talent to help founders, researchers, and students build real products quickly and affordably.">
+<meta name="keywords" content="Site2Success, university-powered software studio, AI-native development, MVP builder, research software, student founder software, working software, software studio Bengaluru">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://site2success.online/pages/home.html">
 <meta name="google-site-verification" content="hUuqrSM6DO2-IPt-vKFLi6_DoScVl3sxZFX5Q328wno">
 
 <!-- ═══ OPEN GRAPH ═══ -->
-<meta property="og:title" content="Site2Success | AI Agents &amp; Automation for Indian Businesses">
-<meta property="og:description" content="Site2Success builds AI agents, chatbots &amp; automation tools for Indian SMBs. Based in Bengaluru. Powered by cutting-edge AI.">
+<meta property="og:title" content="Site2Success | University-Powered AI Software Studio">
+<meta property="og:description" content="Have an idea? We turn it into working software. Combining AI-native development with university talent.">
 <meta property="og:image" content="https://site2success.online/assets/images/og-image.png">
 <meta property="og:url" content="https://site2success.online/pages/home.html">
 <meta property="og:type" content="website">
@@ -22,8 +22,8 @@
 
 <!-- ═══ TWITTER CARD ═══ -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Site2Success | AI Agents &amp; Automation for Indian Businesses">
-<meta name="twitter:description" content="Site2Success builds AI agents, chatbots &amp; automation tools for Indian SMBs. Based in Bengaluru.">
+<meta name="twitter:title" content="Site2Success | University-Powered AI Software Studio">
+<meta name="twitter:description" content="Have an idea? We turn it into working software. Built by the next generation, accelerated by AI.">
 <meta name="twitter:image" content="https://site2success.online/assets/images/og-image.png">
 
 <!-- ═══ FAVICON ═══ -->
@@ -49,18 +49,18 @@
     transform: translateX(-50%);
     width: calc(100% - 48px); max-width: 1200px;
     z-index: 1000;
-    background: rgba(255,255,255,0.72);
+    background: rgba(255,255,255,0.78);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
-    background-image: linear-gradient(135deg, rgba(255,107,74,0.03) 0%, rgba(255,138,91,0.02) 50%, rgba(255,176,136,0.03) 100%);
-    border: 1px solid rgba(255,255,255,0.6);
+    background-image: linear-gradient(135deg, rgba(255,107,74,0.04) 0%, rgba(255,138,91,0.02) 50%, rgba(255,176,136,0.03) 100%);
+    border: 1px solid rgba(255,255,255,0.7);
     border-radius: 100px;
     box-shadow: 0 4px 30px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.9);
     display: flex; align-items: center; justify-content: space-between;
     padding: 0.75rem 1.25rem;
     transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
   }
-  .navbar.scrolled { top: 12px; background: rgba(255,255,255,0.85); box-shadow: 0 8px 32px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.9); }
+  .navbar.scrolled { top: 12px; background: rgba(255,255,255,0.92); box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
   .nav-logo { transition: transform 0.3s ease; }
   .nav-logo:hover { transform: scale(1.02); }
   .nav-item { position: relative; opacity: 0.85; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
@@ -82,114 +82,217 @@
   @media (max-width: 480px) { .navbar { top: 12px; padding: 0.5rem 0.875rem; } }
 
   /* HERO */
-  .hero { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: flex-start; padding: 8rem 2rem 4rem 8%; overflow: hidden; }
+  .hero { position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: flex-start; padding: 9rem 2rem 5rem 8%; overflow: hidden; }
   .hero-bg-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
-  .hero-bg-image img { width: 100%; height: 100%; object-fit: cover; object-position: center right; animation: slowZoom 20s ease-in-out infinite alternate; }
+  .hero-bg-image img { width: 100%; height: 100%; object-fit: cover; object-position: center right; animation: slowZoom 20s ease-in-out infinite alternate; opacity: 0.45; }
   @keyframes slowZoom { 0%{transform:scale(1)} 100%{transform:scale(1.05)} }
-  .hero-bg-image::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg,rgba(255,255,255,0.98) 0%,rgba(255,255,255,0.8) 35%,rgba(255,255,255,0.3) 60%,rgba(255,255,255,0.1) 80%,transparent 100%); }
-  .hero-bg-image::before { content: ''; position: absolute; top: 0; right: 0; width: 50%; height: 100%; background: linear-gradient(270deg,transparent 0%,rgba(255,255,255,0.05) 100%); z-index: 1; }
-  .hero-content { max-width: 600px; text-align: left; margin-left: 0; position: relative; z-index: 2; }
+  .hero-bg-image::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.92) 45%, rgba(255,255,255,0.6) 80%, transparent 100%); }
+  .hero-content { max-width: 680px; text-align: left; margin-left: 0; position: relative; z-index: 2; }
+  .hero-tag { display: inline-flex; align-items: center; gap: 8px; padding: 0.45rem 1.1rem; background: rgba(255,107,74,0.08); border: 1px solid rgba(255,107,74,0.22); border-radius: 100px; color: var(--coral); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.5rem; }
+  .hero-title { font-size: clamp(2.4rem, 4.5vw, 3.75rem); font-weight: 800; line-height: 1.15; color: var(--navy-dark); margin-bottom: 1.25rem; letter-spacing: -0.02em; }
+  .hero-description { font-size: 1.15rem; color: var(--gray-600); line-height: 1.75; margin-bottom: 2rem; font-weight: 400; }
+  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+
   @media (max-width: 1024px) {
     .hero-content { max-width: 100%; text-align: center; margin: 0 auto; }
     .hero { padding-left: 2rem; padding-right: 2rem; justify-content: center; }
     .hero-bg-image img { object-position: center; }
-    .hero-bg-image::after { background: linear-gradient(180deg,rgba(255,255,255,0.95) 0%,rgba(255,255,255,0.9) 50%,rgba(255,255,255,0.7) 100%); }
+    .hero-bg-image::after { background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.93) 60%, rgba(255,255,255,0.85) 100%); }
     .hero-buttons { justify-content: center; }
   }
 
-  /* SERVICES SHOWCASE */
-  .services-showcase { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 4rem; }
-  .service-showcase-card { position: relative; border-radius: 24px; overflow: hidden; height: 400px; box-shadow: 0 20px 50px rgba(0,0,0,0.1); transition: all 0.4s cubic-bezier(0.4,0,0.2,1); cursor: pointer; }
-  .service-showcase-card:hover { transform: translateY(-8px); box-shadow: 0 30px 70px rgba(0,0,0,0.15); }
-  .service-showcase-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
-  .service-showcase-card:hover img { transform: scale(1.05); }
-  .service-overlay { position: absolute; bottom: 0; left: 0; right: 0; padding: 2rem; background: linear-gradient(to top,rgba(26,26,46,0.95) 0%,rgba(26,26,46,0.7) 50%,transparent 100%); color: white; transition: all 0.3s ease; }
-  .service-showcase-card:hover .service-overlay { padding-bottom: 2.5rem; }
-  .service-overlay h3 { color: white; font-size: 1.5rem; margin-bottom: 0.5rem; font-weight: 700; }
-  .service-overlay p { color: rgba(255,255,255,0.8); font-size: 0.95rem; line-height: 1.5; margin: 0; }
-  @media (max-width: 1024px) { .services-showcase { grid-template-columns: 1fr; } .service-showcase-card { height: 300px; } }
+  /* SECTION STYLING */
+  .section-label-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 0.4rem 1rem; background: rgba(255,107,74,0.08);
+    border: 1px solid rgba(255,107,74,0.2); border-radius: 100px;
+    font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--coral); margin-bottom: 1rem;
+  }
 
-  /* FEATURE IMAGE SECTIONS */
-  .features-images-section { padding: 8rem 0; background: linear-gradient(180deg,var(--white-primary) 0%,rgba(255,107,74,0.02) 50%,var(--white-primary) 100%); }
-  .feature-image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-  .feature-image-content h2 { font-size: 2.5rem; margin-bottom: 1.5rem; line-height: 1.2; }
-  .feature-image-content p { color: var(--gray-500); font-size: 1.125rem; line-height: 1.8; margin-bottom: 2rem; }
-  .feature-image-wrapper { position: relative; border-radius: 24px; overflow: hidden; box-shadow: 0 30px 60px rgba(0,0,0,0.12); }
-  .feature-image-wrapper img { width: 100%; height: auto; display: block; transition: transform 0.6s ease; }
-  .feature-image-wrapper:hover img { transform: scale(1.03); }
-  .image-accent { position: absolute; width: 100px; height: 100px; background: var(--gradient-primary); border-radius: 50%; filter: blur(60px); opacity: 0.3; z-index: -1; }
-  .image-accent-1 { top: -50px; left: -50px; }
-  .image-accent-2 { bottom: -50px; right: -50px; }
-  @media (max-width: 1024px) { .feature-image-grid { grid-template-columns: 1fr; gap: 3rem; } }
+  /* WHO WE HELP CARDS */
+  .segments-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem; max-width: 1200px; margin: 3rem auto 0; padding: 0 1.5rem;
+  }
+  .segment-card {
+    background: #ffffff; border-radius: 20px; padding: 2rem 1.5rem;
+    border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    transition: all 0.35s ease; position: relative; overflow: hidden;
+  }
+  .segment-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); border-color: rgba(255,107,74,0.25); }
+  .segment-icon {
+    width: 50px; height: 50px; border-radius: 14px;
+    background: linear-gradient(135deg, rgba(255,107,74,0.1) 0%, rgba(255,138,91,0.06) 100%);
+    display: flex; align-items: center; justify-content: center; color: var(--coral);
+    margin-bottom: 1.25rem; font-size: 1.25rem;
+  }
+  .segment-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--navy-dark); margin-bottom: 0.5rem; }
+  .segment-card p { font-size: 0.92rem; color: var(--gray-500); line-height: 1.6; margin: 0; }
+  .segment-tag { display: inline-block; margin-top: 1rem; font-size: 0.75rem; font-weight: 600; color: var(--orange); background: rgba(255,138,91,0.1); padding: 0.25rem 0.6rem; border-radius: 6px; }
 
-  /* WHY CHOOSE US CARDS */
-  .features-grid-modern { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-  .feature-card-modern { background: var(--white-primary); border-radius: 24px; padding: 2.5rem; border: 1px solid rgba(0,0,0,0.04); box-shadow: 0 4px 20px rgba(0,0,0,0.03); transition: all 0.4s ease; position: relative; overflow: hidden; }
-  .feature-card-modern::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--gradient-primary); transform: scaleX(0); transition: transform 0.4s ease; }
-  .feature-card-modern:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,0.08); }
-  .feature-card-modern:hover::before { transform: scaleX(1); }
-  .feature-number { font-family: var(--font-display); font-size: 3rem; font-weight: 800; color: rgba(244,71,32,0.674); margin-bottom: 1rem; line-height: 1; }
-  .feature-card-modern h4 { font-size: 1.25rem; font-weight: 700; color: var(--navy-dark); margin-bottom: 0.75rem; }
-  .feature-card-modern p { color: var(--gray-500); font-size: 0.95rem; line-height: 1.7; }
-  @media (max-width: 1024px) { .features-grid-modern { grid-template-columns: repeat(2,1fr); } }
-  @media (max-width: 768px) { .features-grid-modern { grid-template-columns: 1fr; } }
+  /* WHAT WE BUILD CARDS */
+  .catalogue-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.75rem; max-width: 1200px; margin: 3rem auto 0; padding: 0 1.5rem;
+  }
+  .catalogue-card {
+    background: #ffffff; border-radius: 20px; padding: 2.25rem;
+    border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    transition: all 0.35s ease; display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .catalogue-card:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(0,0,0,0.08); border-color: rgba(255,107,74,0.3); }
+  .catalogue-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--navy-dark); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+  .catalogue-card p { font-size: 0.95rem; color: var(--gray-500); line-height: 1.7; margin-bottom: 1.25rem; }
+  .catalogue-outcome {
+    background: rgba(255,107,74,0.04); border-left: 3px solid var(--coral);
+    padding: 0.75rem 1rem; border-radius: 0 8px 8px 0; font-size: 0.85rem;
+    color: var(--navy-dark); font-weight: 500;
+  }
 
-  /* FOOTER */
-  .site-footer { background: var(--navy-dark); color: rgba(255,255,255,0.7); padding: 4rem 2rem 2rem; }
-  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto 3rem; }
-  .footer-brand img { height: 44px; width: auto; border-radius: 12px; margin-bottom: 1.25rem; background: #ffffff; padding: 6px 12px; display: inline-block; box-shadow: 0 4px 12px rgba(0,0,0,0.15); opacity: 1 !important; }
-  .footer-brand p { font-size: 0.9rem; line-height: 1.7; color: rgba(255,255,255,0.5); max-width: 280px; margin-top: 0.5rem; }
-  .footer-col h4 { font-size: 0.8125rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.4); margin-bottom: 1.25rem; }
-  .footer-col a { display: block; font-size: 0.9375rem; color: rgba(255,255,255,0.6); margin-bottom: 0.625rem; transition: color 0.25s; text-decoration: none; }
+  /* HOW IT WORKS (SIMPLIFIED 5-STEP) */
+  .process-visual-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem; max-width: 1200px; margin: 3.5rem auto 0; padding: 0 1.5rem;
+  }
+  .process-step-card {
+    background: #ffffff; border-radius: 20px; padding: 2rem 1.25rem;
+    border: 1px solid rgba(0,0,0,0.05); position: relative; text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: all 0.3s ease;
+  }
+  .process-step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
+  .step-num {
+    width: 44px; height: 44px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--coral), var(--orange));
+    color: #fff; font-weight: 800; font-size: 1.1rem;
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto 1.25rem; box-shadow: 0 6px 15px rgba(255,107,74,0.3);
+  }
+  .process-step-card h4 { font-size: 1.15rem; font-weight: 700; color: var(--navy-dark); margin-bottom: 0.5rem; }
+  .process-step-card p { font-size: 0.85rem; color: var(--gray-500); line-height: 1.6; margin: 0; }
+  @media (max-width: 900px) {
+    .process-visual-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .process-visual-grid { grid-template-columns: 1fr; }
+  }
+
+  /* SECTION 9: WHY SITE2SUCCESS / DIFFERENTIATION */
+  .diff-section {
+    background: linear-gradient(135deg, #111424 0%, #1a1e36 100%);
+    color: #ffffff; padding: 6rem 1.5rem; position: relative; overflow: hidden;
+  }
+  .diff-container { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+  .diff-quote-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 24px; padding: 2.75rem; backdrop-filter: blur(16px);
+    margin-bottom: 3.5rem; position: relative;
+  }
+  .diff-quote-card p {
+    font-size: 1.25rem; line-height: 1.8; color: rgba(255,255,255,0.92);
+    font-weight: 500; font-style: italic; margin: 0;
+  }
+  .diff-quote-highlight { color: var(--amber); font-weight: 700; font-style: normal; }
+  .diff-pillars-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem;
+  }
+  .diff-pillar {
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 20px; padding: 2rem;
+  }
+  .diff-pillar h4 { font-size: 1.2rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
+  .diff-pillar p { font-size: 0.95rem; color: rgba(255,255,255,0.7); line-height: 1.7; margin: 0; }
+  @media (max-width: 900px) {
+    .diff-pillars-grid { grid-template-columns: 1fr; }
+  }
+
+  /* SECTION 7: STANDARDIZED PROOF & CASE STUDY */
+  .proof-case-study {
+    background: #ffffff; border-radius: 28px; border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.04); max-width: 1100px;
+    margin: 3.5rem auto 0; padding: 3rem; overflow: hidden;
+  }
+  .case-study-header {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding-bottom: 1.5rem; margin-bottom: 2rem;
+  }
+  .case-study-title-wrap h3 { font-size: 1.75rem; font-weight: 800; color: var(--navy-dark); margin-bottom: 0.25rem; }
+  .case-study-badge {
+    background: rgba(255,107,74,0.1); color: var(--coral);
+    padding: 0.4rem 0.9rem; border-radius: 100px; font-size: 0.8rem; font-weight: 700;
+  }
+  .template-fields-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem;
+  }
+  .template-field-item { font-size: 0.95rem; line-height: 1.7; }
+  .template-field-label {
+    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em;
+    font-weight: 700; color: var(--gray-400); margin-bottom: 0.35rem; display: block;
+  }
+  .template-field-value { color: var(--navy-dark); font-weight: 500; }
+  .case-study-quote-box {
+    grid-column: span 2; background: rgba(255,107,74,0.04);
+    border-left: 4px solid var(--coral); border-radius: 0 16px 16px 0;
+    padding: 1.25rem 1.5rem; margin-top: 1rem;
+  }
+  .case-study-quote-box blockquote { font-style: italic; color: var(--navy-dark); font-size: 1rem; line-height: 1.7; margin: 0; }
+  .case-study-quote-box cite { display: block; margin-top: 0.5rem; font-size: 0.85rem; color: var(--coral); font-weight: 600; font-style: normal; }
+  @media (max-width: 768px) {
+    .template-fields-grid { grid-template-columns: 1fr; }
+    .case-study-quote-box { grid-column: span 1; }
+    .proof-case-study { padding: 1.75rem; }
+  }
+
+  /* CHRIST ORIGIN / CREDIBILITY SECTION */
+  .origin-box {
+    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,248,245,0.9) 100%);
+    border-radius: 24px; border: 1px solid rgba(255,107,74,0.18);
+    box-shadow: 0 10px 40px rgba(255,107,74,0.04);
+    max-width: 960px; margin: 0 auto; padding: 3rem; text-align: center;
+  }
+  .origin-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 0.4rem 1rem; background: rgba(255,107,74,0.08);
+    border: 1px solid rgba(255,107,74,0.2); border-radius: 100px;
+    font-size: 0.8rem; font-weight: 700; color: var(--coral);
+    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.25rem;
+  }
+  .origin-box h3 { font-size: 1.75rem; font-weight: 800; color: var(--navy-dark); margin-bottom: 1rem; }
+  .origin-box p { font-size: 1.05rem; color: var(--gray-600); line-height: 1.85; max-width: 800px; margin: 0 auto 1.5rem; }
+  .origin-note { font-size: 0.82rem; color: var(--gray-400); font-style: italic; }
+
+  /* HOME CTA BANNER */
+  .home-conversion-cta {
+    background: linear-gradient(135deg, #0d0f1a 0%, #1a1e36 100%);
+    border-top: 1px solid rgba(255,107,74,0.25);
+    padding: 6rem 2rem; text-align: center; color: #fff;
+  }
+  .home-conversion-cta h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem; }
+  .home-conversion-cta p { font-size: 1.15rem; color: rgba(255,255,255,0.7); max-width: 650px; margin: 0 auto 2.5rem; line-height: 1.7; }
+  .home-conversion-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+
+  /* FOOTER & LEGAL NOTE */
+  .site-footer { background: #0c0e18; color: rgba(255,255,255,0.7); padding: 5rem 2rem 2.5rem; border-top: 1px solid rgba(255,255,255,0.06); }
+  .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 3rem; max-width: 1200px; margin: 0 auto 3rem; }
+  .footer-brand img { height: 48px; width: auto; border-radius: 12px; margin-bottom: 1.25rem; background: #ffffff; padding: 6px 14px; display: inline-block; }
+  .footer-brand p { font-size: 0.92rem; line-height: 1.75; color: rgba(255,255,255,0.55); max-width: 320px; }
+  .footer-col h4 { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); margin-bottom: 1.25rem; }
+  .footer-col a { display: block; font-size: 0.92rem; color: rgba(255,255,255,0.65); margin-bottom: 0.65rem; transition: color 0.25s; text-decoration: none; }
   .footer-col a:hover { color: var(--coral); }
-  .footer-nap { font-size: 0.9rem; line-height: 1.8; color: rgba(255,255,255,0.5); }
-  .footer-nap strong { color: rgba(255,255,255,0.8); }
+  .legal-scope-disclaimer {
+    max-width: 1200px; margin: 0 auto 2.5rem; padding: 1.5rem 2rem;
+    background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 16px; font-size: 0.8rem; line-height: 1.7; color: rgba(255,255,255,0.45);
+  }
+  .legal-scope-disclaimer strong { color: rgba(255,255,255,0.75); }
   .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-  .footer-bottom p { font-size: 0.875rem; color: rgba(255,255,255,0.3); }
-  .footer-socials { display: flex; gap: 1rem; }
-  .footer-socials a { color: rgba(255,255,255,0.35); transition: color 0.25s; text-decoration: none; font-size: 0.875rem; }
-  .footer-socials a:hover { color: var(--coral); }
-  @media (max-width: 1024px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-  @media (max-width: 640px) { .footer-grid { grid-template-columns: 1fr; } .footer-bottom { flex-direction: column; text-align: center; } }
-
-  /* WHATSAPP DEMO CTA */
-  .demo-cta-banner {
-    background: linear-gradient(135deg, #0A0A0F 0%, #1a1a2e 100%);
-    border-top: 1px solid rgba(255,107,74,0.2);
-    padding: 4rem 2rem;
-    text-align: center;
+  @media (max-width: 900px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
   }
-  .demo-cta-banner h2 { color: #fff; font-size: clamp(1.75rem,4vw,2.5rem); font-weight: 800; margin-bottom: 0.75rem; }
-  .demo-cta-banner p { color: rgba(255,255,255,0.6); font-size: 1.0625rem; margin-bottom: 2rem; }
-  .btn-whatsapp {
-    display: inline-flex; align-items: center; gap: 0.625rem;
-    background: #25D366; color: #fff;
-    padding: 1rem 2rem; border-radius: 100px;
-    font-size: 1rem; font-weight: 700;
-    box-shadow: 0 8px 30px rgba(37,211,102,0.35);
-    transition: all 0.3s ease;
-    text-decoration: none;
+  @media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; }
   }
-  .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(37,211,102,0.45); }
-  .btn-demo-alt {
-    display: inline-flex; align-items: center; gap: 0.5rem;
-    background: transparent; color: rgba(255,255,255,0.8);
-    border: 1px solid rgba(255,255,255,0.2);
-    padding: 1rem 2rem; border-radius: 100px;
-    font-size: 1rem; font-weight: 600;
-    margin-left: 1rem;
-    transition: all 0.3s ease;
-    text-decoration: none;
-  }
-  .btn-demo-alt:hover { border-color: var(--coral); color: var(--coral); }
-  .demo-cta-buttons { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; }
-
-  /* AEO About Para */
-  .aeo-about { background: var(--white-secondary); padding: 5rem 2rem; }
-  .aeo-about-inner { max-width: 860px; margin: 0 auto; }
-  .aeo-about-inner h2 { font-size: 2rem; font-weight: 800; color: var(--navy-dark); margin-bottom: 1.5rem; }
-  .aeo-about-inner p { color: var(--gray-500); font-size: 1.0625rem; line-height: 1.85; margin-bottom: 1.25rem; }
-  .aeo-about-inner strong { color: var(--navy-dark); }
 </style>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -204,11 +307,10 @@
     </a>
     <div class="nav-links" id="nav-links" role="menubar">
       <a href="home.html" class="nav-item active" data-page="home" role="menuitem">Home</a>
-      <a href="services.html" class="nav-item" data-page="services" role="menuitem">Services</a>
-      <a href="automation.html" class="nav-item" data-page="automation" role="menuitem">KIRA<span class="early-tag">Early Access</span></a>
-      <a href="internships.html" class="nav-item" data-page="internships" role="menuitem">Internships</a>
+      <a href="services.html" class="nav-item" data-page="services" role="menuitem">Services &amp; Pricing</a>
       <a href="projects.html" class="nav-item" data-page="projects" role="menuitem">Projects</a>
       <a href="about.html" class="nav-item" data-page="about" role="menuitem">About</a>
+      <a href="internships.html" class="nav-item" data-page="internships" role="menuitem">Builders</a>
       <a href="contact.html" class="nav-item" data-page="contact" role="menuitem">Contact</a>
     </div>
     <div class="menu-toggle" id="menu-toggle" role="button" aria-label="Toggle menu" aria-expanded="false" tabindex="0">
@@ -216,279 +318,421 @@
     </div>
   </nav>
 
-  <!-- Breadcrumb navigation -->
-  <nav aria-label="Breadcrumb" style="display:none;">
-    <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-      <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
-        <a itemprop="item" href="https://site2success.online/"><span itemprop="name">Home</span></a>
-        <meta itemprop="position" content="1">
-      </li>
-    </ol>
-  </nav>
-
-  <!-- Hero Section -->
+  <!-- 1. HERO SECTION (Exact Section 4 Structure) -->
   <section class="hero" aria-labelledby="hero-heading">
     <div class="hero-bg-image">
-      <img src="../assets/images/hero-bg-abstract.jpg" alt="Site2Success AI Technology Background" loading="eager">
+      <img src="../assets/images/hero-bg-abstract.jpg" alt="Site2Success AI Technology Studio Background" loading="eager">
     </div>
     <div class="hero-content">
-      <div class="hero-tag animate-on-load">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+      <div class="hero-tag">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
         </svg>
-        <span>AI-First Tech Startup · Bengaluru, India</span>
+        <span>University-Powered AI Software Studio</span>
       </div>
-      <h1 class="hero-title animate-on-load" id="hero-heading">
-        <span class="gradient-text">Site2Success</span> —<br>AI Agents &amp; Automation<br>for Indian Businesses
+      <h1 class="hero-title" id="hero-heading">
+        Have an idea?<br>
+        <span class="gradient-text">We turn it into working software.</span>
       </h1>
-      <p class="hero-description animate-on-load">
-        India's AI-first startup building intelligent agents, chatbots, and automation tools that help Indian SMBs grow faster, serve better, and compete globally. Incubated at Christ University, Bengaluru.
+      <p class="hero-description">
+        Site2Success combines AI-native development with university talent to help founders, researchers, students and individuals turn software ideas into real products quickly and affordably.
       </p>
-      <div class="hero-buttons animate-on-load">
+      <div class="hero-buttons">
         <a href="contact.html" class="btn btn-primary btn-large" id="hero-cta-primary">
-          Get a Free AI Demo
+          Tell Us What You Want to Build
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </a>
-        <a href="services.html" class="btn btn-secondary btn-large" id="hero-cta-secondary">
-          Explore Services
+        <a href="#how-it-works" class="btn btn-secondary btn-large" id="hero-cta-secondary">
+          How It Works
         </a>
       </div>
     </div>
   </section>
 
-  <!-- Services Showcase -->
-  <section class="section" style="padding-top: 9rem;" aria-labelledby="services-heading">
+  <!-- 2. WHO WE HELP SECTION (Exact Section 3 Priority Order) -->
+  <section class="section" id="who-we-help" style="background:var(--white-secondary); padding: 6rem 0;" aria-labelledby="who-heading">
     <div class="section-header">
-      <span class="section-label">Our Services</span>
-      <h2 class="section-title" id="services-heading">AI Solutions That Drive Real Results</h2>
-      <p class="section-subtitle">From agentic AI and intelligent chatbots to end-to-end workflow automation — built for Indian SMBs ready to scale with AI.</p>
+      <span class="section-label-tag">Qualification</span>
+      <h2 class="section-title" id="who-heading">Who We Help</h2>
+      <p class="section-subtitle">We specialize in turning early-stage ideas and practical software requirements into working products across five key segments.</p>
     </div>
+    <div class="segments-grid">
+      <!-- 1. Faculty / researchers -->
+      <div class="segment-card">
+        <div class="segment-icon">🔬</div>
+        <h3>Faculty &amp; Researchers</h3>
+        <p>Research tools, academic dashboards, automated data pipelines, and interactive computational prototypes built for publications and grant deliverables.</p>
+        <span class="segment-tag">Higher-Value Research Software</span>
+      </div>
+
+      <!-- 2. Student founders -->
+      <div class="segment-card">
+        <div class="segment-icon">🚀</div>
+        <h3>Student Founders</h3>
+        <p>Rapid MVPs, validated software prototypes, customer-facing web apps, and specialized AI tools to test product-market fit with real users and pitch investors.</p>
+        <span class="segment-tag">Core Startup Offering</span>
+      </div>
+
+      <!-- 3. Student projects / personal brands -->
+      <div class="segment-card">
+        <div class="segment-icon">💼</div>
+        <h3>Student Projects &amp; Portfolios</h3>
+        <p>High-impact personal portfolio websites, research showcase hubs, and bespoke interactive apps that prove real capability and command attention.</p>
+        <span class="segment-tag">Fast-Turnaround Builds</span>
+      </div>
+
+      <!-- 4. Clubs / events -->
+      <div class="segment-card">
+        <div class="segment-icon">🎟️</div>
+        <h3>Clubs &amp; Events</h3>
+        <p>Campus registration portals, event ticketing pipelines, attendee check-in systems, and real-time live event engagement dashboards.</p>
+        <span class="segment-tag">High-Visibility Systems</span>
+      </div>
+
+      <!-- 5. Alumni / connected businesses -->
+      <div class="segment-card">
+        <div class="segment-icon">🏢</div>
+        <h3>Alumni &amp; Small Businesses</h3>
+        <p>Production business websites, custom internal tools, workflow automation, and CRM integrations bridging campus talent with commercial operations.</p>
+        <span class="segment-tag">Operational Software</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. WHAT WE BUILD SECTION (Exact Section 8 Catalogue - Outcome Focused) -->
+  <section class="section" id="what-we-build" style="padding: 6rem 0;" aria-labelledby="what-heading">
+    <div class="section-header">
+      <span class="section-label-tag">Concrete Offer</span>
+      <h2 class="section-title" id="what-heading">What We Build</h2>
+      <p class="section-subtitle">Every project is framed around real outcomes — a working product you can launch, test, or show investors.</p>
+    </div>
+    <div class="catalogue-grid">
+      <div class="catalogue-card">
+        <div>
+          <h3>Websites</h3>
+          <p>High-converting, polished digital presences with custom responsive design, lightning-fast performance, and accessible CMS controls.</p>
+        </div>
+        <div class="catalogue-outcome">
+          <strong>Outcome:</strong> A credible digital flagship that builds immediate trust with visitors.
+        </div>
+      </div>
+
+      <div class="catalogue-card">
+        <div>
+          <h3>Web Applications</h3>
+          <p>Full-stack web applications featuring secure authentication, multi-tenant databases, transactional workflows, and connected APIs.</p>
+        </div>
+        <div class="catalogue-outcome">
+          <strong>Outcome:</strong> A reliable platform your users can log into and get daily value from.
+        </div>
+      </div>
+
+      <div class="catalogue-card">
+        <div>
+          <h3>Working MVPs</h3>
+          <p>Early-stage product prototypes built fast to test core assumptions, gather real feedback, and validate your business thesis.</p>
+        </div>
+        <div class="catalogue-outcome">
+          <strong>Outcome:</strong> A working MVP you can demo to investors and onboard your first 100 users.
+        </div>
+      </div>
+
+      <div class="catalogue-card">
+        <div>
+          <h3>AI Applications</h3>
+          <p>Intelligent assistants, document processors, automated research summarizers, and domain-specific AI workflows with mandatory human QA.</p>
+        </div>
+        <div class="catalogue-outcome">
+          <strong>Outcome:</strong> Practical AI features integrated into your business without unreviewed AI hallucinations.
+        </div>
+      </div>
+
+      <div class="catalogue-card">
+        <div>
+          <h3>Custom Dashboards</h3>
+          <p>Consolidated real-time metrics, interactive charts, and business intelligence panels that turn fragmented data into operational clarity.</p>
+        </div>
+        <div class="catalogue-outcome">
+          <strong>Outcome:</strong> A single screen that shows you exactly what is happening in your organization.
+        </div>
+      </div>
+
+      <div class="catalogue-card">
+        <div>
+          <h3>Internal Tools</h3>
+          <p>Bespoke administrative portals, approval queues, inventory trackers, and automation utilities that replace messy spreadsheets.</p>
+        </div>
+        <div class="catalogue-outcome">
+          <strong>Outcome:</strong> Hundreds of hours saved by eliminating repetitive manual coordination.
+        </div>
+      </div>
+
+      <div class="catalogue-card">
+        <div>
+          <h3>Research Prototypes</h3>
+          <p>Specialized scientific software, computational calculators, experimental interfaces, and data visualization tools for academic studies.</p>
+        </div>
+        <div class="catalogue-outcome">
+          <strong>Outcome:</strong> Rigorous, reproducible research software ready for peer publication and citations.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. HOW IT WORKS SECTION (Simplified Section 6 Flow) -->
+  <section class="section" id="how-it-works" style="background:var(--white-secondary); padding: 6rem 0;" aria-labelledby="how-heading">
+    <div class="section-header">
+      <span class="section-label-tag">Reduce Uncertainty</span>
+      <h2 class="section-title" id="how-heading">How It Works</h2>
+      <p class="section-subtitle">A clear, disciplined 5-step delivery process from initial idea to working production software.</p>
+    </div>
+    <div class="process-visual-grid">
+      <div class="process-step-card">
+        <div class="step-num">1</div>
+        <h4>Idea</h4>
+        <p>You submit your idea or business challenge. We clarify the core problem, target audience, and primary success criteria.</p>
+      </div>
+      <div class="process-step-card">
+        <div class="step-num">2</div>
+        <h4>Scope</h4>
+        <p>We assess technical feasibility, define MVP vs. optional features, and provide a transparent milestone schedule and fixed scope.</p>
+      </div>
+      <div class="process-step-card">
+        <div class="step-num">3</div>
+        <h4>Build</h4>
+        <p>Our trained builders execute using AI-native workflows to shorten build cycles, accompanied by regular progress demos.</p>
+      </div>
+      <div class="process-step-card">
+        <div class="step-num">4</div>
+        <h4>QA</h4>
+        <p>Mandatory human code review, cross-device functional testing, and security verification — no unverified code ships.</p>
+      </div>
+      <div class="process-step-card">
+        <div class="step-num">5</div>
+        <h4>Launch</h4>
+        <p>Production deployment, full credential and codebase transfer, documentation handover, and structured aftercare support.</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 2.5rem;">
+      <a href="services.html#process-detail" style="font-weight: 600; color: var(--coral); text-decoration: none; font-size: 0.95rem;">
+        Explore our full 9-stage delivery operating system &rarr;
+      </a>
+    </div>
+  </section>
+
+  <!-- 5. WHY SITE2SUCCESS / DIFFERENTIATION (Exact Section 9 Block) -->
+  <section class="diff-section" id="why-site2success" aria-labelledby="why-heading">
+    <div class="diff-container">
+      <div style="text-align:center; margin-bottom: 2.5rem;">
+        <span class="section-label-tag" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:var(--amber);">Differentiation</span>
+        <h2 id="why-heading" style="font-size:clamp(2rem, 3.5vw, 2.75rem); font-weight:800; margin-top:0.5rem;">Why Site2Success</h2>
+      </div>
+
+      <!-- Section 9 Differentiation Block Quote -->
+      <div class="diff-quote-card">
+        <p>
+          "The differentiator isn't <span class="diff-quote-highlight">"we have students"</span> or <span class="diff-quote-highlight">"we use AI"</span> — those can be copied. What's different is the <span class="diff-quote-highlight">full operating system</span> behind every project: qualified scoping, AI-native development with mandatory human review and QA, a real delivery process, and a team that owns the client relationship end-to-end — not a freelancer marketplace and not a faceless agency."
+        </p>
+      </div>
+
+      <div class="diff-pillars-grid">
+        <div class="diff-pillar">
+          <h4>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--coral);" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            Studio-Level Ownership
+          </h4>
+          <p>Site2Success owns scoping, architecture, customer relationships, quality control, and commercial delivery. You deal with a professional partner, not unmanaged individuals.</p>
+        </div>
+
+        <div class="diff-pillar">
+          <h4>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--coral);" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            AI-Native + Human QA
+          </h4>
+          <p>We use AI-native workflows to shorten build cycles while enforcing mandatory human review on every single feature. No unreviewed AI output ever ships to production.</p>
+        </div>
+
+        <div class="diff-pillar">
+          <h4>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--coral);" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+            University-Powered Talent
+          </h4>
+          <p>We deploy trained university builders into real client projects, giving founders accessible software development while giving the next generation real-world product experience.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. PROOF & CASE STUDIES (Exact Section 7 Template) -->
+  <section class="section" id="proof" style="padding: 6rem 0;" aria-labelledby="proof-heading">
+    <div class="section-header">
+      <span class="section-label-tag">Trust &amp; Results</span>
+      <h2 class="section-title" id="proof-heading">Selected Case Studies</h2>
+      <p class="section-subtitle">Standardized project breakdowns showing problem, scope, turnaround time, and measurable results.</p>
+    </div>
+
+    <!-- Featured Case Study 1: Logeshwaran J (Exact Section 7 format) -->
+    <div class="proof-case-study">
+      <div class="case-study-header">
+        <div class="case-study-title-wrap">
+          <span style="font-size:0.85rem; color:var(--coral); font-weight:700; text-transform:uppercase; letter-spacing:0.06em;">Featured Outcome</span>
+          <h3>Logeshwaran J — Portfolio &amp; Research Admin Portal</h3>
+        </div>
+        <span class="case-study-badge">Live Production System</span>
+      </div>
+
+      <div class="template-fields-grid">
+        <div class="template-field-item">
+          <span class="template-field-label">1. Client Type</span>
+          <span class="template-field-value">Independent Researcher, Data Scientist &amp; Developer</span>
+        </div>
+
+        <div class="template-field-item">
+          <span class="template-field-label">2. Problem</span>
+          <span class="template-field-value">Needed an authoritative platform to showcase published research papers, blogs, and experience, with gated private access and self-serve editing without developer dependencies.</span>
+        </div>
+
+        <div class="template-field-item">
+          <span class="template-field-label">3. Starting Point</span>
+          <span class="template-field-value">Fragmented PDFs, scattered LinkedIn articles, and no centralized authenticated web portal.</span>
+        </div>
+
+        <div class="template-field-item">
+          <span class="template-field-label">4. Scope</span>
+          <span class="template-field-value">Responsive portfolio + authenticated admin portal + research paper repository + interactive blog commenting + visitor chat system + LinkedIn cross-posting.</span>
+        </div>
+
+        <div class="template-field-item">
+          <span class="template-field-label">5. Build Time</span>
+          <span class="template-field-value">2 Weeks from technical scoping to live deployment.</span>
+        </div>
+
+        <div class="template-field-item">
+          <span class="template-field-label">6. Technology Category</span>
+          <span class="template-field-value">Full-Stack Web Application (Node.js, REST APIs, Session Auth, CRUD Management System).</span>
+        </div>
+
+        <div class="template-field-item" style="grid-column: span 2;">
+          <span class="template-field-label">7. Result</span>
+          <span class="template-field-value">Successfully deployed at <strong>logeshwaranj.com</strong> with 100% self-serve content control, automated publishing, and direct visitor contact pipeline.</span>
+        </div>
+
+        <div class="case-study-quote-box">
+          <span class="template-field-label">8. Testimonial</span>
+          <blockquote>"Site2Success delivered a complete, polished platform with an admin portal that gives me total control over my research and publications. Fast turnaround, zero hassle, and exceptional quality."</blockquote>
+          <cite>— Logeshwaran J, Client</cite>
+        </div>
+
+        <div class="template-field-item" style="grid-column: span 2; margin-top: 1rem;">
+          <span class="template-field-label">9. Clear CTA</span>
+          <a href="project-detail.html" class="btn btn-primary" style="padding:0.75rem 1.5rem; font-size:0.9rem;">
+            View Full Case Study &amp; Live Demo &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top: 3rem;">
+      <a href="projects.html" class="btn btn-secondary btn-large">
+        Explore All Portfolio Projects
+      </a>
+    </div>
+  </section>
+
+  <!-- 7. CHRIST ORIGIN & ECOSYSTEM SECTION (Credibility, Not Identity) -->
+  <section class="section" id="origin-credibility" style="background:var(--white-secondary); padding: 5rem 0;" aria-labelledby="origin-heading">
+    <div class="origin-box">
+      <div class="origin-badge">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+        Our Origin &amp; Operating Laboratory
+      </div>
+      <h3 id="origin-heading">Started at CHRIST University. Built for Ideas Everywhere.</h3>
+      <p>
+        Site2Success started within the CHRIST University student builder ecosystem as our first proof point and operating laboratory. That environment gave us the blueprint to recruit ambitious student builders, train them in AI-native development workflows, and deliver real software projects for real clients.
+      </p>
+      <p>
+        Today, Site2Success is building a repeatable, university-powered software network — CHRIST is chapter one; more campus chapters follow as our delivery operating system scales.
+      </p>
+      <p class="origin-note">
+        Note: Site2Success is an independent university-powered software studio founded by Rahul R and L Dhanush Raj. CHRIST University is our founding ecosystem and operating laboratory, not a commercial sponsor or institutional endorser unless specifically designated.
+      </p>
+    </div>
+  </section>
+
+  <!-- 8. FINAL CTA SECTION (Exact Section 4 Structure) -->
+  <section class="home-conversion-cta" aria-labelledby="cta-heading">
     <div class="container">
-      <div class="services-showcase">
-        <div class="service-showcase-card" onclick="window.location.href='services.html'" role="button" tabindex="0" aria-label="AI & Automation Services">
-          <img src="../assets/images/service-web-dev.jpg" alt="Site2Success AI and Automation Services" loading="lazy">
-          <div class="service-overlay">
-            <h3>AI &amp; Automation</h3>
-            <p>Intelligent AI agents, WhatsApp bots, and end-to-end workflow automation — deployed for your Indian business in days, not months.</p>
-          </div>
-        </div>
-        <div class="service-showcase-card" onclick="window.location.href='automation.html'" role="button" tabindex="0" aria-label="KIRA AI Automation">
-          <img src="../assets/images/service-automation.jpg" alt="Site2Success KIRA AI Automation for Indian SMBs" loading="lazy">
-          <div class="service-overlay">
-            <h3>KIRA — AI Agent</h3>
-            <p>Intelligent AI agents and chatbots that automate workflows and customer interactions for Indian SMBs.</p>
-          </div>
-        </div>
-        <div class="service-showcase-card" onclick="window.location.href='internships.html'" role="button" tabindex="0" aria-label="Tech Internship Programs">
-          <img src="../assets/images/service-internship.jpg" alt="Site2Success Internship Programs Bengaluru" loading="lazy">
-          <div class="service-overlay">
-            <h3>Internship Programs</h3>
-            <p>Real-world AI and tech training programs — build skills on live projects with industry mentors.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Feature: Agentic AI -->
-  <section class="features-images-section" aria-labelledby="agentic-heading">
-    <div class="feature-image-grid">
-      <div class="feature-image-content">
-        <span class="section-label">Agentic AI</span>
-        <h2 id="agentic-heading">Agentic AI &amp; Autonomous Workflows</h2>
-        <p>We deploy autonomous AI agents that think, decide, and act on your behalf — from intelligent lead qualification and 24/7 customer handling to multi-step workflow orchestration. Built for Indian SMBs ready to run on autopilot.</p>
-        <a href="services.html" class="btn btn-primary" id="agentic-services-cta">
-          Explore Agentic AI Services
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+      <h2 id="cta-heading">Have an idea? Let's turn it into working software.</h2>
+      <p>Whether you need an MVP, research tool, or custom business application, our university studio delivers production-grade software quickly and affordably.</p>
+      <div class="home-conversion-buttons">
+        <a href="contact.html" class="btn btn-primary btn-large">
+          Tell Us What You Want to Build
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </a>
-      </div>
-      <div class="feature-image-wrapper">
-        <div class="image-accent image-accent-1"></div>
-        <img src="../assets/images/service-automation.jpg" alt="Agentic AI and Autonomous Workflow Automation by Site2Success" loading="lazy">
-        <div class="image-accent image-accent-2"></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Feature: Dashboard -->
-  <section class="section" style="background:linear-gradient(180deg,var(--white-secondary) 0%,var(--white-primary) 100%);" aria-labelledby="dashboard-heading">
-    <div class="feature-image-grid" style="direction:rtl;">
-      <div class="feature-image-content" style="direction:ltr;">
-        <span class="section-label">Business Intelligence</span>
-        <h2 id="dashboard-heading">Custom Dashboards &amp; ERP Systems</h2>
-        <p>Transform your business data into actionable insights. Our custom dashboard and ERP solutions monitor KPIs in real-time, automate reporting, and drive data-driven decisions — built for scalability and ease of use for Indian enterprises.</p>
-        <a href="services.html" class="btn btn-primary" id="dashboard-services-cta">
-          View Solutions
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
+        <a href="services.html" class="btn btn-secondary btn-large">
+          View Services &amp; Packages
         </a>
       </div>
-      <div class="feature-image-wrapper" style="direction:ltr;">
-        <div class="image-accent image-accent-1"></div>
-        <img src="../assets/images/service-dashboard.jpg" alt="Dashboard and ERP System by Site2Success Bengaluru" loading="lazy">
-        <div class="image-accent image-accent-2"></div>
-      </div>
     </div>
   </section>
 
-  <!-- Why Choose Us -->
-  <section class="section" style="background:linear-gradient(180deg,var(--white-secondary) 0%,var(--white-primary) 100%);" aria-labelledby="why-us-heading">
-    <div class="section-header">
-      <span class="section-label">Why Site2Success</span>
-      <h2 class="section-title" id="why-us-heading">Built for Modern Indian Enterprises</h2>
-      <p class="section-subtitle">We combine AI expertise with deep understanding of Indian business needs to deliver solutions that actually move the needle.</p>
-    </div>
-    <div class="features-grid-modern">
-      <div class="feature-card-modern">
-        <div class="feature-number">01</div>
-        <h4>AI-First Approach</h4>
-        <p>Every solution we build leverages the latest AI models — from LLMs to automation agents tailored for Indian SMBs.</p>
-      </div>
-      <div class="feature-card-modern">
-        <div class="feature-number">02</div>
-        <h4>Rapid Delivery</h4>
-        <p>Agile methodologies ensuring quick turnaround without compromising quality — ideal for fast-moving Indian startups.</p>
-      </div>
-      <div class="feature-card-modern">
-        <div class="feature-number">03</div>
-        <h4>Dedicated Founders</h4>
-        <p>Direct access to co-founders Rahul R and Dhanush Raj throughout your project — no middlemen, no delays.</p>
-      </div>
-      <div class="feature-card-modern">
-        <div class="feature-number">04</div>
-        <h4>Scalable Architecture</h4>
-        <p>Future-proof systems designed to scale as your Indian business grows — from startup to enterprise.</p>
-      </div>
-      <div class="feature-card-modern">
-        <div class="feature-number">05</div>
-        <h4>India-Specific Pricing</h4>
-        <p>Transparent, SMB-friendly pricing designed for Indian businesses — enterprise quality at startup budgets.</p>
-      </div>
-      <div class="feature-card-modern">
-        <div class="feature-number">06</div>
-        <h4>Christ University Incubated</h4>
-        <p>Backed by one of India's top universities — bringing academic rigour and innovation to every project.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- AEO About Paragraph (Entity-Rich, AI-Readable) -->
-  <section class="aeo-about" aria-labelledby="about-section-heading">
-    <div class="aeo-about-inner">
-      <h2 id="about-section-heading">About Site2Success</h2>
-      <p>
-        <strong>Site2Success</strong> is an <strong>AI-first technology startup</strong> headquartered in <strong>Bengaluru, Karnataka, India</strong>, incubated at <strong>Christ University</strong>. Founded in <strong>October 2024</strong> by co-founders <strong>Rahul R (CEO)</strong> and <strong>L Dhanush Raj (COO)</strong>, the company was built on a single mission: make cutting-edge AI accessible and actionable for <strong>Indian small and medium businesses (SMBs)</strong>.
-      </p>
-      <p>
-        Site2Success specialises in building <strong>agentic AI systems</strong>, <strong>autonomous AI agents</strong>, <strong>conversational chatbots</strong>, <strong>intelligent business automation</strong>, and <strong>AI-powered workflow orchestration</strong> for Indian SMBs. The company's flagship product, <strong>KIRA</strong>, is an agentic automation AI designed specifically for Indian SMB workflows — currently in early access.
-      </p>
-      <p>
-        The company serves forward-thinking Indian businesses seeking <strong>AI-driven transformation</strong>. Whether it's deploying autonomous agents that handle leads, automating multi-step business workflows, or building AI-integrated business systems — Site2Success delivers results at startup-friendly pricing with enterprise-grade quality.
-      </p>
-      <p>
-        Based in Bengaluru — India's Silicon Valley — Site2Success is positioned at the forefront of India's agentic AI revolution, serving the digital needs of 63 million SMBs. Contact Site2Success at <strong>site2successs@gmail.com</strong> or call <strong>+91 6361446768</strong>.
-      </p>
-    </div>
-  </section>
-
-  <!-- Free AI Demo CTA -->
-  <section class="demo-cta-banner" aria-labelledby="demo-cta-heading">
-    <h2 id="demo-cta-heading">Ready to Supercharge Your Business with AI?</h2>
-    <p>Get a free, personalised AI demo from our founders — no obligations, just possibilities.</p>
-    <div class="demo-cta-buttons">
-      <a href="https://wa.me/916361446768?text=Hi%20Site2Success%2C%20I%27d%20like%20a%20free%20AI%20demo"
-         class="btn-whatsapp" id="whatsapp-demo-btn" rel="noopener" target="_blank" aria-label="Get free AI demo on WhatsApp">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        Get Free AI Demo on WhatsApp
-      </a>
-      <a href="contact.html" class="btn-demo-alt" id="contact-demo-btn">
-        Contact Us
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
-        </svg>
-      </a>
-    </div>
-  </section>
-
-  <!-- FAQ Section -->
-  <section class="section" style="background:var(--white-secondary);" aria-labelledby="faq-heading">
-    <div class="section-header">
-      <span class="section-label">FAQ</span>
-      <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
-    </div>
-    <div style="max-width:800px;margin:0 auto;padding:0 2rem;">
-      <details style="background:#fff;border-radius:16px;padding:1.5rem;margin-bottom:1rem;border:1px solid rgba(0,0,0,0.05);box-shadow:0 2px 12px rgba(0,0,0,0.03);">
-        <summary style="font-weight:700;font-size:1.0625rem;cursor:pointer;color:var(--navy-dark);">What is Site2Success?</summary>
-        <p style="margin-top:1rem;color:var(--gray-500);line-height:1.7;">Site2Success is an AI-first tech startup based in Bengaluru, India, incubated at Christ University. We build AI agents, chatbots, and automation solutions for Indian SMBs.</p>
-      </details>
-      <details style="background:#fff;border-radius:16px;padding:1.5rem;margin-bottom:1rem;border:1px solid rgba(0,0,0,0.05);box-shadow:0 2px 12px rgba(0,0,0,0.03);">
-        <summary style="font-weight:700;font-size:1.0625rem;cursor:pointer;color:var(--navy-dark);">What services does Site2Success offer?</summary>
-        <p style="margin-top:1rem;color:var(--gray-500);line-height:1.7;">Site2Success specialises in agentic AI agents, WhatsApp AI bots, business workflow automation, CRM automation, lead qualification AI, and autonomous agentic systems — all tailored for Indian small and medium businesses.</p>
-      </details>
-      <details style="background:#fff;border-radius:16px;padding:1.5rem;margin-bottom:1rem;border:1px solid rgba(0,0,0,0.05);box-shadow:0 2px 12px rgba(0,0,0,0.03);">
-        <summary style="font-weight:700;font-size:1.0625rem;cursor:pointer;color:var(--navy-dark);">Where is Site2Success located?</summary>
-        <p style="margin-top:1rem;color:var(--gray-500);line-height:1.7;">Site2Success is headquartered in Bengaluru, Karnataka, India, and is incubated at Christ University. You can reach us at site2successs@gmail.com or +91 6361446768.</p>
-      </details>
-      <details style="background:#fff;border-radius:16px;padding:1.5rem;margin-bottom:1rem;border:1px solid rgba(0,0,0,0.05);box-shadow:0 2px 12px rgba(0,0,0,0.03);">
-        <summary style="font-weight:700;font-size:1.0625rem;cursor:pointer;color:var(--navy-dark);">How can I get a free AI demo from Site2Success?</summary>
-        <p style="margin-top:1rem;color:var(--gray-500);line-height:1.7;">Simply click "Get a Free AI Demo" on our homepage or reach us on WhatsApp at +91 6361446768. Our founders will personally walk you through how AI can transform your business.</p>
-      </details>
-    </div>
-  </section>
-
-  <!-- FOOTER with NAP -->
+  <!-- FOOTER (Includes Section 12 Legal Note & NAP) -->
   <footer class="site-footer" role="contentinfo">
     <div class="footer-grid">
       <div class="footer-brand">
-        <img src="../assets/images/logo.png" alt="Site2Success Logo" loading="lazy" style="height:54px;width:auto;border-radius:12px;background:#ffffff;padding:6px 14px;box-shadow:0 4px 12px rgba(0,0,0,0.15);margin-bottom:1.25rem;opacity:1 !important;display:inline-block;">
-        <p>AI-first tech startup building intelligent agents, chatbots, and automation for Indian SMBs.</p>
+        <img src="../assets/images/logo.png" alt="Site2Success Logo" loading="lazy">
+        <p>University-powered, AI-first software studio turning early-stage ideas and practical software requirements into working products.</p>
+        <p style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-top:0.75rem;">"Built by the next generation. Accelerated by AI."</p>
       </div>
+
       <div class="footer-col">
-        <h4>Pages</h4>
+        <h4>Studio</h4>
         <a href="home.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="automation.html">KIRA AI</a>
-        <a href="internships.html">Internships</a>
-        <a href="projects.html">Projects</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
+        <a href="services.html">Services &amp; Packages</a>
+        <a href="projects.html">Projects Portfolio</a>
+        <a href="about.html">About &amp; Operating Model</a>
+        <a href="internships.html">Student Builders</a>
+        <a href="contact.html">Request a Consultation</a>
       </div>
+
       <div class="footer-col">
-        <h4>Services</h4>
-        <a href="services.html">Agentic AI Agents</a>
-        <a href="services.html">WhatsApp AI Bot</a>
-        <a href="services.html">Workflow Automation</a>
-        <a href="services.html">CRM Automation</a>
-        <a href="services.html">AI Chatbots</a>
-        <a href="services.html">Lead Qualification AI</a>
+        <h4>What We Build</h4>
+        <a href="services.html">Websites &amp; Web Apps</a>
+        <a href="services.html">Working MVPs</a>
+        <a href="services.html">AI Applications</a>
+        <a href="services.html">Custom Dashboards</a>
+        <a href="services.html">Internal Tools</a>
+        <a href="services.html">Research Prototypes</a>
       </div>
+
       <div class="footer-col">
-        <h4>Contact (NAP)</h4>
+        <h4>Studio Contact</h4>
         <div class="footer-nap" itemscope itemtype="https://schema.org/LocalBusiness">
-          <strong itemprop="name">Site2Success</strong><br>
+          <strong itemprop="name">Site2Success Studio</strong><br>
           <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
             <span itemprop="addressLocality">Bengaluru</span>,
             <span itemprop="addressRegion">Karnataka</span>,
             <span itemprop="addressCountry">India</span>
           </span><br>
-          <a href="tel:+916361446768" itemprop="telephone" style="color:rgba(255,255,255,0.5);text-decoration:none;">+91 6361446768</a><br>
-          <a href="mailto:site2successs@gmail.com" itemprop="email" style="color:rgba(255,255,255,0.5);text-decoration:none;">site2successs@gmail.com</a>
+          <a href="tel:+916361446768" itemprop="telephone">+91 6361446768</a><br>
+          <a href="mailto:site2successs@gmail.com" itemprop="email">site2successs@gmail.com</a>
         </div>
       </div>
     </div>
+
+    <!-- Section 12 Legal & Scope Note -->
+    <div class="legal-scope-disclaimer">
+      <strong>Legal &amp; Operating Scope Note:</strong> This rebuild is based on a strategic operating plan, not legal, tax, employment, or university-policy advice. Before finalizing client contracts, stipend terms, IP ownership language, data handling policy, or any CHRIST University branding/endorsement claims, appropriate legal and institutional review should be obtained separately — this should not be assumed to be covered by the website content itself.
+    </div>
+
     <div class="footer-bottom">
-      <p>&copy; 2024–2025 Site2Success. All rights reserved.</p>
+      <p>&copy; 2024–2026 Site2Success. All rights reserved. University-Powered AI Software Studio.</p>
       <div class="footer-socials">
         <a href="https://linkedin.com/company/site2success" rel="noopener" target="_blank" aria-label="Site2Success on LinkedIn">LinkedIn</a>
         <a href="https://github.com/site2success" rel="noopener" target="_blank" aria-label="Site2Success on GitHub">GitHub</a>
@@ -531,56 +775,6 @@
   })();
   </script>
 
-  <!-- FAQ JSON-LD Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "What is Site2Success?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Site2Success is an AI-first tech startup based in Bengaluru, India, incubated at Christ University. We build AI agents, chatbots, and automation solutions for Indian SMBs."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What services does Site2Success offer?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Site2Success offers agentic AI agents, WhatsApp AI automation, conversational chatbots, CRM automation, lead qualification AI, and autonomous workflow systems — all built specifically for Indian small and medium businesses."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What is agentic AI and how does Site2Success use it?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Agentic AI refers to autonomous AI systems that can reason, plan, and take multi-step actions independently. Site2Success builds agentic AI solutions that handle customer interactions, qualify leads, automate follow-ups, and orchestrate business workflows — without human intervention."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Where is Site2Success located?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Site2Success is headquartered in Bengaluru, Karnataka, India, and is incubated at Christ University."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How can I get a free AI demo from Site2Success?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Click 'Get a Free AI Demo' on our homepage or WhatsApp us at +91 6361446768. Our founders will personally walk you through how AI can transform your business."
-        }
-      }
-    ]
-  }
-  </script>
-
   <!-- Organization Schema -->
   <script type="application/ld+json">
   {
@@ -589,88 +783,18 @@
     "name": "Site2Success",
     "url": "https://site2success.online",
     "logo": "https://site2success.online/assets/images/logo.png",
-    "description": "AI-first tech startup building agents, chatbots and automation for Indian SMBs. Incubated at Christ University, Bengaluru.",
-    "foundingDate": "2024-10",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Bengaluru",
-      "addressRegion": "Karnataka",
-      "addressCountry": "IN"
-    },
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "telephone": "+91-6361446768",
-      "contactType": "customer service",
-      "email": "site2successs@gmail.com"
-    },
-    "sameAs": [
-      "https://linkedin.com/company/site2success",
-      "https://github.com/site2success",
-      "https://instagram.com/site2success"
-    ]
-  }
-  </script>
-
-  <!-- WebSite + SearchAction Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Site2Success",
-    "url": "https://site2success.online",
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": "https://site2success.online/pages/services.html?q={search_term_string}"
-      },
-      "query-input": "required name=search_term_string"
-    }
-  }
-  </script>
-
-  <!-- BreadcrumbList Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": "https://site2success.online/pages/home.html"
-      }
-    ]
-  }
-  </script>
-
-  <!-- Organization Schema -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Site2Success",
-    "url": "https://site2success.online",
-    "logo": "https://site2success.online/assets/images/logo.png",
-    "description": "AI-first agentic tech startup building autonomous AI agents, chatbots and automation for Indian SMBs. Incubated at Christ University, Bengaluru.",
+    "description": "University-powered AI software studio combining AI-native development with trained student builders to turn software ideas into real products.",
     "foundingDate": "2024-10",
     "founders": [
       {
         "@type": "Person",
-        "name": "L Dhanush Raj",
-        "jobTitle": "Co-Founder & COO",
-        "sameAs": [
-          "https://www.linkedin.com/in/ldhanushraj"
-        ]
+        "name": "Rahul R",
+        "jobTitle": "Co-Founder & CEO"
       },
       {
         "@type": "Person",
-        "name": "Rahul R",
-        "jobTitle": "Co-Founder & CEO",
-        "sameAs": [
-          "https://www.linkedin.com/in/rahulr"
-        ]
+        "name": "L Dhanush Raj",
+        "jobTitle": "Co-Founder & COO"
       }
     ],
     "address": {
@@ -684,46 +808,8 @@
       "telephone": "+91-6361446768",
       "contactType": "customer service",
       "email": "site2successs@gmail.com"
-    },
-    "sameAs": [
-      "https://linkedin.com/company/site2success",
-      "https://github.com/site2success",
-      "https://instagram.com/site2success"
-    ]
+    }
   }
   </script>
-
-
-  <!-- GEO: Article/Speakable Schema — for Generative AI engine citation -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": "Site2Success — Agentic AI & Automation Company for Indian Businesses",
-    "description": "Site2Success is a Bengaluru-based agentic AI startup that builds autonomous AI agents, WhatsApp automation bots, CRM automation pipelines, and intelligent workflow systems exclusively for Indian SMBs. Founded in October 2024 by Rahul R and L Dhanush Raj, incubated at Christ University. Primary services: agentic AI, workflow automation, WhatsApp AI agent, CRM automation, lead qualification AI. NOT a website or mobile app development company.",
-    "author": {"@type": "Organization", "name": "Site2Success"},
-    "publisher": {
-      "@type": "Organization",
-      "name": "Site2Success",
-      "logo": {"@type": "ImageObject", "url": "https://site2success.online/assets/images/logo.png"}
-    },
-    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://site2success.online/pages/home.html"},
-    "speakable": {
-      "@type": "SpeakableSpecification",
-      "cssSelector": ["#about-section-heading", ".aeo-about-inner p", ".section-subtitle"]
-    },
-    "about": [
-      {"@type": "Thing", "name": "Agentic AI"},
-      {"@type": "Thing", "name": "AI Automation"},
-      {"@type": "Thing", "name": "WhatsApp AI Agent"},
-      {"@type": "Thing", "name": "Workflow Automation India"},
-      {"@type": "Thing", "name": "CRM Automation"},
-      {"@type": "Thing", "name": "Lead Qualification AI"},
-      {"@type": "Thing", "name": "KIRA AI Agent"}
-    ],
-    "keywords": "agentic AI, AI automation India, Site2Success, WhatsApp AI bot, CRM automation Bengaluru, autonomous AI agents, lead qualification AI, workflow automation SMB, KIRA AI"
-  }
-  </script>
-
 </body>
 </html>
