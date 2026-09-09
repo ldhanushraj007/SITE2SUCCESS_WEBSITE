@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services &amp; Packages Ladder | Site2Success Software Studio</title>
     <meta name="description" content="Explore Site2Success software packages and delivery operating system: Starter, MVP, Research Prototype, Custom Product, and Maintenance. University-powered AI studio.">
-    <meta name="keywords" content="Site2Success packages, MVP pricing, software studio services, research prototypes, university-powered studio, AI-native development">
+    <meta name="keywords" content="Site2Success packages, MVP sprint, software studio services, research prototypes, university-powered studio, AI-native development">
     <link rel="canonical" href="https://site2success.online/pages/services.html">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="hUuqrSM6DO2-IPt-vKFLi6_DoScVl3sxZFX5Q328wno">
@@ -15,7 +15,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://site2success.online/pages/services.html">
     <meta property="og:title" content="Services &amp; Packages Ladder | Site2Success Software Studio">
-    <meta property="og:description" content="Turn your idea into working software with Site2Success's packages ladder: Starter, MVP, Research Prototype, Custom Product, and Maintenance.">
+    <meta property="og:description" content="Turn your idea into working software with Site2Success's structured packages ladder: Starter, MVP, Research Prototype, Custom Product, and Maintenance.">
     <meta property="og:image" content="https://site2success.online/assets/images/logo.png">
 
     <!-- Twitter -->
@@ -28,7 +28,6 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://images.unsplash.com">
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
@@ -41,660 +40,182 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 
-    <!-- Services Page Specific Styles -->
+    <!-- Services Page Styles -->
     <style>
-        /* Services Hero */
-        .services-hero {
-            min-height: 70vh;
-            display: flex;
-            align-items: center;
-            padding: 8rem 0 4rem;
-            background: linear-gradient(135deg, var(--white-primary) 0%, rgba(255, 107, 74, 0.02) 50%, var(--white-secondary) 100%);
-            position: relative;
-            overflow: hidden;
+        :root {
+            --studio-bg-light: #fafbfc;
+            --studio-card-border: rgba(0, 0, 0, 0.07);
+            --studio-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            --studio-shadow-hover: 0 20px 45px rgba(255, 107, 74, 0.1);
         }
 
-        .services-hero::before {
-            content: '';
-            position: absolute;
-            top: -10%;
-            right: -5%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(255, 107, 74, 0.04) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .services-hero-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: 1.2fr 1fr;
-            gap: 4rem;
-            align-items: center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .services-hero-content {
-            max-width: 600px;
-        }
-
-        .services-hero-label {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            background: rgba(255, 107, 74, 0.08);
-            border: 1px solid rgba(255, 107, 74, 0.15);
-            border-radius: 100px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: var(--coral);
-            margin-bottom: 1.5rem;
-        }
-
-        .services-hero-title {
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            font-weight: 800;
-            line-height: 1.1;
-            color: var(--navy-dark);
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-        }
-
-        .services-hero-title span {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .services-hero-description {
-            font-size: 1.125rem;
-            color: var(--gray-500);
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .services-hero-stats {
-            display: flex;
-            gap: 2.5rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(0, 0, 0, 0.06);
-        }
-
-        .hero-stat {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .hero-stat-number {
-            font-family: var(--font-display);
-            font-size: 2rem;
-            font-weight: 800;
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            line-height: 1;
-        }
-
-        .hero-stat-label {
-            font-size: 0.875rem;
-            color: var(--gray-500);
-            margin-top: 0.25rem;
-        }
-
-        .services-hero-visual {
-            position: relative;
-            height: 500px;
-        }
-
-        .hero-image-main {
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 90%;
-            height: 80%;
-            object-fit: cover;
-            border-radius: 24px;
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
-            z-index: 2;
-        }
-
-        .hero-image-accent {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60%;
-            height: 50%;
-            object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            z-index: 3;
-            border: 4px solid white;
-        }
-
-        .hero-visual-decoration {
-            position: absolute;
-            top: 10%;
-            left: 10%;
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-primary);
-            border-radius: 20px;
-            opacity: 0.1;
-            transform: rotate(15deg);
-            z-index: 1;
-        }
-
-        /* ===== SCROLL-BASED SERVICES SECTION ===== */
-        .services-scroll-section {
-            position: relative;
-        }
-
-        .services-scroll-container {
-            position: relative;
-            height: 600vh;
-        }
-
-        .services-fixed-wrapper {
-            position: sticky;
-            top: 0;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-            background: var(--white-primary);
-        }
-
-        .services-scroll-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-            max-width: 1400px;
-            width: 100%;
-            padding: 0 4rem;
-            align-items: center;
-        }
-
-        .service-image-container {
-            position: relative;
-            height: 500px;
-            border-radius: 32px;
-            overflow: hidden;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.08);
-        }
-
-        .service-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0;
-            transform: scale(1.1);
-            transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 1s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .service-image.active {
-            opacity: 1;
-            transform: scale(1);
-        }
-
-        .service-image.prev {
-            opacity: 0;
-            transform: scale(0.95);
-        }
-
-        .service-content-container {
-            position: relative;
-            height: 400px;
-            display: flex;
-            align-items: center;
-        }
-
-        .service-content {
-            position: absolute;
-            width: 100%;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            pointer-events: none;
-        }
-
-        .service-content.active {
-            opacity: 1;
-            transform: translateY(0);
-            pointer-events: auto;
-        }
-
-        .service-content.prev {
-            opacity: 0;
-            transform: translateY(-30px);
-        }
-
-        .service-number {
-            font-family: var(--font-display);
-            font-size: 0.875rem;
-            font-weight: 600;
-            color: var(--coral);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
-        }
-
-        .service-content h2 {
-            font-size: clamp(2rem, 3vw, 2.75rem);
-            font-weight: 800;
-            color: var(--navy-dark);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            letter-spacing: -0.02em;
-        }
-
-        .service-content p {
-            color: var(--gray-500);
-            font-size: 1.125rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-        }
-
-        .service-tags {
-            display: flex;
-            gap: 0.75rem;
-            flex-wrap: wrap;
-        }
-
-        .service-tag {
-            padding: 0.5rem 1rem;
-            background: rgba(255, 107, 74, 0.06);
-            border-radius: 100px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: var(--coral);
-        }
-
-        .scroll-progress {
-            position: absolute;
-            right: 2rem;
-            top: 50%;
-            transform: translateY(-50%);
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .progress-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--gray-200);
-            transition: all 0.4s ease;
-        }
-
-        .progress-dot.active {
-            background: var(--coral);
-            transform: scale(1.5);
-        }
-
-        /* Section Header - Centered */
-        .section-header-center {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 6rem 2rem 4rem;
-        }
-
-        .section-header-center .section-label {
-            margin-bottom: 1rem;
-        }
-
-        .section-header-center h2 {
-            font-size: clamp(2rem, 3vw, 2.75rem);
-            font-weight: 800;
-            color: var(--navy-dark);
-            margin-bottom: 1rem;
-            letter-spacing: -0.02em;
-        }
-
-        .section-header-center p {
-            color: var(--gray-500);
-            font-size: 1.125rem;
-            line-height: 1.7;
-        }
-
-        /* Why Choose Us Section */
-        .why-us-section {
-            padding: 6rem 0;
-            background: linear-gradient(180deg, var(--white-secondary) 0%, var(--white-primary) 100%);
-        }
-
-        .features-grid-modern {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        .feature-card-modern {
-            background: var(--white-primary);
-            border-radius: 24px;
-            padding: 2.5rem;
-            border: 1px solid rgba(0, 0, 0, 0.04);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card-modern::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.4s ease;
-        }
-
-        .feature-card-modern:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
-        }
-
-        .feature-card-modern:hover::before {
-            transform: scaleX(1);
-        }
-
-        .feature-number {
-            font-family: var(--font-display);
-            font-size: 3rem;
-            font-weight: 800;
-            color: rgba(255, 107, 74, 0.1);
-            line-height: 1;
-            margin-bottom: 1rem;
-        }
-
-        .feature-card-modern h4 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--navy-dark);
-            margin-bottom: 0.75rem;
-        }
-
-        .feature-card-modern p {
-            color: var(--gray-500);
-            font-size: 0.9375rem;
-            line-height: 1.7;
-        }
-
-        /* Process Section */
-        .process-section {
-            padding: 6rem 0;
-            background: linear-gradient(180deg, var(--white-primary) 0%, var(--white-secondary) 100%);
-        }
-
-        .process-timeline {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            position: relative;
-        }
-
-        .process-timeline::before {
-            content: '';
-            position: absolute;
-            top: 40px;
-            left: 10%;
-            right: 10%;
-            height: 2px;
-            background: linear-gradient(90deg, var(--coral), var(--orange), var(--amber));
-            opacity: 0.2;
-        }
-
-        .process-step-modern {
-            text-align: center;
-            flex: 1;
-            position: relative;
-            z-index: 1;
-        }
-
-        .step-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--white-primary);
-            border: 2px solid rgba(255, 107, 74, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            color: var(--coral);
-            font-weight: 700;
-            font-size: 1.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-            transition: all 0.3s ease;
-        }
-
-        .process-step-modern:hover .step-icon {
-            background: var(--gradient-primary);
-            color: white;
-            border-color: transparent;
-            transform: scale(1.1);
-        }
-
-        .process-step-modern h4 {
-            font-size: 1.125rem;
-            font-weight: 700;
-            color: var(--navy-dark);
-            margin-bottom: 0.5rem;
-        }
-
-        .process-step-modern p {
-            font-size: 0.9375rem;
-            color: var(--gray-500);
-            max-width: 200px;
-            margin: 0 auto;
-        }
-
-        /* CTA Section */
-        .cta-section-modern {
-            padding: 6rem 2rem;
-            background: linear-gradient(135deg, rgba(255, 107, 74, 0.05), rgba(255, 138, 91, 0.03));
-            position: relative;
-            overflow: hidden;
-            margin: 4rem 2rem;
-            border-radius: 32px;
-            border: 1px solid rgba(255, 107, 74, 0.1);
-        }
-
-        .cta-section-modern::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(255, 107, 74, 0.08) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .cta-content {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .cta-content h2 {
-            font-size: clamp(2rem, 3vw, 2.75rem);
-            font-weight: 800;
-            color: var(--navy-dark);
-            margin-bottom: 1rem;
-        }
-
-        .cta-content p {
-            color: var(--gray-500);
-            font-size: 1.125rem;
-            margin-bottom: 2rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn-white {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 100px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn-white:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 107, 74, 0.3);
-        }
-
-        .btn-outline-white {
-            background: white;
-            color: var(--coral);
-            border: 2px solid rgba(255, 107, 74, 0.3);
-            padding: 1rem 2rem;
-            border-radius: 100px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            text-decoration: none;
-        }
-
-        .btn-outline-white:hover {
-            background: rgba(255, 107, 74, 0.05);
-            border-color: var(--coral);
-        }
-
-        /* Detailed Services Cards */
-        .services-detail { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
-        .service-category { margin-bottom: 4rem; }
-        .category-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 2rem; }
-        .category-dot { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
-        .category-dot.blue { background: #4A90D9; }
-        .category-dot.green { background: #28C840; }
-        .category-dot.coral { background: var(--coral); }
-        .category-header h2 { font-size: 1.5rem; font-weight: 800; color: var(--navy-dark); }
-        .category-header .count { font-size: 0.875rem; color: var(--gray-400); font-weight: 500; margin-left: 0.5rem; }
-        .service-cards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
-        .svc-card { background: white; border-radius: 16px; padding: 1.75rem; border: 1px solid rgba(0,0,0,0.06); transition: all 0.3s ease; cursor: pointer; }
-        .svc-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.08); border-color: rgba(255,107,74,0.15); }
-        .svc-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy-dark); margin-bottom: 0.6rem; }
-        .svc-card p { font-size: 0.9375rem; color: var(--gray-500); line-height: 1.65; }
-        @media (max-width: 1024px) { .service-cards-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 640px) { .service-cards-grid { grid-template-columns: 1fr; } }
-
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .services-hero-container { grid-template-columns: 1fr; gap: 3rem; }
-            .services-hero-visual { height: 400px; order: -1; }
-            .services-scroll-layout { grid-template-columns: 1fr; gap: 3rem; padding: 0 2rem; }
-            .service-image-container { height: 350px; order: -1; }
-            .service-content-container { height: 300px; text-align: center; }
-            .service-tags { justify-content: center; }
-            .features-grid-modern { grid-template-columns: repeat(2, 1fr); }
-            .process-timeline { flex-direction: column; gap: 3rem; }
-            .process-timeline::before { display: none; }
-            .scroll-progress { right: 1rem; gap: 0.75rem; }
-            .progress-dot { width: 6px; height: 6px; }
-        }
-
-        @media (max-width: 768px) {
-            .services-hero { padding: 6rem 0 3rem; }
-            .services-hero-stats { flex-direction: column; gap: 1.5rem; }
-            .features-grid-modern { grid-template-columns: 1fr; }
-            .service-image-container { height: 280px; border-radius: 24px; }
-        }
-
-        /* Packages Ladder Styles */
         /* ===== NAVBAR ===== */
         .navbar {
-            position: fixed; top: 20px; left: 50%;
+            position: fixed;
+            top: 20px;
+            left: 50%;
             transform: translateX(-50%);
-            width: calc(100% - 48px); max-width: 1200px;
+            width: calc(100% - 48px);
+            max-width: 1200px;
             z-index: 1000;
-            background: rgba(255,255,255,0.78);
+            background: rgba(255, 255, 255, 0.88);
             backdrop-filter: blur(20px) saturate(180%);
             -webkit-backdrop-filter: blur(20px) saturate(180%);
             background-image: linear-gradient(135deg, rgba(255,107,74,0.04) 0%, rgba(255,138,91,0.02) 50%, rgba(255,176,136,0.03) 100%);
-            border: 1px solid rgba(255,255,255,0.7);
+            border: 1px solid rgba(255, 255, 255, 0.7);
             border-radius: 100px;
-            box-shadow: 0 4px 30px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.9);
-            display: flex; align-items: center; justify-content: space-between;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             padding: 0.75rem 1.25rem;
-            transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
-        }
-        .navbar.scrolled { top: 12px; background: rgba(255,255,255,0.92); box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
-        .nav-logo { transition: transform 0.3s ease; }
-        .nav-logo:hover { transform: scale(1.02); }
-        .nav-item { position: relative; opacity: 0.85; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
-        .nav-item:hover { opacity: 1; background: rgba(255,107,74,0.06); color: var(--coral); }
-        .nav-item.active { opacity: 1; background: rgba(255,107,74,0.1); color: var(--coral); font-weight: 600; }
-        .nav-item::after { content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%) scaleX(0); width: 20px; height: 2px; background: linear-gradient(90deg,var(--coral),var(--orange)); border-radius: 2px; transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); }
-        .nav-item:hover::after, .nav-item.active::after { transform: translateX(-50%) scaleX(1); }
-        @media (max-width: 1024px) {
-            .navbar { width: calc(100% - 32px); top: 16px; padding: 0.6rem 1rem; }
-            .nav-links { position: fixed; top: 80px; left: 50%; transform: translateX(-50%) translateY(-20px); width: calc(100% - 48px); max-width: 400px; flex-direction: column; gap: 0.5rem; padding: 1.5rem; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-radius: 24px; border: 1px solid rgba(255,255,255,0.6); box-shadow: 0 8px 32px rgba(0,0,0,0.06); opacity: 0; visibility: hidden; pointer-events: none; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); z-index: 1000; }
-            .nav-links.mobile-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
-            .nav-item { width: 100%; text-align: center; padding: 0.875rem 1.25rem; border-radius: 12px; }
-            .nav-item::after { bottom: 8px; }
-            .menu-toggle { display: flex !important; }
-            .menu-toggle.active span:nth-child(1) { transform: translateY(7px) rotate(45deg) !important; }
-            .menu-toggle.active span:nth-child(2) { opacity: 0 !important; transform: scaleX(0) !important; }
-            .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg) !important; }
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        /* ===== HERO ===== */
+        .navbar.scrolled {
+            top: 12px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-logo {
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.02);
+        }
+
+        .nav-item {
+            position: relative;
+            opacity: 0.85;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-item:hover {
+            opacity: 1;
+            background: rgba(255, 107, 74, 0.06);
+            color: var(--coral);
+        }
+
+        .nav-item.active {
+            opacity: 1;
+            background: rgba(255, 107, 74, 0.1);
+            color: var(--coral);
+            font-weight: 600;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 20px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--coral), var(--orange));
+            border-radius: 2px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-item:hover::after,
+        .nav-item.active::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        @media (max-width: 1024px) {
+            .navbar {
+                width: calc(100% - 32px);
+                top: 16px;
+                padding: 0.6rem 1rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 50%;
+                transform: translateX(-50%) translateY(-20px);
+                width: calc(100% - 48px);
+                max-width: 400px;
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 1.5rem;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px) saturate(180%);
+                -webkit-backdrop-filter: blur(20px) saturate(180%);
+                border-radius: 24px;
+                border: 1px solid rgba(255, 255, 255, 0.6);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1000;
+            }
+
+            .nav-links.mobile-open {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                transform: translateX(-50%) translateY(0);
+            }
+
+            .nav-item {
+                width: 100%;
+                text-align: center;
+                padding: 0.875rem 1.25rem;
+                border-radius: 12px;
+            }
+
+            .nav-item::after {
+                bottom: 8px;
+            }
+
+            .menu-toggle {
+                display: flex !important;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg) !important;
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0 !important;
+                transform: scaleX(0) !important;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg) !important;
+            }
+        }
+
+        /* ===== SERVICES HERO ===== */
         .services-hero {
             min-height: 55vh;
             display: flex;
             align-items: center;
-            padding: 9rem 2rem 4rem;
-            background: linear-gradient(135deg, #ffffff 0%, rgba(255, 107, 74, 0.03) 50%, #fbf9f8 100%);
+            padding: 9.5rem 2rem 4.5rem;
+            background: radial-gradient(circle at 50% 20%, rgba(255, 107, 74, 0.05) 0%, transparent 60%),
+                        linear-gradient(180deg, #ffffff 0%, #fbf9f8 100%);
             position: relative;
             text-align: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.04);
         }
+
         .services-hero-container {
-            max-width: 900px;
+            max-width: 960px;
             margin: 0 auto;
             position: relative;
             z-index: 2;
         }
+
         .services-hero-label {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.45rem 1.1rem;
+            gap: 0.6rem;
+            padding: 0.5rem 1.25rem;
             background: rgba(255, 107, 74, 0.08);
             border: 1px solid rgba(255, 107, 74, 0.2);
             border-radius: 100px;
@@ -703,405 +224,927 @@
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--coral);
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
         }
+
         .services-hero-title {
-            font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+            font-size: clamp(2.4rem, 4.8vw, 3.8rem);
             font-weight: 800;
             line-height: 1.15;
             color: var(--navy-dark);
-            margin-bottom: 1.25rem;
-            letter-spacing: -0.02em;
+            margin-bottom: 1.35rem;
+            letter-spacing: -0.025em;
         }
+
         .services-hero-title span {
             background: var(--gradient-primary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+
         .services-hero-description {
             font-size: 1.15rem;
             color: var(--gray-500);
             line-height: 1.8;
             margin: 0 auto 2.5rem;
-            max-width: 750px;
+            max-width: 780px;
         }
+
         .services-hero-stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            flex-wrap: wrap;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            max-width: 860px;
+            margin: 0 auto;
             padding-top: 2rem;
             border-top: 1px solid rgba(0, 0, 0, 0.06);
         }
+
+        .hero-stat-card {
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 16px;
+            padding: 1.25rem 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            transition: transform 0.25s ease;
+        }
+
+        .hero-stat-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255, 107, 74, 0.2);
+        }
+
         .hero-stat-number {
             font-family: var(--font-display);
-            font-size: 1.75rem;
+            font-size: 1.85rem;
             font-weight: 800;
             color: var(--coral);
             line-height: 1;
             margin-bottom: 0.35rem;
         }
+
         .hero-stat-label {
             font-size: 0.85rem;
             color: var(--gray-500);
             font-weight: 600;
         }
 
+        @media (max-width: 768px) {
+            .services-hero-stats {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+        }
+
         /* ===== SECTION HEADER ===== */
         .section-header-center {
             text-align: center;
-            max-width: 800px;
-            margin: 0 auto 3rem;
+            max-width: 820px;
+            margin: 0 auto 3.5rem;
             padding: 0 1.5rem;
         }
+
         .section-label {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
             font-size: 0.8rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--coral);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.85rem;
+            background: rgba(255, 107, 74, 0.08);
+            padding: 0.35rem 0.9rem;
+            border-radius: 100px;
         }
+
         .section-header-center h2 {
-            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-size: clamp(2.1rem, 3.8vw, 2.9rem);
             font-weight: 800;
             color: var(--navy-dark);
             margin-bottom: 1rem;
-        }
-        .section-header-center p {
-            font-size: 1.05rem;
-            color: var(--gray-500);
-            line-height: 1.7;
+            letter-spacing: -0.02em;
         }
 
-        /* ===== SECTION 5: PRICING LADDER ===== */
-        .ladder-section {
-            scroll-margin-top: 110px;
-            padding: 5rem 1.5rem;
-            background: #fdfdfd;
+        .section-header-center p {
+            font-size: 1.08rem;
+            color: var(--gray-500);
+            line-height: 1.75;
         }
+
+        /* ===== PACKAGES LADDER SECTION ===== */
+        .ladder-section {
+            scroll-margin-top: 100px;
+            padding: 5.5rem 1.5rem;
+            background: #fbfbfd;
+        }
+
         .ladder-container {
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 1.75rem;
+            gap: 2rem;
         }
+
+        /* Aligned 3-Column Card Layout */
         .ladder-card {
             background: #ffffff;
-            border: 1px solid rgba(0,0,0,0.06);
+            border: 1px solid var(--studio-card-border);
             border-radius: 24px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            padding: 2.25rem 2.5rem;
+            box-shadow: var(--studio-shadow);
             display: grid;
-            grid-template-columns: 1.2fr 2fr 1.2fr;
+            grid-template-columns: 290px 1.4fr 260px;
             gap: 2.5rem;
-            align-items: center;
-            transition: all 0.35s ease;
+            align-items: stretch;
+            transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
         }
+
         .ladder-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 16px 45px rgba(0,0,0,0.07);
-            border-color: rgba(255,107,74,0.25);
+            box-shadow: var(--studio-shadow-hover);
+            border-color: rgba(255, 107, 74, 0.25);
         }
+
+        /* Featured MVP Tier */
         .ladder-card.featured-tier {
             border: 2px solid var(--coral);
-            box-shadow: 0 8px 30px rgba(255,107,74,0.08);
-            background: linear-gradient(135deg, #ffffff 0%, rgba(255,107,74,0.02) 100%);
+            background: linear-gradient(135deg, #ffffff 0%, rgba(255, 107, 74, 0.025) 100%);
+            box-shadow: 0 12px 35px rgba(255, 107, 74, 0.09);
         }
-        .ladder-card.featured-tier::before {
-            content: 'Core Startup Offering';
-            position: absolute;
-            top: 1.25rem;
-            right: 1.5rem;
+
+        .featured-banner-strip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
             background: var(--gradient-primary);
-            color: #fff;
-            padding: 0.25rem 0.75rem;
+            color: #ffffff;
+            padding: 0.35rem 0.85rem;
             border-radius: 100px;
             font-size: 0.72rem;
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        .ladder-info h3 {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: var(--navy-dark);
-            margin-bottom: 0.35rem;
-        }
-        .ladder-tier-badge {
-            display: inline-block;
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            color: var(--coral);
+            letter-spacing: 0.06em;
             margin-bottom: 0.75rem;
+            box-shadow: 0 4px 12px rgba(255, 107, 74, 0.25);
         }
-        .ladder-info p {
-            font-size: 0.95rem;
-            color: var(--gray-500);
-            line-height: 1.6;
+
+        /* Column 1: Identity & Timing */
+        .ladder-identity {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            border-right: 1px solid rgba(0, 0, 0, 0.06);
+            padding-right: 2rem;
+        }
+
+        .ladder-identity-top {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ladder-tier-badge {
+            display: inline-flex;
+            align-items: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--coral);
             margin-bottom: 0.5rem;
         }
-        .ladder-purpose {
-            font-size: 0.85rem;
+
+        .ladder-identity h3 {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 0.4rem;
+            letter-spacing: -0.015em;
+        }
+
+        .ladder-identity p {
+            font-size: 0.93rem;
+            color: var(--gray-500);
+            line-height: 1.6;
+            margin-bottom: 1.25rem;
+        }
+
+        .ladder-identity-bottom {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .ladder-speed-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            background: rgba(255, 107, 74, 0.09);
+            color: var(--coral);
+            padding: 0.45rem 0.85rem;
+            border-radius: 10px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            width: fit-content;
+        }
+
+        .ladder-purpose-pill {
+            font-size: 0.78rem;
             color: var(--navy-dark);
             font-weight: 600;
-            background: rgba(0,0,0,0.03);
-            padding: 0.4rem 0.75rem;
+            background: rgba(0, 0, 0, 0.04);
+            padding: 0.35rem 0.7rem;
             border-radius: 8px;
-            display: inline-block;
+            width: fit-content;
         }
-        .ladder-features h4 {
+
+        /* Column 2: Deliverables & Architecture */
+        .ladder-scope {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 0.5rem;
+        }
+
+        .ladder-scope h4 {
             font-size: 0.82rem;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.07em;
             color: var(--gray-400);
             font-weight: 700;
-            margin-bottom: 0.75rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        .ladder-features ul {
+
+        .ladder-features-list {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.75rem;
         }
-        .ladder-features li {
-            font-size: 0.92rem;
+
+        .ladder-features-list li {
+            font-size: 0.94rem;
             color: var(--navy-dark);
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            line-height: 1.55;
+        }
+
+        .ladder-features-list li svg {
+            color: var(--coral);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .ladder-features-list strong {
+            color: var(--navy-dark);
+            font-weight: 700;
+        }
+
+        /* Column 3: Handover Specs & CTA */
+        .ladder-action-col {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: #fafbfc;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 18px;
+            padding: 1.5rem 1.25rem;
+            text-align: left;
+        }
+
+        .scope-specs-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .scope-spec-item {
             display: flex;
             align-items: center;
             gap: 0.5rem;
-            line-height: 1.5;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--gray-600);
         }
-        .ladder-features li svg {
-            color: var(--coral);
+
+        .scope-spec-item svg {
+            color: #10b981;
             flex-shrink: 0;
         }
-        .ladder-action {
+
+        .ladder-btn {
+            width: 100%;
+            text-align: center;
+            padding: 0.85rem 1.25rem;
+            font-size: 0.92rem;
+            font-weight: 700;
+            border-radius: 12px;
+            text-decoration: none;
             display: flex;
-            flex-direction: column;
-            align-items: flex-end;
+            align-items: center;
             justify-content: center;
-            gap: 0.75rem;
-            text-align: right;
+            gap: 0.5rem;
+            transition: all 0.25s ease;
         }
+
         .ladder-action-note {
-            font-size: 0.8rem;
+            font-size: 0.78rem;
             color: var(--gray-400);
+            text-align: center;
+            margin-top: 0.5rem;
+            font-weight: 500;
         }
-        @media (max-width: 992px) {
+
+        @media (max-width: 1100px) {
             .ladder-card {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .ladder-action {
-                align-items: flex-start;
-                text-align: left;
+                grid-template-columns: 260px 1.2fr 230px;
+                gap: 1.75rem;
+                padding: 2rem 1.75rem;
             }
         }
 
-        /* ===== SECTION 8: SERVICE CATALOGUE ===== */
-        .catalogue-section {
-            scroll-margin-top: 110px;
-            padding: 5rem 1.5rem;
-            background: var(--white-secondary);
+        @media (max-width: 960px) {
+            .ladder-card {
+                grid-template-columns: 1fr;
+                gap: 1.75rem;
+            }
+
+            .ladder-identity {
+                border-right: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+                padding-right: 0;
+                padding-bottom: 1.5rem;
+            }
+
+            .ladder-action-col {
+                margin-top: 0.5rem;
+            }
         }
-        .catalogue-grid-custom {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
+
+        /* ===== SECTION: COMPARISON MATRIX ===== */
+        .matrix-section {
+            padding: 5.5rem 1.5rem;
+            background: #ffffff;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .matrix-table-wrapper {
+            max-width: 1240px;
             margin: 0 auto;
-        }
-        .catalogue-item-card {
+            overflow-x: auto;
             background: #ffffff;
             border-radius: 20px;
+            border: 1px solid var(--studio-card-border);
+            box-shadow: var(--studio-shadow);
+        }
+
+        .matrix-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.92rem;
+        }
+
+        .matrix-table th {
+            padding: 1.25rem 1.5rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            background: #fafbfc;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.06);
+            white-space: nowrap;
+        }
+
+        .matrix-table th.featured-col {
+            background: rgba(255, 107, 74, 0.08);
+            color: var(--coral);
+            border-bottom-color: var(--coral);
+        }
+
+        .matrix-table td {
+            padding: 1.1rem 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            color: var(--gray-600);
+            vertical-align: middle;
+        }
+
+        .matrix-table tr:hover td {
+            background: rgba(255, 107, 74, 0.015);
+        }
+
+        .matrix-table td.featured-cell {
+            background: rgba(255, 107, 74, 0.03);
+            font-weight: 600;
+            color: var(--navy-dark);
+        }
+
+        .matrix-table .check-yes {
+            color: #10b981;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-weight: 600;
+        }
+
+        .matrix-table .check-highlight {
+            color: var(--coral);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-weight: 700;
+        }
+
+        /* ===== SERVICE CATALOGUE (BALANCED 6-GRID) ===== */
+        .catalogue-section {
+            scroll-margin-top: 100px;
+            padding: 5.5rem 1.5rem;
+            background: #fbf9f8;
+        }
+
+        .catalogue-grid-six {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .catalogue-card {
+            background: #ffffff;
+            border-radius: 22px;
             padding: 2.25rem;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.02);
-            transition: all 0.3s ease;
+            border: 1px solid var(--studio-card-border);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
-        .catalogue-item-card:hover {
+
+        .catalogue-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.06);
-            border-color: rgba(255,107,74,0.25);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.07);
+            border-color: rgba(255, 107, 74, 0.25);
         }
-        .catalogue-item-card h3 {
+
+        .catalogue-card-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(255, 107, 74, 0.09);
+            color: var(--coral);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .catalogue-card h3 {
             font-size: 1.35rem;
             font-weight: 800;
             color: var(--navy-dark);
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.01em;
         }
-        .catalogue-item-card p {
-            font-size: 0.95rem;
+
+        .catalogue-card p {
+            font-size: 0.93rem;
             color: var(--gray-500);
-            line-height: 1.6;
+            line-height: 1.65;
             margin-bottom: 1.25rem;
         }
+
         .catalogue-bullets {
             list-style: none;
             padding: 0;
             margin: 0 0 1.5rem 0;
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.5rem;
         }
+
         .catalogue-bullets li {
             font-size: 0.88rem;
             color: var(--navy-dark);
-            font-weight: 500;
-        }
-        .catalogue-outcome-box {
-            background: rgba(255,107,74,0.04);
-            border-left: 3px solid var(--coral);
-            padding: 0.75rem 1rem;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.88rem;
-            color: var(--navy-dark);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
             font-weight: 500;
         }
 
-        /* ===== SECTION 6: 9-STAGE PROCESS ===== */
+        .catalogue-bullets li svg {
+            color: var(--coral);
+            flex-shrink: 0;
+        }
+
+        .catalogue-outcome-box {
+            background: rgba(255, 107, 74, 0.04);
+            border-left: 3px solid var(--coral);
+            padding: 0.85rem 1rem;
+            border-radius: 0 10px 10px 0;
+            font-size: 0.88rem;
+            color: var(--navy-dark);
+            line-height: 1.55;
+        }
+
+        .catalogue-outcome-box strong {
+            color: var(--coral);
+            font-weight: 700;
+        }
+
+        @media (max-width: 1024px) {
+            .catalogue-grid-six {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 650px) {
+            .catalogue-grid-six {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== SECTION: 9-STAGE PROCESS (PHASE GROUPED) ===== */
         .process-full-section {
-            scroll-margin-top: 110px;
+            scroll-margin-top: 100px;
             padding: 6rem 1.5rem;
             background: #ffffff;
         }
-        .process-grid-nine {
+
+        .process-phases-container {
+            max-width: 1240px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 3.5rem;
+        }
+
+        .process-phase-block {
+            background: #fdfdfd;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            border-radius: 24px;
+            padding: 2.25rem 2rem;
+            position: relative;
+        }
+
+        .phase-header-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .phase-title-group {
+            display: flex;
+            align-items: center;
+            gap: 0.85rem;
+        }
+
+        .phase-tag {
+            background: var(--navy-dark);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.35rem 0.85rem;
+            border-radius: 100px;
+        }
+
+        .phase-title-group h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin: 0;
+        }
+
+        .phase-objective {
+            font-size: 0.88rem;
+            color: var(--gray-500);
+            font-weight: 500;
+        }
+
+        .phase-cards-row {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
+            gap: 1.5rem;
         }
+
         .nine-stage-card {
-            background: #faf8f7;
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid rgba(0,0,0,0.04);
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 1.75rem;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
             transition: all 0.3s ease;
             position: relative;
         }
+
         .nine-stage-card:hover {
-            transform: translateY(-4px);
-            background: #ffffff;
-            box-shadow: 0 12px 35px rgba(0,0,0,0.05);
-            border-color: rgba(255,107,74,0.2);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
+            border-color: rgba(255, 107, 74, 0.25);
         }
+
         .nine-stage-header {
             display: flex;
             align-items: center;
             gap: 0.85rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.85rem;
         }
+
         .nine-stage-badge {
-            width: 38px;
-            height: 38px;
-            border-radius: 12px;
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
             background: var(--gradient-primary);
             color: #ffffff;
             font-weight: 800;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
+
         .nine-stage-card h4 {
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 700;
             color: var(--navy-dark);
             margin: 0;
         }
+
         .nine-stage-card p {
             font-size: 0.9rem;
             color: var(--gray-500);
             line-height: 1.65;
             margin: 0;
         }
-        @media (max-width: 1024px) {
-            .process-grid-nine { grid-template-columns: repeat(2, 1fr); }
+
+        @media (max-width: 992px) {
+            .phase-cards-row {
+                grid-template-columns: 1fr;
+            }
         }
-        @media (max-width: 650px) {
-            .process-grid-nine { grid-template-columns: 1fr; }
+
+        /* ===== SECTION: STUDIO GUARANTEES ===== */
+        .guarantees-section {
+            padding: 5.5rem 1.5rem;
+            background: #0f121e;
+            color: #ffffff;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .guarantees-container {
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .guarantees-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.75rem;
+            margin-top: 3rem;
+        }
+
+        .guarantee-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .guarantee-card:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 107, 74, 0.35);
+        }
+
+        .guarantee-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(255, 107, 74, 0.15);
+            color: var(--coral);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .guarantee-card h4 {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 0.6rem;
+        }
+
+        .guarantee-card p {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.65);
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        @media (max-width: 1024px) {
+            .guarantees-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .guarantees-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ===== SECTION: FAQ ===== */
+        .faq-section {
+            padding: 5.5rem 1.5rem;
+            background: #fafbfc;
+        }
+
+        .faq-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .faq-item {
+            background: #ffffff;
+            border: 1px solid var(--studio-card-border);
+            border-radius: 18px;
+            padding: 1.75rem 2rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            transition: all 0.25s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(255, 107, 74, 0.25);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+        }
+
+        .faq-item h3 {
+            font-size: 1.12rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 0.6rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .faq-item h3 svg {
+            color: var(--coral);
+            flex-shrink: 0;
+        }
+
+        .faq-item p {
+            font-size: 0.94rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+            margin: 0;
         }
 
         /* ===== CTA BANNER ===== */
         .cta-banner-services {
-            background: linear-gradient(135deg, #0f1120 0%, #1a1e36 100%);
-            border-top: 1px solid rgba(255,107,74,0.25);
-            padding: 5rem 1.5rem;
+            background: linear-gradient(135deg, #0c0e18 0%, #171b30 100%);
+            border-top: 1px solid rgba(255, 107, 74, 0.2);
+            padding: 5.5rem 1.5rem;
             text-align: center;
             color: #ffffff;
         }
+
         .cta-banner-services h2 {
-            font-size: clamp(2rem, 3.5vw, 2.75rem);
+            font-size: clamp(2.1rem, 3.8vw, 3rem);
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 1.1rem;
+            letter-spacing: -0.02em;
         }
+
         .cta-banner-services p {
-            font-size: 1.1rem;
-            color: rgba(255,255,255,0.7);
-            max-width: 650px;
+            font-size: 1.12rem;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 680px;
             margin: 0 auto 2.5rem;
-            line-height: 1.7;
+            line-height: 1.75;
         }
 
         /* ===== FOOTER ===== */
         .site-footer {
-            background: #0c0e18;
-            color: rgba(255,255,255,0.7);
+            background: #080a12;
+            color: rgba(255, 255, 255, 0.7);
             padding: 5rem 2rem 2.5rem;
-            border-top: 1px solid rgba(255,255,255,0.06);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
         }
+
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1.2fr;
             gap: 3rem;
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto 3rem;
         }
+
         .footer-brand img {
-            height: 48px; width: auto; border-radius: 12px; margin-bottom: 1.25rem;
-            background: #ffffff; padding: 6px 14px; display: inline-block;
+            height: 44px;
+            width: auto;
+            border-radius: 0;
+            margin-bottom: 1.25rem;
+            background: transparent;
+            padding: 0;
+            display: inline-block;
+            filter: brightness(0) invert(1);
         }
+
         .footer-brand p {
-            font-size: 0.92rem; line-height: 1.75; color: rgba(255,255,255,0.55); max-width: 320px;
+            font-size: 0.92rem;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.55);
+            max-width: 340px;
         }
+
         .footer-col h4 {
-            font-size: 0.82rem; font-weight: 700; text-transform: uppercase;
-            letter-spacing: 0.08em; color: rgba(255,255,255,0.45); margin-bottom: 1.25rem;
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 1.25rem;
         }
+
         .footer-col a {
-            display: block; font-size: 0.92rem; color: rgba(255,255,255,0.65);
-            margin-bottom: 0.65rem; transition: color 0.25s; text-decoration: none;
+            display: block;
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.65);
+            margin-bottom: 0.65rem;
+            transition: color 0.25s;
+            text-decoration: none;
         }
-        .footer-col a:hover { color: var(--coral); }
+
+        .footer-col a:hover {
+            color: var(--coral);
+        }
+
         .legal-scope-disclaimer {
-            max-width: 1200px; margin: 0 auto 2.5rem; padding: 1.5rem 2rem;
-            background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07);
-            border-radius: 16px; font-size: 0.8rem; line-height: 1.7; color: rgba(255,255,255,0.45);
+            max-width: 1240px;
+            margin: 0 auto 2.5rem;
+            padding: 1.5rem 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 16px;
+            font-size: 0.8rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.45);
         }
-        .legal-scope-disclaimer strong { color: rgba(255,255,255,0.75); }
+
+        .legal-scope-disclaimer strong {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
         .footer-bottom {
-            max-width: 1200px; margin: 0 auto; padding-top: 2rem;
-            border-top: 1px solid rgba(255,255,255,0.06); display: flex;
-            justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;
+            max-width: 1240px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
         }
-        @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } }
+
+        @media (max-width: 900px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -1109,12 +1152,12 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar" aria-label="Main navigation">
         <a href="home.html" class="nav-logo" aria-label="Site2Success Home">
-            <img src="../assets/images/logo.png" alt="Site2Success Logo" style="height: 48px; width: auto; border-radius: 0;">
+            <img src="../assets/images/logo.png" alt="Site2Success Logo" style="height: 44px; width: auto; border-radius: 0;">
         </a>
 
         <div class="nav-links" id="nav-links" role="menubar">
             <a href="home.html" class="nav-item" data-page="home" role="menuitem">Home</a>
-            <a href="services.html" class="nav-item active" data-page="services" role="menuitem">Services &amp; Pricing</a>
+            <a href="services.html" class="nav-item active" data-page="services" role="menuitem">Services &amp; Packages</a>
             <a href="projects.html" class="nav-item" data-page="projects" role="menuitem">Projects</a>
             <a href="about.html" class="nav-item" data-page="about" role="menuitem">About</a>
             <a href="internships.html" class="nav-item" data-page="internships" role="menuitem">Builders</a>
@@ -1135,326 +1178,803 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                 </svg>
-                <span>Studio Packages &amp; Offerings</span>
+                <span>Studio Delivery Packages</span>
             </div>
             <h1 class="services-hero-title">
-                Turn Your Idea Into <span>Working Software</span>
+                Turn Your Vision Into <span>Production Software</span>
             </h1>
             <p class="services-hero-description">
-                Site2Success combines AI-native development workflows with trained university talent to build real products quickly and affordably. Explore our structured packages ladder below.
+                Site2Success combines AI-native acceleration with trained university software squads and senior engineering review. Explore our structured packages ladder, scope deliverables, and 9-stage delivery operating system.
             </p>
             <div class="services-hero-stats">
-                <div class="hero-stat">
+                <div class="hero-stat-card">
                     <div class="hero-stat-number">5 Tiers</div>
-                    <div class="hero-stat-label">Structured Packages Ladder</div>
+                    <div class="hero-stat-label">Structured Packages</div>
                 </div>
-                <div class="hero-stat">
+                <div class="hero-stat-card">
+                    <div class="hero-stat-number">7–14d</div>
+                    <div class="hero-stat-label">Typical Sprint Velocity</div>
+                </div>
+                <div class="hero-stat-card">
                     <div class="hero-stat-number">100% QA</div>
                     <div class="hero-stat-label">Mandatory Human Review</div>
                 </div>
-                <div class="hero-stat">
-                    <div class="hero-stat-number">End-to-End</div>
-                    <div class="hero-stat-label">Studio Ownership</div>
+                <div class="hero-stat-card">
+                    <div class="hero-stat-number">Full IP</div>
+                    <div class="hero-stat-label">Client Code Ownership</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 5: SERVICES / PRICING LADDER -->
+    <!-- SECTION: PACKAGES LADDER -->
     <section class="ladder-section" id="packages">
         <div class="section-header-center">
-            <span class="section-label">Packages Ladder</span>
-            <h2>Structured Value Tiers for Every Stage</h2>
-            <p>We believe in transparent, value-aligned tiers rather than flat discount pricing. Every package delivers production-grade software backed by studio oversight.</p>
+            <span class="section-label">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                Structured Packages Ladder
+            </span>
+            <h2>Transparent Milestone Sprints For Every Stage</h2>
+            <p>Every tier provides production-grade software backed by studio oversight, clear deliverables, and full GitHub codebase transfer upon completion.</p>
         </div>
 
         <div class="ladder-container">
             <!-- 1. Starter Package -->
             <div class="ladder-card">
-                <div class="ladder-info">
-                    <span class="ladder-tier-badge">Tier 01</span>
-                    <h3>Starter</h3>
-                    <p>Portfolio, personal site, or simple high-impact landing page.</p>
-                    <span class="ladder-purpose">Fast entry · Student &amp; Creator Market</span>
+                <div class="ladder-identity">
+                    <div class="ladder-identity-top">
+                        <span class="ladder-tier-badge">Tier 01 · Rapid Launch</span>
+                        <h3>Starter</h3>
+                        <p>High-converting portfolio, modern personal site, or founder landing page engineered for credibility.</p>
+                    </div>
+                    <div class="ladder-identity-bottom">
+                        <div class="ladder-speed-pill">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            7–10 Days Sprint
+                        </div>
+                        <span class="ladder-purpose-pill">Fast Entry · Creators &amp; Researchers</span>
+                    </div>
                 </div>
-                <div class="ladder-features">
-                    <h4>What's Included</h4>
-                    <ul>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom responsive UI &amp; modern styling</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Contact, inquiry, and lead capture hooks</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> High-speed deployment &amp; custom domain setup</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Handover documentation &amp; self-serve edits</li>
+
+                <div class="ladder-scope">
+                    <h4>Core Deliverables &amp; Technical Scope</h4>
+                    <ul class="ladder-features-list">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Custom Responsive UI</strong> with bespoke CSS typography and mobile-first fluid layout</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Inbound Lead Capture</strong> with automated inquiry hooks &amp; email notifications</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Edge Deployment &amp; Domain Setup</strong> with SSL certificate and lightning CDN performance</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Self-Serve Handover Spec</strong> and structured markdown documentation for easy updates</span>
+                        </li>
                     </ul>
                 </div>
-                <div class="ladder-action">
-                    <a href="contact.html?package=starter" class="btn btn-primary">Request Starter Scope</a>
-                    <span class="ladder-action-note">Typically 1–2 week turnaround</span>
+
+                <div class="ladder-action-col">
+                    <div class="scope-specs-group">
+                        <div class="scope-spec-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            100% Repository Transfer
+                        </div>
+                        <div class="scope-spec-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Senior Engineer Code Audit
+                        </div>
+                        <div class="scope-spec-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            14 Days Post-Launch Support
+                        </div>
+                    </div>
+                    <div>
+                        <a href="contact.html?package=starter" class="btn btn-primary ladder-btn">
+                            Scope Starter Sprint
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <div class="ladder-action-note">Milestone-based delivery</div>
+                    </div>
                 </div>
             </div>
 
-            <!-- 2. MVP Package -->
+            <!-- 2. MVP Package (Featured Tier) -->
             <div class="ladder-card featured-tier">
-                <div class="ladder-info">
-                    <span class="ladder-tier-badge">Tier 02 · Most Popular</span>
-                    <h3>MVP</h3>
-                    <p>Early-stage founder product prototype to validate core assumptions.</p>
-                    <span class="ladder-purpose">Core Startup Offering</span>
+                <div class="ladder-identity">
+                    <div class="ladder-identity-top">
+                        <div class="featured-banner-strip">
+                            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                            Most Popular · Core Startup Build
+                        </div>
+                        <span class="ladder-tier-badge">Tier 02 · Founder Flagship</span>
+                        <h3>Rapid MVP</h3>
+                        <p>Working full-stack product prototype designed to test core assumptions, engage early adopters, and pitch investors.</p>
+                    </div>
+                    <div class="ladder-identity-bottom">
+                        <div class="ladder-speed-pill" style="background: var(--gradient-primary); color: #ffffff;">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            14–21 Days Sprint
+                        </div>
+                        <span class="ladder-purpose-pill">Early Founders &amp; Startups</span>
+                    </div>
                 </div>
-                <div class="ladder-features">
-                    <h4>What's Included</h4>
-                    <ul>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> User authentication &amp; secure session control</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Full database models &amp; core CRUD functionality</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Key third-party API integrations (Payment, CRM, Messaging)</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Investor-ready UI and mobile-first responsiveness</li>
+
+                <div class="ladder-scope">
+                    <h4>Core Deliverables &amp; Technical Scope</h4>
+                    <ul class="ladder-features-list">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Full Authentication &amp; Sessions</strong> (OAuth, magic links, protected routes, and user profile management)</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Database Architecture &amp; CRUD Engine</strong> with scalable PostgreSQL/Supabase schema design</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Core 3rd-Party &amp; AI Integrations</strong> (Stripe/Razorpay payments, messaging, OpenAI API pipelines)</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Investor-Ready UI &amp; Interactive Flow</strong> with production CI/CD staging environments</span>
+                        </li>
                     </ul>
                 </div>
-                <div class="ladder-action">
-                    <a href="contact.html?package=mvp" class="btn btn-primary">Request MVP Scope</a>
-                    <span class="ladder-action-note">Typically 2–3 week build sprint</span>
+
+                <div class="ladder-action-col" style="background: rgba(255, 107, 74, 0.03); border-color: rgba(255, 107, 74, 0.2);">
+                    <div class="scope-specs-group">
+                        <div class="scope-spec-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Full Source Code &amp; Schema Handover
+                        </div>
+                        <div class="scope-spec-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Senior Technical Lead Code Review
+                        </div>
+                        <div class="scope-spec-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            30 Days Post-Launch Warranty
+                        </div>
+                    </div>
+                    <div>
+                        <a href="contact.html?package=mvp" class="btn btn-primary ladder-btn" style="box-shadow: 0 6px 20px rgba(255, 107, 74, 0.3);">
+                            Scope MVP Sprint
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <div class="ladder-action-note">Fixed milestone agreement</div>
+                    </div>
                 </div>
             </div>
 
             <!-- 3. Research / Prototype Package -->
             <div class="ladder-card">
-                <div class="ladder-info">
-                    <span class="ladder-tier-badge">Tier 03</span>
-                    <h3>Research / Prototype</h3>
-                    <p>Faculty &amp; researcher software, scientific workflows, and academic tools.</p>
-                    <span class="ladder-purpose">Higher-Value Technical Work</span>
+                <div class="ladder-identity">
+                    <div class="ladder-identity-top">
+                        <span class="ladder-tier-badge">Tier 03 · Academic &amp; Lab</span>
+                        <h3>Research Prototype</h3>
+                        <p>Specialized computational workflows, interactive calculators, experimental tools, and academic interfaces.</p>
+                    </div>
+                    <div class="ladder-identity-bottom">
+                        <div class="ladder-speed-pill">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            2–4 Weeks Sprint
+                        </div>
+                        <span class="ladder-purpose-pill">University Faculty &amp; Labs</span>
+                    </div>
                 </div>
-                <div class="ladder-features">
-                    <h4>What's Included</h4>
-                    <ul>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Computational pipelines &amp; interactive research calculators</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Academic dashboards &amp; dataset visualization</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Controlled data access &amp; research paper management</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Reproducible code standards for publication</li>
+
+                <div class="ladder-scope">
+                    <h4>Core Deliverables &amp; Technical Scope</h4>
+                    <ul class="ladder-features-list">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Interactive Computational Models</strong> and domain-specific analytical simulation tools</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Dataset Visualization &amp; Filtering</strong> with high-performance chart rendering and exports</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Secure Data Ingestion &amp; Sanitization</strong> with role-governed access for lab teams</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Publication-Ready Reproducibility</strong> with structured repository and documentation</span>
+                        </li>
                     </ul>
                 </div>
-                <div class="ladder-action">
-                    <a href="contact.html?package=research" class="btn btn-primary">Request Research Scope</a>
-                    <span class="ladder-action-note">Custom academic scoping</span>
+
+                <div class="ladder-action-col">
+                    <div class="scope-specs-group">
+                        <div class="scope-spec-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Open-Source or Private Lab License
+                        </div>
+                        <div class="scope-spec-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Academic Rigor Verification
+                        </div>
+                        <div class="scope-spec-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Custom Technical Scoping
+                        </div>
+                    </div>
+                    <div>
+                        <a href="contact.html?package=research" class="btn btn-primary ladder-btn">
+                            Scope Research Sprint
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <div class="ladder-action-note">Collaborative lab scoping</div>
+                    </div>
                 </div>
             </div>
 
             <!-- 4. Custom Product Package -->
             <div class="ladder-card">
-                <div class="ladder-info">
-                    <span class="ladder-tier-badge">Tier 04</span>
-                    <h3>Custom Product</h3>
-                    <p>Complex web app, AI application, or internal operational tool.</p>
-                    <span class="ladder-purpose">High-Value Software Projects</span>
+                <div class="ladder-identity">
+                    <div class="ladder-identity-top">
+                        <span class="ladder-tier-badge">Tier 04 · Complex Systems</span>
+                        <h3>Custom Product</h3>
+                        <p>Multi-portal web application, AI-integrated workflow, or custom operations software with tailored architecture.</p>
+                    </div>
+                    <div class="ladder-identity-bottom">
+                        <div class="ladder-speed-pill">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            3–6 Weeks Sprint
+                        </div>
+                        <span class="ladder-purpose-pill">Growing Companies &amp; Scaleups</span>
+                    </div>
                 </div>
-                <div class="ladder-features">
-                    <h4>What's Included</h4>
-                    <ul>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Multi-role administration portals &amp; role-based access</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Domain-specific AI assistant integration with human QA</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Automated multi-stage business pipelines &amp; reporting</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Architecture design, security audit, and staging checks</li>
+
+                <div class="ladder-scope">
+                    <h4>Core Deliverables &amp; Technical Scope</h4>
+                    <ul class="ladder-features-list">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Role-Based Administrative Portals</strong> with multi-tenant permissions and audit logging</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Proprietary AI Agent Integration</strong> with hallucination guardrails and human escalation review</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Custom Backend Microservices &amp; APIs</strong> designed for horizontal scale and security</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Security Audit &amp; Performance Tuning</strong> with stress testing prior to go-live</span>
+                        </li>
                     </ul>
                 </div>
-                <div class="ladder-action">
-                    <a href="contact.html?package=custom" class="btn btn-primary">Request Custom Scope</a>
-                    <span class="ladder-action-note">Milestone-based delivery</span>
+
+                <div class="ladder-action-col">
+                    <div class="scope-specs-group">
+                        <div class="scope-spec-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Dedicated Squad &amp; Architect
+                        </div>
+                        <div class="scope-spec-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Weekly Sprint Milestone Demos
+                        </div>
+                        <div class="scope-spec-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            45 Days Post-Launch Warranty
+                        </div>
+                    </div>
+                    <div>
+                        <a href="contact.html?package=custom" class="btn btn-primary ladder-btn">
+                            Scope Custom Sprint
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <div class="ladder-action-note">Milestone-based delivery</div>
+                    </div>
                 </div>
             </div>
 
             <!-- 5. Maintenance / Iteration Package -->
             <div class="ladder-card">
-                <div class="ladder-info">
-                    <span class="ladder-tier-badge">Tier 05</span>
-                    <h3>Maintenance &amp; Iteration</h3>
-                    <p>Post-launch changes, ongoing improvements, and technical support.</p>
-                    <span class="ladder-purpose">Recurring Support &amp; Evolution</span>
+                <div class="ladder-identity">
+                    <div class="ladder-identity-top">
+                        <span class="ladder-tier-badge">Tier 05 · Continuous Evolution</span>
+                        <h3>Maintenance &amp; Care</h3>
+                        <p>Scheduled feature updates, security patches, ongoing performance monitoring, and rapid engineering support.</p>
+                    </div>
+                    <div class="ladder-identity-bottom">
+                        <div class="ladder-speed-pill">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                            Ongoing Retainer Sprints
+                        </div>
+                        <span class="ladder-purpose-pill">Post-Launch &amp; Active Products</span>
+                    </div>
                 </div>
-                <div class="ladder-features">
-                    <h4>What's Included</h4>
-                    <ul>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Scheduled dependency updates &amp; security maintenance</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Priority bug resolution &amp; continuous QA monitoring</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Iterative feature sprints based on real user feedback</li>
-                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Dedicated project communication channel</li>
+
+                <div class="ladder-scope">
+                    <h4>Core Deliverables &amp; Technical Scope</h4>
+                    <ul class="ladder-features-list">
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Proactive Dependency Upgrades</strong> and automated vulnerability patch management</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Priority SLA Bug Resolution</strong> with dedicated triage channel and quick turnaround</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Monthly Feature Iteration Blocks</strong> for rolling enhancements driven by user telemetry</span>
+                        </li>
+                        <li>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            <span><strong>Uptime &amp; Error Telemetry Monitoring</strong> with weekly performance health reporting</span>
+                        </li>
                     </ul>
                 </div>
-                <div class="ladder-action">
-                    <a href="contact.html?package=maintenance" class="btn btn-secondary">Inquire About Retainers</a>
-                    <span class="ladder-action-note">Monthly retainer or sprint packs</span>
+
+                <div class="ladder-action-col">
+                    <div class="scope-specs-group">
+                        <div class="scope-spec-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Dedicated Slack/Discord Channel
+                        </div>
+                        <div class="scope-spec-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Rollover Sprint Hours
+                        </div>
+                        <div class="scope-spec-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                            Zero Long-Term Lock-In
+                        </div>
+                    </div>
+                    <div>
+                        <a href="contact.html?package=maintenance" class="btn btn-secondary ladder-btn">
+                            Inquire About Retainer
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                        </a>
+                        <div class="ladder-action-note">Monthly or sprint-pack terms</div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 8: SERVICE CATALOGUE (OUTCOME-FOCUSED) -->
+    <!-- SECTION: COMPARISON MATRIX -->
+    <section class="matrix-section">
+        <div class="section-header-center">
+            <span class="section-label">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                At a Glance Comparison
+            </span>
+            <h2>Package Deliverables Breakdown</h2>
+            <p>Compare deliverables, timelines, and technical inclusion across our five development tiers.</p>
+        </div>
+
+        <div class="matrix-table-wrapper">
+            <table class="matrix-table">
+                <thead>
+                    <tr>
+                        <th style="width: 25%;">Scope Dimension</th>
+                        <th style="width: 15%;">Starter</th>
+                        <th style="width: 20%;" class="featured-col">⭐ MVP Sprint</th>
+                        <th style="width: 20%;">Research Prototype</th>
+                        <th style="width: 20%;">Custom Product</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Typical Velocity</strong></td>
+                        <td>7–10 Days</td>
+                        <td class="featured-cell">14–21 Days</td>
+                        <td>2–4 Weeks</td>
+                        <td>3–6 Weeks</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Primary Audience</strong></td>
+                        <td>Creators &amp; Portfolios</td>
+                        <td class="featured-cell">Early-Stage Founders</td>
+                        <td>Faculty Labs &amp; Scholars</td>
+                        <td>Growing Businesses</td>
+                    </tr>
+                    <tr>
+                        <td><strong>UI/UX Design System</strong></td>
+                        <td>Bespoke CSS Design</td>
+                        <td class="featured-cell">Full Component System</td>
+                        <td>Academic &amp; Data Viz</td>
+                        <td>Multi-Portal Architecture</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Auth &amp; User Accounts</strong></td>
+                        <td>Contact Form Hooks</td>
+                        <td class="featured-cell"><span class="check-highlight">✓ Complete OAuth &amp; Roles</span></td>
+                        <td>Lab Access Control</td>
+                        <td><span class="check-yes">✓ Enterprise RBAC</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Database Architecture</strong></td>
+                        <td>Static / Form DB</td>
+                        <td class="featured-cell"><span class="check-highlight">✓ PostgreSQL / Supabase</span></td>
+                        <td><span class="check-yes">✓ Research Dataset Schema</span></td>
+                        <td><span class="check-yes">✓ Multi-Table Relational</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>AI &amp; API Integrations</strong></td>
+                        <td>Webhook Endpoints</td>
+                        <td class="featured-cell"><span class="check-highlight">✓ Payment + AI Pipelines</span></td>
+                        <td>Computational APIs</td>
+                        <td><span class="check-yes">✓ Bespoke AI Copilots</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Senior Human QA Review</strong></td>
+                        <td><span class="check-yes">✓ Included</span></td>
+                        <td class="featured-cell"><span class="check-highlight">✓ 100% Mandatory Audit</span></td>
+                        <td><span class="check-yes">✓ Included</span></td>
+                        <td><span class="check-yes">✓ Comprehensive Audit</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Source Code Handover</strong></td>
+                        <td><span class="check-yes">✓ 100% Client GitHub</span></td>
+                        <td class="featured-cell"><span class="check-highlight">✓ 100% Client GitHub</span></td>
+                        <td><span class="check-yes">✓ 100% Client GitHub</span></td>
+                        <td><span class="check-yes">✓ 100% Client GitHub</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Post-Launch Warranty</strong></td>
+                        <td>14 Days</td>
+                        <td class="featured-cell">30 Days</td>
+                        <td>30 Days</td>
+                        <td>45 Days</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- SECTION: SERVICE CATALOGUE (BALANCED 6-GRID) -->
     <section class="catalogue-section" id="catalogue">
         <div class="section-header-center">
-            <span class="section-label">Service Catalogue</span>
-            <h2>What We Build</h2>
-            <p>Every software solution is framed around concrete outcomes, not technical buzzwords.</p>
+            <span class="section-label">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                Core Capabilities
+            </span>
+            <h2>What We Engineer</h2>
+            <p>Every software deliverable is defined around measurable outcomes, rock-solid engineering, and clear utility.</p>
         </div>
 
-        <div class="catalogue-grid-custom">
-            <div class="catalogue-item-card">
+        <div class="catalogue-grid-six">
+            <!-- 1. Modern Websites -->
+            <div class="catalogue-card">
                 <div>
-                    <h3>Websites</h3>
-                    <p>Modern, responsive, and performance-tuned web presences engineered for brand credibility and inbound conversions.</p>
+                    <div class="catalogue-card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <h3>High-Impact Websites</h3>
+                    <p>High-speed, beautifully styled digital presences engineered for brand credibility and inbound conversions.</p>
+                    <ul class="catalogue-bullets">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Modern typography &amp; fluid animations</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Sub-second load times &amp; 95+ Lighthouse</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Automated lead capture integrations</li>
+                    </ul>
                 </div>
                 <div class="catalogue-outcome-box">
-                    <strong>Outcome:</strong> A polished digital hub that inspires trust and clearly communicates your value proposition.
+                    <strong>Outcome:</strong> An elite digital flagship that builds immediate trust and converts visitors into inbound opportunities.
                 </div>
             </div>
 
-            <div class="catalogue-item-card">
+            <!-- 2. Web Applications -->
+            <div class="catalogue-card">
                 <div>
-                    <h3>Web Applications</h3>
-                    <p>Full-stack web applications featuring secure authentication, data persistence, and interactive user interfaces.</p>
+                    <div class="catalogue-card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                    </div>
+                    <h3>Full-Stack Web Apps</h3>
+                    <p>Modern web platforms featuring secure authentication, multi-tenant databases, and rich interactive interfaces.</p>
+                    <ul class="catalogue-bullets">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Next.js, Node &amp; PostgreSQL foundations</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Role-based access control &amp; session security</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Production REST/GraphQL API architecture</li>
+                    </ul>
                 </div>
                 <div class="catalogue-outcome-box">
-                    <strong>Outcome:</strong> A scalable product platform that users can log into and interact with daily.
+                    <strong>Outcome:</strong> A reliable software platform your users can log into and rely on every single day.
                 </div>
             </div>
 
-            <div class="catalogue-item-card">
+            <!-- 3. Rapid MVPs -->
+            <div class="catalogue-card">
                 <div>
-                    <h3>Working MVPs</h3>
-                    <p>Minimum viable products designed to test core assumptions, validate market demand, and pitch early investors.</p>
+                    <div class="catalogue-card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </div>
+                    <h3>Rapid Founder MVPs</h3>
+                    <p>Functional software prototypes engineered to test core hypotheses, collect real user feedback, and secure capital.</p>
+                    <ul class="catalogue-bullets">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 14-day rapid prototyping sprints</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Core user loop &amp; billing integration</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Investor-ready polish &amp; analytics tracking</li>
+                    </ul>
                 </div>
                 <div class="catalogue-outcome-box">
-                    <strong>Outcome:</strong> A functional product you can show investors and test with your initial cohort of users.
+                    <strong>Outcome:</strong> A working product in front of real customers in weeks instead of quarters.
                 </div>
             </div>
 
-            <div class="catalogue-item-card">
+            <!-- 4. AI Copilots & Workflows -->
+            <div class="catalogue-card">
                 <div>
-                    <h3>AI Applications</h3>
-                    <p>Bespoke intelligent assistants, automated summarizers, and domain-specific AI workflows with strict human QA.</p>
+                    <div class="catalogue-card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                    </div>
+                    <h3>AI-Native Workflows</h3>
+                    <p>Bespoke intelligent assistants, automated summarizers, document intelligence, and domain-tuned pipelines.</p>
+                    <ul class="catalogue-bullets">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> RAG pipelines over private business data</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Hallucination guardrails &amp; QA verification</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Automated document classification engines</li>
+                    </ul>
                 </div>
                 <div class="catalogue-outcome-box">
-                    <strong>Outcome:</strong> Practical, error-checked AI features that automate business workflows without hallucinations.
+                    <strong>Outcome:</strong> Practical AI automation that saves team hours without accuracy compromises.
                 </div>
             </div>
 
-            <div class="catalogue-item-card">
+            <!-- 5. Executive Dashboards -->
+            <div class="catalogue-card">
                 <div>
-                    <h3>Custom Dashboards</h3>
-                    <p>Centralized business intelligence dashboards consolidating key metrics, data visualizations, and operational indicators.</p>
+                    <div class="catalogue-card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+                    </div>
+                    <h3>Analytics &amp; Dashboards</h3>
+                    <p>Real-time metrics visualization consolidating business KPIs, transaction trends, and operational activity.</p>
+                    <ul class="catalogue-bullets">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> High-speed interactive data filtering</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Multi-source aggregation &amp; webhook ingestion</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Automated PDF / CSV exports &amp; alert triggers</li>
+                    </ul>
                 </div>
                 <div class="catalogue-outcome-box">
-                    <strong>Outcome:</strong> A clean real-time view of your organization's performance in one place.
+                    <strong>Outcome:</strong> Complete operational clarity in a single glance for founders and leadership teams.
                 </div>
             </div>
 
-            <div class="catalogue-item-card">
+            <!-- 6. Internal Operations Tools -->
+            <div class="catalogue-card">
                 <div>
-                    <h3>Internal Tools</h3>
-                    <p>Administrative portals, approval queues, inventory trackers, and staff utilities that eliminate manual spreadsheets.</p>
+                    <div class="catalogue-card-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                    </div>
+                    <h3>Internal Business Tools</h3>
+                    <p>Administrative portals, approval queues, inventory trackers, and staff utilities that replace messy manual spreadsheets.</p>
+                    <ul class="catalogue-bullets">
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Custom CRUD portals with validation checks</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Multi-step staff approval and review workflows</li>
+                        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Full audit trail logging &amp; error reduction</li>
+                    </ul>
                 </div>
                 <div class="catalogue-outcome-box">
-                    <strong>Outcome:</strong> Seamless internal operations that save team hours and prevent administrative errors.
-                </div>
-            </div>
-
-            <div class="catalogue-item-card">
-                <div>
-                    <h3>Research Prototypes</h3>
-                    <p>Specialized scientific software, computational calculators, experimental interfaces, and data collection tools for faculty.</p>
-                </div>
-                <div class="catalogue-outcome-box">
-                    <strong>Outcome:</strong> Rigorous, reproducible research software ready for peer publication and citations.
+                    <strong>Outcome:</strong> Streamlined backoffice operations that eliminate manual errors and repetitive tasks.
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECTION 6: THE COMPLETE 9-STAGE DELIVERY PROCESS -->
+    <!-- SECTION: THE 9-STAGE DELIVERY PROCESS (PHASE GROUPED) -->
     <section class="process-full-section" id="process-detail">
         <div class="section-header-center">
-            <span class="section-label">Delivery Operating System</span>
-            <h2>Our End-to-End Client Process</h2>
-            <p>A transparent 9-stage delivery workflow that keeps your project on time, in scope, and under strict quality control.</p>
+            <span class="section-label">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                Delivery Operating System
+            </span>
+            <h2>Our 9-Stage Delivery Process</h2>
+            <p>A transparent, disciplined client journey from initial concept intake to production deployment and long-term care.</p>
         </div>
 
-        <div class="process-grid-nine">
-            <!-- Stage 1 -->
-            <div class="nine-stage-card">
-                <div class="nine-stage-header">
-                    <div class="nine-stage-badge">01</div>
-                    <h4>Intake</h4>
+        <div class="process-phases-container">
+            <!-- Phase 1 -->
+            <div class="process-phase-block">
+                <div class="phase-header-bar">
+                    <div class="phase-title-group">
+                        <span class="phase-tag">Phase 01</span>
+                        <h3>Discovery &amp; Technical Scoping</h3>
+                    </div>
+                    <span class="phase-objective">Objective: Eliminate ambiguity before code is written</span>
                 </div>
-                <p>Client submits initial idea or problem statement. Requirements, urgency, and expected outcomes are recorded.</p>
+                <div class="phase-cards-row">
+                    <div class="nine-stage-card">
+                        <div class="nine-stage-header">
+                            <div class="nine-stage-badge">01</div>
+                            <h4>Intake</h4>
+                        </div>
+                        <p>Client submits product idea or business requirements. Target audience, core challenges, and desired outcomes are catalogued.</p>
+                    </div>
+
+                    <div class="nine-stage-card">
+                        <div class="nine-stage-header">
+                            <div class="nine-stage-badge">02</div>
+                            <h4>Qualification</h4>
+                        </div>
+                        <p>We evaluate user personas, technical feasibility, timeline urgency, decision-maker goals, and milestone boundaries.</p>
+                    </div>
+
+                    <div class="nine-stage-card">
+                        <div class="nine-stage-header">
+                            <div class="nine-stage-badge">03</div>
+                            <h4>Technical Spec</h4>
+                        </div>
+                        <p>System architecture mapped out. Must-have core MVP features separated from nice-to-haves; sprint timeline locked.</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Stage 2 -->
-            <div class="nine-stage-card">
-                <div class="nine-stage-header">
-                    <div class="nine-stage-badge">02</div>
-                    <h4>Qualification</h4>
+            <!-- Phase 2 -->
+            <div class="process-phase-block">
+                <div class="phase-header-bar">
+                    <div class="phase-title-group">
+                        <span class="phase-tag" style="background: var(--coral);">Phase 02</span>
+                        <h3>Sprint Architecture &amp; Rapid Build</h3>
+                    </div>
+                    <span class="phase-objective">Objective: High-velocity prototyping with AI acceleration</span>
                 </div>
-                <p>Confirm the target user, primary problem, scope boundary, decision-maker, budget range, and delivery timeline.</p>
+                <div class="phase-cards-row">
+                    <div class="nine-stage-card">
+                        <div class="nine-stage-header">
+                            <div class="nine-stage-badge">04</div>
+                            <h4>Milestone Proposal</h4>
+                        </div>
+                        <p>Clear, fixed scope agreement shared outlining exact sprint deliverables, architecture choices, and acceptance criteria.</p>
+                    </div>
+
+                    <div class="nine-stage-card">
+                        <div class="nine-stage-header">
+                            <div class="nine-stage-badge">05</div>
+                            <h4>Sprint Kickoff</h4>
+                        </div>
+                        <p>Dedicated studio builder squad assigned. Direct communication channel established and sprint roadmap initiated.</p>
+                    </div>
+
+                    <div class="nine-stage-card">
+                        <div class="nine-stage-header">
+                            <div class="nine-stage-badge">06</div>
+                            <h4>AI-Native Build</h4>
+                        </div>
+                        <p>Rapid component development and database implementation using AI tooling, with frequent client progress previews.</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Stage 3 -->
-            <div class="nine-stage-card">
-                <div class="nine-stage-header">
-                    <div class="nine-stage-badge">03</div>
-                    <h4>Technical Scoping</h4>
+            <!-- Phase 3 -->
+            <div class="process-phase-block">
+                <div class="phase-header-bar">
+                    <div class="phase-title-group">
+                        <span class="phase-tag">Phase 03</span>
+                        <h3>Quality Assurance, Launch &amp; Care</h3>
+                    </div>
+                    <span class="phase-objective">Objective: Flawless production handover &amp; ongoing stability</span>
                 </div>
-                <p>Feasibility review; MVP core features distinguished from optional nice-to-haves; timeline estimated accurately.</p>
+                <div class="phase-cards-row">
+                    <div class="nine-stage-card">
+                        <div class="nine-stage-header">
+                            <div class="nine-stage-badge">07</div>
+                            <h4>Senior Human QA</h4>
+                        </div>
+                        <p>Rigorous human code review, security audits, responsiveness checks across viewports, and edge-case testing.</p>
+                    </div>
+
+                    <div class="nine-stage-card">
+                        <div class="nine-stage-header">
+                            <div class="nine-stage-badge">08</div>
+                            <h4>Launch &amp; IP Handover</h4>
+                        </div>
+                        <p>Production domain deployment, 100% repository transfer, environment variable handover, and final acceptance signoff.</p>
+                    </div>
+
+                    <div class="nine-stage-card">
+                        <div class="nine-stage-header">
+                            <div class="nine-stage-badge">09</div>
+                            <h4>Aftercare &amp; Support</h4>
+                        </div>
+                        <p>Warranty support active, post-launch feedback gathered, and continuous iteration or retainer sprint options available.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: STUDIO GUARANTEES -->
+    <section class="guarantees-section">
+        <div class="guarantees-container">
+            <div class="section-header-center" style="margin-bottom: 2rem;">
+                <span class="section-label" style="background: rgba(255, 107, 74, 0.15); color: var(--orange);">
+                    Studio Guardrails
+                </span>
+                <h2 style="color: #ffffff;">Our Non-Negotiable Commitments</h2>
+                <p style="color: rgba(255, 255, 255, 0.7);">We eliminated the frustrations of traditional software agencies: no hidden hourly bloat, no hostage code, and zero compromises on quality.</p>
             </div>
 
-            <!-- Stage 4 -->
-            <div class="nine-stage-card">
-                <div class="nine-stage-header">
-                    <div class="nine-stage-badge">04</div>
-                    <h4>Proposal</h4>
+            <div class="guarantees-grid">
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    </div>
+                    <h4>Fixed Milestone Scoping</h4>
+                    <p>Every sprint has defined boundaries and acceptance criteria. You will never face surprise billing or creeping invoices.</p>
                 </div>
-                <p>A clear proposal is shared outlining agreed scope, milestones, pricing tier, and key architectural assumptions.</p>
+
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h4>100% Code Ownership</h4>
+                    <p>All repositories, accounts, APIs, and intellectual property belong exclusively to you from day one of handover.</p>
+                </div>
+
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <h4>Senior Human QA Audit</h4>
+                    <p>Student developers bring sprint speed; senior engineers ensure architectural hygiene, security, and lint-clean code.</p>
+                </div>
+
+                <div class="guarantee-card">
+                    <div class="guarantee-icon">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                    </div>
+                    <h4>Zero Vendor Lock-In</h4>
+                    <p>Built with industry-standard stacks (Next.js, Node, PostgreSQL) so any engineering team can take over anytime.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: FREQUENTLY ASKED QUESTIONS -->
+    <section class="faq-section">
+        <div class="section-header-center">
+            <span class="section-label">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                Common Questions
+            </span>
+            <h2>Frequently Asked Questions</h2>
+            <p>Everything you need to know about partnering with Site2Success on your software build.</p>
+        </div>
+
+        <div class="faq-grid">
+            <div class="faq-item">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    How quickly can our project sprint kick off?
+                </h3>
+                <p>Following our initial discovery and technical scoping conversation, approved proposals typically kickoff within 3 to 5 business days, with builder squads assigned immediately.</p>
             </div>
 
-            <!-- Stage 5 -->
-            <div class="nine-stage-card">
-                <div class="nine-stage-header">
-                    <div class="nine-stage-badge">05</div>
-                    <h4>Kickoff</h4>
-                </div>
-                <p>Single client contact confirmed; shared project channel created; deliverables and acceptance criteria locked in.</p>
+            <div class="faq-item">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    How does milestone-based scoping work?
+                </h3>
+                <p>We do not bill open-ended hourly rates. Before work starts, we document a concise technical scope with clear deliverable milestones. You know precisely what is being built, the acceptance criteria, and the exact completion date.</p>
             </div>
 
-            <!-- Stage 6 -->
-            <div class="nine-stage-card">
-                <div class="nine-stage-header">
-                    <div class="nine-stage-badge">06</div>
-                    <h4>Build</h4>
-                </div>
-                <p>AI-native rapid development sprints with weekly internal reviews, regular client demos, and clear progress tracking.</p>
+            <div class="faq-item">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Who owns the code and intellectual property?
+                </h3>
+                <p>You own 100% of the intellectual property, database schema, design assets, and code from the moment of project handover. We transfer the complete GitHub repository directly to your organization.</p>
             </div>
 
-            <!-- Stage 7 -->
-            <div class="nine-stage-card">
-                <div class="nine-stage-header">
-                    <div class="nine-stage-badge">07</div>
-                    <h4>QA</h4>
-                </div>
-                <p>Comprehensive functional testing, responsive cross-device checks, security review, and mandatory human code audit.</p>
-            </div>
-
-            <!-- Stage 8 -->
-            <div class="nine-stage-card">
-                <div class="nine-stage-header">
-                    <div class="nine-stage-badge">08</div>
-                    <h4>Launch &amp; Handover</h4>
-                </div>
-                <p>Production deployment, credentials and repository transfer, full documentation provided, and final acceptance milestone.</p>
-            </div>
-
-            <!-- Stage 9 -->
-            <div class="nine-stage-card">
-                <div class="nine-stage-header">
-                    <div class="nine-stage-badge">09</div>
-                    <h4>Aftercare</h4>
-                </div>
-                <p>Feedback collected; testimonial requested; ongoing maintenance or next-phase sprint offered; outcome packaged as case study.</p>
+            <div class="faq-item">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    How does the student builder + senior QA model operate?
+                </h3>
+                <p>Our handpicked university fellows build rapid prototypes with modern AI workflows, delivering incredible speed and enthusiasm. Every feature and module is audited, refactored, and approved by senior software engineers before client handover.</p>
             </div>
         </div>
     </section>
@@ -1462,24 +1982,24 @@
     <!-- CTA Section -->
     <section class="cta-banner-services">
         <div class="container">
-            <h2>Ready to turn your idea into working software?</h2>
-            <p>Consult with our studio team to scope your project, pick the right package, and get a clear timeline.</p>
-            <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+            <h2>Ready to turn your vision into working software?</h2>
+            <p>Schedule a 20-minute technical discovery call with our studio leads. We'll map your requirements into a clear sprint plan and timeline.</p>
+            <div style="display:flex; justify-content:center; gap:1.25rem; flex-wrap:wrap;">
                 <a href="contact.html" class="btn btn-primary btn-large">
-                    Tell Us What You Want to Build
+                    Scope Your Project Sprint
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <line x1="5" y1="12" x2="19" y2="12"></line>
                         <polyline points="12 5 19 12 12 19"></polyline>
                     </svg>
                 </a>
                 <a href="projects.html" class="btn btn-secondary btn-large">
-                    View Portfolio Case Studies
+                    Explore Studio Portfolio
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER with Section 12 Legal Note & NAP -->
+    <!-- FOOTER -->
     <footer class="site-footer" role="contentinfo">
         <div class="footer-grid">
             <div class="footer-brand">
@@ -1517,7 +2037,7 @@
                         <span itemprop="addressCountry">India</span>
                     </span><br>
                     <a href="tel:+916361446768" itemprop="telephone">+91 6361446768</a><br>
-                    <a href="mailto:site2successs@gmail.com" itemprop="email">site2successs@gmail.com</a>
+                    <a href="mailto:info@site2success.online" itemprop="email">info@site2success.online</a>
                 </div>
             </div>
         </div>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,21 +28,168 @@
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="dns-prefetch" href="https://images.unsplash.com">
-    <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Styles -->
     <link rel="stylesheet" href="../assets/css/main.css">
     <link rel="stylesheet" href="../assets/css/pages.css">
-    
+
     <style>
-        .navbar {
-            background: rgba(255, 255, 255, 0.95) !important;
-            backdrop-filter: blur(20px);
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+        :root {
+            --studio-bg-light: #fafbfc;
+            --studio-card-border: rgba(0, 0, 0, 0.07);
+            --studio-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            --studio-shadow-hover: 0 20px 45px rgba(255, 107, 74, 0.1);
         }
 
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 48px);
+            max-width: 1200px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            background-image: linear-gradient(135deg, rgba(255,107,74,0.04) 0%, rgba(255,138,91,0.02) 50%, rgba(255,176,136,0.03) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 100px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1.25rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.scrolled {
+            top: 12px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-logo {
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.02);
+        }
+
+        .nav-item {
+            position: relative;
+            opacity: 0.85;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: var(--navy-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-item:hover {
+            opacity: 1;
+            background: rgba(255, 107, 74, 0.06);
+            color: var(--coral);
+        }
+
+        .nav-item.active {
+            opacity: 1;
+            background: rgba(255, 107, 74, 0.1);
+            color: var(--coral);
+            font-weight: 600;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 20px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--coral), var(--orange));
+            border-radius: 2px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-item:hover::after,
+        .nav-item.active::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        @media (max-width: 1024px) {
+            .navbar {
+                width: calc(100% - 32px);
+                top: 16px;
+                padding: 0.6rem 1rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 50%;
+                transform: translateX(-50%) translateY(-20px);
+                width: calc(100% - 48px);
+                max-width: 400px;
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 1.5rem;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px) saturate(180%);
+                -webkit-backdrop-filter: blur(20px) saturate(180%);
+                border-radius: 24px;
+                border: 1px solid rgba(255, 255, 255, 0.6);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1000;
+            }
+
+            .nav-links.mobile-open {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                transform: translateX(-50%) translateY(0);
+            }
+
+            .nav-item {
+                width: 100%;
+                text-align: center;
+                padding: 0.875rem 1.25rem;
+                border-radius: 12px;
+            }
+
+            .nav-item::after {
+                bottom: 8px;
+            }
+
+            .menu-toggle {
+                display: flex !important;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg) !important;
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0 !important;
+                transform: scaleX(0) !important;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg) !important;
+            }
+        }
+
+        /* ===== HERO SECTION ===== */
         .internship-hero {
             position: relative;
             min-height: 65vh;
@@ -49,7 +197,8 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            background: linear-gradient(135deg, #090c16 0%, #15192c 50%, #0c0e18 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .internship-hero-bg {
@@ -65,7 +214,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.3;
+            opacity: 0.25;
         }
 
         .internship-hero-overlay {
@@ -74,7 +223,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(18,24,41,0.85) 0%, rgba(26,26,46,0.92) 100%);
+            background: linear-gradient(135deg, rgba(9, 12, 22, 0.85) 0%, rgba(21, 25, 44, 0.92) 100%);
             z-index: 1;
         }
 
@@ -82,19 +231,19 @@
             position: relative;
             z-index: 3;
             text-align: center;
-            max-width: 860px;
-            padding: 8rem 2rem 4rem;
+            max-width: 900px;
+            padding: 9.5rem 2rem 4.5rem;
         }
 
         .internship-hero-label {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             padding: 0.5rem 1.25rem;
             background: rgba(255, 107, 74, 0.15);
-            border: 1px solid rgba(255, 107, 74, 0.3);
+            border: 1px solid rgba(255, 107, 74, 0.35);
             border-radius: 100px;
-            font-size: 0.8rem;
+            font-size: 0.82rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.08em;
@@ -103,92 +252,104 @@
         }
 
         .internship-hero-title {
-            font-size: clamp(2.3rem, 5vw, 3.75rem);
+            font-size: clamp(2.4rem, 4.8vw, 3.8rem);
             font-weight: 800;
             color: #ffffff;
-            margin-bottom: 1.25rem;
-            letter-spacing: -0.02em;
+            margin-bottom: 1.35rem;
+            letter-spacing: -0.025em;
             line-height: 1.15;
         }
 
+        .internship-hero-title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
         .internship-hero-subtitle {
-            font-size: clamp(1.05rem, 2vw, 1.25rem);
-            color: rgba(255, 255, 255, 0.85);
-            line-height: 1.75;
-            max-width: 720px;
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            color: rgba(255, 255, 255, 0.82);
+            line-height: 1.8;
+            max-width: 760px;
             margin: 0 auto;
         }
 
+        /* ===== TRACKS SECTION ===== */
         .tracks-section {
-            padding: 0 2rem 4rem;
-            margin-top: -3rem;
+            padding: 0 2rem 5.5rem;
+            margin-top: -2.5rem;
             position: relative;
             z-index: 10;
         }
 
         .tracks-container {
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.98);
             backdrop-filter: blur(20px);
             border-radius: 32px;
             padding: 3.5rem;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--studio-card-border);
         }
 
         .tracks-header {
             margin-bottom: 3rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .tracks-header h2 {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.85rem;
+            font-size: clamp(2rem, 3.5vw, 2.75rem);
             font-weight: 800;
             color: var(--navy-dark);
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.85rem;
+            letter-spacing: -0.02em;
         }
 
         .tracks-header p {
             color: var(--gray-600);
             font-size: 1.05rem;
-            line-height: 1.7;
-            max-width: 750px;
+            line-height: 1.75;
         }
 
         .tracks-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 1.75rem;
+            gap: 2rem;
         }
 
         .track-card {
             background: #fafbfc;
-            border-radius: 20px;
-            border: 1px solid rgba(0,0,0,0.06);
+            border-radius: 22px;
+            border: 1px solid rgba(0, 0, 0, 0.06);
             padding: 2.25rem;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
         }
 
         .track-card:hover {
             transform: translateY(-4px);
-            border-color: rgba(255,107,74,0.25);
-            box-shadow: 0 16px 40px rgba(0,0,0,0.05);
+            border-color: rgba(255, 107, 74, 0.25);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+            background: #ffffff;
         }
 
         .track-badge {
             display: inline-block;
-            padding: 0.3rem 0.75rem;
-            background: rgba(255,107,74,0.1);
+            padding: 0.35rem 0.85rem;
+            background: rgba(255, 107, 74, 0.1);
             color: var(--coral);
             border-radius: 100px;
             font-size: 0.75rem;
             font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 0.05em;
             margin-bottom: 1rem;
             width: fit-content;
         }
@@ -198,29 +359,29 @@
             font-weight: 800;
             color: var(--navy-dark);
             margin-bottom: 0.75rem;
+            letter-spacing: -0.01em;
         }
 
         .track-card p {
             font-size: 0.95rem;
             color: var(--gray-600);
             line-height: 1.7;
-            margin-bottom: 1.25rem;
-            flex: 1;
+            margin-bottom: 1.35rem;
         }
 
         .track-skills {
             display: flex;
-            gap: 0.4rem;
+            gap: 0.45rem;
             flex-wrap: wrap;
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
         }
 
         .track-skills span {
-            padding: 0.25rem 0.65rem;
-            background: #fff;
-            border: 1px solid rgba(0,0,0,0.08);
+            padding: 0.3rem 0.75rem;
+            background: #ffffff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
             border-radius: 8px;
-            font-size: 0.75rem;
+            font-size: 0.78rem;
             color: var(--navy-dark);
             font-weight: 600;
         }
@@ -229,9 +390,14 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-top: 1rem;
-            border-top: 1px solid rgba(0,0,0,0.06);
+            padding-top: 1.1rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
             font-size: 0.85rem;
+            color: var(--coral);
+            font-weight: 700;
+        }
+
+        .track-meta span:last-child {
             color: var(--gray-500);
             font-weight: 600;
         }
@@ -245,17 +411,25 @@
         }
 
         .pillar-card {
-            background: #ffffff;
+            background: #fafbfc;
             border-radius: 20px;
             padding: 2rem 1.5rem;
-            border: 1px solid rgba(0,0,0,0.06);
+            border: 1px solid rgba(0, 0, 0, 0.06);
             text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(255, 107, 74, 0.25);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+            background: #ffffff;
         }
 
         .pillar-icon {
             width: 54px;
             height: 54px;
-            background: rgba(255,107,74,0.1);
+            background: rgba(255, 107, 74, 0.1);
             color: var(--coral);
             border-radius: 16px;
             display: flex;
@@ -274,85 +448,200 @@
         .pillar-card p {
             font-size: 0.9rem;
             color: var(--gray-500);
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* 4-Step Application Steps */
+        .apply-steps-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2.5rem 0 3.5rem;
+        }
+
+        .apply-step-card {
+            background: #fafbfc;
+            border-radius: 18px;
+            padding: 1.75rem 1.5rem;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            position: relative;
+        }
+
+        .apply-step-number {
+            font-size: 0.78rem;
+            font-weight: 800;
+            color: var(--coral);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 0.5rem;
+        }
+
+        .apply-step-card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin-bottom: 0.4rem;
+        }
+
+        .apply-step-card p {
+            font-size: 0.85rem;
+            color: var(--gray-500);
             line-height: 1.6;
             margin: 0;
         }
 
         @media (max-width: 1024px) {
-            .tracks-grid { grid-template-columns: 1fr; }
-            .pillars-grid { grid-template-columns: repeat(2, 1fr); }
+            .tracks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pillars-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .apply-steps-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 768px) {
-            .tracks-container { padding: 2rem 1.5rem; border-radius: 20px; }
-            .pillars-grid { grid-template-columns: 1fr; }
-            .internship-hero-content { padding: 6rem 1.5rem 3rem; }
+            .tracks-container {
+                padding: 2.25rem 1.5rem;
+                border-radius: 20px;
+            }
+
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .apply-steps-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .internship-hero-content {
+                padding: 7rem 1.5rem 3.5rem;
+            }
         }
 
-        /* ── Mobile Nav (shared) ── */
-        @media (max-width: 1024px) {
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: 50%;
-                transform: translateX(-50%) translateY(-20px);
-                width: calc(100% - 48px);
-                max-width: 400px;
-                flex-direction: column;
-                gap: 0.5rem;
-                padding: 1.5rem;
-                background: rgba(255,255,255,0.97);
-                backdrop-filter: blur(20px) saturate(180%);
-                -webkit-backdrop-filter: blur(20px) saturate(180%);
-                border-radius: 24px;
-                border: 1px solid rgba(255,255,255,0.6);
-                box-shadow: 0 8px 32px rgba(0,0,0,0.06);
-                opacity: 0;
-                visibility: hidden;
-                pointer-events: none;
-                transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
-                z-index: 999;
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: #080a12;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 5rem 2rem 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.2fr;
+            gap: 3rem;
+            max-width: 1240px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-brand img {
+            height: 44px;
+            width: auto;
+            border-radius: 0;
+            margin-bottom: 1.25rem;
+            background: transparent;
+            padding: 0;
+            display: inline-block;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-brand p {
+            font-size: 0.92rem;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.55);
+            max-width: 340px;
+        }
+
+        .footer-col h4 {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.65);
+            margin-bottom: 0.65rem;
+            transition: color 0.25s;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: var(--coral);
+        }
+
+        .legal-scope-disclaimer {
+            max-width: 1240px;
+            margin: 0 auto 2.5rem;
+            padding: 1.5rem 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 16px;
+            font-size: 0.8rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        .legal-scope-disclaimer strong {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .footer-bottom {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
             }
-            .nav-links.mobile-open {
-                opacity: 1;
-                visibility: visible;
-                pointer-events: auto;
-                transform: translateX(-50%) translateY(0);
+        }
+
+        @media (max-width: 600px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
-            .nav-item {
-                width: 100%;
-                text-align: center;
-                padding: 0.875rem 1.25rem;
-            }
-            .menu-toggle {
-                display: flex !important;
-            }
-            .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-            .menu-toggle.active span:nth-child(2) { opacity: 0; }
-            .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
         }
     </style>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 </head>
+
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <a href="home.html" class="nav-logo">
-            <img src="../assets/images/logo.png" alt="Site2Success — University-Powered AI Software Studio" style="height: 48px; width: auto; border-radius: 0;">
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
+        <a href="home.html" class="nav-logo" aria-label="Site2Success Home">
+            <img src="../assets/images/logo.png" alt="Site2Success — University-Powered AI Software Studio" style="height: 44px; width: auto; border-radius: 0;">
         </a>
 
-        <div class="nav-links" id="nav-links">
-            <a href="home.html" class="nav-item" data-page="home">Home</a>
-            <a href="services.html" class="nav-item" data-page="services">Services</a>
-            <a href="projects.html" class="nav-item" data-page="projects">Projects</a>
-            <a href="about.html" class="nav-item" data-page="about">About</a>
-            <a href="internships.html" class="nav-item active" data-page="internships">Builders</a>
-            <a href="automation.html" class="nav-item" data-page="automation">KIRA AI</a>
-            <a href="contact.html" class="nav-item" data-page="contact">Contact</a>
+        <div class="nav-links" id="nav-links" role="menubar">
+            <a href="home.html" class="nav-item" data-page="home" role="menuitem">Home</a>
+            <a href="services.html" class="nav-item" data-page="services" role="menuitem">Services &amp; Packages</a>
+            <a href="projects.html" class="nav-item" data-page="projects" role="menuitem">Projects</a>
+            <a href="about.html" class="nav-item" data-page="about" role="menuitem">About</a>
+            <a href="internships.html" class="nav-item active" data-page="internships" role="menuitem">Builders</a>
+            <a href="contact.html" class="nav-item" data-page="contact" role="menuitem">Contact</a>
         </div>
-        <div class="menu-toggle" id="menu-toggle">
+
+        <div class="menu-toggle" id="menu-toggle" role="button" aria-label="Toggle menu" aria-expanded="false" tabindex="0">
             <span></span>
             <span></span>
             <span></span>
@@ -372,7 +661,7 @@
                 </svg>
                 Builders Studio Fellowship
             </div>
-            <h1 class="internship-hero-title">Build Real Software.<br>Earn Stipends.<br>Master AI-Native Engineering.</h1>
+            <h1 class="internship-hero-title">Build Real Software.<br><span>Earn Stipends.</span> Master AI-Native Engineering.</h1>
             <p class="internship-hero-subtitle">We don't do dummy classroom exercises or coffee runs. Site2Success pairs gifted university developers with professional AI tooling and senior QA oversight to ship production software for real founders, researchers, and businesses.</p>
         </div>
     </section>
@@ -388,80 +677,88 @@
             <div class="tracks-grid">
                 <!-- Track 1: Full-Stack Web Apps -->
                 <div class="track-card">
-                    <span class="track-badge">Squad 01</span>
-                    <h3>Full-Stack Web Applications</h3>
-                    <p>Build responsive, production-ready web apps, client portals, and administrative back-offices. Implement authentication, database migrations, and clean UI components.</p>
-                    <div class="track-skills">
-                        <span>React / Next.js</span>
-                        <span>Node.js / Express</span>
-                        <span>PostgreSQL / MongoDB</span>
-                        <span>JWT Auth</span>
-                        <span>Tailwind / CSS</span>
+                    <div>
+                        <span class="track-badge">Squad 01</span>
+                        <h3>Full-Stack Web Applications</h3>
+                        <p>Build responsive, production-ready web apps, client portals, and administrative back-offices. Implement authentication, database migrations, and clean UI components.</p>
+                        <div class="track-skills">
+                            <span>React / Next.js</span>
+                            <span>Node.js / Express</span>
+                            <span>PostgreSQL / Supabase</span>
+                            <span>JWT Auth</span>
+                            <span>Tailwind / CSS</span>
+                        </div>
                     </div>
                     <div class="track-meta">
                         <span>Project-Based Stipends</span>
-                        <span>Code Review by Senior QA</span>
+                        <span>Senior Code Review</span>
                     </div>
                 </div>
 
                 <!-- Track 2: AI Workflows & Automation -->
                 <div class="track-card">
-                    <span class="track-badge">Squad 02</span>
-                    <h3>AI Workflows &amp; Automation</h3>
-                    <p>Integrate LLM endpoints, structured prompt engines, webhook automations, and multi-channel bots (WhatsApp Business API, CRM pipelines, KIRA engine integrations).</p>
-                    <div class="track-skills">
-                        <span>OpenAI / Gemini APIs</span>
-                        <span>WhatsApp Cloud API</span>
-                        <span>n8n / Webhooks</span>
-                        <span>Python / FastApi</span>
-                        <span>Vector Stores</span>
+                    <div>
+                        <span class="track-badge">Squad 02</span>
+                        <h3>AI Workflows &amp; Automation</h3>
+                        <p>Integrate LLM endpoints, structured prompt engines, webhook automations, and multi-channel bots (WhatsApp Business API, CRM pipelines, KIRA engine integrations).</p>
+                        <div class="track-skills">
+                            <span>OpenAI / Gemini APIs</span>
+                            <span>WhatsApp Cloud API</span>
+                            <span>n8n / Webhooks</span>
+                            <span>Python / FastAPI</span>
+                            <span>Vector Stores</span>
+                        </div>
                     </div>
                     <div class="track-meta">
                         <span>Project-Based Stipends</span>
-                        <span>Real Client Deployments</span>
+                        <span>Live Client Deployments</span>
                     </div>
                 </div>
 
                 <!-- Track 3: Research Prototypes & Dashboards -->
                 <div class="track-card">
-                    <span class="track-badge">Squad 03</span>
-                    <h3>Research Prototypes &amp; Viz</h3>
-                    <p>Collaborate with university researchers and lab faculty to transform complex scientific data and Python models into interactive web tools and grant-ready prototypes.</p>
-                    <div class="track-skills">
-                        <span>Python / Data Analysis</span>
-                        <span>Plotly / D3.js</span>
-                        <span>Streamlit / FastApi</span>
-                        <span>REST Endpoints</span>
-                        <span>CSV / GeoJSON</span>
+                    <div>
+                        <span class="track-badge">Squad 03</span>
+                        <h3>Research Prototypes &amp; Viz</h3>
+                        <p>Collaborate with university researchers and lab faculty to transform complex scientific data and Python models into interactive web tools and grant-ready prototypes.</p>
+                        <div class="track-skills">
+                            <span>Python / Data Analysis</span>
+                            <span>Plotly / D3.js</span>
+                            <span>Streamlit / FastAPI</span>
+                            <span>REST Endpoints</span>
+                            <span>CSV / GeoJSON</span>
+                        </div>
                     </div>
                     <div class="track-meta">
-                        <span>Academic Citations &amp; Stipends</span>
                         <span>Faculty Co-Design</span>
+                        <span>Academic Citations</span>
                     </div>
                 </div>
 
                 <!-- Track 4: Cross-Platform Mobile Apps -->
                 <div class="track-card">
-                    <span class="track-badge">Squad 04</span>
-                    <h3>Cross-Platform Mobile Apps</h3>
-                    <p>Deliver native-feeling iOS and Android applications for student founders and local businesses. Focus on clean navigation, local caching, and payment gateway hooks.</p>
-                    <div class="track-skills">
-                        <span>Flutter / Dart</span>
-                        <span>React Native</span>
-                        <span>Firebase / Supabase</span>
-                        <span>Push Notifications</span>
-                        <span>Store Deployment</span>
+                    <div>
+                        <span class="track-badge">Squad 04</span>
+                        <h3>Cross-Platform Mobile Apps</h3>
+                        <p>Deliver native-feeling iOS and Android applications for student founders and local businesses. Focus on clean navigation, local caching, and payment gateway hooks.</p>
+                        <div class="track-skills">
+                            <span>Flutter / Dart</span>
+                            <span>React Native</span>
+                            <span>Firebase / Supabase</span>
+                            <span>Push Notifications</span>
+                            <span>Store Deployment</span>
+                        </div>
                     </div>
                     <div class="track-meta">
                         <span>Project-Based Stipends</span>
-                        <span>App Store / Play Store</span>
+                        <span>Store Deployments</span>
                     </div>
                 </div>
             </div>
 
-            <!-- What Builders Get -->
-            <div style="margin-top: 4rem; padding-top: 3rem; border-top: 1px solid rgba(0,0,0,0.06);">
-                <h3 style="font-size: 1.5rem; font-weight: 800; color: var(--navy-dark); text-align: center; margin-bottom: 2rem;">Why Build With Site2Success</h3>
+            <!-- Why Build With Site2Success -->
+            <div style="margin-top: 4.5rem; padding-top: 3.5rem; border-top: 1px solid rgba(0,0,0,0.06);">
+                <h3 style="font-size: 1.65rem; font-weight: 800; color: var(--navy-dark); text-align: center; margin-bottom: 2rem; letter-spacing: -0.015em;">Why Build With Site2Success</h3>
                 <div class="pillars-grid">
                     <div class="pillar-card">
                         <div class="pillar-icon">
@@ -497,10 +794,38 @@
                 </div>
             </div>
 
+            <!-- Application Process Roadmap -->
+            <div style="margin-top: 4.5rem; padding-top: 3.5rem; border-top: 1px solid rgba(0,0,0,0.06);">
+                <h3 style="font-size: 1.65rem; font-weight: 800; color: var(--navy-dark); text-align: center; margin-bottom: 0.5rem; letter-spacing: -0.015em;">The Fellowship Selection Process</h3>
+                <p style="text-align: center; color: var(--gray-500); max-width: 600px; margin: 0 auto 2.5rem;">A fast, meritocratic 4-step benchmark evaluating practical building ability and commitment.</p>
+                <div class="apply-steps-grid">
+                    <div class="apply-step-card">
+                        <div class="apply-step-number">Step 01</div>
+                        <h4>Initial Intake</h4>
+                        <p>Submit your GitHub profile, past projects, and primary coding stack preferences.</p>
+                    </div>
+                    <div class="apply-step-card">
+                        <div class="apply-step-number">Step 02</div>
+                        <h4>Practical Challenge</h4>
+                        <p>A 48-hour hands-on coding task focusing on API consumption, clean UI, and edge handling.</p>
+                    </div>
+                    <div class="apply-step-card">
+                        <div class="apply-step-number">Step 03</div>
+                        <h4>Squad Interview</h4>
+                        <p>Technical conversation with studio leads on code architecture, AI tools, and collaboration.</p>
+                    </div>
+                    <div class="apply-step-card">
+                        <div class="apply-step-number">Step 04</div>
+                        <h4>Active Sprint Placement</h4>
+                        <p>Onboarded into a live client squad, equipped with AI tooling, and assigned milestone deliverables.</p>
+                    </div>
+                </div>
+            </div>
+
             <!-- Application Callout -->
-            <div style="margin-top: 3.5rem; background: linear-gradient(135deg, #121829 0%, #1e293b 100%); border-radius: 24px; padding: 3rem; color: white; text-align: center;">
-                <h3 style="font-size: 1.75rem; font-weight: 800; margin-bottom: 0.75rem;">Ready to Join the Studio Squad?</h3>
-                <p style="color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 2rem; line-height: 1.7;">Selection is based on a practical code benchmark, problem-solving ability, and eagerness to ship. Open to motivated university students across all years.</p>
+            <div style="background: linear-gradient(135deg, #101424 0%, #1b2138 100%); border-radius: 24px; padding: 3.5rem 2.5rem; color: white; text-align: center; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 20px 60px rgba(0,0,0,0.12);">
+                <h3 style="font-size: 1.85rem; font-weight: 800; margin-bottom: 0.75rem; letter-spacing: -0.015em;">Ready to Join the Studio Squad?</h3>
+                <p style="color: rgba(255,255,255,0.7); max-width: 640px; margin: 0 auto 2.25rem; line-height: 1.75; font-size: 1.05rem;">Selection is based on a practical code benchmark, problem-solving ability, and eagerness to ship. Open to motivated university students across all engineering and computer science programs.</p>
                 <a href="contact.html?subject=Join+Studio+as+a+Builder" class="btn btn-primary btn-large">
                     Apply for Builders Fellowship
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -509,51 +834,60 @@
         </div>
     </section>
 
-    <!-- FOOTER with NAP & Section 12 Disclaimer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:4rem 2rem 2rem;">
-        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto 3rem;">
-            <div>
-                <img src="../assets/images/logo.png" alt="Site2Success Logo" style="height:54px;width:auto;border-radius:12px;background:#ffffff;padding:6px 14px;box-shadow:0 4px 12px rgba(0,0,0,0.15);margin-bottom:1.25rem;opacity:1 !important;display:inline-block;">
-                <p style="font-size:0.9rem;line-height:1.7;color:rgba(255,255,255,0.5);max-width:320px;">University-powered AI software studio combining AI-native development with university talent to turn ideas into working software.</p>
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="../assets/images/logo.png" alt="Site2Success Logo" loading="lazy">
+                <p>University-powered, AI-first software studio turning early-stage ideas and practical software requirements into working products.</p>
+                <p style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-top:0.75rem;">"Built by the next generation. Accelerated by AI."</p>
             </div>
-            <div>
-                <h4 style="font-size:0.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;">Pages</h4>
-                <a href="home.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Home</a>
-                <a href="services.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Services &amp; Pricing</a>
-                <a href="projects.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Case Studies</a>
-                <a href="about.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">About</a>
-                <a href="internships.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Builders Studio</a>
-                <a href="automation.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">KIRA AI</a>
-                <a href="contact.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Contact</a>
+
+            <div class="footer-col">
+                <h4>Studio</h4>
+                <a href="home.html">Home</a>
+                <a href="services.html">Services &amp; Packages</a>
+                <a href="projects.html">Projects Portfolio</a>
+                <a href="about.html">About &amp; Operating Model</a>
+                <a href="internships.html">Student Builders</a>
+                <a href="contact.html">Request a Consultation</a>
             </div>
-            <div>
-                <h4 style="font-size:0.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;">Studio Office</h4>
-                <div style="font-size:0.9rem;line-height:1.8;color:rgba(255,255,255,0.5);" itemscope itemtype="https://schema.org/LocalBusiness">
-                    <strong itemprop="name" style="color:rgba(255,255,255,0.8);">Site2Success</strong><br>
+
+            <div class="footer-col">
+                <h4>Packages Ladder</h4>
+                <a href="services.html#packages">Starter Package</a>
+                <a href="services.html#packages">MVP Package</a>
+                <a href="services.html#packages">Research / Prototype</a>
+                <a href="services.html#packages">Custom Product</a>
+                <a href="services.html#packages">Maintenance Retainer</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Studio Contact</h4>
+                <div class="footer-nap" itemscope itemtype="https://schema.org/LocalBusiness">
+                    <strong itemprop="name">Site2Success Studio</strong><br>
                     <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                         <span itemprop="addressLocality">Bengaluru</span>,
                         <span itemprop="addressRegion">Karnataka</span>,
                         <span itemprop="addressCountry">India</span>
                     </span><br>
-                    <a href="tel:+916361446768" itemprop="telephone" style="color:rgba(255,255,255,0.5);text-decoration:none;">+91 6361446768</a><br>
-                    <a href="mailto:site2successs@gmail.com" itemprop="email" style="color:rgba(255,255,255,0.5);text-decoration:none;">site2successs@gmail.com</a>
+                    <a href="tel:+916361446768" itemprop="telephone">+91 6361446768</a><br>
+                    <a href="mailto:info@site2success.online" itemprop="email">info@site2success.online</a>
                 </div>
             </div>
         </div>
 
-        <!-- Section 12 Governance & Scope Note -->
-        <div style="max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem;margin-bottom:2rem;">
-            <p style="font-size:0.775rem;line-height:1.7;color:rgba(255,255,255,0.38);margin:0;">
-                <strong style="color:rgba(255,255,255,0.55);">Scope &amp; Governance Note:</strong> This rebuild is based on a strategic operating plan, not legal, tax, employment, or university-policy advice. Before finalizing client contracts, stipend terms, IP ownership language, data handling policy, or any CHRIST University branding/endorsement claims, appropriate legal and institutional review should be obtained separately — this should not be assumed to be covered by the website content itself.
-            </p>
+        <!-- Section 12 Legal Note -->
+        <div class="legal-scope-disclaimer">
+            <strong>Legal &amp; Operating Scope Note:</strong> This rebuild is based on a strategic operating plan, not legal, tax, employment, or university-policy advice. Before finalizing client contracts, stipend terms, IP ownership language, data handling policy, or any CHRIST University branding/endorsement claims, appropriate legal and institutional review should be obtained separately — this should not be assumed to be covered by the website content itself.
         </div>
 
-        <div style="max-width:1200px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
-            <p style="font-size:0.875rem;color:rgba(255,255,255,0.3);">&copy; 2024–2026 Site2Success. All rights reserved.</p>
-            <div style="display:flex;gap:1rem;">
-                <a href="https://linkedin.com/company/site2success" rel="noopener" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.875rem;">LinkedIn</a>
-                <a href="https://github.com/site2success" rel="noopener" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.875rem;">GitHub</a>
-                <a href="https://instagram.com/site2success" rel="noopener" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.875rem;">Instagram</a>
+        <div class="footer-bottom">
+            <p>&copy; 2024–2026 Site2Success. All rights reserved. University-Powered AI Software Studio.</p>
+            <div class="footer-socials">
+                <a href="https://linkedin.com/company/site2success" rel="noopener" target="_blank" aria-label="Site2Success on LinkedIn">LinkedIn</a>
+                <a href="https://github.com/site2success" rel="noopener" target="_blank" aria-label="Site2Success on GitHub">GitHub</a>
+                <a href="https://instagram.com/site2success" rel="noopener" target="_blank" aria-label="Site2Success on Instagram">Instagram</a>
             </div>
         </div>
     </footer>
@@ -589,4 +923,5 @@
     })();
     </script>
 </body>
+
 </html>

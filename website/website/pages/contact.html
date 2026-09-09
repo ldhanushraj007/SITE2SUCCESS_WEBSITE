@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Schedule a Technical Scoping Call | Site2Success — University-Powered AI Software Studio</title>
-    <meta name="description" content="Have an idea? We turn it into working software. Schedule a technical scoping call with Site2Success founders in Bengaluru. Transparent fixed-scope proposals.">
-    <meta name="keywords" content="contact Site2Success, technical scoping call, software studio Bengaluru, MVP development, AI workflow automation">
+    <meta name="description" content="Have an idea? We turn it into working software. Schedule a technical scoping session with Site2Success founders in Bengaluru. Transparent milestone proposals within 48h.">
+    <meta name="keywords" content="contact Site2Success, technical scoping call, software studio Bengaluru, MVP development, AI workflow automation, sprint scoping">
     <link rel="canonical" href="https://site2success.online/pages/contact.html">
     <meta name="robots" content="index, follow">
     <meta name="google-site-verification" content="hUuqrSM6DO2-IPt-vKFLi6_DoScVl3sxZFX5Q328wno">
@@ -37,113 +37,428 @@
     <link rel="stylesheet" href="../assets/css/pages.css">
 
     <style>
+        :root {
+            --studio-bg-light: #fafbfc;
+            --studio-card-border: rgba(0, 0, 0, 0.07);
+            --studio-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            --studio-shadow-hover: 0 20px 45px rgba(255, 107, 74, 0.1);
+        }
+
+        /* ===== NAVBAR ===== */
+        .navbar {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: calc(100% - 48px);
+            max-width: 1200px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.88);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            background-image: linear-gradient(135deg, rgba(255,107,74,0.04) 0%, rgba(255,138,91,0.02) 50%, rgba(255,176,136,0.03) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 100px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.75rem 1.25rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .navbar.scrolled {
+            top: 12px;
+            background: rgba(255, 255, 255, 0.96);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+        }
+
+        .nav-logo {
+            transition: transform 0.3s ease;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-logo:hover {
+            transform: scale(1.02);
+        }
+
+        .nav-item {
+            position: relative;
+            opacity: 0.85;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: var(--navy-dark);
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .nav-item:hover {
+            opacity: 1;
+            background: rgba(255, 107, 74, 0.06);
+            color: var(--coral);
+        }
+
+        .nav-item.active {
+            opacity: 1;
+            background: rgba(255, 107, 74, 0.1);
+            color: var(--coral);
+            font-weight: 600;
+        }
+
+        .nav-item::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 20px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--coral), var(--orange));
+            border-radius: 2px;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-item:hover::after,
+        .nav-item.active::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        @media (max-width: 1024px) {
+            .navbar {
+                width: calc(100% - 32px);
+                top: 16px;
+                padding: 0.6rem 1rem;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 50%;
+                transform: translateX(-50%) translateY(-20px);
+                width: calc(100% - 48px);
+                max-width: 400px;
+                flex-direction: column;
+                gap: 0.5rem;
+                padding: 1.5rem;
+                background: rgba(255, 255, 255, 0.98);
+                backdrop-filter: blur(20px) saturate(180%);
+                -webkit-backdrop-filter: blur(20px) saturate(180%);
+                border-radius: 24px;
+                border: 1px solid rgba(255, 255, 255, 0.6);
+                box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+                opacity: 0;
+                visibility: hidden;
+                pointer-events: none;
+                transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                z-index: 1000;
+            }
+
+            .nav-links.mobile-open {
+                opacity: 1;
+                visibility: visible;
+                pointer-events: auto;
+                transform: translateX(-50%) translateY(0);
+            }
+
+            .nav-item {
+                width: 100%;
+                text-align: center;
+                padding: 0.875rem 1.25rem;
+                border-radius: 12px;
+            }
+
+            .nav-item::after {
+                bottom: 8px;
+            }
+
+            .menu-toggle {
+                display: flex !important;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: translateY(7px) rotate(45deg) !important;
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0 !important;
+                transform: scaleX(0) !important;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: translateY(-7px) rotate(-45deg) !important;
+            }
+        }
+
+        /* ===== CONTACT HERO ===== */
         .contact-hero {
             position: relative;
-            min-height: 45vh;
+            min-height: 48vh;
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            background: linear-gradient(135deg, #faf8f6 0%, #f5f0eb 50%, #faf6f2 100%);
-        }
-
-        .contact-hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(rgba(255, 107, 74, 0.08) 1px, transparent 1px);
-            background-size: 30px 30px;
-            z-index: 0;
+            background: radial-gradient(circle at 50% 20%, rgba(255, 107, 74, 0.06) 0%, transparent 65%),
+                        linear-gradient(180deg, #ffffff 0%, #faf8f7 100%);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            text-align: center;
         }
 
         .contact-hero-content {
             position: relative;
             z-index: 2;
-            text-align: center;
-            max-width: 800px;
-            padding: 7rem 2rem 3rem;
+            max-width: 880px;
+            padding: 9.5rem 2rem 4rem;
         }
 
         .contact-hero-label {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
+            gap: 0.6rem;
+            padding: 0.5rem 1.25rem;
             background: rgba(255, 107, 74, 0.08);
-            border: 1px solid rgba(255, 107, 74, 0.15);
+            border: 1px solid rgba(255, 107, 74, 0.2);
             border-radius: 100px;
-            font-size: 0.75rem;
+            font-size: 0.82rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.08em;
             color: var(--coral);
-            margin-bottom: 1.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .pulse-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #10b981;
+            box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+            70% { box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
         }
 
         .contact-hero-title {
-            font-size: clamp(2.3rem, 5vw, 3.4rem);
+            font-size: clamp(2.4rem, 4.8vw, 3.8rem);
             font-weight: 800;
             color: var(--navy-dark);
-            margin-bottom: 0.75rem;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
+            margin-bottom: 1.25rem;
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+        }
+
+        .contact-hero-title span {
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .contact-hero-subtitle {
-            font-size: 1.1rem;
-            color: var(--gray-600);
-            line-height: 1.75;
+            font-size: 1.15rem;
+            color: var(--gray-500);
+            line-height: 1.8;
+            max-width: 760px;
+            margin: 0 auto;
         }
 
+        /* ===== MAIN CONTACT SECTION ===== */
         .contact-section {
-            padding: 0 2rem 5rem;
-            margin-top: -1.5rem;
+            padding: 0 2rem 6rem;
+            margin-top: -2rem;
             position: relative;
             z-index: 10;
         }
 
         .contact-container {
-            max-width: 1200px;
+            max-width: 1240px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.25fr 0.75fr;
+            grid-template-columns: 1.35fr 0.85fr;
             gap: 2.5rem;
             align-items: start;
         }
 
+        /* FORM CARD */
         .contact-form-card {
-            background: rgba(255, 255, 255, 0.98);
-            backdrop-filter: blur(20px);
+            background: #ffffff;
             border-radius: 28px;
-            padding: 3rem;
-            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.06);
-            border: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 3.25rem;
+            box-shadow: 0 24px 64px rgba(0, 0, 0, 0.06);
+            border: 1px solid var(--studio-card-border);
+            position: relative;
+            overflow: hidden;
         }
 
-        .contact-form-card h2 {
+        .contact-form-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+        }
+
+        .form-header-box {
+            margin-bottom: 2.25rem;
             display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            font-size: 1.6rem;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .form-header-main h2 {
+            font-size: 1.75rem;
             font-weight: 800;
             color: var(--navy-dark);
             margin-bottom: 0.5rem;
+            letter-spacing: -0.015em;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
         }
 
-        .contact-form-card .form-lead {
-            font-size: 0.95rem;
+        .form-header-main h2 svg {
+            color: var(--coral);
+            flex-shrink: 0;
+        }
+
+        .form-header-main p {
+            font-size: 0.96rem;
             color: var(--gray-500);
-            line-height: 1.6;
-            margin-bottom: 2rem;
+            line-height: 1.65;
+            margin: 0;
         }
 
+        .form-est-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.78rem;
+            font-weight: 700;
+            color: #059669;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            padding: 0.35rem 0.75rem;
+            border-radius: 100px;
+        }
+
+        /* Pre-Selected Scope Pill Banner */
+        .selected-package-banner {
+            display: none;
+            align-items: center;
+            justify-content: space-between;
+            background: rgba(255, 107, 74, 0.08);
+            border: 1px solid rgba(255, 107, 74, 0.25);
+            border-radius: 14px;
+            padding: 0.85rem 1.25rem;
+            margin-bottom: 2rem;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-6px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .banner-info {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--coral);
+        }
+
+        .banner-clear-btn {
+            background: none;
+            border: none;
+            color: var(--gray-400);
+            font-size: 0.8rem;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .banner-clear-btn:hover {
+            color: var(--navy-dark);
+        }
+
+        /* Project Category Chips */
+        .category-chips-group {
+            margin-bottom: 1.75rem;
+        }
+
+        .category-chips-label {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: var(--gray-400);
+            margin-bottom: 0.75rem;
+        }
+
+        .category-chips-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+        }
+
+        .category-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            border: 1.5px solid rgba(0, 0, 0, 0.08);
+            background: #fafbfc;
+            border-radius: 100px;
+            padding: 0.5rem 1.05rem;
+            font-size: 0.84rem;
+            font-weight: 600;
+            color: var(--navy-dark);
+            cursor: pointer;
+            transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+            user-select: none;
+        }
+
+        .category-chip svg {
+            color: var(--coral);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+
+        .category-chip:hover {
+            border-color: rgba(255, 107, 74, 0.35);
+            background: #ffffff;
+            color: var(--coral);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(255, 107, 74, 0.08);
+        }
+
+        .category-chip:hover svg {
+            transform: scale(1.15);
+        }
+
+        .category-chip.active {
+            background: rgba(255, 107, 74, 0.12);
+            border-color: var(--coral);
+            color: var(--coral);
+            font-weight: 700;
+            box-shadow: 0 0 0 3px rgba(255, 107, 74, 0.12);
+        }
+
+        /* Form Inputs */
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 1.25rem;
+            gap: 1.45rem;
         }
 
         .form-row {
@@ -155,210 +470,656 @@
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 0.4rem;
+            gap: 0.45rem;
         }
 
         .form-label {
-            font-size: 0.85rem;
+            font-size: 0.86rem;
             font-weight: 700;
             color: var(--navy-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .label-with-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+        }
+
+        .label-with-icon svg {
+            color: var(--coral);
+            opacity: 0.85;
+            flex-shrink: 0;
+        }
+
+        .form-label span.req {
+            color: var(--coral);
+            margin-left: 2px;
+        }
+
+        .form-label span.opt {
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            font-weight: 500;
         }
 
         .form-input {
-            padding: 0.875rem 1rem;
-            border: 1px solid rgba(0, 0, 0, 0.1);
-            border-radius: 12px;
+            padding: 0.95rem 1.2rem;
+            border: 1.5px solid rgba(0, 0, 0, 0.09);
+            border-radius: 14px;
             font-size: 0.95rem;
             color: var(--navy-dark);
             background: #fafbfc;
-            transition: all 0.2s ease;
+            transition: all 0.22s ease;
             font-family: inherit;
         }
 
         .form-input:focus {
             outline: none;
             border-color: var(--coral);
-            background: white;
-            box-shadow: 0 0 0 3px rgba(255, 107, 74, 0.12);
+            background: #ffffff;
+            box-shadow: 0 0 0 4px rgba(255, 107, 74, 0.12), 0 4px 16px rgba(0, 0, 0, 0.03);
+        }
+
+        .form-field-hint {
+            font-size: 0.78rem;
+            color: var(--gray-400);
+            line-height: 1.45;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            margin-top: 0.2rem;
+        }
+
+        .form-field-hint svg {
+            color: var(--gray-400);
+            flex-shrink: 0;
         }
 
         textarea.form-input {
-            min-height: 120px;
+            min-height: 135px;
             resize: vertical;
+            line-height: 1.6;
         }
 
         select.form-input {
             cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23718096' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 1.1rem center;
+            background-size: 1.1em;
+            padding-right: 2.5rem;
         }
 
+        /* Timeline Selector */
+        .timeline-radio-group {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.85rem;
+        }
+
+        .timeline-pill {
+            border: 1.5px solid rgba(0, 0, 0, 0.08);
+            background: #fafbfc;
+            border-radius: 16px;
+            padding: 0.95rem 0.75rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.22s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 0.25rem;
+            position: relative;
+        }
+
+        .timeline-pill input {
+            display: none;
+        }
+
+        .pill-icon-wrap {
+            width: 32px;
+            height: 32px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.04);
+            color: var(--gray-600);
+            margin-bottom: 0.2rem;
+            transition: all 0.22s ease;
+        }
+
+        .timeline-pill .pill-title {
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            transition: color 0.2s ease;
+        }
+
+        .timeline-pill .pill-sub {
+            font-size: 0.73rem;
+            color: var(--gray-400);
+        }
+
+        .timeline-pill:hover {
+            border-color: rgba(255, 107, 74, 0.35);
+            background: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.04);
+        }
+
+        .timeline-pill:hover .pill-icon-wrap {
+            background: rgba(255, 107, 74, 0.1);
+            color: var(--coral);
+        }
+
+        .timeline-pill.selected {
+            border-color: var(--coral);
+            background: rgba(255, 107, 74, 0.06);
+            box-shadow: 0 0 0 3px rgba(255, 107, 74, 0.12);
+        }
+
+        .timeline-pill.selected .pill-icon-wrap {
+            background: var(--gradient-primary);
+            color: #ffffff;
+        }
+
+        .timeline-pill.selected .pill-title {
+            color: var(--coral);
+        }
+
+        /* Submit Button */
         .submit-btn {
             background: var(--gradient-primary);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 12px;
-            font-size: 1rem;
-            font-weight: 700;
+            color: #ffffff;
+            padding: 1.15rem 2rem;
+            border-radius: 16px;
+            font-size: 1.02rem;
+            font-weight: 800;
             border: none;
             cursor: pointer;
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
+            gap: 0.65rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             margin-top: 0.5rem;
+            box-shadow: 0 8px 25px rgba(255, 107, 74, 0.28);
+            letter-spacing: -0.01em;
         }
 
         .submit-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 107, 74, 0.3);
+            box-shadow: 0 14px 35px rgba(255, 107, 74, 0.38);
         }
 
-        /* Sidebar Info */
-        .contact-info-card {
-            display: flex;
-            flex-direction: column;
-            gap: 1.25rem;
+        .submit-btn svg {
+            transition: transform 0.2s ease;
         }
 
-        .info-block {
-            background: #ffffff;
-            border-radius: 20px;
-            padding: 1.75rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
-            border: 1px solid rgba(0, 0, 0, 0.06);
+        .submit-btn:hover svg {
+            transform: translateX(4px);
         }
 
-        .contact-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 1rem;
-        }
-
-        .contact-icon {
-            width: 46px;
-            height: 46px;
-            background: rgba(255, 107, 74, 0.1);
-            border-radius: 14px;
+        /* Trust Badges Strip */
+        .form-trust-badges {
             display: flex;
             align-items: center;
-            justify-content: center;
-            color: var(--coral);
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(0, 0, 0, 0.06);
+            margin-top: 1rem;
+        }
+
+        .trust-badge-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gray-500);
+        }
+
+        .trust-badge-item svg {
+            color: #059669;
             flex-shrink: 0;
         }
 
-        .contact-details {
+        .trust-badge-item {
             display: flex;
-            flex-direction: column;
-            gap: 0.2rem;
+            align-items: center;
+            gap: 0.4rem;
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            font-weight: 600;
         }
 
-        .contact-label {
+        .trust-badge-item svg {
+            color: #10b981;
+            flex-shrink: 0;
+        }
+
+        /* Success State View */
+        .form-success-state {
+            display: none;
+            text-align: center;
+            padding: 3rem 1.5rem;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .success-icon-wrap {
+            width: 72px;
+            height: 72px;
+            border-radius: 50%;
+            background: rgba(16, 185, 129, 0.12);
+            color: #10b981;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .form-success-state h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--navy-dark);
+            margin-bottom: 0.75rem;
+        }
+
+        .form-success-state p {
+            font-size: 1.05rem;
+            color: var(--gray-500);
+            line-height: 1.7;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+
+        .success-next-steps {
+            background: #fafbfc;
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            border-radius: 18px;
+            padding: 1.5rem 1.75rem;
+            text-align: left;
+            max-width: 520px;
+            margin: 0 auto 2rem;
+        }
+
+        .success-next-steps h4 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--coral);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .next-step-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--navy-dark);
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+
+        .next-step-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .step-num-pill {
+            background: rgba(255, 107, 74, 0.1);
+            color: var(--coral);
+            font-weight: 800;
+            font-size: 0.75rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        /* SIDEBAR INFO */
+        .contact-info-column {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        /* WhatsApp / Phone Direct Card */
+        .founder-connect-card {
+            background: linear-gradient(135deg, #0d101d 0%, #171c32 100%);
+            border-radius: 24px;
+            padding: 2.25rem;
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 16px 45px rgba(0, 0, 0, 0.1);
+        }
+
+        .founder-connect-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        .status-pill-green {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: rgba(16, 185, 129, 0.15);
+            color: #34d399;
+            padding: 0.3rem 0.75rem;
+            border-radius: 100px;
             font-size: 0.75rem;
             font-weight: 700;
+        }
+
+        .founder-connect-card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.015em;
+        }
+
+        .founder-connect-card p {
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.65;
+            margin-bottom: 1.5rem;
+        }
+
+        .founder-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .whatsapp-direct-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.9rem 1.25rem;
+            background: #25D366;
+            color: #ffffff;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+        }
+
+        .whatsapp-direct-btn:hover {
+            transform: translateY(-2px);
+            background: #22bf5b;
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.35);
+        }
+
+        .phone-direct-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.85rem 1.25rem;
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            font-size: 0.92rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .phone-direct-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            color: #ffffff;
+        }
+
+        /* Contact Details Cards */
+        .info-detail-box {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 1.75rem;
+            border: 1px solid var(--studio-card-border);
+            box-shadow: var(--studio-shadow);
+        }
+
+        .contact-item-row {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.1rem;
+        }
+
+        .contact-item-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(255, 107, 74, 0.09);
+            color: var(--coral);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-item-meta {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .contact-item-label {
+            font-size: 0.75rem;
+            font-weight: 800;
             text-transform: uppercase;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.08em;
             color: var(--gray-400);
         }
 
-        .contact-value {
-            font-size: 0.975rem;
+        .contact-item-value {
+            font-size: 1rem;
             font-weight: 700;
             color: var(--navy-dark);
             text-decoration: none;
+            transition: color 0.2s ease;
         }
 
-        .sidebar-callout {
-            background: linear-gradient(135deg, #121829 0%, #1e293b 100%);
-            border-radius: 24px;
-            padding: 2.25rem;
-            color: white;
-            border: 1px solid rgba(255,255,255,0.08);
+        .contact-item-value:hover {
+            color: var(--coral);
         }
 
-        .sidebar-callout h3 {
-            font-size: 1.2rem;
+        .contact-item-sub {
+            font-size: 0.82rem;
+            color: var(--gray-400);
+            line-height: 1.5;
+        }
+
+        /* 3-Step Protocol Card */
+        .scoping-protocol-card {
+            background: #fbfbfc;
+            border-radius: 20px;
+            padding: 2rem 1.75rem;
+            border: 1px solid var(--studio-card-border);
+        }
+
+        .scoping-protocol-card h4 {
+            font-size: 0.82rem;
             font-weight: 800;
-            margin-bottom: 0.5rem;
-            color: #fff;
-        }
-
-        .sidebar-callout p {
-            font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
-            line-height: 1.6;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--coral);
             margin-bottom: 1.25rem;
         }
 
-        .direct-call-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--gradient-primary);
-            color: white;
-            border-radius: 100px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: all 0.3s ease;
+        .protocol-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
         }
 
-        .direct-call-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(255,107,74,0.3);
+        .protocol-step-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.85rem;
+        }
+
+        .protocol-step-dot {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: rgba(255, 107, 74, 0.12);
+            color: var(--coral);
+            font-size: 0.78rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .protocol-step-text h5 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--navy-dark);
+            margin: 0 0 0.2rem 0;
+        }
+
+        .protocol-step-text p {
+            font-size: 0.82rem;
+            color: var(--gray-500);
+            line-height: 1.55;
+            margin: 0;
         }
 
         @media (max-width: 1024px) {
-            .contact-container { grid-template-columns: 1fr; }
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
         }
 
         @media (max-width: 768px) {
-            .contact-form-card { padding: 2rem 1.5rem; border-radius: 20px; }
-            .form-row { grid-template-columns: 1fr; }
-            .contact-hero-content { padding: 5rem 1.5rem 2rem; }
+            .contact-form-card {
+                padding: 2.25rem 1.5rem;
+                border-radius: 20px;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-radio-group {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-hero-content {
+                padding: 7rem 1.5rem 3.5rem;
+            }
         }
 
-        /* ── Mobile Nav (shared) ── */
-        @media (max-width: 1024px) {
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: 50%;
-                transform: translateX(-50%) translateY(-20px);
-                width: calc(100% - 48px);
-                max-width: 400px;
-                flex-direction: column;
-                gap: 0.5rem;
-                padding: 1.5rem;
-                background: rgba(255,255,255,0.97);
-                backdrop-filter: blur(20px) saturate(180%);
-                -webkit-backdrop-filter: blur(20px) saturate(180%);
-                border-radius: 24px;
-                border: 1px solid rgba(255,255,255,0.6);
-                box-shadow: 0 8px 32px rgba(0,0,0,0.06);
-                opacity: 0;
-                visibility: hidden;
-                pointer-events: none;
-                transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
-                z-index: 999;
+        /* ===== FOOTER ===== */
+        .site-footer {
+            background: #080a12;
+            color: rgba(255, 255, 255, 0.7);
+            padding: 5rem 2rem 2.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.2fr;
+            gap: 3rem;
+            max-width: 1240px;
+            margin: 0 auto 3rem;
+        }
+
+        .footer-brand img {
+            height: 44px;
+            width: auto;
+            border-radius: 0;
+            margin-bottom: 1.25rem;
+            background: transparent;
+            padding: 0;
+            display: inline-block;
+            filter: brightness(0) invert(1);
+        }
+
+        .footer-brand p {
+            font-size: 0.92rem;
+            line-height: 1.75;
+            color: rgba(255, 255, 255, 0.55);
+            max-width: 340px;
+        }
+
+        .footer-col h4 {
+            font-size: 0.82rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: rgba(255, 255, 255, 0.45);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-col a {
+            display: block;
+            font-size: 0.92rem;
+            color: rgba(255, 255, 255, 0.65);
+            margin-bottom: 0.65rem;
+            transition: color 0.25s;
+            text-decoration: none;
+        }
+
+        .footer-col a:hover {
+            color: var(--coral);
+        }
+
+        .legal-scope-disclaimer {
+            max-width: 1240px;
+            margin: 0 auto 2.5rem;
+            padding: 1.5rem 2rem;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 16px;
+            font-size: 0.8rem;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        .legal-scope-disclaimer strong {
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .footer-bottom {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
             }
-            .nav-links.mobile-open {
-                opacity: 1;
-                visibility: visible;
-                pointer-events: auto;
-                transform: translateX(-50%) translateY(0);
+        }
+
+        @media (max-width: 600px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
             }
-            .nav-item {
-                width: 100%;
-                text-align: center;
-                padding: 0.875rem 1.25rem;
-            }
-            .menu-toggle {
-                display: flex !important;
-            }
-            .menu-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-            .menu-toggle.active span:nth-child(2) { opacity: 0; }
-            .menu-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
         }
     </style>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
@@ -368,22 +1129,21 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <a href="home.html" class="nav-logo">
-            <img src="../assets/images/logo.png" alt="Site2Success — University-Powered AI Software Studio" style="height: 48px; width: auto; border-radius: 0;">
+    <nav class="navbar" id="navbar" aria-label="Main navigation">
+        <a href="home.html" class="nav-logo" aria-label="Site2Success Home">
+            <img src="../assets/images/logo.png" alt="Site2Success — University-Powered AI Software Studio" style="height: 44px; width: auto; border-radius: 0;">
         </a>
 
-        <div class="nav-links" id="nav-links">
-            <a href="home.html" class="nav-item" data-page="home">Home</a>
-            <a href="services.html" class="nav-item" data-page="services">Services</a>
-            <a href="projects.html" class="nav-item" data-page="projects">Projects</a>
-            <a href="about.html" class="nav-item" data-page="about">About</a>
-            <a href="internships.html" class="nav-item" data-page="internships">Builders</a>
-            <a href="automation.html" class="nav-item" data-page="automation">KIRA AI</a>
-            <a href="contact.html" class="nav-item active" data-page="contact">Contact</a>
+        <div class="nav-links" id="nav-links" role="menubar">
+            <a href="home.html" class="nav-item" data-page="home" role="menuitem">Home</a>
+            <a href="services.html" class="nav-item" data-page="services" role="menuitem">Services &amp; Packages</a>
+            <a href="projects.html" class="nav-item" data-page="projects" role="menuitem">Projects</a>
+            <a href="about.html" class="nav-item" data-page="about" role="menuitem">About</a>
+            <a href="internships.html" class="nav-item" data-page="internships" role="menuitem">Builders</a>
+            <a href="contact.html" class="nav-item active" data-page="contact" role="menuitem">Contact</a>
         </div>
 
-        <div class="menu-toggle" id="menu-toggle">
+        <div class="menu-toggle" id="menu-toggle" role="button" aria-label="Toggle menu" aria-expanded="false" tabindex="0">
             <span></span>
             <span></span>
             <span></span>
@@ -394,203 +1154,381 @@
     <section class="contact-hero">
         <div class="contact-hero-content">
             <div class="contact-hero-label">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-                </svg>
-                Technical Scoping Session
+                <span class="pulse-dot"></span>
+                <span>Active Intake • 24h Assessment Commitment</span>
             </div>
-            <h1 class="contact-hero-title">Have an Idea? Let's Scope It.</h1>
-            <p class="contact-hero-subtitle">Tell us what you're trying to build. We'll assess your requirements, define concrete deliverables, and provide a transparent, fixed-scope proposal within 48 hours.</p>
+            <h1 class="contact-hero-title">
+                Have an Idea? <span>Let's Scope the Sprint.</span>
+            </h1>
+            <p class="contact-hero-subtitle">
+                Share your requirements, napkin sketch, or operational bottleneck. Our founding engineers will assess feasibility, define concrete milestones, and deliver a transparent fixed-scope plan within 48 hours.
+            </p>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Main Contact Section -->
     <section class="contact-section">
         <div class="contact-container">
-            <!-- Form Card -->
-            <div class="contact-form-card">
-                <h2>
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                        <polyline points="22,6 12,13 2,6"></polyline>
-                    </svg>
-                    Start a Project Conversation
-                </h2>
-                <p class="form-lead">Share your starting point — whether rough notes, a Figma mock, raw research data, or an operational bottleneck. No commitment required.</p>
 
+            <!-- FORM CARD -->
+            <div class="contact-form-card">
+                <!-- Pre-selected Package Banner (populated via URL param) -->
+                <div id="package-banner" class="selected-package-banner">
+                    <div class="banner-info">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                        <span id="package-banner-text">Selected: Rapid MVP Sprint Package</span>
+                    </div>
+                    <button type="button" id="clear-package-btn" class="banner-clear-btn">Reset</button>
+                </div>
+
+                <div class="form-header-box">
+                    <div class="form-header-main">
+                        <h2>
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                            Technical Scoping Intake
+                        </h2>
+                        <p>Tell us what problem you want to solve. Zero sales pressure, no open-ended hourly billing.</p>
+                    </div>
+                    <span class="form-est-badge">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        ~2 min intake
+                    </span>
+                </div>
+
+                <!-- Form Interactive Body -->
                 <form id="contact-form" class="contact-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label class="form-label" for="contact-name">Full Name *</label>
-                            <input type="text" id="contact-name" class="form-input" placeholder="Your full name" required>
+                    <!-- Category Quick Select Chips (Custom Vector Icons, No Emojis) -->
+                    <div class="category-chips-group">
+                        <div class="category-chips-label">
+                            <span>Quick Select Track</span>
+                            <span style="font-size:0.75rem; color:var(--gray-400); text-transform:none; font-weight:500;">Click to pre-fill scope</span>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label" for="contact-email">Email Address *</label>
-                            <input type="email" id="contact-email" class="form-input" placeholder="you@university.edu or you@company.com" required>
+                        <div class="category-chips-wrap">
+                            <span class="category-chip" data-track="MVP Package (Startup Prototype)">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path></svg>
+                                <span>MVP Prototype</span>
+                            </span>
+                            <span class="category-chip" data-track="Custom Full-Stack Product">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                                <span>Web Application</span>
+                            </span>
+                            <span class="category-chip" data-track="Starter Package (Website / Landing)">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                <span>High-Impact Website</span>
+                            </span>
+                            <span class="category-chip" data-track="AI Workflow & Automation">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"></rect><rect x="9" y="9" width="6" height="6"></rect><line x1="9" y1="1" x2="9" y2="4"></line><line x1="15" y1="1" x2="15" y2="4"></line><line x1="9" y1="20" x2="9" y2="23"></line><line x1="15" y1="20" x2="15" y2="23"></line><line x1="20" y1="9" x2="23" y2="9"></line><line x1="20" y1="14" x2="23" y2="14"></line><line x1="1" y1="9" x2="4" y2="9"></line><line x1="1" y1="14" x2="4" y2="14"></line></svg>
+                                <span>AI Workflow</span>
+                            </span>
+                            <span class="category-chip" data-track="Academic Research Prototype">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31L4.17 19.34A2 2 0 0 0 5.86 22h12.28a2 2 0 0 0 1.69-2.66L14 9.31V2"></path><line x1="8.5" y1="2" x2="15.5" y2="2"></line><line x1="7" y1="16" x2="17" y2="16"></line></svg>
+                                <span>Research Software</span>
+                            </span>
+                            <span class="category-chip" data-track="Maintenance & Evolution Retainer">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+                                <span>Maintenance</span>
+                            </span>
                         </div>
                     </div>
 
+                    <!-- Row 1: Name & Email -->
                     <div class="form-row">
                         <div class="form-group">
-                            <label class="form-label" for="contact-phone">Phone / WhatsApp *</label>
+                            <label class="form-label" for="contact-name">
+                                <span class="label-with-icon">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                    Full Name <span class="req">*</span>
+                                </span>
+                            </label>
+                            <input type="text" id="contact-name" class="form-input" placeholder="e.g. Rahul Sharma" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="contact-email">
+                                <span class="label-with-icon">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                                    Work / Academic Email <span class="req">*</span>
+                                </span>
+                            </label>
+                            <input type="email" id="contact-email" class="form-input" placeholder="you@company.com or you@university.edu" required>
+                        </div>
+                    </div>
+
+                    <!-- Row 2: Phone & Track Dropdown -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label" for="contact-phone">
+                                <span class="label-with-icon">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    Phone / WhatsApp <span class="req">*</span>
+                                </span>
+                            </label>
                             <input type="tel" id="contact-phone" class="form-input" placeholder="+91 98765 43210" required>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="contact-subject">Project Category / Inquiry *</label>
+                            <label class="form-label" for="contact-subject">
+                                <span class="label-with-icon">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+                                    Project Track <span class="req">*</span>
+                                </span>
+                            </label>
                             <select id="contact-subject" class="form-input" required>
-                                <option value="">Select your project track...</option>
-                                <option value="Starter Sprint (Landing Page, Portfolio, or Event Portal)">Starter Sprint (Website / Portfolio / Event Portal)</option>
-                                <option value="Startup MVP / Web Application">Startup MVP / Web Application (Validation Pilot)</option>
-                                <option value="Academic Research Prototype / Data Viz">Academic Research Prototype &amp; Data Viz</option>
-                                <option value="Custom Full-Stack Product">Custom Full-Stack Product Development</option>
-                                <option value="AI Workflow &amp; Automation (KIRA AI / CRM)">AI Workflow &amp; Automation (KIRA AI / CRM)</option>
-                                <option value="Maintenance &amp; Evolution Retainer">Maintenance &amp; Evolution Retainer</option>
-                                <option value="Builders Studio Fellowship Application">Join Studio as a Builder (Fellowship)</option>
-                                <option value="General Inquiry">Other Consultation</option>
+                                <option value="">Select your project scope...</option>
+                                <option value="Starter Package (Website / Landing)">Starter Package (Website / Portfolio / Launch Page)</option>
+                                <option value="MVP Package (Startup Prototype)">Rapid MVP Package (Founder Validation Pilot)</option>
+                                <option value="Academic Research Prototype">Research Prototype &amp; Dataset Viz (Faculty Lab)</option>
+                                <option value="Custom Full-Stack Product">Custom Full-Stack Web Application / Multi-Portal</option>
+                                <option value="AI Workflow & Automation">AI Workflow &amp; Customer Automation Engine</option>
+                                <option value="Maintenance & Evolution Retainer">Ongoing Maintenance &amp; Iteration Retainer</option>
+                                <option value="Builders Studio Fellowship Application">Join Studio as a Builder (Student Fellowship)</option>
+                                <option value="General Exploration">Other Scoping Inquiry</option>
                             </select>
                         </div>
                     </div>
 
+                    <!-- Desired Velocity / Timeline (Custom Vector Icons, No Emojis) -->
                     <div class="form-group">
-                        <label class="form-label" for="contact-message">Tell Us About What You Want to Build *</label>
-                        <textarea id="contact-message" class="form-input" placeholder="What problem are you solving? What is your starting point and desired turnaround?" rows="4" required></textarea>
+                        <label class="form-label">
+                            <span class="label-with-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                Target Delivery Velocity
+                            </span>
+                            <span class="opt">Milestone-driven</span>
+                        </label>
+                        <div class="timeline-radio-group">
+                            <label class="timeline-pill" id="pill-rush">
+                                <input type="radio" name="velocity" value="Rapid Sprint (1–2 Weeks)">
+                                <span class="pill-icon-wrap">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                                </span>
+                                <span class="pill-title">1–2 Weeks</span>
+                                <span class="pill-sub">Rapid Sprint</span>
+                            </label>
+                            <label class="timeline-pill selected" id="pill-standard">
+                                <input type="radio" name="velocity" value="Standard (2–4 Weeks)" checked>
+                                <span class="pill-icon-wrap">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path></svg>
+                                </span>
+                                <span class="pill-title">2–4 Weeks</span>
+                                <span class="pill-sub">Full Prototype Build</span>
+                            </label>
+                            <label class="timeline-pill" id="pill-flexible">
+                                <input type="radio" name="velocity" value="Exploratory / Flexible">
+                                <span class="pill-icon-wrap">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                                </span>
+                                <span class="pill-title">Flexible</span>
+                                <span class="pill-sub">Scoping &amp; Discovery</span>
+                            </label>
+                        </div>
                     </div>
 
-                    <button type="submit" class="submit-btn">
-                        Submit for Technical Scoping
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                        </svg>
+                    <!-- Project Overview -->
+                    <div class="form-group">
+                        <label class="form-label" for="contact-message">
+                            <span class="label-with-icon">
+                                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+                                Project Description &amp; Core Requirements <span class="req">*</span>
+                            </span>
+                        </label>
+                        <textarea id="contact-message" class="form-input" placeholder="What is the core problem? What user loop or APIs are needed? Links to Figma designs, Google Docs, or GitHub repos are welcome..." required></textarea>
+                        <div class="form-field-hint">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                            <span>Strict NDA confidentiality guaranteed prior to any code or requirement review.</span>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submit-btn" class="submit-btn">
+                        <span>Submit for Technical Scoping</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
                     </button>
+
+                    <!-- Trust Strip (Custom Vector Icons, No Generic Checks) -->
+                    <div class="form-trust-badges">
+                        <div class="trust-badge-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            Strict NDA Confidentiality
+                        </div>
+                        <div class="trust-badge-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                            Fixed Milestone Scope
+                        </div>
+                        <div class="trust-badge-item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            100% Code Ownership Handover
+                        </div>
+                    </div>
                 </form>
+
+                <!-- Interactive Success State (Hidden initially) -->
+                <div id="form-success-box" class="form-success-state">
+                    <div class="success-icon-wrap">
+                        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <h3>Scoping Request Received</h3>
+                    <p>Thank you, <span id="success-client-name" style="font-weight:700; color:var(--navy-dark);">Founder</span>! Our founding team has received your project details and will review technical feasibility.</p>
+                    
+                    <div class="success-next-steps">
+                        <h4>What Happens in the Next 24–48 Hours</h4>
+                        <div class="next-step-row">
+                            <span class="step-num-pill">01</span>
+                            <div><strong>Technical Feasibility Review:</strong> Our leads review your feature requirements and architectural prerequisites.</div>
+                        </div>
+                        <div class="next-step-row">
+                            <span class="step-num-pill">02</span>
+                            <div><strong>20-Minute Alignment Call:</strong> We will reach out via WhatsApp/Email to schedule a brief discovery call.</div>
+                        </div>
+                        <div class="next-step-row">
+                            <span class="step-num-pill">03</span>
+                            <div><strong>Fixed Sprint Proposal:</strong> You will receive a written milestone proposal outlining deliverables and exact delivery dates.</div>
+                        </div>
+                    </div>
+
+                    <button type="button" id="reset-form-btn" class="btn btn-secondary">Submit Another Scope</button>
+                </div>
             </div>
 
-            <!-- Info Sidebar -->
-            <div class="contact-info-card">
-                <!-- Studio Office -->
-                <div class="info-block">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg>
+            <!-- SIDEBAR INFO COLUMN -->
+            <div class="contact-info-column">
+
+                <!-- Direct Founder Hotline & WhatsApp Card -->
+                <div class="founder-connect-card">
+                    <div class="founder-connect-header">
+                        <span class="status-pill-green">
+                            <span class="pulse-dot" style="background:#10b981;"></span>
+                            Founders Available
+                        </span>
+                        <span style="font-size:0.8rem; color:rgba(255,255,255,0.45);">Mon–Sat</span>
+                    </div>
+                    <h3>Urgent Timeline?</h3>
+                    <p>Have an upcoming investor demo, academic grant deadline, or rapid sprint need? Talk directly to our technical founders.</p>
+                    
+                    <div class="founder-actions">
+                        <a href="https://wa.me/916361446768?text=Hi%20Site2Success%2C%20I%20would%20like%20to%20scope%20a%20project%20sprint." target="_blank" rel="noopener" class="whatsapp-direct-btn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.173.086.275.071.376-.043.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564c.173.087.289.129.332.202.043.073.043.419-.101.824z"></path><path d="M12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.309A9.957 9.957 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.25c-1.614 0-3.136-.45-4.453-1.233l-.319-.189-2.967.778.792-2.893-.207-.33A8.219 8.219 0 0 1 3.75 12c0-4.549 3.701-8.25 8.25-8.25 4.549 0 8.25 3.701 8.25 8.25 0 4.549-3.701 8.25-8.25 8.25z"></path></svg>
+                            Message on WhatsApp
+                        </a>
+                        <a href="tel:+916361446768" class="phone-direct-btn">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                            Call +91 6361446768
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Direct Email Box -->
+                <div class="info-detail-box">
+                    <div class="contact-item-row">
+                        <div class="contact-item-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
                         </div>
-                        <div class="contact-details">
-                            <span class="contact-label">Studio Origin</span>
-                            <span class="contact-value">Bengaluru, Karnataka, India</span>
-                            <span style="font-size:0.8rem; color:var(--gray-400);">Operating Laboratory: CHRIST University</span>
+                        <div class="contact-item-meta">
+                            <span class="contact-item-label">Direct Studio Inbox</span>
+                            <a href="mailto:info@site2success.online" class="contact-item-value">info@site2success.online</a>
+                            <span class="contact-item-sub">Monitored 7 days a week by founders</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Direct Email -->
-                <div class="info-block">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
+                <!-- Studio Origin & Location -->
+                <div class="info-detail-box">
+                    <div class="contact-item-row">
+                        <div class="contact-item-icon">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
                         </div>
-                        <div class="contact-details">
-                            <span class="contact-label">Direct Studio Email</span>
-                            <a href="mailto:site2successs@gmail.com" class="contact-value">site2successs@gmail.com</a>
+                        <div class="contact-item-meta">
+                            <span class="contact-item-label">Studio Origin &amp; Lab</span>
+                            <span class="contact-item-value">Bengaluru, Karnataka, India</span>
+                            <span class="contact-item-sub">Campus Lab: CHRIST University</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Phone / WhatsApp -->
-                <div class="info-block">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
+                <!-- 3-Step Protocol -->
+                <div class="scoping-protocol-card">
+                    <h4>The Studio Scoping Protocol</h4>
+                    <div class="protocol-steps">
+                        <div class="protocol-step-item">
+                            <div class="protocol-step-dot">1</div>
+                            <div class="protocol-step-text">
+                                <h5>Inquiry Assessment (24h)</h5>
+                                <p>We dissect requirements, tech stack constraints, and timeline feasibility.</p>
+                            </div>
                         </div>
-                        <div class="contact-details">
-                            <span class="contact-label">Founder Hotline</span>
-                            <a href="tel:+916361446768" class="contact-value">+91 6361446768</a>
+                        <div class="protocol-step-item">
+                            <div class="protocol-step-dot">2</div>
+                            <div class="protocol-step-text">
+                                <h5>Founder Alignment Call</h5>
+                                <p>A 20-minute Zoom/Google Meet call to clarify features and deliverables.</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-
-                <!-- Response Commitment -->
-                <div class="info-block">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <circle cx="12" cy="12" r="10"></circle>
-                                <polyline points="12 6 12 12 16 14"></polyline>
-                            </svg>
-                        </div>
-                        <div class="contact-details">
-                            <span class="contact-label">Scoping Guarantee</span>
-                            <span class="contact-value">Initial Assessment in 24h</span>
-                            <span style="font-size:0.8rem; color:var(--gray-400);">Fixed-scope proposal in 48h</span>
+                        <div class="protocol-step-item">
+                            <div class="protocol-step-dot">3</div>
+                            <div class="protocol-step-text">
+                                <h5>Locked Milestone Proposal</h5>
+                                <p>A fixed proposal with sprint dates, acceptance criteria, and full IP handover.</p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Direct Founder Call Callout -->
-                <div class="sidebar-callout">
-                    <h3>Urgent or Time-Sensitive?</h3>
-                    <p>Have an upcoming academic deadline, event drop, or investor pitch? Speak directly with our founding team.</p>
-                    <a href="tel:+916361446768" class="direct-call-btn">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                        Call Founders Now
-                    </a>
-                </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER with NAP & Section 12 Disclaimer -->
-    <footer style="background:#1a1a2e;color:rgba(255,255,255,0.7);padding:4rem 2rem 2rem;">
-        <div style="display:grid;grid-template-columns:2fr 1fr 1fr;gap:3rem;max-width:1200px;margin:0 auto 3rem;">
-            <div>
-                <img src="../assets/images/logo.png" alt="Site2Success Logo" style="height:54px;width:auto;border-radius:12px;background:#ffffff;padding:6px 14px;box-shadow:0 4px 12px rgba(0,0,0,0.15);margin-bottom:1.25rem;opacity:1 !important;display:inline-block;">
-                <p style="font-size:0.9rem;line-height:1.7;color:rgba(255,255,255,0.5);max-width:320px;">University-powered AI software studio combining AI-native development with university talent to turn ideas into working software.</p>
+    <!-- FOOTER -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <img src="../assets/images/logo.png" alt="Site2Success Logo" loading="lazy">
+                <p>University-powered, AI-first software studio turning early-stage ideas and practical software requirements into working products.</p>
+                <p style="font-size:0.8rem; color:rgba(255,255,255,0.4); margin-top:0.75rem;">"Built by the next generation. Accelerated by AI."</p>
             </div>
-            <div>
-                <h4 style="font-size:0.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;">Pages</h4>
-                <a href="home.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Home</a>
-                <a href="services.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Services &amp; Pricing</a>
-                <a href="projects.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Case Studies</a>
-                <a href="about.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">About</a>
-                <a href="internships.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Builders Studio</a>
-                <a href="automation.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">KIRA AI</a>
-                <a href="contact.html" style="display:block;font-size:0.9375rem;color:rgba(255,255,255,0.6);margin-bottom:0.625rem;text-decoration:none;">Contact</a>
+
+            <div class="footer-col">
+                <h4>Studio</h4>
+                <a href="home.html">Home</a>
+                <a href="services.html">Services &amp; Packages</a>
+                <a href="projects.html">Projects Portfolio</a>
+                <a href="about.html">About &amp; Operating Model</a>
+                <a href="internships.html">Student Builders</a>
+                <a href="contact.html">Request a Consultation</a>
             </div>
-            <div>
-                <h4 style="font-size:0.8125rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,0.4);margin-bottom:1.25rem;">Studio Office</h4>
-                <div style="font-size:0.9rem;line-height:1.8;color:rgba(255,255,255,0.5);" itemscope itemtype="https://schema.org/LocalBusiness">
-                    <strong itemprop="name" style="color:rgba(255,255,255,0.8);">Site2Success</strong><br>
+
+            <div class="footer-col">
+                <h4>Packages Ladder</h4>
+                <a href="services.html#packages">Starter Package</a>
+                <a href="services.html#packages">MVP Package</a>
+                <a href="services.html#packages">Research / Prototype</a>
+                <a href="services.html#packages">Custom Product</a>
+                <a href="services.html#packages">Maintenance Retainer</a>
+            </div>
+
+            <div class="footer-col">
+                <h4>Studio Contact</h4>
+                <div class="footer-nap" itemscope itemtype="https://schema.org/LocalBusiness">
+                    <strong itemprop="name">Site2Success Studio</strong><br>
                     <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                         <span itemprop="addressLocality">Bengaluru</span>,
                         <span itemprop="addressRegion">Karnataka</span>,
                         <span itemprop="addressCountry">India</span>
                     </span><br>
-                    <a href="tel:+916361446768" itemprop="telephone" style="color:rgba(255,255,255,0.5);text-decoration:none;">+91 6361446768</a><br>
-                    <a href="mailto:site2successs@gmail.com" itemprop="email" style="color:rgba(255,255,255,0.5);text-decoration:none;">site2successs@gmail.com</a>
+                    <a href="tel:+916361446768" itemprop="telephone">+91 6361446768</a><br>
+                    <a href="mailto:info@site2success.online" itemprop="email">info@site2success.online</a>
                 </div>
             </div>
         </div>
 
-        <!-- Section 12 Governance & Scope Note -->
-        <div style="max-width:1200px;margin:0 auto;border-top:1px solid rgba(255,255,255,0.06);padding-top:1.5rem;margin-bottom:2rem;">
-            <p style="font-size:0.775rem;line-height:1.7;color:rgba(255,255,255,0.38);margin:0;">
-                <strong style="color:rgba(255,255,255,0.55);">Scope &amp; Governance Note:</strong> This rebuild is based on a strategic operating plan, not legal, tax, employment, or university-policy advice. Before finalizing client contracts, stipend terms, IP ownership language, data handling policy, or any CHRIST University branding/endorsement claims, appropriate legal and institutional review should be obtained separately — this should not be assumed to be covered by the website content itself.
-            </p>
+        <!-- Section 12 Legal Note -->
+        <div class="legal-scope-disclaimer">
+            <strong>Legal &amp; Operating Scope Note:</strong> This rebuild is based on a strategic operating plan, not legal, tax, employment, or university-policy advice. Before finalizing client contracts, stipend terms, IP ownership language, data handling policy, or any CHRIST University branding/endorsement claims, appropriate legal and institutional review should be obtained separately — this should not be assumed to be covered by the website content itself.
         </div>
 
-        <div style="max-width:1200px;margin:0 auto;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
-            <p style="font-size:0.875rem;color:rgba(255,255,255,0.3);">&copy; 2024–2026 Site2Success. All rights reserved.</p>
-            <div style="display:flex;gap:1rem;">
-                <a href="https://linkedin.com/company/site2success" rel="noopener" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.875rem;">LinkedIn</a>
-                <a href="https://github.com/site2success" rel="noopener" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.875rem;">GitHub</a>
-                <a href="https://instagram.com/site2success" rel="noopener" target="_blank" style="color:rgba(255,255,255,0.35);text-decoration:none;font-size:0.875rem;">Instagram</a>
+        <div class="footer-bottom">
+            <p>&copy; 2024–2026 Site2Success. All rights reserved. University-Powered AI Software Studio.</p>
+            <div class="footer-socials">
+                <a href="https://linkedin.com/company/site2success" rel="noopener" target="_blank" aria-label="Site2Success on LinkedIn">LinkedIn</a>
+                <a href="https://github.com/site2success" rel="noopener" target="_blank" aria-label="Site2Success on GitHub">GitHub</a>
+                <a href="https://instagram.com/site2success" rel="noopener" target="_blank" aria-label="Site2Success on Instagram">Instagram</a>
             </div>
         </div>
     </footer>
@@ -598,36 +1536,188 @@
     <!-- Scripts -->
     <script src="../assets/js/main.js"></script>
     <script>
-    // URL Parameter Auto-population for subject / message
     (function() {
+        // Elements
+        const form = document.getElementById('contact-form');
+        const successBox = document.getElementById('form-success-box');
+        const subjectSelect = document.getElementById('contact-subject');
+        const messageArea = document.getElementById('contact-message');
+        const clientNameDisplay = document.getElementById('success-client-name');
+        const resetBtn = document.getElementById('reset-form-btn');
+        const packageBanner = document.getElementById('package-banner');
+        const packageBannerText = document.getElementById('package-banner-text');
+        const clearPackageBtn = document.getElementById('clear-package-btn');
+        const categoryChips = document.querySelectorAll('.category-chip');
+        const timelinePills = document.querySelectorAll('.timeline-pill');
+
+        // Parse URL params for ?package= or ?subject= or ?type=
         const urlParams = new URLSearchParams(window.location.search);
+        const packageParam = urlParams.get('package');
         const subjectParam = urlParams.get('subject');
-        if (subjectParam) {
-            const subjectSelect = document.getElementById('contact-subject');
-            const messageArea = document.getElementById('contact-message');
-            if (subjectSelect) {
-                // Try finding matching option
-                let matched = false;
-                for (let i = 0; i < subjectSelect.options.length; i++) {
-                    const opt = subjectSelect.options[i];
-                    if (opt.value.toLowerCase().includes(subjectParam.toLowerCase()) || 
-                        subjectParam.toLowerCase().includes(opt.value.toLowerCase())) {
-                        subjectSelect.selectedIndex = i;
-                        matched = true;
-                        break;
+        const typeParam = urlParams.get('type');
+
+        const packageMap = {
+            'starter': 'Starter Package (Website / Landing)',
+            'mvp': 'MVP Package (Startup Prototype)',
+            'research': 'Academic Research Prototype',
+            'custom': 'Custom Full-Stack Product',
+            'maintenance': 'Maintenance & Evolution Retainer'
+        };
+
+        function selectTrack(trackName, showBanner = true) {
+            if (!subjectSelect) return;
+            for (let i = 0; i < subjectSelect.options.length; i++) {
+                const opt = subjectSelect.options[i];
+                if (opt.value.toLowerCase().includes(trackName.toLowerCase()) || 
+                    trackName.toLowerCase().includes(opt.value.toLowerCase())) {
+                    subjectSelect.selectedIndex = i;
+                    
+                    // Highlight matching chip
+                    categoryChips.forEach(chip => {
+                        if (chip.dataset.track && chip.dataset.track.toLowerCase().includes(trackName.toLowerCase())) {
+                            chip.classList.add('active');
+                        } else {
+                            chip.classList.remove('active');
+                        }
+                    });
+
+                    if (showBanner && packageBanner && packageBannerText) {
+                        packageBannerText.textContent = 'Selected Sprint Scope: ' + opt.text;
+                        packageBanner.style.display = 'flex';
                     }
-                }
-                if (!matched) {
-                    if (messageArea && !messageArea.value) {
-                        messageArea.value = 'Inquiry Regarding: ' + subjectParam + '\n\n';
-                    }
+                    break;
                 }
             }
         }
-    })();
 
-    // Mobile Navigation
-    (function() {
+        if (packageParam && packageMap[packageParam.toLowerCase()]) {
+            selectTrack(packageMap[packageParam.toLowerCase()], true);
+        } else if (subjectParam) {
+            selectTrack(subjectParam, true);
+        } else if (typeParam) {
+            if (typeParam === 'club') {
+                selectTrack('Starter Package', true);
+                if (messageArea && !messageArea.value) {
+                    messageArea.value = "Inquiry for campus event or club portal check-in software.\n\n";
+                }
+            } else if (typeParam === 'business') {
+                selectTrack('Custom Full-Stack Product', true);
+                if (messageArea && !messageArea.value) {
+                    messageArea.value = "Inquiry for small business / alumni workflow tooling.\n\n";
+                }
+            }
+        }
+
+        // Category Chips Click Handler
+        categoryChips.forEach(chip => {
+            chip.addEventListener('click', function() {
+                const track = this.dataset.track;
+                selectTrack(track, false);
+                categoryChips.forEach(c => c.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Clear Package Banner
+        if (clearPackageBtn) {
+            clearPackageBtn.addEventListener('click', function() {
+                if (packageBanner) packageBanner.style.display = 'none';
+                if (subjectSelect) subjectSelect.selectedIndex = 0;
+                categoryChips.forEach(c => c.classList.remove('active'));
+            });
+        }
+
+        // Timeline Pills Radio selection styling
+        timelinePills.forEach(pill => {
+            pill.addEventListener('click', function() {
+                timelinePills.forEach(p => p.classList.remove('selected'));
+                this.classList.add('selected');
+                const radio = this.querySelector('input[type="radio"]');
+                if (radio) radio.checked = true;
+            });
+        });
+
+        // Form Submit Handler
+        if (form) {
+            form.addEventListener('submit', async function(e) {
+                e.preventDefault();
+
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn ? submitBtn.innerHTML : 'Initiate Sprint Scoping';
+                if (submitBtn) {
+                    submitBtn.disabled = true;
+                    submitBtn.innerHTML = 'Sending...';
+                }
+
+                const name = document.getElementById('contact-name').value.trim();
+                const email = document.getElementById('contact-email').value.trim();
+                const phone = document.getElementById('contact-phone').value.trim();
+                const subject = subjectSelect ? subjectSelect.value : '';
+                const message = messageArea ? messageArea.value.trim() : '';
+                const velocityInput = document.querySelector('input[name="velocity"]:checked');
+                const velocity = velocityInput ? velocityInput.value : '';
+                const fullSubject = velocity ? (subject + ' (' + velocity + ')') : subject;
+
+                const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzBQ4tb5WC3v8845_wDgkJzyyJZamwnQZxpagP_qujHQS8M9QrWbrzBmZwFYz7yqKA8LA/exec";
+
+                const params = new URLSearchParams({
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    subject: fullSubject,
+                    message: message
+                });
+
+                try {
+                    await fetch(SCRIPT_URL + "?" + params.toString(), {
+                        method: "POST",
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: params.toString(),
+                        mode: "no-cors"
+                    });
+                } catch (err) {
+                    console.error("Submission error:", err);
+                }
+
+                // Show client name in success screen
+                if (clientNameDisplay) {
+                    clientNameDisplay.textContent = name ? name.split(' ')[0] : 'Founder';
+                }
+
+                // Smooth transition to success state
+                form.style.display = 'none';
+                if (packageBanner) packageBanner.style.display = 'none';
+                document.querySelector('.form-header-box').style.display = 'none';
+                if (successBox) successBox.style.display = 'block';
+
+                // Scroll smoothly to top of card
+                document.querySelector('.contact-form-card').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                if (submitBtn) {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                }
+            });
+        }
+
+        // Reset Form Handler
+        if (resetBtn) {
+            resetBtn.addEventListener('click', function() {
+                if (form) {
+                    form.reset();
+                    form.style.display = 'flex';
+                }
+                document.querySelector('.form-header-box').style.display = 'block';
+                if (successBox) successBox.style.display = 'none';
+                categoryChips.forEach(c => c.classList.remove('active'));
+                timelinePills.forEach((p, idx) => {
+                    if (idx === 1) p.classList.add('selected');
+                    else p.classList.remove('selected');
+                });
+            });
+        }
+
+        // Mobile Nav & Scroll
         var toggle = document.getElementById('menu-toggle');
         var links  = document.getElementById('nav-links');
         var navbar = document.getElementById('navbar');

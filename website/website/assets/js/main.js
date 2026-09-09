@@ -214,65 +214,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initialize animations
     Animations.init();
-
-    // Setup contact form handler
-    const contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', async function (e) {
-            e.preventDefault();
-            
-            const form = this;
-            const submitBtn = form.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerHTML;
-            
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = 'Sending...';
-
-            const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbywzTX1OxXYF-di9j3Xl4GeRvme7Kp1bN1ohCLmLi-7nS9uimll_7UucF-AsbkZEF7B/exec";
-
-            // Get form values - INCLUDING PHONE
-            const name = document.getElementById("contact-name").value;
-            const email = document.getElementById("contact-email").value;
-            const phone = document.getElementById("contact-phone").value;  // PHONE FIELD
-            const subject = document.getElementById("contact-subject").value;
-            const message = document.getElementById("contact-message").value;
-
-            console.log("Form data:", { name, email, phone, subject, message });
-
-            const data = new URLSearchParams({
-                name: name,
-                email: email,
-                phone: phone,  // PHONE INCLUDED
-                subject: subject,
-                message: message
-            });
-
-            try {
-                console.log("Sending to:", SCRIPT_URL);
-                console.log("Data:", data.toString());
-                
-                // Use no-cors mode to avoid CORS issues
-                await fetch(SCRIPT_URL, {
-                    method: "POST",
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: data.toString(),
-                    mode: "no-cors"
-                });
-                
-                console.log("Fetch completed");
-                
-            } catch (error) {
-                console.error("Fetch error:", error);
-            }
-
-            // Always show success (data was sent)
-            UI.showToast("Message sent successfully! We'll get back to you soon.", "success");
-            form.reset();
-            
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = originalText;
-        });
-    }
 });
 
 // Export for global access

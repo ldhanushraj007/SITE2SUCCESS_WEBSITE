@@ -26,30 +26,43 @@
 <meta name="twitter:description" content="Have an idea? We turn it into working software. Built by the next generation, accelerated by AI.">
 <meta name="twitter:image" content="https://site2success.online/assets/images/og-image.png">
 
-<!-- ═══ FAVICON ═══ -->
-
-
-
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="dns-prefetch" href="https://images.unsplash.com">
 <link rel="preconnect" href="https://images.unsplash.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 <!-- Styles -->
 <link rel="stylesheet" href="../assets/css/main.css">
 <link rel="stylesheet" href="../assets/css/pages.css">
 
-<!-- Additional Inline Styles -->
+<!-- Favicons -->
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<!-- Additional Styles & Component System -->
 <style>
-  /* GLASSMORPHISM NAVBAR */
+  /* ═══ ROOT & BASE TOKENS ═══ */
+  :root {
+    --coral: #FF6B4A;
+    --coral-rgb: 255, 107, 74;
+    --orange: #FF8A5B;
+    --amber: #FFB088;
+    --navy-dark: #111424;
+    --navy-surface: #181c30;
+    --navy-border: rgba(255, 255, 255, 0.08);
+    --navy-light: #242946;
+  }
+
+  /* ═══ GLASSMORPHISM NAVBAR ═══ */
   .navbar {
     position: fixed; top: 20px; left: 50%;
     transform: translateX(-50%);
     width: calc(100% - 48px); max-width: 1200px;
     z-index: 1000;
-    background: rgba(255,255,255,0.78);
+    background: rgba(255,255,255,0.88);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     background-image: linear-gradient(135deg, rgba(255,107,74,0.04) 0%, rgba(255,138,91,0.02) 50%, rgba(255,176,136,0.03) 100%);
@@ -60,15 +73,16 @@
     padding: 0.75rem 1.25rem;
     transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
   }
-  .navbar.scrolled { top: 12px; background: rgba(255,255,255,0.92); box-shadow: 0 8px 32px rgba(0,0,0,0.07); }
+  .navbar.scrolled { top: 12px; background: rgba(255,255,255,0.95); box-shadow: 0 8px 32px rgba(0,0,0,0.08); }
   .nav-logo { transition: transform 0.3s ease; }
   .nav-logo:hover { transform: scale(1.02); }
-  .nav-item { position: relative; opacity: 0.85; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); }
+  .nav-item { position: relative; opacity: 0.85; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); text-decoration: none; color: var(--navy-dark); font-weight: 500; font-size: 0.95rem; }
   .nav-item:hover { opacity: 1; background: rgba(255,107,74,0.06); color: var(--coral); }
   .nav-item.active { opacity: 1; background: rgba(255,107,74,0.1); color: var(--coral); font-weight: 600; }
   .nav-item::after { content: ''; position: absolute; bottom: 4px; left: 50%; transform: translateX(-50%) scaleX(0); width: 20px; height: 2px; background: linear-gradient(90deg,var(--coral),var(--orange)); border-radius: 2px; transition: transform 0.3s cubic-bezier(0.4,0,0.2,1); }
   .nav-item:hover::after, .nav-item.active::after { transform: translateX(-50%) scaleX(1); }
-  @media (max-width: 1024px) {
+
+  @media (max-width: 960px) {
     .navbar { width: calc(100% - 32px); top: 16px; padding: 0.6rem 1rem; }
     .nav-links { position: fixed; top: 80px; left: 50%; transform: translateX(-50%) translateY(-20px); width: calc(100% - 48px); max-width: 400px; flex-direction: column; gap: 0.5rem; padding: 1.5rem; background: rgba(255,255,255,0.97); backdrop-filter: blur(20px) saturate(180%); -webkit-backdrop-filter: blur(20px) saturate(180%); border-radius: 24px; border: 1px solid rgba(255,255,255,0.6); box-shadow: 0 8px 32px rgba(0,0,0,0.06); opacity: 0; visibility: hidden; pointer-events: none; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); z-index: 1000; }
     .nav-links.mobile-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateX(-50%) translateY(0); }
@@ -79,29 +93,920 @@
     .menu-toggle.active span:nth-child(2) { opacity: 0 !important; transform: scaleX(0) !important; }
     .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg) !important; }
   }
-  @media (max-width: 480px) { .navbar { top: 12px; padding: 0.5rem 0.875rem; } }
 
-  /* HERO */
-  .hero { position: relative; min-height: 90vh; display: flex; align-items: center; justify-content: flex-start; padding: 9rem 2rem 5rem 8%; overflow: hidden; }
-  .hero-bg-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0; pointer-events: none; }
-  .hero-bg-image img { width: 100%; height: 100%; object-fit: cover; object-position: center right; animation: slowZoom 20s ease-in-out infinite alternate; opacity: 0.45; }
-  @keyframes slowZoom { 0%{transform:scale(1)} 100%{transform:scale(1.05)} }
-  .hero-bg-image::after { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.92) 45%, rgba(255,255,255,0.6) 80%, transparent 100%); }
-  .hero-content { max-width: 680px; text-align: left; margin-left: 0; position: relative; z-index: 2; }
-  .hero-tag { display: inline-flex; align-items: center; gap: 8px; padding: 0.45rem 1.1rem; background: rgba(255,107,74,0.08); border: 1px solid rgba(255,107,74,0.22); border-radius: 100px; color: var(--coral); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.5rem; }
-  .hero-title { font-size: clamp(2.4rem, 4.5vw, 3.75rem); font-weight: 800; line-height: 1.15; color: var(--navy-dark); margin-bottom: 1.25rem; letter-spacing: -0.02em; }
-  .hero-description { font-size: 1.15rem; color: var(--gray-600); line-height: 1.75; margin-bottom: 2rem; font-weight: 400; }
-  .hero-buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
-
-  @media (max-width: 1024px) {
-    .hero-content { max-width: 100%; text-align: center; margin: 0 auto; }
-    .hero { padding-left: 2rem; padding-right: 2rem; justify-content: center; }
-    .hero-bg-image img { object-position: center; }
-    .hero-bg-image::after { background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(255,255,255,0.93) 60%, rgba(255,255,255,0.85) 100%); }
-    .hero-buttons { justify-content: center; }
+  /* ═══ HERO SECTION ═══ */
+  .hero-wrapper {
+    position: relative;
+    min-height: 92vh;
+    display: flex;
+    align-items: center;
+    padding: 8.5rem 2rem 5rem;
+    overflow: hidden;
+    background: radial-gradient(circle at 85% 20%, rgba(255, 107, 74, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 10% 80%, rgba(255, 138, 91, 0.05) 0%, transparent 40%);
+  }
+  .hero-container {
+    max-width: 1240px;
+    margin: 0 auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 3.5rem;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+  }
+  .hero-live-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.45rem 1rem;
+    background: rgba(255, 107, 74, 0.08);
+    border: 1px solid rgba(255, 107, 74, 0.22);
+    border-radius: 100px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--coral);
+    margin-bottom: 1.25rem;
+  }
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+    animation: pulseGlow 2s infinite;
+  }
+  @keyframes pulseGlow {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
+    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+  }
+  .hero-title {
+    font-size: clamp(2.4rem, 4.2vw, 3.65rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--navy-dark);
+    margin-bottom: 1.25rem;
+    letter-spacing: -0.025em;
+  }
+  .hero-description {
+    font-size: 1.12rem;
+    color: var(--gray-600);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    max-width: 620px;
+  }
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: 2.5rem;
+  }
+  .hero-proof-strip {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+  .proof-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.86rem;
+    color: var(--gray-600);
+    font-weight: 600;
+  }
+  .proof-item svg {
+    color: var(--coral);
   }
 
-  /* SECTION STYLING */
+  /* ═══ HERO SPRINT SHOWCASE (REPLACES TERMINAL) ═══ */
+  .hero-sprint-showcase {
+    background: #111424;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 25px 60px -15px rgba(17, 20, 36, 0.3), 0 0 40px rgba(255, 107, 74, 0.08);
+    overflow: hidden;
+    position: relative;
+    padding: 1.75rem;
+  }
+  .sprint-top-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 1.5rem;
+  }
+  .sprint-tag-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .sprint-status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #10b981;
+    box-shadow: 0 0 8px #10b981;
+  }
+  .sprint-status-text {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: rgba(255,255,255,0.75);
+  }
+  .sprint-phase-pill {
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    background: rgba(16, 185, 129, 0.15);
+    color: #34d399;
+    border-radius: 100px;
+    border: 1px solid rgba(16, 185, 129, 0.3);
+  }
+  .sprint-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.25rem;
+  }
+  .sprint-project-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: var(--amber);
+    margin-bottom: 0.25rem;
+  }
+  .sprint-project-title {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #ffffff;
+    line-height: 1.2;
+    margin: 0;
+  }
+  .sprint-badge-delivery {
+    background: rgba(255, 107, 74, 0.15);
+    border: 1px solid rgba(255, 107, 74, 0.35);
+    border-radius: 100px;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--coral);
+    white-space: nowrap;
+  }
+  .sprint-progress-wrap {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    padding: 1rem;
+    margin-bottom: 1.25rem;
+  }
+  .progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.6);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+  }
+  .progress-percent {
+    color: #34d399;
+    font-weight: 700;
+  }
+  .progress-track {
+    width: 100%;
+    height: 6px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 100px;
+    overflow: hidden;
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--coral), #10b981);
+    border-radius: 100px;
+  }
+  .sprint-modules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .sprint-module-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 12px;
+    padding: 0.75rem 0.85rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .module-status-icon {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.2);
+    color: #34d399;
+    font-size: 0.7rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .module-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+  }
+  .module-sub {
+    font-size: 0.68rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2px;
+  }
+  .sprint-quality-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .quality-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+  }
+  .quality-item svg {
+    color: var(--coral);
+  }
+
+  @media (max-width: 960px) {
+    .hero-container { grid-template-columns: 1fr; gap: 3rem; text-align: center; }
+    .hero-title { margin-left: auto; margin-right: auto; }
+    .hero-description { margin-left: auto; margin-right: auto; }
+    .hero-buttons { justify-content: center; }
+    .hero-proof-strip { justify-content: center; }
+    .hero-sprint-showcase { max-width: 520px; margin: 0 auto; text-align: left; }
+  }
+
+  /* ═══ STUDIO DELIVERABLES MARQUEE (REPLACES TECH STACK) ═══ */
+  .marquee-section {
+    padding: 2.25rem 0;
+    background: #ffffff;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    overflow: hidden;
+    position: relative;
+  }
+  .marquee-header-label {
+    text-align: center;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray-400);
+    margin-bottom: 1.25rem;
+  }
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: scrollMarquee 35s linear infinite;
+    gap: 1.25rem;
+  }
+  .marquee-track:hover { animation-play-state: paused; }
+  @keyframes scrollMarquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .deliverable-marquee-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 0.55rem 1.25rem;
+    background: var(--white-secondary);
+    border: 1px solid rgba(0,0,0,0.06);
+    border-radius: 100px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--navy-dark);
+    white-space: nowrap;
+    transition: all 0.25s ease;
+  }
+  .deliverable-marquee-chip:hover {
+    border-color: rgba(255, 107, 74, 0.3);
+    background: rgba(255, 107, 74, 0.04);
+    transform: translateY(-2px);
+  }
+  .marquee-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--coral); }
+
+  /* ═══ BALANCED 6-CARD GRID: WHO WE HELP ═══ */
+  .segments-grid-balanced {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    max-width: 1200px;
+    margin: 3rem auto 0;
+    padding: 0 1.5rem;
+  }
+  .segment-card-modern {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2.25rem 1.75rem;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+  .segment-card-modern:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 18px 45px rgba(0,0,0,0.08);
+    border-color: rgba(255, 107, 74, 0.35);
+  }
+  .segment-card-top {
+    margin-bottom: 1.5rem;
+  }
+  .segment-icon-modern {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, rgba(255,107,74,0.12) 0%, rgba(255,138,91,0.08) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--coral);
+    margin-bottom: 1.25rem;
+    transition: transform 0.3s ease;
+  }
+  .segment-card-modern:hover .segment-icon-modern {
+    transform: scale(1.08);
+  }
+  .segment-card-modern h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-bottom: 0.6rem;
+  }
+  .segment-card-modern p {
+    font-size: 0.93rem;
+    color: var(--gray-600);
+    line-height: 1.65;
+    margin: 0;
+  }
+  .deliverables-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 1.25rem;
+  }
+  .deliverable-chip {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.6rem;
+    background: rgba(255, 107, 74, 0.06);
+    color: var(--coral);
+    border-radius: 6px;
+    border: 1px solid rgba(255, 107, 74, 0.14);
+  }
+  .segment-card-footer {
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .segment-footer-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s;
+  }
+  .segment-card-modern:hover .segment-footer-link {
+    color: var(--coral);
+  }
+
+  @media (max-width: 992px) {
+    .segments-grid-balanced { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 640px) {
+    .segments-grid-balanced { grid-template-columns: 1fr; }
+  }
+
+  /* ═══ BALANCED 8-CARD GRID: WHAT WE BUILD (FIXED DAYS ALIGNMENT) ═══ */
+  .catalogue-grid-balanced {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    max-width: 1240px;
+    margin: 3rem auto 0;
+    padding: 0 1.5rem;
+  }
+  .catalogue-card-modern {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 1.75rem 1.5rem;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 4px 18px rgba(0,0,0,0.02);
+    transition: all 0.35s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .catalogue-card-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.07);
+    border-color: rgba(255, 107, 74, 0.3);
+  }
+  .catalogue-badge-strip {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 1.25rem;
+    flex-wrap: nowrap;
+  }
+  /* FIXED: speed-pill prevents text wrapping so days stay on one line */
+  .speed-pill {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.28rem 0.65rem;
+    background: rgba(16, 185, 129, 0.08);
+    color: #059669;
+    border-radius: 100px;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    white-space: nowrap !important;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .tech-pill {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--gray-500);
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .catalogue-card-modern h3 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-bottom: 0.65rem;
+  }
+  .catalogue-card-modern p {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: 1.25rem;
+    flex-grow: 1;
+  }
+  .catalogue-outcome-box {
+    background: rgba(255, 107, 74, 0.04);
+    border-left: 3px solid var(--coral);
+    padding: 0.7rem 0.9rem;
+    border-radius: 0 8px 8px 0;
+    font-size: 0.82rem;
+    color: var(--navy-dark);
+    line-height: 1.5;
+  }
+
+  @media (max-width: 1100px) {
+    .catalogue-grid-balanced { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .catalogue-grid-balanced { grid-template-columns: 1fr; }
+  }
+
+  /* ═══ HOW IT WORKS (CUSTOM SVG ICONS & PERFECT DAYS ALIGNMENT) ═══ */
+  .timeline-flow-container {
+    position: relative;
+    max-width: 1200px;
+    margin: 3.5rem auto 0;
+    padding: 0 1.5rem;
+  }
+  .timeline-connecting-line {
+    position: absolute;
+    top: 50px;
+    left: 10%;
+    right: 10%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--coral), var(--orange), var(--amber));
+    z-index: 1;
+    opacity: 0.35;
+  }
+  .process-visual-grid-connected {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.25rem;
+    position: relative;
+    z-index: 2;
+  }
+  .process-step-card-modern {
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 2rem 1.25rem;
+    border: 1px solid rgba(0,0,0,0.06);
+    position: relative;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+    transition: all 0.3s ease;
+  }
+  .process-step-card-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    border-color: rgba(255, 107, 74, 0.35);
+  }
+  .step-icon-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--coral), var(--orange));
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    box-shadow: 0 8px 22px rgba(255, 107, 74, 0.35);
+    border: 4px solid #ffffff;
+    position: relative;
+    z-index: 2;
+  }
+  .step-day-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 84px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--coral);
+    background: rgba(255, 107, 74, 0.08);
+    padding: 0.25rem 0.75rem;
+    border-radius: 100px;
+    margin-bottom: 0.85rem;
+    white-space: nowrap;
+  }
+  .process-step-card-modern h4 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-bottom: 0.5rem;
+  }
+  .process-step-card-modern p {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  @media (max-width: 992px) {
+    .timeline-connecting-line { display: none; }
+    .process-visual-grid-connected { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px) {
+    .process-visual-grid-connected { grid-template-columns: 1fr; }
+  }
+
+  /* ═══ COMPARISON MATRIX ═══ */
+  .comparison-wrapper {
+    margin-top: 3.5rem;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    overflow-x: auto;
+  }
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    min-width: 680px;
+  }
+  .comparison-table th, .comparison-table td {
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.92rem;
+  }
+  .comparison-table th {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.5);
+    background: rgba(0,0,0,0.2);
+  }
+  .comparison-table th.col-highlight, .comparison-table td.col-highlight {
+    background: rgba(255, 107, 74, 0.12);
+    border-left: 1px solid rgba(255, 107, 74, 0.25);
+    border-right: 1px solid rgba(255, 107, 74, 0.25);
+  }
+  .comparison-table th.col-highlight {
+    color: var(--coral);
+    font-weight: 800;
+  }
+  .feature-label {
+    font-weight: 600;
+    color: #ffffff;
+  }
+  .c-good { color: #34d399; font-weight: 600; }
+  .c-warn { color: #fbbf24; }
+  .c-bad { color: #f87171; }
+
+  /* ═══ LOGESHWARAN SIR FEATURED CASE STUDY (WITH ACTUAL LIVE WEBSITE EMBED) ═══ */
+  .featured-case-container {
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1px solid rgba(0,0,0,0.07);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.05);
+    max-width: 1160px;
+    margin: 2.5rem auto 0;
+    padding: 3rem;
+    display: grid;
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: 3rem;
+    align-items: center;
+  }
+  .browser-window-mockup {
+    background: #1e2438;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.12);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+    overflow: hidden;
+  }
+  .browser-window-bar {
+    background: #141827;
+    padding: 0.65rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .browser-url-pill {
+    background: rgba(255,255,255,0.08);
+    border-radius: 100px;
+    padding: 0.2rem 0.85rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: #94a3b8;
+    flex-grow: 1;
+    max-width: 260px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .browser-live-frame {
+    width: 100%;
+    height: 420px;
+    border: none;
+    display: block;
+    background: #ffffff;
+  }
+  .case-metrics-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+    padding: 1.25rem;
+    background: rgba(255, 107, 74, 0.04);
+    border-radius: 14px;
+    border: 1px solid rgba(255, 107, 74, 0.12);
+  }
+  .case-metric-box h4 {
+    font-size: 1.65rem;
+    font-weight: 800;
+    color: var(--coral);
+    margin-bottom: 0.2rem;
+  }
+  .case-metric-box span {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-600);
+  }
+
+  @media (max-width: 992px) {
+    .featured-case-container { grid-template-columns: 1fr; padding: 2rem 1.5rem; }
+  }
+
+  /* ═══ INTERACTIVE ESTIMATOR WIDGET ═══ */
+  .estimator-card {
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 107, 74, 0.2);
+    box-shadow: 0 15px 50px rgba(255, 107, 74, 0.06);
+    max-width: 1080px;
+    margin: 3.5rem auto 0;
+    padding: 3rem;
+  }
+  .estimator-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 3rem;
+  }
+  .estimator-step-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    margin-bottom: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .option-pill-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 2rem;
+  }
+  .option-pill {
+    padding: 0.6rem 1.15rem;
+    border-radius: 10px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background: var(--white-secondary);
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--navy-dark);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    user-select: none;
+  }
+  .option-pill:hover {
+    border-color: var(--coral);
+    background: rgba(255, 107, 74, 0.04);
+  }
+  .option-pill.selected {
+    background: var(--coral);
+    border-color: var(--coral);
+    color: #ffffff;
+    box-shadow: 0 4px 14px rgba(255, 107, 74, 0.35);
+  }
+  .estimator-result-panel {
+    background: #111424;
+    border-radius: 18px;
+    padding: 2.25rem 2rem;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 10px 30px rgba(17, 20, 36, 0.15);
+  }
+  .result-header {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  .result-header h4 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #ffffff;
+    margin-bottom: 0.35rem;
+  }
+  .result-header span {
+    font-size: 0.85rem;
+    color: var(--amber);
+    font-weight: 600;
+  }
+  .result-spec-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.88rem;
+    padding: 0.6rem 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.08);
+  }
+  .result-spec-item span:first-child { color: rgba(255,255,255,0.6); }
+  .result-spec-item span:last-child { color: #ffffff; font-weight: 600; }
+
+  @media (max-width: 900px) {
+    .estimator-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .estimator-card { padding: 2rem 1.5rem; }
+  }
+
+  /* ═══ FAQ ACCORDION ═══ */
+  .faq-accordion-container {
+    max-width: 860px;
+    margin: 3.5rem auto 0;
+    padding: 0 1.5rem;
+  }
+  .faq-item {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid rgba(0,0,0,0.06);
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+    overflow: hidden;
+    transition: all 0.3s ease;
+  }
+  .faq-item:hover {
+    border-color: rgba(255, 107, 74, 0.25);
+  }
+  .faq-question {
+    padding: 1.35rem 1.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--navy-dark);
+    user-select: none;
+  }
+  .faq-toggle-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: rgba(255, 107, 74, 0.08);
+    color: var(--coral);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    transition: transform 0.3s ease;
+  }
+  .faq-item.open .faq-toggle-icon {
+    transform: rotate(45deg);
+    background: var(--coral);
+    color: #ffffff;
+  }
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
+    padding: 0 1.75rem;
+    color: var(--gray-600);
+    font-size: 0.95rem;
+    line-height: 1.75;
+  }
+  .faq-item.open .faq-answer {
+    max-height: 300px;
+    padding: 0 1.75rem 1.5rem;
+  }
+
+  /* ═══ FLOATING WHATSAPP / CALL PILL ═══ */
+  .floating-contact-pill {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 999;
+    background: #111424;
+    color: #ffffff;
+    border-radius: 100px;
+    padding: 0.75rem 1.35rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.15);
+    font-weight: 600;
+    font-size: 0.88rem;
+    transition: all 0.3s cubic-bezier(0.4,0,0.2,1);
+  }
+  .floating-contact-pill:hover {
+    transform: translateY(-3px) scale(1.03);
+    background: #1a1e36;
+    box-shadow: 0 15px 40px rgba(255,107,74,0.3);
+  }
+  .floating-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #25D366;
+    box-shadow: 0 0 10px #25D366;
+  }
+  @media (max-width: 768px) {
+    .floating-contact-pill {
+      bottom: 16px;
+      right: 16px;
+      padding: 0.55rem 1rem;
+      font-size: 0.8rem;
+    }
+  }
+
+  /* ═══ SECTION WRAPPERS & UTILS ═══ */
   .section-label-tag {
     display: inline-flex; align-items: center; gap: 6px;
     padding: 0.4rem 1rem; background: rgba(255,107,74,0.08);
@@ -109,87 +1014,18 @@
     font-size: 0.78rem; font-weight: 700; text-transform: uppercase;
     letter-spacing: 0.08em; color: var(--coral); margin-bottom: 1rem;
   }
-
-  /* WHO WE HELP CARDS */
-  .segments-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem; max-width: 1200px; margin: 3rem auto 0; padding: 0 1.5rem;
-  }
-  .segment-card {
-    background: #ffffff; border-radius: 20px; padding: 2rem 1.5rem;
-    border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    transition: all 0.35s ease; position: relative; overflow: hidden;
-  }
-  .segment-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,0.08); border-color: rgba(255,107,74,0.25); }
-  .segment-icon {
-    width: 50px; height: 50px; border-radius: 14px;
-    background: linear-gradient(135deg, rgba(255,107,74,0.1) 0%, rgba(255,138,91,0.06) 100%);
-    display: flex; align-items: center; justify-content: center; color: var(--coral);
-    margin-bottom: 1.25rem; font-size: 1.25rem;
-  }
-  .segment-card h3 { font-size: 1.2rem; font-weight: 700; color: var(--navy-dark); margin-bottom: 0.5rem; }
-  .segment-card p { font-size: 0.92rem; color: var(--gray-500); line-height: 1.6; margin: 0; }
-  .segment-tag { display: inline-block; margin-top: 1rem; font-size: 0.75rem; font-weight: 600; color: var(--orange); background: rgba(255,138,91,0.1); padding: 0.25rem 0.6rem; border-radius: 6px; }
-
-  /* WHAT WE BUILD CARDS */
-  .catalogue-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.75rem; max-width: 1200px; margin: 3rem auto 0; padding: 0 1.5rem;
-  }
-  .catalogue-card {
-    background: #ffffff; border-radius: 20px; padding: 2.25rem;
-    border: 1px solid rgba(0,0,0,0.05); box-shadow: 0 4px 20px rgba(0,0,0,0.03);
-    transition: all 0.35s ease; display: flex; flex-direction: column; justify-content: space-between;
-  }
-  .catalogue-card:hover { transform: translateY(-6px); box-shadow: 0 20px 45px rgba(0,0,0,0.08); border-color: rgba(255,107,74,0.3); }
-  .catalogue-card h3 { font-size: 1.3rem; font-weight: 700; color: var(--navy-dark); margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem; }
-  .catalogue-card p { font-size: 0.95rem; color: var(--gray-500); line-height: 1.7; margin-bottom: 1.25rem; }
-  .catalogue-outcome {
-    background: rgba(255,107,74,0.04); border-left: 3px solid var(--coral);
-    padding: 0.75rem 1rem; border-radius: 0 8px 8px 0; font-size: 0.85rem;
-    color: var(--navy-dark); font-weight: 500;
-  }
-
-  /* HOW IT WORKS (SIMPLIFIED 5-STEP) */
-  .process-visual-grid {
-    display: grid; grid-template-columns: repeat(5, 1fr);
-    gap: 1.25rem; max-width: 1200px; margin: 3.5rem auto 0; padding: 0 1.5rem;
-  }
-  .process-step-card {
-    background: #ffffff; border-radius: 20px; padding: 2rem 1.25rem;
-    border: 1px solid rgba(0,0,0,0.05); position: relative; text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.02); transition: all 0.3s ease;
-  }
-  .process-step-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
-  .step-num {
-    width: 44px; height: 44px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--coral), var(--orange));
-    color: #fff; font-weight: 800; font-size: 1.1rem;
-    display: flex; align-items: center; justify-content: center;
-    margin: 0 auto 1.25rem; box-shadow: 0 6px 15px rgba(255,107,74,0.3);
-  }
-  .process-step-card h4 { font-size: 1.15rem; font-weight: 700; color: var(--navy-dark); margin-bottom: 0.5rem; }
-  .process-step-card p { font-size: 0.85rem; color: var(--gray-500); line-height: 1.6; margin: 0; }
-  @media (max-width: 900px) {
-    .process-visual-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 600px) {
-    .process-visual-grid { grid-template-columns: 1fr; }
-  }
-
-  /* SECTION 9: WHY SITE2SUCCESS / DIFFERENTIATION */
   .diff-section {
-    background: linear-gradient(135deg, #111424 0%, #1a1e36 100%);
-    color: #ffffff; padding: 6rem 1.5rem; position: relative; overflow: hidden;
+    background: linear-gradient(135deg, #0d0f1a 0%, #1a1e36 100%);
+    color: #ffffff; padding: 6.5rem 1.5rem; position: relative; overflow: hidden;
   }
-  .diff-container { max-width: 1100px; margin: 0 auto; position: relative; z-index: 2; }
+  .diff-container { max-width: 1140px; margin: 0 auto; position: relative; z-index: 2; }
   .diff-quote-card {
-    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 24px; padding: 2.75rem; backdrop-filter: blur(16px);
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px; padding: 2.25rem 2.5rem; backdrop-filter: blur(16px);
     margin-bottom: 3.5rem; position: relative;
   }
   .diff-quote-card p {
-    font-size: 1.25rem; line-height: 1.8; color: rgba(255,255,255,0.92);
+    font-size: 1.2rem; line-height: 1.8; color: rgba(255,255,255,0.92);
     font-weight: 500; font-style: italic; margin: 0;
   }
   .diff-quote-highlight { color: var(--amber); font-weight: 700; font-style: normal; }
@@ -206,76 +1042,60 @@
     .diff-pillars-grid { grid-template-columns: 1fr; }
   }
 
-  /* SECTION 7: STANDARDIZED PROOF & CASE STUDY */
-  .proof-case-study {
-    background: #ffffff; border-radius: 28px; border: 1px solid rgba(0,0,0,0.06);
-    box-shadow: 0 15px 50px rgba(0,0,0,0.04); max-width: 1100px;
-    margin: 3.5rem auto 0; padding: 3rem; overflow: hidden;
+  /* CREDIBILITY & STATS */
+  .origin-box-modern {
+    background: #ffffff;
+    border-radius: 24px;
+    border: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 3.5rem;
+    text-align: center;
   }
-  .case-study-header {
-    display: flex; justify-content: space-between; align-items: flex-start;
-    flex-wrap: wrap; gap: 1rem; border-bottom: 1px solid rgba(0,0,0,0.06);
-    padding-bottom: 1.5rem; margin-bottom: 2rem;
+  .origin-stats-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin: 2.5rem 0;
+    padding: 1.75rem;
+    background: var(--white-secondary);
+    border-radius: 18px;
+    border: 1px solid rgba(0,0,0,0.05);
   }
-  .case-study-title-wrap h3 { font-size: 1.75rem; font-weight: 800; color: var(--navy-dark); margin-bottom: 0.25rem; }
-  .case-study-badge {
-    background: rgba(255,107,74,0.1); color: var(--coral);
-    padding: 0.4rem 0.9rem; border-radius: 100px; font-size: 0.8rem; font-weight: 700;
+  .origin-stat-item h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--coral);
+    margin-bottom: 0.25rem;
   }
-  .template-fields-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem;
+  .origin-stat-item p {
+    font-size: 0.82rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray-500);
+    margin: 0;
   }
-  .template-field-item { font-size: 0.95rem; line-height: 1.7; }
-  .template-field-label {
-    font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em;
-    font-weight: 700; color: var(--gray-400); margin-bottom: 0.35rem; display: block;
-  }
-  .template-field-value { color: var(--navy-dark); font-weight: 500; }
-  .case-study-quote-box {
-    grid-column: span 2; background: rgba(255,107,74,0.04);
-    border-left: 4px solid var(--coral); border-radius: 0 16px 16px 0;
-    padding: 1.25rem 1.5rem; margin-top: 1rem;
-  }
-  .case-study-quote-box blockquote { font-style: italic; color: var(--navy-dark); font-size: 1rem; line-height: 1.7; margin: 0; }
-  .case-study-quote-box cite { display: block; margin-top: 0.5rem; font-size: 0.85rem; color: var(--coral); font-weight: 600; font-style: normal; }
   @media (max-width: 768px) {
-    .template-fields-grid { grid-template-columns: 1fr; }
-    .case-study-quote-box { grid-column: span 1; }
-    .proof-case-study { padding: 1.75rem; }
+    .origin-stats-row { grid-template-columns: repeat(2, 1fr); }
+    .origin-box-modern { padding: 2rem 1.5rem; }
   }
-
-  /* CHRIST ORIGIN / CREDIBILITY SECTION */
-  .origin-box {
-    background: linear-gradient(135deg, rgba(255,255,255,0.9) 0%, rgba(255,248,245,0.9) 100%);
-    border-radius: 24px; border: 1px solid rgba(255,107,74,0.18);
-    box-shadow: 0 10px 40px rgba(255,107,74,0.04);
-    max-width: 960px; margin: 0 auto; padding: 3rem; text-align: center;
-  }
-  .origin-badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    padding: 0.4rem 1rem; background: rgba(255,107,74,0.08);
-    border: 1px solid rgba(255,107,74,0.2); border-radius: 100px;
-    font-size: 0.8rem; font-weight: 700; color: var(--coral);
-    text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1.25rem;
-  }
-  .origin-box h3 { font-size: 1.75rem; font-weight: 800; color: var(--navy-dark); margin-bottom: 1rem; }
-  .origin-box p { font-size: 1.05rem; color: var(--gray-600); line-height: 1.85; max-width: 800px; margin: 0 auto 1.5rem; }
-  .origin-note { font-size: 0.82rem; color: var(--gray-400); font-style: italic; }
 
   /* HOME CTA BANNER */
   .home-conversion-cta {
     background: linear-gradient(135deg, #0d0f1a 0%, #1a1e36 100%);
     border-top: 1px solid rgba(255,107,74,0.25);
-    padding: 6rem 2rem; text-align: center; color: #fff;
+    padding: 6.5rem 2rem; text-align: center; color: #fff;
   }
   .home-conversion-cta h2 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; margin-bottom: 1rem; }
   .home-conversion-cta p { font-size: 1.15rem; color: rgba(255,255,255,0.7); max-width: 650px; margin: 0 auto 2.5rem; line-height: 1.7; }
   .home-conversion-buttons { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
-  /* FOOTER & LEGAL NOTE */
+  /* FOOTER */
   .site-footer { background: #0c0e18; color: rgba(255,255,255,0.7); padding: 5rem 2rem 2.5rem; border-top: 1px solid rgba(255,255,255,0.06); }
   .footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr; gap: 3rem; max-width: 1200px; margin: 0 auto 3rem; }
-  .footer-brand img { height: 48px; width: auto; border-radius: 12px; margin-bottom: 1.25rem; background: #ffffff; padding: 6px 14px; display: inline-block; }
+  .footer-brand img { height: 44px; width: auto; border-radius: 0; margin-bottom: 1.25rem; background: transparent; padding: 0; display: inline-block; filter: brightness(0) invert(1); }
   .footer-brand p { font-size: 0.92rem; line-height: 1.75; color: rgba(255,255,255,0.55); max-width: 320px; }
   .footer-col h4 { font-size: 0.82rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: rgba(255,255,255,0.45); margin-bottom: 1.25rem; }
   .footer-col a { display: block; font-size: 0.92rem; color: rgba(255,255,255,0.65); margin-bottom: 0.65rem; transition: color 0.25s; text-decoration: none; }
@@ -287,27 +1107,20 @@
   }
   .legal-scope-disclaimer strong { color: rgba(255,255,255,0.75); }
   .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-  @media (max-width: 900px) {
-    .footer-grid { grid-template-columns: 1fr 1fr; }
-  }
-  @media (max-width: 600px) {
-    .footer-grid { grid-template-columns: 1fr; }
-  }
+  @media (max-width: 900px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .footer-grid { grid-template-columns: 1fr; } }
 </style>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 </head>
 
 <body>
-  <!-- GLASSMORPHISM NAVBAR -->
+  <!-- ═══ GLASSMORPHISM NAVBAR ═══ -->
   <nav class="navbar" id="navbar" aria-label="Main navigation">
     <a href="home.html" class="nav-logo" aria-label="Site2Success Home">
       <img src="../assets/images/logo.png" alt="Site2Success Logo" style="height:48px;width:auto;border-radius:0;" loading="eager">
     </a>
     <div class="nav-links" id="nav-links" role="menubar">
       <a href="home.html" class="nav-item active" data-page="home" role="menuitem">Home</a>
-      <a href="services.html" class="nav-item" data-page="services" role="menuitem">Services &amp; Pricing</a>
+      <a href="services.html" class="nav-item" data-page="services" role="menuitem">Services &amp; Packages</a>
       <a href="projects.html" class="nav-item" data-page="projects" role="menuitem">Projects</a>
       <a href="about.html" class="nav-item" data-page="about" role="menuitem">About</a>
       <a href="internships.html" class="nav-item" data-page="internships" role="menuitem">Builders</a>
@@ -318,253 +1131,542 @@
     </div>
   </nav>
 
-  <!-- 1. HERO SECTION (Exact Section 4 Structure) -->
-  <section class="hero" aria-labelledby="hero-heading">
-    <div class="hero-bg-image">
-      <img src="../assets/images/hero-bg-abstract.jpg" alt="Site2Success AI Technology Studio Background" loading="eager">
+  <!-- ═══ 1. HERO SECTION WITH SPRINT DASHBOARD SHOWCASE ═══ -->
+  <header class="hero-wrapper" aria-labelledby="hero-heading">
+    <div class="hero-container">
+      <div class="hero-left-content">
+        <div class="hero-live-badge">
+          <span class="pulse-dot"></span>
+          <span>Studio Active &bull; Accepting Q2/Q3 Cohort Builds</span>
+        </div>
+        <h1 class="hero-title" id="hero-heading">
+          Have an idea?<br>
+          <span class="gradient-text">We turn it into working software.</span>
+        </h1>
+        <p class="hero-description">
+          Site2Success combines AI-native development with university talent to help founders, researchers, students and individuals turn software ideas into real products quickly and affordably.
+        </p>
+        <div class="hero-buttons">
+          <a href="contact.html" class="btn btn-primary btn-large" id="hero-cta-primary">
+            Tell Us What You Want to Build
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#how-it-works" class="btn btn-secondary btn-large" id="hero-cta-secondary">
+            How It Works
+          </a>
+        </div>
+        <div class="hero-proof-strip">
+          <div class="proof-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+            <span>14-Day MVP Turnaround</span>
+          </div>
+          <div class="proof-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>100% Human-Reviewed QA</span>
+          </div>
+          <div class="proof-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>Full IP &amp; Code Ownership</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Studio Sprint & Product Dashboard Card (Replaces Terminal) -->
+      <div class="hero-sprint-showcase" aria-label="Studio Active Sprint Dashboard">
+        <div class="sprint-top-strip">
+          <div class="sprint-tag-wrap">
+            <span class="sprint-status-dot"></span>
+            <span class="sprint-status-text">Studio Sprint Hub</span>
+          </div>
+          <span class="sprint-phase-pill">&#9679; Production Ready</span>
+        </div>
+        
+        <div class="sprint-card-header">
+          <div>
+            <div class="sprint-project-label">Flagship Sprint</div>
+            <h3 class="sprint-project-title">Full-Stack MVP Platform</h3>
+          </div>
+          <div class="sprint-badge-delivery">&#9889; 14-Day Sprint</div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="sprint-progress-wrap">
+          <div class="progress-labels">
+            <span>Sprint Velocity</span>
+            <span class="progress-percent">100% Milestone Reached</span>
+          </div>
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 100%;"></div>
+          </div>
+        </div>
+
+        <!-- Feature Modules Delivered -->
+        <div class="sprint-modules-grid">
+          <div class="sprint-module-card">
+            <div class="module-status-icon">&#10003;</div>
+            <div>
+              <div class="module-title">Modern Auth &amp; Roles</div>
+              <div class="module-sub">Multi-tenant access ready</div>
+            </div>
+          </div>
+          <div class="sprint-module-card">
+            <div class="module-status-icon">&#10003;</div>
+            <div>
+              <div class="module-title">Database &amp; APIs</div>
+              <div class="module-sub">Production schemas &amp; CRUD</div>
+            </div>
+          </div>
+          <div class="sprint-module-card">
+            <div class="module-status-icon">&#10003;</div>
+            <div>
+              <div class="module-title">Client Admin Portal</div>
+              <div class="module-sub">Self-serve management UI</div>
+            </div>
+          </div>
+          <div class="sprint-module-card">
+            <div class="module-status-icon">&#10003;</div>
+            <div>
+              <div class="module-title">Cloud Deployment</div>
+              <div class="module-sub">Live URL + Repo Transfer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Studio Quality Guarantee Strip -->
+        <div class="sprint-quality-strip">
+          <div class="quality-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+            <span>Mandatory Human Code QA</span>
+          </div>
+          <div class="quality-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <span>100% IP Transferred</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="hero-content">
-      <div class="hero-tag">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-        </svg>
-        <span>University-Powered AI Software Studio</span>
-      </div>
-      <h1 class="hero-title" id="hero-heading">
-        Have an idea?<br>
-        <span class="gradient-text">We turn it into working software.</span>
-      </h1>
-      <p class="hero-description">
-        Site2Success combines AI-native development with university talent to help founders, researchers, students and individuals turn software ideas into real products quickly and affordably.
-      </p>
-      <div class="hero-buttons">
-        <a href="contact.html" class="btn btn-primary btn-large" id="hero-cta-primary">
-          Tell Us What You Want to Build
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
-        <a href="#how-it-works" class="btn btn-secondary btn-large" id="hero-cta-secondary">
-          How It Works
-        </a>
-      </div>
+  </header>
+
+  <!-- ═══ 2. STUDIO DELIVERABLES & CAPABILITIES MARQUEE ═══ -->
+  <section class="marquee-section" aria-label="What our software studio delivers">
+    <div class="marquee-header-label">Studio Capabilities &amp; Proven Outcomes</div>
+    <div class="marquee-track">
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>14-Day Working MVPs</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>Mandatory Senior QA</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>100% Source Code Ownership</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>Full-Stack Web Applications</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>AI Workflows &amp; Assistants</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>Real-Time Operations Dashboards</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>Academic &amp; Research Software</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>Gated Admin Portals</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>Zero Vendor Lock-In</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>High-Speed Cloud Deployment</div>
+      <!-- Loop duplicate -->
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>14-Day Working MVPs</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>Mandatory Senior QA</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>100% Source Code Ownership</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>Full-Stack Web Applications</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>AI Workflows &amp; Assistants</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>Real-Time Operations Dashboards</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>Academic &amp; Research Software</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>Gated Admin Portals</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>Zero Vendor Lock-In</div>
+      <div class="deliverable-marquee-chip"><span class="marquee-dot"></span>High-Speed Cloud Deployment</div>
     </div>
   </section>
 
-  <!-- 2. WHO WE HELP SECTION (Exact Section 3 Priority Order) -->
+  <!-- ═══ 3. WHO WE HELP SECTION (Balanced 3x2 Grid - 6 Strategic Segments) ═══ -->
   <section class="section" id="who-we-help" style="background:var(--white-secondary); padding: 6rem 0;" aria-labelledby="who-heading">
     <div class="section-header">
       <span class="section-label-tag">Qualification</span>
       <h2 class="section-title" id="who-heading">Who We Help</h2>
-      <p class="section-subtitle">We specialize in turning early-stage ideas and practical software requirements into working products across five key segments.</p>
+      <p class="section-subtitle">We specialize in turning early-stage ideas and practical software requirements into working products across six balanced segments.</p>
     </div>
-    <div class="segments-grid">
+    <div class="segments-grid-balanced">
       <!-- 1. Faculty / researchers -->
-      <div class="segment-card">
-        <div class="segment-icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M10 2v7.31L4.5 19.5A2 2 0 0 0 6.24 22h11.52a2 2 0 0 0 1.74-2.5L14 9.31V2"></path>
-            <line x1="8" y1="2" x2="16" y2="2"></line>
-            <line x1="9" y1="14" x2="15" y2="14"></line>
-          </svg>
+      <div class="segment-card-modern">
+        <div class="segment-card-top">
+          <div class="segment-icon-modern" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 2v7.31L4.5 19.5A2 2 0 0 0 6.24 22h11.52a2 2 0 0 0 1.74-2.5L14 9.31V2"></path>
+              <line x1="8" y1="2" x2="16" y2="2"></line>
+              <line x1="9" y1="14" x2="15" y2="14"></line>
+            </svg>
+          </div>
+          <h3>Faculty &amp; Researchers</h3>
+          <p>Research tools, academic dashboards, automated data pipelines, and interactive computational prototypes built for publications and grant deliverables.</p>
+          <div class="deliverables-chips">
+            <span class="deliverable-chip">Data Dashboards</span>
+            <span class="deliverable-chip">Paper Prototypes</span>
+            <span class="deliverable-chip">Grant Tools</span>
+          </div>
         </div>
-        <h3>Faculty &amp; Researchers</h3>
-        <p>Research tools, academic dashboards, automated data pipelines, and interactive computational prototypes built for publications and grant deliverables.</p>
-        <span class="segment-tag">Higher-Value Research Software</span>
+        <div class="segment-card-footer">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--coral);">RESEARCH SOFTWARE</span>
+          <a href="contact.html?type=researcher" class="segment-footer-link">Explore &rarr;</a>
+        </div>
       </div>
 
       <!-- 2. Student founders -->
-      <div class="segment-card">
-        <div class="segment-icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
-            <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
-            <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
-            <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
-          </svg>
+      <div class="segment-card-modern">
+        <div class="segment-card-top">
+          <div class="segment-icon-modern" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+            </svg>
+          </div>
+          <h3>Student Founders</h3>
+          <p>Rapid MVPs, validated software prototypes, customer-facing web apps, and specialized AI tools to test product-market fit with real users and pitch investors.</p>
+          <div class="deliverables-chips">
+            <span class="deliverable-chip">Working MVPs</span>
+            <span class="deliverable-chip">User Auth</span>
+            <span class="deliverable-chip">Investor Demos</span>
+          </div>
         </div>
-        <h3>Student Founders</h3>
-        <p>Rapid MVPs, validated software prototypes, customer-facing web apps, and specialized AI tools to test product-market fit with real users and pitch investors.</p>
-        <span class="segment-tag">Core Startup Offering</span>
+        <div class="segment-card-footer">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--coral);">CORE STARTUP MVP</span>
+          <a href="contact.html?type=founder" class="segment-footer-link">Explore &rarr;</a>
+        </div>
       </div>
 
       <!-- 3. Student projects / personal brands -->
-      <div class="segment-card">
-        <div class="segment-icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-          </svg>
+      <div class="segment-card-modern">
+        <div class="segment-card-top">
+          <div class="segment-icon-modern" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <h3>Student Projects &amp; Portfolios</h3>
+          <p>High-impact personal portfolio websites, research showcase hubs, and bespoke interactive apps that prove real capability and command attention.</p>
+          <div class="deliverables-chips">
+            <span class="deliverable-chip">Flagship Portfolios</span>
+            <span class="deliverable-chip">CMS Portals</span>
+            <span class="deliverable-chip">Domain Setup</span>
+          </div>
         </div>
-        <h3>Student Projects &amp; Portfolios</h3>
-        <p>High-impact personal portfolio websites, research showcase hubs, and bespoke interactive apps that prove real capability and command attention.</p>
-        <span class="segment-tag">Fast-Turnaround Builds</span>
+        <div class="segment-card-footer">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--coral);">PORTFOLIO &amp; SHOWCASE</span>
+          <a href="contact.html?type=portfolio" class="segment-footer-link">Explore &rarr;</a>
+        </div>
       </div>
 
       <!-- 4. Clubs / events -->
-      <div class="segment-card">
-        <div class="segment-icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
-            <path d="M13 5v2"></path>
-            <path d="M13 17v2"></path>
-            <path d="M13 11v2"></path>
-          </svg>
+      <div class="segment-card-modern">
+        <div class="segment-card-top">
+          <div class="segment-icon-modern" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+              <path d="M13 5v2"></path>
+              <path d="M13 17v2"></path>
+              <path d="M13 11v2"></path>
+            </svg>
+          </div>
+          <h3>Clubs &amp; Campus Events</h3>
+          <p>Campus registration portals, event ticketing pipelines, attendee check-in systems, and real-time live event engagement dashboards.</p>
+          <div class="deliverables-chips">
+            <span class="deliverable-chip">Ticket Check-in</span>
+            <span class="deliverable-chip">Live Leaderboards</span>
+            <span class="deliverable-chip">QR Systems</span>
+          </div>
         </div>
-        <h3>Clubs &amp; Events</h3>
-        <p>Campus registration portals, event ticketing pipelines, attendee check-in systems, and real-time live event engagement dashboards.</p>
-        <span class="segment-tag">High-Visibility Systems</span>
+        <div class="segment-card-footer">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--coral);">CAMPUS SYSTEMS</span>
+          <a href="contact.html?type=club" class="segment-footer-link">Explore &rarr;</a>
+        </div>
       </div>
 
       <!-- 5. Alumni / connected businesses -->
-      <div class="segment-card">
-        <div class="segment-icon" aria-hidden="true">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
-            <path d="M9 22v-4h6v4"></path>
-            <path d="M8 6h.01"></path>
-            <path d="M16 6h.01"></path>
-            <path d="M8 10h.01"></path>
-            <path d="M16 10h.01"></path>
-            <path d="M8 14h.01"></path>
-            <path d="M16 14h.01"></path>
-          </svg>
+      <div class="segment-card-modern">
+        <div class="segment-card-top">
+          <div class="segment-icon-modern" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+              <path d="M9 22v-4h6v4"></path>
+              <path d="M8 6h.01"></path>
+              <path d="M16 6h.01"></path>
+              <path d="M8 10h.01"></path>
+              <path d="M16 10h.01"></path>
+              <path d="M8 14h.01"></path>
+              <path d="M16 14h.01"></path>
+            </svg>
+          </div>
+          <h3>Alumni &amp; Small Businesses</h3>
+          <p>Production business websites, custom internal tools, workflow automation, and CRM integrations bridging campus talent with commercial operations.</p>
+          <div class="deliverables-chips">
+            <span class="deliverable-chip">Client Portals</span>
+            <span class="deliverable-chip">Automation</span>
+            <span class="deliverable-chip">CRM Workflows</span>
+          </div>
         </div>
-        <h3>Alumni &amp; Small Businesses</h3>
-        <p>Production business websites, custom internal tools, workflow automation, and CRM integrations bridging campus talent with commercial operations.</p>
-        <span class="segment-tag">Operational Software</span>
+        <div class="segment-card-footer">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--coral);">BUSINESS TOOLING</span>
+          <a href="contact.html?type=business" class="segment-footer-link">Explore &rarr;</a>
+        </div>
+      </div>
+
+      <!-- 6. Non-Profits & Social Ventures (3x2 Balanced) -->
+      <div class="segment-card-modern">
+        <div class="segment-card-top">
+          <div class="segment-icon-modern" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+            </svg>
+          </div>
+          <h3>Non-Profits &amp; Social Initiatives</h3>
+          <p>Donor transparency portals, community platforms, impact tracking dashboards, and volunteer coordinating software built for rapid social impact.</p>
+          <div class="deliverables-chips">
+            <span class="deliverable-chip">Impact Dashboards</span>
+            <span class="deliverable-chip">Donor Portals</span>
+            <span class="deliverable-chip">Community Hubs</span>
+          </div>
+        </div>
+        <div class="segment-card-footer">
+          <span style="font-size:0.75rem; font-weight:700; color:var(--coral);">SOCIAL VENTURES</span>
+          <a href="contact.html?type=nonprofit" class="segment-footer-link">Explore &rarr;</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. WHAT WE BUILD SECTION (Exact Section 8 Catalogue - Outcome Focused) -->
+  <!-- ═══ 4. WHAT WE BUILD SECTION (Balanced 4x2 Grid - Days Aligned Without Wrapping) ═══ -->
   <section class="section" id="what-we-build" style="padding: 6rem 0;" aria-labelledby="what-heading">
     <div class="section-header">
       <span class="section-label-tag">Concrete Offer</span>
       <h2 class="section-title" id="what-heading">What We Build</h2>
-      <p class="section-subtitle">Every project is framed around real outcomes — a working product you can launch, test, or show investors.</p>
+      <p class="section-subtitle">Every project is framed around real outcomes — a working product you can launch, test, or demonstrate to users and stakeholders.</p>
     </div>
-    <div class="catalogue-grid">
-      <div class="catalogue-card">
+    <div class="catalogue-grid-balanced">
+      <!-- 1. Websites -->
+      <div class="catalogue-card-modern">
         <div>
+          <div class="catalogue-badge-strip">
+            <span class="speed-pill">&#9889; 7&ndash;10 Days</span>
+            <span class="tech-pill">Next.js &bull; Tailwind</span>
+          </div>
           <h3>Websites</h3>
-          <p>High-converting, polished digital presences with custom responsive design, lightning-fast performance, and accessible CMS controls.</p>
+          <p>High-converting digital presences with custom responsive design, lightning-fast performance, and accessible CMS controls.</p>
         </div>
-        <div class="catalogue-outcome">
+        <div class="catalogue-outcome-box">
           <strong>Outcome:</strong> A credible digital flagship that builds immediate trust with visitors.
         </div>
       </div>
 
-      <div class="catalogue-card">
+      <!-- 2. Web Applications -->
+      <div class="catalogue-card-modern">
         <div>
+          <div class="catalogue-badge-strip">
+            <span class="speed-pill">&#9889; 2&ndash;3 Weeks</span>
+            <span class="tech-pill">React &bull; Supabase</span>
+          </div>
           <h3>Web Applications</h3>
           <p>Full-stack web applications featuring secure authentication, multi-tenant databases, transactional workflows, and connected APIs.</p>
         </div>
-        <div class="catalogue-outcome">
+        <div class="catalogue-outcome-box">
           <strong>Outcome:</strong> A reliable platform your users can log into and get daily value from.
         </div>
       </div>
 
-      <div class="catalogue-card">
+      <!-- 3. Working MVPs -->
+      <div class="catalogue-card-modern">
         <div>
+          <div class="catalogue-badge-strip">
+            <span class="speed-pill">&#9889; 14 Days</span>
+            <span class="tech-pill">Next.js &bull; Auth &bull; DB</span>
+          </div>
           <h3>Working MVPs</h3>
           <p>Early-stage product prototypes built fast to test core assumptions, gather real feedback, and validate your business thesis.</p>
         </div>
-        <div class="catalogue-outcome">
+        <div class="catalogue-outcome-box">
           <strong>Outcome:</strong> A working MVP you can demo to investors and onboard your first 100 users.
         </div>
       </div>
 
-      <div class="catalogue-card">
+      <!-- 4. AI Applications -->
+      <div class="catalogue-card-modern">
         <div>
+          <div class="catalogue-badge-strip">
+            <span class="speed-pill">&#9889; 2&ndash;3 Weeks</span>
+            <span class="tech-pill">FastAPI &bull; LLM</span>
+          </div>
           <h3>AI Applications</h3>
-          <p>Intelligent assistants, document processors, automated research summarizers, and domain-specific AI workflows with mandatory human QA.</p>
+          <p>Intelligent assistants, document processors, automated summarizers, and domain-specific AI workflows with mandatory human QA.</p>
         </div>
-        <div class="catalogue-outcome">
-          <strong>Outcome:</strong> Practical AI features integrated into your business without unreviewed AI hallucinations.
+        <div class="catalogue-outcome-box">
+          <strong>Outcome:</strong> Practical AI features integrated into your business without unreviewed hallucinations.
         </div>
       </div>
 
-      <div class="catalogue-card">
+      <!-- 5. Custom Dashboards -->
+      <div class="catalogue-card-modern">
         <div>
+          <div class="catalogue-badge-strip">
+            <span class="speed-pill">&#9889; 10&ndash;14 Days</span>
+            <span class="tech-pill">Charts &bull; SQL</span>
+          </div>
           <h3>Custom Dashboards</h3>
           <p>Consolidated real-time metrics, interactive charts, and business intelligence panels that turn fragmented data into operational clarity.</p>
         </div>
-        <div class="catalogue-outcome">
+        <div class="catalogue-outcome-box">
           <strong>Outcome:</strong> A single screen that shows you exactly what is happening in your organization.
         </div>
       </div>
 
-      <div class="catalogue-card">
+      <!-- 6. Internal Tools -->
+      <div class="catalogue-card-modern">
         <div>
+          <div class="catalogue-badge-strip">
+            <span class="speed-pill">&#9889; 2 Weeks</span>
+            <span class="tech-pill">Admin CRUD &bull; Roles</span>
+          </div>
           <h3>Internal Tools</h3>
           <p>Bespoke administrative portals, approval queues, inventory trackers, and automation utilities that replace messy spreadsheets.</p>
         </div>
-        <div class="catalogue-outcome">
+        <div class="catalogue-outcome-box">
           <strong>Outcome:</strong> Hundreds of hours saved by eliminating repetitive manual coordination.
         </div>
       </div>
 
-      <div class="catalogue-card">
+      <!-- 7. Research Prototypes -->
+      <div class="catalogue-card-modern">
         <div>
+          <div class="catalogue-badge-strip">
+            <span class="speed-pill">&#9889; 2&ndash;3 Weeks</span>
+            <span class="tech-pill">Python &bull; Streamlit</span>
+          </div>
           <h3>Research Prototypes</h3>
           <p>Specialized scientific software, computational calculators, experimental interfaces, and data visualization tools for academic studies.</p>
         </div>
-        <div class="catalogue-outcome">
+        <div class="catalogue-outcome-box">
           <strong>Outcome:</strong> Rigorous, reproducible research software ready for peer publication and citations.
         </div>
       </div>
+
+      <!-- 8. Automations & API Integrations -->
+      <div class="catalogue-card-modern">
+        <div>
+          <div class="catalogue-badge-strip">
+            <span class="speed-pill">&#9889; 7&ndash;12 Days</span>
+            <span class="tech-pill">Webhooks &bull; APIs</span>
+          </div>
+          <h3>Automations &amp; APIs</h3>
+          <p>Connected background workflows, WhatsApp &amp; email notification dispatchers, automated payment triggers, and third-party API syncs.</p>
+        </div>
+        <div class="catalogue-outcome-box">
+          <strong>Outcome:</strong> Zero manual copy-pasting across your apps and guaranteed data reliability.
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 2.75rem;">
+      <a href="services.html" class="btn btn-secondary btn-large">
+        Explore Full Services Catalogue &amp; Scopes &rarr;
+      </a>
     </div>
   </section>
 
-  <!-- 4. HOW IT WORKS SECTION (Simplified Section 6 Flow) -->
-  <section class="section" id="how-it-works" style="background:var(--white-secondary); padding: 6rem 0;" aria-labelledby="how-heading">
+  <!-- ═══ 5. HOW IT WORKS SECTION (CUSTOM SVG ICONS & ALIGNED DAYS) ═══ -->
+  <section class="section" id="how-it-works" style="background:var(--white-secondary); padding: 6.5rem 0;" aria-labelledby="how-heading">
     <div class="section-header">
       <span class="section-label-tag">Reduce Uncertainty</span>
       <h2 class="section-title" id="how-heading">How It Works</h2>
       <p class="section-subtitle">A clear, disciplined 5-step delivery process from initial idea to working production software.</p>
     </div>
-    <div class="process-visual-grid">
-      <div class="process-step-card">
-        <div class="step-num">1</div>
-        <h4>Idea</h4>
-        <p>You submit your idea or business challenge. We clarify the core problem, target audience, and primary success criteria.</p>
-      </div>
-      <div class="process-step-card">
-        <div class="step-num">2</div>
-        <h4>Scope</h4>
-        <p>We assess technical feasibility, define MVP vs. optional features, and provide a transparent milestone schedule and fixed scope.</p>
-      </div>
-      <div class="process-step-card">
-        <div class="step-num">3</div>
-        <h4>Build</h4>
-        <p>Our trained builders execute using AI-native workflows to shorten build cycles, accompanied by regular progress demos.</p>
-      </div>
-      <div class="process-step-card">
-        <div class="step-num">4</div>
-        <h4>QA</h4>
-        <p>Mandatory human code review, cross-device functional testing, and security verification — no unverified code ships.</p>
-      </div>
-      <div class="process-step-card">
-        <div class="step-num">5</div>
-        <h4>Launch</h4>
-        <p>Production deployment, full credential and codebase transfer, documentation handover, and structured aftercare support.</p>
+    <div class="timeline-flow-container">
+      <div class="timeline-connecting-line" aria-hidden="true"></div>
+      <div class="process-visual-grid-connected">
+        <!-- Step 1: Idea (Custom Lightbulb SVG) -->
+        <div class="process-step-card-modern">
+          <div class="step-icon-badge" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6"></path><path d="M10 22h4"></path>
+              <path d="M12 2a7 7 0 0 0-7 7c0 2.38 1.19 4.47 3 5.74V17a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-2.26c1.81-1.27 3-3.36 3-5.74a7 7 0 0 0-7-7z"></path>
+            </svg>
+          </div>
+          <span class="step-day-pill">Day 1</span>
+          <h4>1. Idea</h4>
+          <p>Submit your concept or challenge. We clarify target users, core pain points, and MVP success criteria.</p>
+        </div>
+
+        <!-- Step 2: Scope (Custom Blueprint Layers SVG) -->
+        <div class="process-step-card-modern">
+          <div class="step-icon-badge" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
+          <span class="step-day-pill">Day 2&ndash;3</span>
+          <h4>2. Scope</h4>
+          <p>Technical architecture review, defining essential vs. optional features, and locking a milestone schedule.</p>
+        </div>
+
+        <!-- Step 3: Build (Custom Code Terminal SVG) -->
+        <div class="process-step-card-modern">
+          <div class="step-icon-badge" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+              <line x1="14" y1="4" x2="10" y2="20"></line>
+            </svg>
+          </div>
+          <span class="step-day-pill">Week 1&ndash;2</span>
+          <h4>3. Build</h4>
+          <p>Trained builders execute in rapid sprints using AI-accelerated workflows with regular live demo check-ins.</p>
+        </div>
+
+        <!-- Step 4: QA (Custom Verified Shield SVG) -->
+        <div class="process-step-card-modern">
+          <div class="step-icon-badge" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              <polyline points="9 12 11 14 15 10"></polyline>
+            </svg>
+          </div>
+          <span class="step-day-pill">Week 2</span>
+          <h4>4. QA</h4>
+          <p>Mandatory senior code review, functional cross-browser testing, and security verification. No unverified code ships.</p>
+        </div>
+
+        <!-- Step 5: Launch (Custom Rocket Launch SVG) -->
+        <div class="process-step-card-modern">
+          <div class="step-icon-badge" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
+              <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
+              <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
+              <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
+            </svg>
+          </div>
+          <span class="step-day-pill">Day 14</span>
+          <h4>5. Launch</h4>
+          <p>Cloud deployment, complete codebase and credential handover, documentation, and structured post-launch warranty.</p>
+        </div>
       </div>
     </div>
-    <div style="text-align:center; margin-top: 2.5rem;">
-      <a href="services.html#process-detail" style="font-weight: 600; color: var(--coral); text-decoration: none; font-size: 0.95rem;">
+    <div style="text-align:center; margin-top: 3rem;">
+      <a href="services.html#process-detail" style="font-weight: 700; color: var(--coral); text-decoration: none; font-size: 0.95rem;">
         Explore our full 9-stage delivery operating system &rarr;
       </a>
     </div>
   </section>
 
-  <!-- 5. WHY SITE2SUCCESS / DIFFERENTIATION (Exact Section 9 Block) -->
+  <!-- ═══ 6. STUDIO COMPARISON MATRIX ("WHY SITE2SUCCESS") ═══ -->
   <section class="diff-section" id="why-site2success" aria-labelledby="why-heading">
     <div class="diff-container">
       <div style="text-align:center; margin-bottom: 2.5rem;">
         <span class="section-label-tag" style="background:rgba(255,255,255,0.1); border-color:rgba(255,255,255,0.2); color:var(--amber);">Differentiation</span>
         <h2 id="why-heading" style="font-size:clamp(2rem, 3.5vw, 2.75rem); font-weight:800; margin-top:0.5rem;">Why Site2Success</h2>
+        <p style="color:rgba(255,255,255,0.7); max-width:650px; margin:0.75rem auto 0; font-size:1.05rem;">
+          How our university-powered studio model outdelivers unmanaged freelancers and traditional software agencies.
+        </p>
       </div>
 
       <!-- Section 9 Differentiation Block Quote -->
@@ -574,6 +1676,7 @@
         </p>
       </div>
 
+      <!-- 3 Core Studio Pillars -->
       <div class="diff-pillars-grid">
         <div class="diff-pillar">
           <h4>
@@ -599,110 +1702,329 @@
           <p>We deploy trained university builders into real client projects, giving founders accessible software development while giving the next generation real-world product experience.</p>
         </div>
       </div>
+
+      <!-- Comparison Table (Zero Pricing Figures) -->
+      <div class="comparison-wrapper">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Evaluation Factor</th>
+              <th>Freelancers &amp; Upwork</th>
+              <th>Traditional Agency</th>
+              <th class="col-highlight">Site2Success Studio</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="feature-label">Turnaround Speed</td>
+              <td class="c-warn">Unpredictable (weeks to months)</td>
+              <td class="c-warn">2&ndash;4 Months (heavy overhead)</td>
+              <td class="col-highlight c-good">&#10003; 14-Day Fixed Sprints</td>
+            </tr>
+            <tr>
+              <td class="feature-label">Code Quality &amp; QA</td>
+              <td class="c-bad">Inconsistent; self-checked only</td>
+              <td class="c-good">Good manual QA</td>
+              <td class="col-highlight c-good">&#10003; AI-Speed + Mandatory Senior QA</td>
+            </tr>
+            <tr>
+              <td class="feature-label">Project Ownership</td>
+              <td class="c-bad">High ghosting &amp; abandonment risk</td>
+              <td class="c-good">Dedicated account manager</td>
+              <td class="col-highlight c-good">&#10003; End-to-End Studio Accountability</td>
+            </tr>
+            <tr>
+              <td class="feature-label">Source Code &amp; IP</td>
+              <td class="c-warn">Ambiguous without legal contracts</td>
+              <td class="c-warn">Vendor lock-in clauses common</td>
+              <td class="col-highlight c-good">&#10003; 100% Client Code &amp; IP Transfer</td>
+            </tr>
+            <tr>
+              <td class="feature-label">Scoping Model</td>
+              <td class="c-warn">Vague hourly billing creep</td>
+              <td class="c-warn">Complex high-tier retainers</td>
+              <td class="col-highlight c-good">&#10003; Transparent Milestone Scope</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
-  <!-- 6. PROOF & CASE STUDIES (Exact Section 7 Template) -->
-  <section class="section" id="proof" style="padding: 6rem 0;" aria-labelledby="proof-heading">
+  <!-- ═══ 7. SELECTED CASE STUDY (LOGESHWARAN SIR FEATURED SHOWCASE WITH ACTUAL LIVE WEBSITE) ═══ -->
+  <section class="section" id="proof" style="padding: 6.5rem 0;" aria-labelledby="proof-heading">
     <div class="section-header">
-      <span class="section-label-tag">Trust &amp; Results</span>
-      <h2 class="section-title" id="proof-heading">Selected Case Studies</h2>
-      <p class="section-subtitle">Standardized project breakdowns showing problem, scope, turnaround time, and measurable results.</p>
+      <span class="section-label-tag">Featured Client Outcome</span>
+      <h2 class="section-title" id="proof-heading">Selected Case Study</h2>
+      <p class="section-subtitle">Real production systems engineered and deployed for researchers, founders, and academic leaders.</p>
     </div>
 
-    <!-- Featured Case Study 1: Logeshwaran J (Exact Section 7 format) -->
-    <div class="proof-case-study">
-      <div class="case-study-header">
-        <div class="case-study-title-wrap">
-          <span style="font-size:0.85rem; color:var(--coral); font-weight:700; text-transform:uppercase; letter-spacing:0.06em;">Featured Outcome</span>
-          <h3>Logeshwaran J — Portfolio &amp; Research Admin Portal</h3>
+    <div class="featured-case-container">
+      <!-- Left Details -->
+      <div>
+        <div style="display:flex; align-items:center; gap:8px; margin-bottom:0.75rem;">
+          <span class="speed-pill">&#10003; Live in Production</span>
+          <span style="font-size:0.8rem; color:var(--gray-500); font-weight:600;">Academic Faculty &bull; Independent Researcher</span>
         </div>
-        <span class="case-study-badge">Live Production System</span>
+        <h3 style="font-size:clamp(1.7rem, 2.8vw, 2.2rem); font-weight:800; color:var(--navy-dark); margin-bottom:1rem; line-height:1.2;">
+          Logeshwaran J &mdash; Portfolio &amp; Research Admin Portal
+        </h3>
+        <p style="font-size:0.95rem; color:var(--gray-600); line-height:1.75; margin-bottom:1.5rem;">
+          Architected and deployed an authoritative academic platform to showcase published papers, research citations, and automated visitor inquiries, backed by a 100% self-serve authenticated admin portal with zero developer dependencies.
+        </p>
+
+        <div class="case-metrics-bar">
+          <div class="case-metric-box">
+            <h4>14 Days</h4>
+            <span>Idea to Launch</span>
+          </div>
+          <div class="case-metric-box">
+            <h4>100%</h4>
+            <span>Gated Admin CRUD</span>
+          </div>
+          <div class="case-metric-box">
+            <h4>Zero</h4>
+            <span>Ongoing Lock-In</span>
+          </div>
+        </div>
+
+        <blockquote style="background:rgba(255,107,74,0.04); border-left:4px solid var(--coral); padding:1.15rem 1.35rem; border-radius:0 12px 12px 0; margin-bottom:1.75rem; font-style:italic; font-size:0.95rem; color:var(--navy-dark); line-height:1.7;">
+          "Site2Success delivered a complete, polished platform with an admin portal that gives me total control over my research and publications. Fast turnaround, zero hassle, and exceptional quality."
+          <footer style="margin-top:0.5rem; font-size:0.84rem; font-weight:700; color:var(--coral); font-style:normal;">
+            &mdash; Logeshwaran J, Client &amp; Researcher
+          </footer>
+        </blockquote>
+
+        <div style="display:flex; gap:1rem; flex-wrap:wrap; align-items:center;">
+          <a href="project-detail.html" class="btn btn-primary" style="padding:0.75rem 1.5rem; font-size:0.9rem;">
+            View Detailed Architecture Breakdown &rarr;
+          </a>
+          <a href="https://logeshwaranj.com" target="_blank" rel="noopener" class="btn btn-secondary" style="padding:0.75rem 1.5rem; font-size:0.9rem;">
+            Visit Live Site (logeshwaranj.com) &nearr;
+          </a>
+        </div>
       </div>
 
-      <div class="template-fields-grid">
-        <div class="template-field-item">
-          <span class="template-field-label">1. Client Type</span>
-          <span class="template-field-value">Independent Researcher, Data Scientist &amp; Developer</span>
-        </div>
-
-        <div class="template-field-item">
-          <span class="template-field-label">2. Problem</span>
-          <span class="template-field-value">Needed an authoritative platform to showcase published research papers, blogs, and experience, with gated private access and self-serve editing without developer dependencies.</span>
-        </div>
-
-        <div class="template-field-item">
-          <span class="template-field-label">3. Starting Point</span>
-          <span class="template-field-value">Fragmented PDFs, scattered LinkedIn articles, and no centralized authenticated web portal.</span>
-        </div>
-
-        <div class="template-field-item">
-          <span class="template-field-label">4. Scope</span>
-          <span class="template-field-value">Responsive portfolio + authenticated admin portal + research paper repository + interactive blog commenting + visitor chat system + LinkedIn cross-posting.</span>
-        </div>
-
-        <div class="template-field-item">
-          <span class="template-field-label">5. Build Time</span>
-          <span class="template-field-value">2 Weeks from technical scoping to live deployment.</span>
-        </div>
-
-        <div class="template-field-item">
-          <span class="template-field-label">6. Technology Category</span>
-          <span class="template-field-value">Full-Stack Web Application (Node.js, REST APIs, Session Auth, CRUD Management System).</span>
-        </div>
-
-        <div class="template-field-item" style="grid-column: span 2;">
-          <span class="template-field-label">7. Result</span>
-          <span class="template-field-value">Successfully deployed at <strong>logeshwaranj.com</strong> with 100% self-serve content control, automated publishing, and direct visitor contact pipeline.</span>
-        </div>
-
-        <div class="case-study-quote-box">
-          <span class="template-field-label">8. Testimonial</span>
-          <blockquote>"Site2Success delivered a complete, polished platform with an admin portal that gives me total control over my research and publications. Fast turnaround, zero hassle, and exceptional quality."</blockquote>
-          <cite>— Logeshwaran J, Client</cite>
-        </div>
-
-        <div class="template-field-item" style="grid-column: span 2; margin-top: 1rem;">
-          <span class="template-field-label">9. Clear CTA</span>
-          <a href="project-detail.html" class="btn btn-primary" style="padding:0.75rem 1.5rem; font-size:0.9rem;">
-            View Full Case Study &amp; Live Demo &rarr;
+      <!-- Right: Actual Live Website Embedded Inside Clean Browser Frame -->
+      <div class="browser-window-mockup" aria-label="Live preview of Logeshwaran J website">
+        <div class="browser-window-bar">
+          <div class="terminal-dots">
+            <div class="terminal-dot dot-red"></div>
+            <div class="terminal-dot dot-yellow"></div>
+            <div class="terminal-dot dot-green"></div>
+          </div>
+          <div class="browser-url-pill">
+            <span style="color:#10b981;">&#128274;</span> https://logeshwaranj.com
+          </div>
+          <a href="https://logeshwaranj.com" target="_blank" rel="noopener" style="font-size:0.75rem; color:#38bdf8; text-decoration:none; font-weight:600; display:inline-flex; align-items:center; gap:4px;">
+            Open Live &nearr;
           </a>
+        </div>
+        <div style="background:#ffffff; position:relative;">
+          <iframe src="https://logeshwaranj.com/" class="browser-live-frame" loading="lazy" title="Logeshwaran J Live Platform Preview" sandbox="allow-scripts allow-same-origin"></iframe>
         </div>
       </div>
     </div>
 
     <div style="text-align:center; margin-top: 3rem;">
       <a href="projects.html" class="btn btn-secondary btn-large">
-        Explore All Portfolio Projects
+        Explore All Portfolio Projects &rarr;
       </a>
     </div>
   </section>
 
-  <!-- 7. CHRIST ORIGIN & ECOSYSTEM SECTION (Credibility, Not Identity) -->
-  <section class="section" id="origin-credibility" style="background:var(--white-secondary); padding: 5rem 0;" aria-labelledby="origin-heading">
-    <div class="origin-box">
-      <div class="origin-badge">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
-        Our Origin &amp; Operating Laboratory
+  <!-- ═══ 8. INTERACTIVE SCOPE & TIMELINE ESTIMATOR WIDGET ═══ -->
+  <section class="section" id="estimator" style="background:var(--white-secondary); padding: 6.5rem 0;" aria-labelledby="estimator-heading">
+    <div class="section-header">
+      <span class="section-label-tag">Interactive Scoping Tool</span>
+      <h2 class="section-title" id="estimator-heading">Plan Your Project Sprint</h2>
+      <p class="section-subtitle">Select your requirements below to instantly configure your recommended studio architecture and delivery timeline.</p>
+    </div>
+
+    <div class="estimator-card">
+      <div class="estimator-grid">
+        <!-- Interactive Controls -->
+        <div class="estimator-controls">
+          <!-- Step 1: Project Type -->
+          <div class="estimator-step-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
+            1. What are you building?
+          </div>
+          <div class="option-pill-group" id="group-type">
+            <div class="option-pill selected" data-value="mvp" data-name="Working MVP / Web App" data-speed="14 Days">Working MVP / Web App</div>
+            <div class="option-pill" data-value="website" data-name="Production Website" data-speed="7-10 Days">Production Website</div>
+            <div class="option-pill" data-value="ai" data-name="AI Workflow / Agent" data-speed="2-3 Weeks">AI Workflow / Agent</div>
+            <div class="option-pill" data-value="dashboard" data-name="Internal Tool & Dashboard" data-speed="10-14 Days">Internal Tool / Dashboard</div>
+          </div>
+
+          <!-- Step 2: Timeline Preference -->
+          <div class="estimator-step-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+            2. Desired Turnaround
+          </div>
+          <div class="option-pill-group" id="group-timeline">
+            <div class="option-pill selected" data-value="fast" data-name="Fast-Track Sprint (&lt; 2 Weeks)">Fast-Track (&lt; 2 Weeks)</div>
+            <div class="option-pill" data-value="standard" data-name="Standard Sprint (2-3 Weeks)">Standard (2-3 Weeks)</div>
+            <div class="option-pill" data-value="flexible" data-name="Comprehensive Multi-Milestone">Multi-Milestone</div>
+          </div>
+
+          <!-- Step 3: Core Modules -->
+          <div class="estimator-step-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+            3. Required Modules (Multi-Select)
+          </div>
+          <div class="option-pill-group" id="group-modules">
+            <div class="option-pill selected" data-module="Auth & Roles">User Authentication</div>
+            <div class="option-pill selected" data-module="Database & APIs">Database + REST/GraphQL</div>
+            <div class="option-pill" data-module="Admin CRUD Portal">Admin Portal</div>
+            <div class="option-pill" data-module="AI/LLM Integration">AI / LLM Integration</div>
+            <div class="option-pill" data-module="Payment Gateway">Payment Gateway</div>
+            <div class="option-pill" data-module="Analytics & Logs">Live Analytics</div>
+          </div>
+        </div>
+
+        <!-- Dynamic Output Panel -->
+        <div class="estimator-result-panel">
+          <div>
+            <div class="result-header">
+              <span style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--amber);">Recommended Architecture</span>
+              <h4 id="calc-project-title">Working MVP / Web App</h4>
+              <span id="calc-timeline-label">&#9889; 14-Day Delivery Sprint</span>
+            </div>
+
+            <div class="result-spec-item">
+              <span>Delivery Model:</span>
+              <span>Fixed Milestone Scope</span>
+            </div>
+            <div class="result-spec-item">
+              <span>Code Quality:</span>
+              <span style="color:#34d399;">Mandatory Senior QA</span>
+            </div>
+            <div class="result-spec-item">
+              <span>Code Transfer:</span>
+              <span>100% Client IP Ownership</span>
+            </div>
+            <div class="result-spec-item">
+              <span>Selected Modules:</span>
+              <span id="calc-modules-count" style="color:var(--coral);">2 Modules</span>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem;">
+            <a href="https://wa.me/916361446768?text=Hi%20Site2Success%2C%20I%20configured%20a%20project%20scope%20on%20your%20website%20and%20would%20like%20to%20discuss%20it." id="estimator-whatsapp-btn" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%; justify-content:center; padding:0.9rem; font-size:0.95rem;">
+              Discuss This Scope on WhatsApp &rarr;
+            </a>
+            <div style="text-align:center; font-size:0.76rem; color:rgba(255,255,255,0.45); margin-top:0.75rem;">
+              No commitment &bull; Direct consultation with studio leads
+            </div>
+          </div>
+        </div>
       </div>
-      <h3 id="origin-heading">Started at CHRIST University. Built for Ideas Everywhere.</h3>
-      <p>
+    </div>
+  </section>
+
+  <!-- ═══ 9. CHRIST ORIGIN & OPERATING ENGINE ═══ -->
+  <section class="section" id="origin-credibility" style="padding: 6rem 0;" aria-labelledby="origin-heading">
+    <div class="origin-box-modern">
+      <span class="section-label-tag">Founding Ecosystem</span>
+      <h3 id="origin-heading" style="font-size:clamp(1.8rem, 3.2vw, 2.5rem); font-weight:800; color:var(--navy-dark); margin-bottom:1rem;">
+        Started at CHRIST University. Built for Ideas Everywhere.
+      </h3>
+      <p style="font-size:1.05rem; color:var(--gray-600); line-height:1.85; max-width:820px; margin:0 auto 1.5rem;">
         Site2Success started within the CHRIST University student builder ecosystem as our first proof point and operating laboratory. That environment gave us the blueprint to recruit ambitious student builders, train them in AI-native development workflows, and deliver real software projects for real clients.
       </p>
-      <p>
-        Today, Site2Success is building a repeatable, university-powered software network — CHRIST is chapter one; more campus chapters follow as our delivery operating system scales.
-      </p>
-      <p class="origin-note">
+
+      <div class="origin-stats-row">
+        <div class="origin-stat-item">
+          <h3>50+</h3>
+          <p>Trained Builders</p>
+        </div>
+        <div class="origin-stat-item">
+          <h3>14 Days</h3>
+          <p>Avg MVP Turnaround</p>
+        </div>
+        <div class="origin-stat-item">
+          <h3>100%</h3>
+          <p>Human-Reviewed QA</p>
+        </div>
+        <div class="origin-stat-item">
+          <h3>Zero</h3>
+          <p>Vendor Lock-in</p>
+        </div>
+      </div>
+
+      <p style="font-size:0.85rem; color:var(--gray-500); max-width:780px; margin:0 auto; line-height:1.6; font-style:italic;">
         Note: Site2Success is an independent university-powered software studio founded by Rahul R and L Dhanush Raj. CHRIST University is our founding ecosystem and operating laboratory, not a commercial sponsor or institutional endorser unless specifically designated.
       </p>
     </div>
   </section>
 
-  <!-- 8. FINAL CTA SECTION (Exact Section 4 Structure) -->
+  <!-- ═══ 10. INTERACTIVE FAQ ACCORDION ═══ -->
+  <section class="section" id="faq" style="background:var(--white-secondary); padding: 6.5rem 0;" aria-labelledby="faq-heading">
+    <div class="section-header">
+      <span class="section-label-tag">Got Questions?</span>
+      <h2 class="section-title" id="faq-heading">Frequently Asked Questions</h2>
+      <p class="section-subtitle">Everything you need to know about our studio process, code ownership, and delivery model.</p>
+    </div>
+
+    <div class="faq-accordion-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>Who owns the source code and intellectual property?</span>
+          <div class="faq-toggle-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          You own 100% of the intellectual property, design assets, and source code. Upon final milestone sign-off, we transfer full admin ownership of the GitHub repository, cloud hosting environments, databases, and domain configurations to you. There is zero vendor lock-in.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How do you guarantee quality with university builders?</span>
+          <div class="faq-toggle-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          Every project is overseen by experienced studio engineering leads. While trained student builders accelerate development using AI-native workflows, <strong>no code ever reaches production without mandatory senior human code review, security linting, and multi-device functional QA.</strong>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>How fast can we go from idea to a live MVP?</span>
+          <div class="faq-toggle-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          Our core working MVP sprints typically take <strong>14 days (2 weeks)</strong>. Smaller marketing flagships and landing pages take 7–10 days. During technical scoping, we define a strict milestone roadmap so you know exactly what delivers on each day.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What do you need from me to get started?</span>
+          <div class="faq-toggle-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          Just a description of your idea, who it's for, and the primary problem you are solving. You don't need wireframes or technical documentation; our studio scoping team will extract your core requirements and draft the technical architecture for you.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <span>What happens after the software is deployed?</span>
+          <div class="faq-toggle-icon">+</div>
+        </div>
+        <div class="faq-answer">
+          Every build includes a structured handover session, complete documentation, and an inclusive warranty window for post-launch bug fixes. We also offer ongoing iteration sprints if you wish to add new features as your user base expands.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 11. FINAL CONVERSION CTA ═══ -->
   <section class="home-conversion-cta" aria-labelledby="cta-heading">
     <div class="container">
       <h2 id="cta-heading">Have an idea? Let's turn it into working software.</h2>
-      <p>Whether you need an MVP, research tool, or custom business application, our university studio delivers production-grade software quickly and affordably.</p>
+      <p>Whether you need an MVP, research tool, or custom business application, our university studio delivers production-grade software quickly and reliably.</p>
       <div class="home-conversion-buttons">
         <a href="contact.html" class="btn btn-primary btn-large">
           Tell Us What You Want to Build
@@ -718,7 +2040,13 @@
     </div>
   </section>
 
-  <!-- FOOTER (Includes Section 12 Legal Note & NAP) -->
+  <!-- ═══ FLOATING WHATSAPP PILL ═══ -->
+  <a href="https://wa.me/916361446768?text=Hi%20Site2Success%2C%20I%20have%20an%20idea%20and%20would%20like%20to%20consult%20with%20your%20studio." class="floating-contact-pill" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <span class="floating-dot"></span>
+    <span>Chat with Founders</span>
+  </a>
+
+  <!-- ═══ FOOTER ═══ -->
   <footer class="site-footer" role="contentinfo">
     <div class="footer-grid">
       <div class="footer-brand">
@@ -757,18 +2085,18 @@
             <span itemprop="addressCountry">India</span>
           </span><br>
           <a href="tel:+916361446768" itemprop="telephone">+91 6361446768</a><br>
-          <a href="mailto:site2successs@gmail.com" itemprop="email">site2successs@gmail.com</a>
+          <a href="mailto:info@site2success.online" itemprop="email">info@site2success.online</a>
         </div>
       </div>
     </div>
 
     <!-- Section 12 Legal & Scope Note -->
     <div class="legal-scope-disclaimer">
-      <strong>Legal &amp; Operating Scope Note:</strong> This rebuild is based on a strategic operating plan, not legal, tax, employment, or university-policy advice. Before finalizing client contracts, stipend terms, IP ownership language, data handling policy, or any CHRIST University branding/endorsement claims, appropriate legal and institutional review should be obtained separately — this should not be assumed to be covered by the website content itself.
+      <strong>Legal &amp; Operating Scope Note:</strong> This rebuild is based on a strategic operating plan, not legal, tax, employment, or university-policy advice. Before finalizing client contracts, stipend terms, IP ownership language, data handling policy, or any CHRIST University branding/endorsement claims, appropriate legal and institutional review should be obtained separately &mdash; this should not be assumed to be covered by the website content itself.
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; 2024–2026 Site2Success. All rights reserved. University-Powered AI Software Studio.</p>
+      <p>&copy; 2024&ndash;2026 Site2Success. All rights reserved. University-Powered AI Software Studio.</p>
       <div class="footer-socials">
         <a href="https://linkedin.com/company/site2success" rel="noopener" target="_blank" aria-label="Site2Success on LinkedIn">LinkedIn</a>
         <a href="https://github.com/site2success" rel="noopener" target="_blank" aria-label="Site2Success on GitHub">GitHub</a>
@@ -777,37 +2105,119 @@
     </div>
   </footer>
 
-  <!-- Scripts -->
+  <!-- ═══ INTERACTIVE SCRIPTS ═══ -->
   <script src="../assets/js/main.js"></script>
   <script>
   (function() {
+    // 1. Mobile Menu & Navbar Scroll
     var toggle = document.getElementById('menu-toggle');
     var links  = document.getElementById('nav-links');
     var navbar = document.getElementById('navbar');
-    if (!toggle || !links) return;
-    window.addEventListener('scroll', function() {
-      if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
-    });
-    toggle.addEventListener('click', function(e) {
-      e.stopPropagation();
-      var open = links.classList.toggle('mobile-open');
-      toggle.classList.toggle('active');
-      toggle.setAttribute('aria-expanded', open);
-    });
-    links.querySelectorAll('a').forEach(function(a) {
-      a.addEventListener('click', function() {
-        toggle.classList.remove('active');
-        links.classList.remove('mobile-open');
-        toggle.setAttribute('aria-expanded', 'false');
+    if (toggle && links) {
+      window.addEventListener('scroll', function() {
+        if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
+      });
+      toggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var open = links.classList.toggle('mobile-open');
+        toggle.classList.toggle('active');
+        toggle.setAttribute('aria-expanded', open);
+      });
+      links.querySelectorAll('a').forEach(function(a) {
+        a.addEventListener('click', function() {
+          toggle.classList.remove('active');
+          links.classList.remove('mobile-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+      document.addEventListener('click', function(e) {
+        if (navbar && !navbar.contains(e.target)) {
+          toggle.classList.remove('active');
+          links.classList.remove('mobile-open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+      });
+    }
+
+    // 2. Interactive FAQ Accordion
+    var faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(function(item) {
+      var question = item.querySelector('.faq-question');
+      if (!question) return;
+      question.addEventListener('click', function() {
+        var isOpen = item.classList.contains('open');
+        faqItems.forEach(function(i) { i.classList.remove('open'); });
+        if (!isOpen) item.classList.add('open');
       });
     });
-    document.addEventListener('click', function(e) {
-      if (navbar && !navbar.contains(e.target)) {
-        toggle.classList.remove('active');
-        links.classList.remove('mobile-open');
-        toggle.setAttribute('aria-expanded', 'false');
+
+    // 3. Interactive Scope & Timeline Estimator
+    var groupType = document.getElementById('group-type');
+    var groupTimeline = document.getElementById('group-timeline');
+    var groupModules = document.getElementById('group-modules');
+    var calcTitle = document.getElementById('calc-project-title');
+    var calcTimeline = document.getElementById('calc-timeline-label');
+    var calcModules = document.getElementById('calc-modules-count');
+    var whatsappBtn = document.getElementById('estimator-whatsapp-btn');
+
+    function updateEstimator() {
+      var selectedTypeEl = groupType.querySelector('.option-pill.selected');
+      var selectedTimeEl = groupTimeline.querySelector('.option-pill.selected');
+      var selectedModuleEls = groupModules.querySelectorAll('.option-pill.selected');
+
+      var typeName = selectedTypeEl ? selectedTypeEl.getAttribute('data-name') : 'Working MVP / Web App';
+      var speed = selectedTypeEl ? selectedTypeEl.getAttribute('data-speed') : '14 Days';
+      var timeName = selectedTimeEl ? selectedTimeEl.getAttribute('data-name') : 'Fast-Track';
+      
+      var moduleNames = [];
+      selectedModuleEls.forEach(function(el) {
+        moduleNames.push(el.getAttribute('data-module'));
+      });
+
+      if (calcTitle) calcTitle.textContent = typeName;
+      if (calcTimeline) calcTimeline.innerHTML = '&#9889; ' + speed + ' (' + timeName + ')';
+      if (calcModules) calcModules.textContent = moduleNames.length + ' Module' + (moduleNames.length === 1 ? '' : 's') + ' Selected';
+
+      if (whatsappBtn) {
+        var msg = 'Hi Site2Success! I configured a build scope on your website:\n' +
+                  '- Project Type: ' + typeName + '\n' +
+                  '- Target Timeline: ' + speed + ' (' + timeName + ')\n' +
+                  '- Modules: ' + (moduleNames.join(', ') || 'Custom') + '\n' +
+                  'I would like to discuss technical scoping with your studio leads.';
+        whatsappBtn.href = 'https://wa.me/916361446768?text=' + encodeURIComponent(msg);
       }
-    });
+    }
+
+    if (groupType) {
+      groupType.querySelectorAll('.option-pill').forEach(function(pill) {
+        pill.addEventListener('click', function() {
+          groupType.querySelectorAll('.option-pill').forEach(function(p) { p.classList.remove('selected'); });
+          pill.classList.add('selected');
+          updateEstimator();
+        });
+      });
+    }
+
+    if (groupTimeline) {
+      groupTimeline.querySelectorAll('.option-pill').forEach(function(pill) {
+        pill.addEventListener('click', function() {
+          groupTimeline.querySelectorAll('.option-pill').forEach(function(p) { p.classList.remove('selected'); });
+          pill.classList.add('selected');
+          updateEstimator();
+        });
+      });
+    }
+
+    if (groupModules) {
+      groupModules.querySelectorAll('.option-pill').forEach(function(pill) {
+        pill.addEventListener('click', function() {
+          pill.classList.toggle('selected');
+          updateEstimator();
+        });
+      });
+    }
+
+    updateEstimator();
   })();
   </script>
 
@@ -843,7 +2253,7 @@
       "@type": "ContactPoint",
       "telephone": "+91-6361446768",
       "contactType": "customer service",
-      "email": "site2successs@gmail.com"
+      "email": "info@site2success.online"
     }
   }
   </script>
