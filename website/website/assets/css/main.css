@@ -4,29 +4,34 @@
    Inspired by ohm.health visual aesthetics
    ============================================ */
 
-:root {
-    /* Primary Brand Colors - Refined */
-    --coral: #FF6B4A;
-    --orange: #FF8A5B;
-    --amber: #FFB088;
-    --navy-dark: #1a1a2e;
-    --navy-light: #2d2d44;
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
-    /* Enhanced White Scale - Ohm Inspired */
+:root {
+    /* Primary Brand Colors - Exactly Extracted from Logo */
+    --coral: #FF3B56;
+    --coral-rgb: 255, 59, 86;
+    --orange: #FF6E2E;
+    --orange-rgb: 255, 110, 46;
+    --amber: #FFA337;
+    --amber-rgb: 255, 163, 55;
+    --navy-dark: #0B0F19;
+    --navy-light: #151D2F;
+
+    /* Enhanced White Scale */
     --white-primary: #ffffff;
     --white-secondary: #fafafa;
     --white-tertiary: #f5f5f5;
-    --gray-50: #f9fafb;
-    --gray-100: #f3f4f6;
-    --gray-200: #e5e7eb;
-    --gray-300: #d1d5db;
-    --gray-400: #9ca3af;
-    --gray-500: #6b7280;
-    --gray-600: #4b5563;
-    --gray-700: #374151;
-    --gray-800: #1f2937;
+    --gray-50: #f8fafc;
+    --gray-100: #f1f5f9;
+    --gray-200: #e2e8f0;
+    --gray-300: #cbd5e1;
+    --gray-400: #94a3b8;
+    --gray-500: #64748b;
+    --gray-600: #475569;
+    --gray-700: #334155;
+    --gray-800: #1e293b;
 
-    /* Soft Shadows - Ohm Inspired */
+    /* Soft Shadows */
     --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.02);
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
@@ -34,14 +39,17 @@
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.05), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
     --shadow-soft: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
 
-    /* Refined Gradients */
-    --gradient-primary: linear-gradient(135deg, #FF6B4A 0%, #FF8A5B 50%, #FFB088 100%);
-    --gradient-subtle: linear-gradient(180deg, rgba(255, 107, 74, 0.03) 0%, transparent 100%);
-    --gradient-warm: linear-gradient(135deg, rgba(255, 107, 74, 0.08) 0%, rgba(255, 176, 136, 0.04) 100%);
+    /* Refined Gradients Matching Brand Flame */
+    --gradient-primary: linear-gradient(135deg, #FF3B56 0%, #FF6E2E 52%, #FFA337 100%);
+    --gradient-subtle: linear-gradient(180deg, rgba(255, 110, 46, 0.03) 0%, transparent 100%);
+    --gradient-warm: linear-gradient(135deg, rgba(255, 59, 86, 0.08) 0%, rgba(255, 110, 46, 0.05) 50%, rgba(255, 163, 55, 0.03) 100%);
 
-    /* Typography */
-    --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    --font-display: 'Plus Jakarta Sans', sans-serif;
+    /* Typography - Distinctive Quicksand + Poppins */
+    --font-primary: 'Quicksand', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-display: 'Quicksand', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-heading: 'Quicksand', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-body: 'Quicksand', 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
 
     /* Spacing Scale - Enhanced */
     --space-1: 0.25rem;
@@ -143,6 +151,86 @@ button {
     border: none;
     background: none;
     font-family: inherit;
+}
+
+/* ════════════════════════════════════════════════════════════
+   CUSTOM BRAND EMOJIS & MICRO-INTERACTION ENGINE
+   ════════════════════════════════════════════════════════════ */
+.c-emoji {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: -0.18em;
+    width: 1.35em;
+    height: 1.35em;
+    position: relative;
+    margin-right: 0.35em;
+    flex-shrink: 0;
+    transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), filter 0.25s ease;
+}
+.c-emoji svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+.c-emoji:hover,
+button:hover .c-emoji,
+a:hover .c-emoji,
+.offer-card:hover .c-emoji,
+.trust-pill:hover .c-emoji {
+    transform: scale(1.22) rotate(-5deg);
+}
+
+/* Custom Emoji Variants */
+.c-emoji-rocket svg { filter: drop-shadow(0 2px 8px rgba(255, 110, 46, 0.45)); }
+.c-emoji-brain svg { filter: drop-shadow(0 2px 8px rgba(168, 85, 247, 0.4)); }
+.c-emoji-chart svg { filter: drop-shadow(0 2px 8px rgba(56, 189, 248, 0.4)); }
+.c-emoji-bolt svg { filter: drop-shadow(0 2px 8px rgba(255, 163, 55, 0.5)); }
+.c-emoji-shield svg { filter: drop-shadow(0 2px 8px rgba(255, 59, 86, 0.4)); }
+.c-emoji-lock svg { filter: drop-shadow(0 2px 8px rgba(255, 110, 46, 0.4)); }
+.c-emoji-check svg { filter: drop-shadow(0 2px 6px rgba(16, 185, 129, 0.45)); }
+.c-emoji-bot svg { filter: drop-shadow(0 2px 8px rgba(99, 102, 241, 0.45)); }
+.c-emoji-play svg { filter: drop-shadow(0 2px 8px rgba(255, 110, 46, 0.5)); }
+
+/* Microinteractions: Tactile Buttons */
+.btn-micro {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease, background 0.25s ease;
+}
+.btn-micro:hover {
+    transform: translateY(-3px) scale(1.02);
+}
+.btn-micro:active {
+    transform: translateY(1px) scale(0.98);
+}
+.btn-micro svg.arrow-icon,
+.btn-primary svg,
+.btn-secondary svg {
+    transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.btn-micro:hover svg.arrow-icon,
+.btn-primary:hover svg,
+.btn-secondary:hover svg {
+    transform: translateX(4px);
+}
+
+/* Subtle SVG Line-Drawing Animation */
+.svg-draw-path {
+    stroke-dasharray: 600;
+    stroke-dashoffset: 600;
+    animation: svgDrawLine 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+@keyframes svgDrawLine {
+    to { stroke-dashoffset: 0; }
+}
+
+/* Atmospheric Gradients */
+@keyframes atmosphericShift {
+    0% { transform: translate(0, 0) scale(1); filter: hue-rotate(0deg); }
+    50% { transform: translate(35px, 45px) scale(1.06); filter: hue-rotate(12deg); }
+    100% { transform: translate(-30px, -35px) scale(0.95); filter: hue-rotate(-8deg); }
 }
 
 /* Cards - Enhanced with softer shadows (Ohm Style) */
