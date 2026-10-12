@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -627,25 +627,29 @@
 
 <body>
     <!-- Navigation -->
-    <nav class="navbar" id="navbar" aria-label="Main navigation">
-        <a href="home.html" class="nav-logo" aria-label="Site2Success Home">
-            <img src="../assets/images/logo.png" alt="Site2Success — University-Powered AI Software Studio" style="height: 44px; width: auto; border-radius: 0;">
+        <!-- â•â•â• MASTER UNIFIED NAVBAR â•â•â• -->
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+        <a href="home.html" class="nav-brand" aria-label="Site2Success Home">
+            <img src="../assets/images/logo.png" alt="Site2Success Logo" class="nav-logo-img">
+            <span class="nav-status-pill">
+                <span class="radar-dot"></span>
+                <span>STUDIO OPEN</span>
+            </span>
         </a>
 
-        <div class="nav-links" id="nav-links" role="menubar">
-            <a href="home.html" class="nav-item" data-page="home" role="menuitem">Home</a>
-            <a href="services.html" class="nav-item" data-page="services" role="menuitem">Services &amp; Packages</a>
-            <a href="projects.html" class="nav-item" data-page="projects" role="menuitem">Projects</a>
-            <a href="about.html" class="nav-item" data-page="about" role="menuitem">About</a>
-            <a href="internships.html" class="nav-item active" data-page="internships" role="menuitem">Builders</a>
-            <a href="contact.html" class="nav-item" data-page="contact" role="menuitem">Contact</a>
+        <div class="nav-links" id="nav-links">
+            <a href="home.html" class="nav-link" data-page="home">Home</a>
+            <a href="services.html" class="nav-link" data-page="services">Services</a>
+            <a href="projects.html" class="nav-link" data-page="projects">Projects</a>
+            <a href="about.html" class="nav-link" data-page="about">About</a>
+            <a href="internships.html" class="nav-link" data-page="internships">Builders</a>
+            <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
+            <a href="contact.html" class="nav-cta-btn">Start Sprint &rarr;</a>
         </div>
 
-        <div class="menu-toggle" id="menu-toggle" role="button" aria-label="Toggle menu" aria-expanded="false" tabindex="0">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
     <!-- Hero Section -->
@@ -893,35 +897,8 @@
     </footer>
 
     <!-- Scripts -->
+    <!-- Navigation Controller -->
     <script src="../assets/js/main.js"></script>
-    <script>
-    (function() {
-        var toggle = document.getElementById('menu-toggle');
-        var links  = document.getElementById('nav-links');
-        var navbar = document.getElementById('navbar');
-        if (!toggle || !links) return;
-        window.addEventListener('scroll', function() {
-            if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
-        });
-        toggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggle.classList.toggle('active');
-            links.classList.toggle('mobile-open');
-        });
-        links.querySelectorAll('a').forEach(function(a) {
-            a.addEventListener('click', function() {
-                toggle.classList.remove('active');
-                links.classList.remove('mobile-open');
-            });
-        });
-        document.addEventListener('click', function(e) {
-            if (navbar && !navbar.contains(e.target)) {
-                toggle.classList.remove('active');
-                links.classList.remove('mobile-open');
-            }
-        });
-    })();
-    </script>
 </body>
 
 </html>

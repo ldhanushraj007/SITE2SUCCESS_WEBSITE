@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -125,20 +125,29 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 </head>
 <body>
-    <nav class="navbar" id="navbar">
-        <a href="home.html" class="nav-logo">
-            <img src="../assets/images/logo.png" alt="Site2Success" style="height: 48px; width: auto; border-radius: 0;">
+        <!-- â•â•â• MASTER UNIFIED NAVBAR â•â•â• -->
+    <nav class="navbar" id="navbar" aria-label="Main Navigation">
+        <a href="home.html" class="nav-brand" aria-label="Site2Success Home">
+            <img src="../assets/images/logo.png" alt="Site2Success Logo" class="nav-logo-img">
+            <span class="nav-status-pill">
+                <span class="radar-dot"></span>
+                <span>STUDIO OPEN</span>
+            </span>
         </a>
+
         <div class="nav-links" id="nav-links">
-            <a href="home.html" class="nav-item">Home</a>
-            <a href="services.html" class="nav-item active">Services</a>
-            <a href="automation.html" class="nav-item">KIRA<span class="early-tag">Early Access</span></a>
-            <a href="internships.html" class="nav-item">Internships</a>
-            <a href="projects.html" class="nav-item">Projects</a>
-            <a href="about.html" class="nav-item">About</a>
-            <a href="contact.html" class="nav-item">Contact</a>
+            <a href="home.html" class="nav-link" data-page="home">Home</a>
+            <a href="services.html" class="nav-link" data-page="services">Services</a>
+            <a href="projects.html" class="nav-link" data-page="projects">Projects</a>
+            <a href="about.html" class="nav-link" data-page="about">About</a>
+            <a href="internships.html" class="nav-link" data-page="internships">Builders</a>
+            <a href="contact.html" class="nav-link" data-page="contact">Contact</a>
+            <a href="contact.html" class="nav-cta-btn">Start Sprint &rarr;</a>
         </div>
-        <div class="menu-toggle" id="menu-toggle"><span></span><span></span><span></span></div>
+
+        <button class="menu-toggle" id="menu-toggle" aria-label="Toggle Navigation">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
 
     <div class="sd-hero">
@@ -384,36 +393,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Mobile Nav script -->
-    <script>
-    (function() {
-        var toggle = document.getElementById('menu-toggle');
-        var links  = document.getElementById('nav-links');
-        var navbar = document.getElementById('navbar');
-        if (!toggle || !links) return;
-        window.addEventListener('scroll', function() {
-            if (navbar) navbar.classList.toggle('scrolled', window.scrollY > 50);
-        });
-        toggle.addEventListener('click', function(e) {
-            e.stopPropagation();
-            toggle.classList.toggle('active');
-            links.classList.toggle('mobile-open');
-        });
-        links.querySelectorAll('a').forEach(function(a) {
-            a.addEventListener('click', function() {
-                toggle.classList.remove('active');
-                links.classList.remove('mobile-open');
-            });
-        });
-        document.addEventListener('click', function(e) {
-            if (navbar && !navbar.contains(e.target)) {
-                toggle.classList.remove('active');
-                links.classList.remove('mobile-open');
-            }
-        });
-    })();
-    </script>
 
     <!-- BreadcrumbList Schema -->
     <script type="application/ld+json">
