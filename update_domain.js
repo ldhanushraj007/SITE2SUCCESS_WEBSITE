@@ -6,8 +6,8 @@ const sitemapPath = path.join(directoryPath, 'sitemap.xml');
 
 function replaceInFile(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
-    if (content.includes('site2success.in')) {
-        content = content.replace(/site2success\.in/g, 'site2success.online');
+    if (content.includes('site2success.online')) {
+        content = content.replace(/site2success\.online/g, 'site2success.in');
         fs.writeFileSync(filePath, content, 'utf8');
         console.log(`Updated domain in ${filePath}`);
     }
@@ -36,5 +36,4 @@ if (fs.existsSync(sitemapPath)) {
 // Update everything else
 updateDomain(directoryPath);
 
-// Also check package.json or other root files if any, but mostly it's in website/website
 console.log('Done replacing domain!');
