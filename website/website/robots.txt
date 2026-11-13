@@ -1,4 +1,38 @@
+# robots.txt for Site2Success (https://site2success.in)
 User-agent: *
 Allow: /
 
+# Answer Engine Optimization (AEO) & Generative Engine Optimization (GEO)
+# Explicitly welcome AI and conversational search crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Sitemap
 Sitemap: https://site2success.in/sitemap.xml

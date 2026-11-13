@@ -36,14 +36,23 @@ services.forEach(s => {
     <meta name="keywords" content="${s.title}, Site2Success, AI agent, business automation, Bengaluru, India, startup, workflow automation">
     <link rel="canonical" href="https://site2success.in/pages/services/${s.id}.html">
     <meta name="robots" content="index, follow">
+    <meta name="google-site-verification" content="hUuqrSM6DO2-IPt-vKFLi6_DoScVl3sxZFX5Q328wno">
     <meta name="google-site-verification" content="erB9FH8CbM0SuXc1aqRoS94toNrKQ-dM144Mg-gx-9o">
     
+    <!-- Geographic & Local Meta Tags (GEO / AEO) -->
+    <meta name="geo.region" content="IN-KA">
+    <meta name="geo.placename" content="Bengaluru">
+    <meta name="geo.position" content="12.9716;77.5946">
+    <meta name="ICBM" content="12.9716, 77.5946">
     
-        <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_IN">
+    <meta property="og:site_name" content="Site2Success">
     <meta property="og:url" content="https://site2success.in/pages/services/${s.id}.html">
     <meta property="og:title" content="${s.title} — AI &amp; Automation Services | Site2Success">
     <meta property="og:description" content="${s.subtitle}">
@@ -248,8 +257,30 @@ services.forEach(s => {
       "itemListElement": [
         {"@type":"ListItem","position":1,"name":"Home","item":"https://site2success.in/pages/home.html"},
         {"@type":"ListItem","position":2,"name":"Services","item":"https://site2success.in/pages/services.html"},
-        {"@type":"ListItem","position":3,"name":"\${s.title}","item":"https://site2success.in/pages/services/\${s.id}.html"}
+        {"@type":"ListItem","position":3,"name":"${s.title}","item":"https://site2success.in/pages/services/${s.id}.html"}
       ]
+    }
+    </script>
+
+    <!-- Service Schema (AEO / Generative Engine Optimization) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "${s.title}",
+      "serviceType": "${s.catLabel}",
+      "description": "${s.subtitle}",
+      "provider": {
+        "@type": "Organization",
+        "name": "Site2Success",
+        "url": "https://site2success.in",
+        "logo": "https://site2success.in/assets/images/logo.png"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "India"
+      },
+      "url": "https://site2success.in/pages/services/${s.id}.html"
     }
     </script>
 

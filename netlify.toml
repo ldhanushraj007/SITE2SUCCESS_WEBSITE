@@ -1,2 +1,46 @@
 [build]
   publish = "website/website"
+
+# 301 Permanent Domain Migration Redirects (Old .online -> New .in)
+[[redirects]]
+  from = "https://site2success.online/*"
+  to = "https://site2success.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://site2success.online/*"
+  to = "https://site2success.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.site2success.online/*"
+  to = "https://site2success.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.site2success.online/*"
+  to = "https://site2success.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://site2success.in/*"
+  to = "https://site2success.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.site2success.in/*"
+  to = "https://site2success.in/:splat"
+  status = 301
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

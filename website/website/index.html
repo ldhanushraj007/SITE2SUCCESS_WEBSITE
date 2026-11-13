@@ -11,14 +11,21 @@
 <!-- Open Graph -->
 <meta property="og:title" content="Site2Success | University-Powered AI Software Studio">
 <meta property="og:description" content="Site2Success combines AI-native development with university talent to help founders, researchers, students and individuals turn software ideas into real products quickly and affordably.">
-<meta property="og:image" content="assets/images/og-image.png">
+<meta property="og:image" content="https://site2success.in/assets/images/og-image.png">
 <meta property="og:url" content="https://site2success.in/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Site2Success">
+<meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Site2Success | University-Powered AI Software Studio">
 <meta name="twitter:description" content="Have an idea? We turn it into working software. Built by the next generation, accelerated by AI.">
-<meta name="twitter:image" content="assets/images/og-image.png">
+<meta name="twitter:image" content="https://site2success.in/assets/images/og-image.png">
+
+<!-- Geographic & Local Meta Tags (GEO / Local SEO) -->
+<meta name="geo.region" content="IN-KA">
+<meta name="geo.placename" content="Bengaluru">
+<meta name="geo.position" content="12.9716;77.5946">
+<meta name="ICBM" content="12.9716, 77.5946">
 
 <!-- Instant meta refresh fallback for bots / fast redirect -->
 <meta http-equiv="refresh" content="0;url=pages/home.html">
@@ -351,11 +358,13 @@ html, body {
     <ul>
       <li><a href="pages/home.html">Home Dashboard</a></li>
       <li><a href="pages/services.html">All Services</a></li>
-      <li><a href="pages/services/mvp-prototypes.html">MVP &amp; Prototype Development</a></li>
-      <li><a href="pages/services/research-software.html">Research Software &amp; Academic Tools</a></li>
-      <li><a href="pages/services/portfolios-branding.html">Portfolio &amp; Brand Websites</a></li>
-      <li><a href="pages/services/automation.html">Workflow Automation &amp; Bots</a></li>
-      <li><a href="pages/services/ai-solutions.html">Custom AI &amp; LLM Integrations</a></li>
+      <li><a href="pages/services/whatsapp-ai-agent.html">WhatsApp AI Agent</a></li>
+      <li><a href="pages/services/website-lead-capture-bot.html">Website Lead Capture Bot</a></li>
+      <li><a href="pages/services/ai-appointment-booking.html">AI Appointment Booking</a></li>
+      <li><a href="pages/services/crm-automation.html">CRM Automation</a></li>
+      <li><a href="pages/services/mobile-app-development.html">Mobile App Development</a></li>
+      <li><a href="pages/services/ecommerce-store.html">E-Commerce Store</a></li>
+      <li><a href="pages/services/admin-dashboard-portals.html">Admin Dashboards &amp; Portals</a></li>
       <li><a href="pages/projects.html">Client Case Studies &amp; Verified Deployments</a></li>
       <li><a href="pages/automation.html">KIRA AI Platform</a></li>
       <li><a href="pages/internships.html">Student Builder Internships</a></li>
@@ -448,28 +457,49 @@ document.addEventListener('click', navigateToHome);
 document.addEventListener('keydown', navigateToHome);
 </script>
 
-<!-- Organization Schema -->
+<!-- Organization & ProfessionalService Schema (GEO / AEO) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "ProfessionalService"],
   "name": "Site2Success",
+  "alternateName": "Site2Success Studio",
   "url": "https://site2success.in",
   "logo": "https://site2success.in/assets/images/logo.png",
-  "description": "University-powered AI software studio combining AI-native development with trained student builders to turn software ideas into real products.",
+  "image": "https://site2success.in/assets/images/og-image.png",
+  "description": "University-powered AI software studio combining AI-native development with trained student builders to turn software ideas into real products in 14 days.",
   "foundingDate": "2024-10",
+  "founders": [
+    {
+      "@type": "Person",
+      "name": "Rahul R",
+      "jobTitle": "Co-Founder & CEO"
+    },
+    {
+      "@type": "Person",
+      "name": "L Dhanush Raj",
+      "jobTitle": "Co-Founder & COO"
+    }
+  ],
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Bengaluru",
     "addressRegion": "Karnataka",
     "addressCountry": "IN"
   },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 12.9716,
+    "longitude": 77.5946
+  },
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+91-6361446768",
     "contactType": "customer service",
-    "email": "info@site2success.in"
+    "email": "info@site2success.in",
+    "areaServed": "IN"
   },
+  "priceRange": "$$",
   "sameAs": [
     "https://linkedin.com/company/site2success",
     "https://github.com/site2success",

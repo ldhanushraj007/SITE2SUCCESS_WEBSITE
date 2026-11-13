@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -19,10 +19,17 @@
 <meta property="og:url" content="https://site2success.in/pages/home.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Site2Success">
+<meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Site2Success | University-Powered AI Software Studio">
 <meta name="twitter:description" content="Have an idea? We turn it into working software in 14 days.">
 <meta name="twitter:image" content="https://site2success.in/assets/images/og-image.png">
+
+<!-- Geographic & Local Meta Tags (GEO / AEO) -->
+<meta name="geo.region" content="IN-KA">
+<meta name="geo.placename" content="Bengaluru">
+<meta name="geo.position" content="12.9716;77.5946">
+<meta name="ICBM" content="12.9716, 77.5946">
 
 <!-- ═══ FONTS (QUICKSAND + POPPINS) ═══ -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2254,14 +2261,16 @@
   })();
   </script>
 
-  <!-- Organization Schema -->
+  <!-- Organization & ProfessionalService Schema (GEO / Local SEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "ProfessionalService"],
     "name": "Site2Success",
+    "alternateName": "Site2Success Studio",
     "url": "https://site2success.in",
     "logo": "https://site2success.in/assets/images/logo.png",
+    "image": "https://site2success.in/assets/images/og-image.png",
     "description": "University-powered AI software studio combining AI-native development with trained university talent to turn ideas into real products in 14 days.",
     "foundingDate": "2024-10",
     "founders": [
@@ -2282,12 +2291,66 @@
       "addressRegion": "Karnataka",
       "addressCountry": "IN"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 12.9716,
+      "longitude": 77.5946
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+91-6361446768",
       "contactType": "customer service",
-      "email": "info@site2success.in"
-    }
+      "email": "info@site2success.in",
+      "areaServed": "IN"
+    },
+    "priceRange": "$$",
+    "sameAs": [
+      "https://linkedin.com/company/site2success",
+      "https://github.com/site2success",
+      "https://instagram.com/site2success"
+    ]
+  }
+  </script>
+
+  <!-- FAQPage Schema for Answer Engine Optimization (AEO / Google AI Overviews / Perplexity / ChatGPT) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is Site2Success?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Site2Success is a university-powered AI software studio based in Bengaluru, India. We combine AI-native engineering methodologies with elite university talent squads to ship production software, web apps, and MVPs in 14 days."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What services does Site2Success offer?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Site2Success provides full-stack MVP development, custom AI agents, WhatsApp business bots, website lead capture chatbots, AI appointment booking, internal knowledge bots, CRM automations, and bespoke admin portals."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How quickly can Site2Success build a software prototype or MVP?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our flagship MVP Package ships fully functional, production-ready software within 14 days, complete with 100% code ownership and senior engineering QA."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can I contact Site2Success or book a consultation?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "You can schedule a scoping call directly through our contact page, email us at info@site2success.in, or reach out via WhatsApp/Phone at +91 6361446768."
+        }
+      }
+    ]
   }
   </script>
 </body>

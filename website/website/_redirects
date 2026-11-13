@@ -1,0 +1,10 @@
+# 301 Permanent Domain Migration Redirects (Old .online -> New .in)
+https://site2success.online/*   https://site2success.in/:splat   301!
+http://site2success.online/*    https://site2success.in/:splat   301!
+https://www.site2success.online/*   https://site2success.in/:splat   301!
+http://www.site2success.online/*    https://site2success.in/:splat   301!
+
+# Canonical WWW and HTTPS Redirects for site2success.in
+http://site2success.in/*        https://site2success.in/:splat   301!
+http://www.site2success.in/*    https://site2success.in/:splat   301!
+https://www.site2success.in/*   https://site2success.in/:splat   301!

@@ -6,8 +6,20 @@ const sitemapPath = path.join(directoryPath, 'sitemap.xml');
 
 function replaceInFile(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
+    let changed = false;
     if (content.includes('site2success.online')) {
         content = content.replace(/site2success\.online/g, 'site2success.in');
+        changed = true;
+    }
+    if (content.includes('http://site2success.in')) {
+        content = content.replace(/http:\/\/site2success\.in/g, 'https://site2success.in');
+        changed = true;
+    }
+    if (content.includes('http://www.site2success.in')) {
+        content = content.replace(/http:\/\/www\.site2success\.in/g, 'https://site2success.in');
+        changed = true;
+    }
+    if (changed) {
         fs.writeFileSync(filePath, content, 'utf8');
         console.log(`Updated domain in ${filePath}`);
     }
@@ -22,7 +34,7 @@ function updateDomain(dir) {
         
         if (stat.isDirectory()) {
             updateDomain(filePath);
-        } else if (file.endsWith('.html') || file.endsWith('.js') || file.endsWith('.xml') || file.endsWith('.json')) {
+        } else if (file.endsWith('.html') || file.endsWith('.js') || file.endsWith('.xml') || file.endsWith('.json') || file.endsWith('.txt')) {
             replaceInFile(filePath);
         }
     });
@@ -36,4 +48,4 @@ if (fs.existsSync(sitemapPath)) {
 // Update everything else
 updateDomain(directoryPath);
 
-console.log('Done replacing domain!');
+console.log('Done replacing domain with site2success.in!');

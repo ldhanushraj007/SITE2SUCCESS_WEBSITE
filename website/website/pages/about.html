@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -18,10 +18,17 @@
     <meta property="og:url" content="https://site2success.in/pages/about.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Site2Success">
+    <meta property="og:locale" content="en_IN">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="About Site2Success | University-Powered AI Software Studio">
     <meta name="twitter:description" content="Built by the next generation. Accelerated by AI. Learn about our university-powered studio model, operating engine, and campus laboratory origin.">
     <meta name="twitter:image" content="https://site2success.in/assets/images/logo.png">
+
+    <!-- Geographic & Local Meta Tags (GEO / AEO) -->
+    <meta name="geo.region" content="IN-KA">
+    <meta name="geo.placename" content="Bengaluru">
+    <meta name="geo.position" content="12.9716;77.5946">
+    <meta name="ICBM" content="12.9716, 77.5946">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1070,6 +1077,53 @@
     <!-- Scripts -->
     <!-- Navigation Controller -->
     <script src="../assets/js/main.js"></script>
+    <!-- AboutPage & Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Site2Success",
+        "alternateName": "Site2Success Studio",
+        "url": "https://site2success.in",
+        "logo": "https://site2success.in/assets/images/logo.png",
+        "description": "University-powered AI software studio combining AI-native development with trained university talent to turn ideas into real products in 14 days.",
+        "foundingDate": "2024-10",
+        "founders": [
+          {
+            "@type": "Person",
+            "name": "Rahul R",
+            "jobTitle": "Co-Founder & CEO"
+          },
+          {
+            "@type": "Person",
+            "name": "L Dhanush Raj",
+            "jobTitle": "Co-Founder & COO"
+          }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Bengaluru",
+          "addressRegion": "Karnataka",
+          "addressCountry": "IN"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-6361446768",
+          "contactType": "customer service",
+          "email": "info@site2success.in"
+        }
+      },
+      "breadcrumb": {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://site2success.in/pages/home.html"},
+          {"@type": "ListItem", "position": 2, "name": "About", "item": "https://site2success.in/pages/about.html"}
+        ]
+      }
+    }
+    </script>
 </body>
 
 </html>
