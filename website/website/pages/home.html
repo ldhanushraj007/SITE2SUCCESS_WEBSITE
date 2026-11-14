@@ -1308,6 +1308,22 @@
     .footer-inner { grid-template-columns: 1fr; }
   }
 
+  
+        /* Custom S2S Vector Icon System */
+        .s2s-icon {
+            display: inline-block;
+            vertical-align: -2px;
+            flex-shrink: 0;
+            transition: transform 0.25s ease, color 0.25s ease;
+        }
+        .s2s-icon-grow { color: #FF6B4A; }
+        .s2s-icon-test { color: #9333EA; }
+        .s2s-icon-build { color: #0EA5E9; }
+        .s2s-icon-target { color: var(--coral, #FF6B4A); margin-right: 0.35rem; }
+        .pillar-btn .s2s-icon { margin-right: 0.4rem; }
+        .pillar-btn:hover .s2s-icon { transform: scale(1.15); }
+        .pillar-btn.active .s2s-icon { color: #ffffff !important; }
+
   /* ═══ 6 FLAGSHIPS GRID ON HOME ═══ */
   .offer-grid-6 {
     display: grid;
@@ -1738,14 +1754,14 @@
       <a href="services/ai-visibility-seo-aeo-geo.html" class="offer-card">
         <div>
           <div class="offer-top-strip">
-            <span class="offer-pillar-tag grow">🚀 Grow · Search &amp; AI</span>
+            <span class="offer-pillar-tag grow"><svg class="s2s-icon s2s-icon-grow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><circle cx="15.5" cy="8.5" r="1.5" fill="currentColor"></circle></svg> Grow · Search &amp; AI</span>
             <span class="offer-speed-pill">
               <span class="c-emoji c-emoji-bolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#flame-grad)" stroke="#FF8A5B" stroke-width="1.2"/></svg></span>
               Retainer
             </span>
           </div>
           <h3>AI Visibility (SEO + AEO + GEO)</h3>
-          <div class="offer-promise-text">"Get found on Google and recommended by ChatGPT, Perplexity and Gemini"</div>
+          <div class="offer-promise-text"><svg class="s2s-icon s2s-icon-target" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <span>"Get found on Google and recommended by ChatGPT, Perplexity and Gemini"</span></div>
           <p>Optimize your website, structured schema, and llms.txt so search engines and generative AI tools actively quote and cite your brand.</p>
         </div>
         <div>
@@ -1762,14 +1778,14 @@
       <a href="services/ai-agent-reliability-audit.html" class="offer-card">
         <div>
           <div class="offer-top-strip">
-            <span class="offer-pillar-tag test">🛡️ Test · Risk Mitigation</span>
+            <span class="offer-pillar-tag test"><svg class="s2s-icon s2s-icon-test" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg> Test · Risk Mitigation</span>
             <span class="offer-speed-pill">
               <span class="c-emoji c-emoji-bolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#flame-grad)" stroke="#FF8A5B" stroke-width="1.2"/></svg></span>
               2–3 Weeks
             </span>
           </div>
           <h3>AI Agent Reliability Audit</h3>
-          <div class="offer-promise-text">"Prove your AI bot gives correct, safe answers"</div>
+          <div class="offer-promise-text"><svg class="s2s-icon s2s-icon-target" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <span>"Prove your AI bot gives correct, safe answers"</span></div>
           <p>Adversarial stress-testing across 200+ conversations to eliminate hallucinations, prompt injection leaks, and rogue pricing promises.</p>
         </div>
         <div>
@@ -1786,14 +1802,14 @@
       <a href="services/qa-as-a-service.html" class="offer-card">
         <div>
           <div class="offer-top-strip">
-            <span class="offer-pillar-tag test">🛡️ Test · Dedicated QA</span>
+            <span class="offer-pillar-tag test"><svg class="s2s-icon s2s-icon-test" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg> Test · Dedicated QA</span>
             <span class="offer-speed-pill">
               <span class="c-emoji c-emoji-bolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#flame-grad)" stroke="#FF8A5B" stroke-width="1.2"/></svg></span>
               Monthly
             </span>
           </div>
           <h3>QA-as-a-Service</h3>
-          <div class="offer-promise-text">"Stop bugs reaching your customers"</div>
+          <div class="offer-promise-text"><svg class="s2s-icon s2s-icon-target" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <span>"Stop bugs reaching your customers"</span></div>
           <p>Outsource your testing to an agile QA squad: cross-device exploratory testing, reproducible Jira/GitHub video tickets, and automated regression suites.</p>
         </div>
         <div>
@@ -1810,14 +1826,14 @@
       <a href="services/spreadsheet-to-software.html" class="offer-card">
         <div>
           <div class="offer-top-strip">
-            <span class="offer-pillar-tag build">⚙️ Build · Core Systems</span>
+            <span class="offer-pillar-tag build"><svg class="s2s-icon s2s-icon-build" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Build · Core Systems</span>
             <span class="offer-speed-pill">
               <span class="c-emoji c-emoji-bolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#flame-grad)" stroke="#FF8A5B" stroke-width="1.2"/></svg></span>
               4–6 Weeks
             </span>
           </div>
           <h3>Spreadsheet-to-Software Migration</h3>
-          <div class="offer-promise-text">"Replace fragile Excel and WhatsApp workflows with real software"</div>
+          <div class="offer-promise-text"><svg class="s2s-icon s2s-icon-target" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <span>"Replace fragile Excel and WhatsApp workflows with real software"</span></div>
           <p>Replace broken Excel files, formula errors, and chaotic WhatsApp groups with custom, mobile-friendly web software: logins, roles, forms, approvals, and real databases.</p>
         </div>
         <div>
@@ -1834,14 +1850,14 @@
       <a href="services/document-intelligence.html" class="offer-card">
         <div>
           <div class="offer-top-strip">
-            <span class="offer-pillar-tag build">⚙️ Build · Automation</span>
+            <span class="offer-pillar-tag build"><svg class="s2s-icon s2s-icon-build" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Build · Automation</span>
             <span class="offer-speed-pill">
               <span class="c-emoji c-emoji-bolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#flame-grad)" stroke="#FF8A5B" stroke-width="1.2"/></svg></span>
               3–4 Weeks
             </span>
           </div>
           <h3>Document Intelligence</h3>
-          <div class="offer-promise-text">"Stop typing data from invoices and forms by hand"</div>
+          <div class="offer-promise-text"><svg class="s2s-icon s2s-icon-target" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <span>"Stop typing data from invoices and forms by hand"</span></div>
           <p>Automate data extraction from GST invoices, bills, and KYC forms via WhatsApp or email directly into Tally, ERPs, or SQL databases with human review consoles.</p>
         </div>
         <div>
@@ -1858,14 +1874,14 @@
       <a href="services/fractional-tech-team.html" class="offer-card">
         <div>
           <div class="offer-top-strip">
-            <span class="offer-pillar-tag build">⚙️ Build · Full Tech Team</span>
+            <span class="offer-pillar-tag build"><svg class="s2s-icon s2s-icon-build" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Build · Full Tech Team</span>
             <span class="offer-speed-pill">
               <span class="c-emoji c-emoji-bolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#flame-grad)" stroke="#FF8A5B" stroke-width="1.2"/></svg></span>
               Monthly
             </span>
           </div>
           <h3>Fractional Tech Team</h3>
-          <div class="offer-promise-text">"A full tech department on a monthly retainer"</div>
+          <div class="offer-promise-text"><svg class="s2s-icon s2s-icon-target" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <span>"A full tech department on a monthly retainer"</span></div>
           <p>A trained student software builder squad guided by senior engineering reviewers, working on your product roadmap for a fraction of the cost of one full-time hire.</p>
         </div>
         <div>
@@ -1883,7 +1899,7 @@
     <div style="max-width:1200px;margin:3rem auto 0;background:linear-gradient(135deg,rgba(255,110,46,0.06),rgba(255,59,86,0.04));border:1.5px dashed rgba(255,110,46,0.3);border-radius:20px;padding:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;">
       <div>
         <span style="display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:#FF6E2E;margin-bottom:0.4rem;">
-          🎁 Free Diagnostic Tools Available
+          <svg class="s2s-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 12 20 22 4 22 4 12"></polyline><rect x="2" y="7" width="20" height="5"></rect><line x1="12" y1="22" x2="12" y2="7"></line><path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path><path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path></svg> Free Diagnostic Tools Available
         </span>
         <h4 style="font-size:1.25rem;font-weight:800;color:var(--brand-dark,#0B101D);margin:0 0 0.4rem 0;">Test Our Quality Before Committing</h4>
         <p style="font-size:0.92rem;color:#64748B;margin:0;max-width:650px;">Free AI Visibility Score check, 25-question Bot Reliability stress test, or our "Messiest Spreadsheet" architecture review.</p>

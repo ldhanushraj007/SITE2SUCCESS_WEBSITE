@@ -1151,6 +1151,22 @@
             }
         }
     
+        
+        /* Custom S2S Vector Icon System */
+        .s2s-icon {
+            display: inline-block;
+            vertical-align: -2px;
+            flex-shrink: 0;
+            transition: transform 0.25s ease, color 0.25s ease;
+        }
+        .s2s-icon-grow { color: #FF6B4A; }
+        .s2s-icon-test { color: #9333EA; }
+        .s2s-icon-build { color: #0EA5E9; }
+        .s2s-icon-target { color: var(--coral, #FF6B4A); margin-right: 0.35rem; }
+        .pillar-btn .s2s-icon { margin-right: 0.4rem; }
+        .pillar-btn:hover .s2s-icon { transform: scale(1.15); }
+        .pillar-btn.active .s2s-icon { color: #ffffff !important; }
+
         /* ===== 6 STRATEGIC FLAGSHIP SERVICES (PRIMARY PRIORITY) ===== */
         .flagships-section {
             padding: 6.5rem 1.5rem 5rem;
@@ -1625,9 +1641,9 @@
             <!-- Pillar Filter Bar -->
             <div class="pillar-filter-bar">
                 <button class="pillar-btn active" data-filter="all">All Services (6)</button>
-                <button class="pillar-btn" data-filter="grow">🚀 Grow (1)</button>
-                <button class="pillar-btn" data-filter="test">🛡️ Test (2)</button>
-                <button class="pillar-btn" data-filter="build">⚙️ Build (3)</button>
+                <button class="pillar-btn" data-filter="grow"><svg class="s2s-icon s2s-icon-grow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><circle cx="15.5" cy="8.5" r="1.5" fill="currentColor"></circle></svg><span>Grow (1)</span></button>
+                <button class="pillar-btn" data-filter="test"><svg class="s2s-icon s2s-icon-test" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg><span>Test (2)</span></button>
+                <button class="pillar-btn" data-filter="build"><svg class="s2s-icon s2s-icon-build" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg><span>Build (3)</span></button>
             </div>
 
             <!-- 6 Flagship Cards Grid -->
@@ -1636,11 +1652,9 @@
                 <!-- 1. AI Visibility -->
                 <div class="flagship-card" data-category="grow">
                     <div class="flagship-top">
-                        <span class="flagship-pillar-badge grow">🚀 Grow · Search &amp; AI Visibility</span>
+                        <span class="flagship-pillar-badge grow"><svg class="s2s-icon s2s-icon-grow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path><circle cx="15.5" cy="8.5" r="1.5" fill="currentColor"></circle></svg> Grow · Search &amp; AI Visibility</span>
                         <h3>AI Visibility (SEO + AEO + GEO)</h3>
-                        <div class="flagship-promise">
-                            🎯 "Get found on Google and recommended by ChatGPT, Perplexity and Gemini"
-                        </div>
+                        <div class="flagship-promise"><svg class="s2s-icon s2s-icon-target" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <span>"Get found on Google and recommended by ChatGPT, Perplexity and Gemini"</span></div>
                         <p class="flagship-desc">
                             People now discover businesses in three ways: Google ranking, voice/snippet answers, and generative recommendations. We optimize your website, schemas, and llms.txt so search and AI models quote you.
                         </p>
@@ -1679,11 +1693,9 @@
                 <!-- 2. AI Agent Reliability Audit -->
                 <div class="flagship-card" data-category="test">
                     <div class="flagship-top">
-                        <span class="flagship-pillar-badge test">🛡️ Test · AI Agent Risk Mitigation</span>
+                        <span class="flagship-pillar-badge test"><svg class="s2s-icon s2s-icon-test" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg> Test · AI Agent Risk Mitigation</span>
                         <h3>AI Agent Reliability Audit</h3>
-                        <div class="flagship-promise">
-                            🎯 "Prove your AI bot gives correct, safe answers"
-                        </div>
+                        <div class="flagship-promise"><svg class="s2s-icon s2s-icon-target" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <span>"Prove your AI bot gives correct, safe answers"</span></div>
                         <p class="flagship-desc">
                             Almost no company tests their chatbots systematically. Bots invent prices, leak prompts, and make rogue promises. Backed by our research on hallucination spread in multi-agent systems, we stress-test and harden your bot.
                         </p>
@@ -1722,11 +1734,9 @@
                 <!-- 3. QA-as-a-Service -->
                 <div class="flagship-card" data-category="test">
                     <div class="flagship-top">
-                        <span class="flagship-pillar-badge test">🛡️ Test · Dedicated Software QA</span>
+                        <span class="flagship-pillar-badge test"><svg class="s2s-icon s2s-icon-test" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg> Test · Dedicated Software QA</span>
                         <h3>QA-as-a-Service</h3>
-                        <div class="flagship-promise">
-                            🎯 "Stop bugs reaching your customers"
-                        </div>
+                        <div class="flagship-promise"><svg class="s2s-icon s2s-icon-target" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <span>"Stop bugs reaching your customers"</span></div>
                         <p class="flagship-desc">
                             Startups and agencies ship fast without dedicated testers, causing customer-facing bugs and churn. We provide an agile outsourced QA squad: cross-device exploratory testing, reproducible tickets, and automated regression suites.
                         </p>
@@ -1765,11 +1775,9 @@
                 <!-- 4. Spreadsheet-to-Software Migration -->
                 <div class="flagship-card" data-category="build">
                     <div class="flagship-top">
-                        <span class="flagship-pillar-badge build">⚙️ Build · Custom Software &amp; DB</span>
+                        <span class="flagship-pillar-badge build"><svg class="s2s-icon s2s-icon-build" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Build · Custom Software &amp; DB</span>
                         <h3>Spreadsheet-to-Software Migration</h3>
-                        <div class="flagship-promise">
-                            🎯 "Replace fragile Excel and WhatsApp workflows with real software"
-                        </div>
+                        <div class="flagship-promise"><svg class="s2s-icon s2s-icon-target" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <span>"Replace fragile Excel and WhatsApp workflows with real software"</span></div>
                         <p class="flagship-desc">
                             Growing businesses run on Excel, Google Sheets, and WhatsApp groups until formulas break, data duplicates, and one person leaving cripples operations. We replace messy sheets with secure, custom web software.
                         </p>
@@ -1808,11 +1816,9 @@
                 <!-- 5. Document Intelligence -->
                 <div class="flagship-card" data-category="build">
                     <div class="flagship-top">
-                        <span class="flagship-pillar-badge build">⚙️ Build · Intelligent Pipelines</span>
+                        <span class="flagship-pillar-badge build"><svg class="s2s-icon s2s-icon-build" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Build · Intelligent Pipelines</span>
                         <h3>Document Intelligence</h3>
-                        <div class="flagship-promise">
-                            🎯 "Stop typing data from invoices and forms by hand"
-                        </div>
+                        <div class="flagship-promise"><svg class="s2s-icon s2s-icon-target" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <span>"Stop typing data from invoices and forms by hand"</span></div>
                         <p class="flagship-desc">
                             Eliminate manual paperwork entry. We build custom document pipelines that ingest GST bills, invoices, purchase orders, and forms via email or WhatsApp, run OCR and AI extraction, and sync directly to Tally or database.
                         </p>
@@ -1851,11 +1857,9 @@
                 <!-- 6. Fractional Tech Team -->
                 <div class="flagship-card" data-category="build">
                     <div class="flagship-top">
-                        <span class="flagship-pillar-badge build">⚙️ Build · Dedicated Engineering Squad</span>
+                        <span class="flagship-pillar-badge build"><svg class="s2s-icon s2s-icon-build" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg> Build · Dedicated Engineering Squad</span>
                         <h3>Fractional Tech Team</h3>
-                        <div class="flagship-promise">
-                            🎯 "A full tech department on a monthly retainer"
-                        </div>
+                        <div class="flagship-promise"><svg class="s2s-icon s2s-icon-target" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg> <span>"A full tech department on a monthly retainer"</span></div>
                         <p class="flagship-desc">
                             A complete outsourced technology department: trained university builder squad led by a senior engineering reviewer, working on your product roadmap. Full-stack development, DevOps, and weekly sprints for a fraction of one hire.
                         </p>
@@ -1913,7 +1917,7 @@
                 <!-- Diagnostic 1 -->
                 <div class="diag-card">
                     <div>
-                        <span class="diag-badge">🔍 Free Tool</span>
+                        <span class="diag-badge"><svg class="s2s-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg> Free Tool</span>
                         <h3>AI Visibility Score Check</h3>
                         <p>Share your website and core business offering. We test how visible you are across Google, ChatGPT, Perplexity, and Gemini, delivering a 1-page gap scorecard.</p>
                     </div>
@@ -1925,7 +1929,7 @@
                 <!-- Diagnostic 2 -->
                 <div class="diag-card">
                     <div>
-                        <span class="diag-badge">🧪 Free Stress Test</span>
+                        <span class="diag-badge"><svg class="s2s-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31L4.69 18.5a2 2 0 0 0 1.71 3h11.2a2 2 0 0 0 1.71-3L14 9.31V2"></path><line x1="8.5" y1="2" x2="15.5" y2="2"></line><line x1="14" y1="9" x2="10" y2="9"></line></svg> Free Stress Test</span>
                         <h3>Bot Reliability Check</h3>
                         <p>Running an existing customer chatbot on WhatsApp or website? We run 20 to 30 tricky adversarial questions against it and deliver a summary of what broke.</p>
                     </div>
@@ -1937,7 +1941,7 @@
                 <!-- Diagnostic 3 -->
                 <div class="diag-card">
                     <div>
-                        <span class="diag-badge">📊 Free Blueprint</span>
+                        <span class="diag-badge"><svg class="s2s-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="9" y1="3" x2="9" y2="21"></line><line x1="15" y1="3" x2="15" y2="21"></line></svg> Free Blueprint</span>
                         <h3>"Messiest Spreadsheet" Audit</h3>
                         <p>Send us your most complex, fragile Excel or Google Sheet. We will analyze the formulas, map the workflows, and tell you what it takes to turn it into custom software.</p>
                     </div>
@@ -2408,7 +2412,7 @@
                     <tr>
                         <th style="width: 25%;">Scope Dimension</th>
                         <th style="width: 15%;">Starter</th>
-                        <th style="width: 20%;" class="featured-col">⭐ MVP Sprint</th>
+                        <th style="width: 20%;" class="featured-col"><svg class="s2s-icon" width="14" height="14" viewBox="0 0 24 24" fill="#FFA337" stroke="#FFA337" stroke-width="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> MVP Sprint</th>
                         <th style="width: 20%;">Research Prototype</th>
                         <th style="width: 20%;">Custom Product</th>
                     </tr>
