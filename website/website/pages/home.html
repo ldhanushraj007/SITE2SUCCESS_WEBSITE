@@ -1307,7 +1307,73 @@
     .closing-card { padding: 3.5rem 1.5rem; }
     .footer-inner { grid-template-columns: 1fr; }
   }
-</style>
+
+  /* ═══ 6 FLAGSHIPS GRID ON HOME ═══ */
+  .offer-grid-6 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  @media (max-width: 1024px) {
+    .offer-grid-6 {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media (max-width: 768px) {
+    .offer-grid-6 {
+      grid-template-columns: 1fr;
+    }
+  }
+  .offer-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  }
+  .offer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.08);
+    border-color: rgba(255, 110, 46, 0.35);
+  }
+  .offer-pillar-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 0.3rem 0.75rem;
+    border-radius: 100px;
+    margin-bottom: 0.85rem;
+  }
+  .offer-pillar-tag.grow { background: rgba(255,107,74,0.12); color: #FF6B4A; }
+  .offer-pillar-tag.test { background: rgba(147,51,234,0.12); color: #9333EA; }
+  .offer-pillar-tag.build { background: rgba(14,165,233,0.12); color: #0EA5E9; }
+  .offer-promise-text {
+    font-size: 0.84rem;
+    font-weight: 700;
+    color: var(--brand-coral, #FF6E2E);
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+  }
+  .offer-cta-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 1.25rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: #FF6E2E;
+  }
+
+  </style>
     
 </head>
 
@@ -1654,116 +1720,177 @@
     </div>
   </header>
 
-  <!-- ═══ WHAT WE SHIP: 4 CLEAN FLAGSHIPS ═══ -->
+  <!-- ═══ WHAT WE SHIP: 6 CORE FLAGSHIP SERVICES (PRIMARY PRIORITY) ═══ -->
   <section class="section" id="what-we-build">
     <div class="section-head">
       <span class="section-tag">
         <span class="c-emoji c-emoji-rocket">
           <svg viewBox="0 0 24 24" fill="none"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" fill="url(#flame-grad)" stroke="#FF6E2E" stroke-width="1.5"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" fill="url(#flame-grad)" stroke="#FF3B56" stroke-width="1.5"/><circle cx="15.5" cy="8.5" r="1.5" fill="#FFFFFF"/></svg>
         </span>
-        Studio Capabilities
+        Primary Agency Solutions
       </span>
-      <h2 class="section-title">What We Ship</h2>
-      <p class="section-sub">Every project delivers working, production-grade software ready for real users and stakeholders.</p>
+      <h2 class="section-title">Our 6 Core Flagship Services</h2>
+      <p class="section-sub">We build technology, we test technology, and we make your business visible to technology.</p>
     </div>
 
-    <div class="offer-grid-4">
-      <!-- 1. MVPs -->
-      <div class="offer-card">
+    <div class="offer-grid-6">
+      <!-- 1. AI Visibility -->
+      <a href="services/ai-visibility-seo-aeo-geo.html" class="offer-card">
         <div>
           <div class="offer-top-strip">
-            <div class="offer-icon-box">
-              <span class="c-emoji c-emoji-rocket" style="width:28px; height:28px; margin:0;">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" fill="url(#flame-grad)" stroke="#FF6E2E" stroke-width="1.5"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" fill="url(#flame-grad)" stroke="#FF3B56" stroke-width="1.5"/><circle cx="15.5" cy="8.5" r="1.5" fill="#FFFFFF"/></svg>
-              </span>
-            </div>
+            <span class="offer-pillar-tag grow">🚀 Grow · Search &amp; AI</span>
             <span class="offer-speed-pill">
               <span class="c-emoji c-emoji-bolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#flame-grad)" stroke="#FF8A5B" stroke-width="1.2"/></svg></span>
-              14 Days
+              Retainer
             </span>
           </div>
-          <h3>Full-Stack MVPs</h3>
-          <p>Production web apps built to test your core thesis, onboard initial users, and demo to investors without endless agency overhead.</p>
+          <h3>AI Visibility (SEO + AEO + GEO)</h3>
+          <div class="offer-promise-text">"Get found on Google and recommended by ChatGPT, Perplexity and Gemini"</div>
+          <p>Optimize your website, structured schema, and llms.txt so search engines and generative AI tools actively quote and cite your brand.</p>
         </div>
-        <div class="offer-deliverables">
-          <span class="offer-chip">Next.js &bull; React</span>
-          <span class="offer-chip">Auth &amp; RBAC</span>
-          <span class="offer-chip">PostgreSQL</span>
-          <span class="offer-chip">Cloud Handover</span>
+        <div>
+          <div class="offer-deliverables">
+            <span class="offer-chip">Google &amp; ChatGPT</span>
+            <span class="offer-chip">Schema &amp; llms.txt</span>
+            <span class="offer-chip">Monthly Score</span>
+          </div>
+          <div class="offer-cta-link">View Full Scope &rarr;</div>
         </div>
-      </div>
+      </a>
 
-      <!-- 2. AI Agents -->
-      <div class="offer-card">
+      <!-- 2. AI Agent Reliability Audit -->
+      <a href="services/ai-agent-reliability-audit.html" class="offer-card">
         <div>
           <div class="offer-top-strip">
-            <div class="offer-icon-box">
-              <span class="c-emoji c-emoji-brain" style="width:28px; height:28px; margin:0;">
-                <svg viewBox="0 0 24 24" fill="none"><path d="M9.5 2a4 4 0 0 0-4 4c0 .35.04.69.13 1.01A4.5 4.5 0 0 0 3 11.5a4.5 4.5 0 0 0 2.5 4A4.5 4.5 0 0 0 9 20h.5V2z" stroke="#C084FC" stroke-width="1.8" fill="rgba(192,132,252,0.15)"/><path d="M14.5 2a4 4 0 0 1 4 4c0 .35-.04.69-.13 1.01A4.5 4.5 0 0 1 21 11.5a4.5 4.5 0 0 1-2.5 4 4.5 4.5 0 0 1-3.5 4.5h-.5V2z" stroke="#FF6E2E" stroke-width="1.8" fill="rgba(255,110,46,0.15)"/><circle cx="12" cy="7" r="1.2" fill="#FFA337"/><circle cx="12" cy="13" r="1.2" fill="#FF3B56"/></svg>
-              </span>
-            </div>
+            <span class="offer-pillar-tag test">🛡️ Test · Risk Mitigation</span>
             <span class="offer-speed-pill">
               <span class="c-emoji c-emoji-bolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#flame-grad)" stroke="#FF8A5B" stroke-width="1.2"/></svg></span>
-              7&ndash;14 Days
+              2–3 Weeks
             </span>
           </div>
-          <h3>AI Agents &amp; Workflows</h3>
-          <p>Autonomous WhatsApp bots, website lead capturers, document summarizers, and custom domain-specific AI workflows with strict QA.</p>
+          <h3>AI Agent Reliability Audit</h3>
+          <div class="offer-promise-text">"Prove your AI bot gives correct, safe answers"</div>
+          <p>Adversarial stress-testing across 200+ conversations to eliminate hallucinations, prompt injection leaks, and rogue pricing promises.</p>
         </div>
-        <div class="offer-deliverables">
-          <span class="offer-chip">WhatsApp API</span>
-          <span class="offer-chip">RAG Knowledge Base</span>
-          <span class="offer-chip">Zero Hallucinations</span>
+        <div>
+          <div class="offer-deliverables">
+            <span class="offer-chip">200+ Test Suite</span>
+            <span class="offer-chip">Anti-Hallucination</span>
+            <span class="offer-chip">Hardened Guardrails</span>
+          </div>
+          <div class="offer-cta-link">View Full Scope &rarr;</div>
         </div>
-      </div>
+      </a>
 
-      <!-- 3. Digital Flagships -->
-      <div class="offer-card">
+      <!-- 3. QA-as-a-Service -->
+      <a href="services/qa-as-a-service.html" class="offer-card">
         <div>
           <div class="offer-top-strip">
-            <div class="offer-icon-box">
-              <span class="c-emoji c-emoji-chart" style="width:28px; height:28px; margin:0;">
-                <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="13" width="4" height="8" rx="1.5" fill="#38BDF8"/><rect x="10" y="8" width="4" height="13" rx="1.5" fill="#818CF8"/><rect x="17" y="3" width="4" height="18" rx="1.5" fill="#34D399"/></svg>
-              </span>
-            </div>
+            <span class="offer-pillar-tag test">🛡️ Test · Dedicated QA</span>
             <span class="offer-speed-pill">
               <span class="c-emoji c-emoji-bolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#flame-grad)" stroke="#FF8A5B" stroke-width="1.2"/></svg></span>
-              7&ndash;10 Days
+              Monthly
             </span>
           </div>
-          <h3>Digital Flagships</h3>
-          <p>High-converting web presences with bespoke responsive design, 100/100 performance scores, custom domains, and effortless CMS control.</p>
+          <h3>QA-as-a-Service</h3>
+          <div class="offer-promise-text">"Stop bugs reaching your customers"</div>
+          <p>Outsource your testing to an agile QA squad: cross-device exploratory testing, reproducible Jira/GitHub video tickets, and automated regression suites.</p>
         </div>
-        <div class="offer-deliverables">
-          <span class="offer-chip">Ultra-Fast Loading</span>
-          <span class="offer-chip">Modern SEO</span>
-          <span class="offer-chip">Self-Serve CMS</span>
+        <div>
+          <div class="offer-deliverables">
+            <span class="offer-chip">Multi-Device Audits</span>
+            <span class="offer-chip">Checkout &amp; Auth</span>
+            <span class="offer-chip">Automated Suites</span>
+          </div>
+          <div class="offer-cta-link">View Full Scope &rarr;</div>
         </div>
-      </div>
+      </a>
 
-      <!-- 4. Internal Tools -->
-      <div class="offer-card">
+      <!-- 4. Spreadsheet-to-Software Migration -->
+      <a href="services/spreadsheet-to-software.html" class="offer-card">
         <div>
           <div class="offer-top-strip">
-            <div class="offer-icon-box">
-              <span class="c-emoji c-emoji-lock" style="width:28px; height:28px; margin:0;">
-                <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2.5" fill="rgba(255,110,46,0.18)" stroke="#FF6E2E" stroke-width="1.8"/><path d="M7 11V7a5 5 0 0 1 10 0v4" stroke="#FFA337" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="16" r="1.5" fill="#FFFFFF"/></svg>
-              </span>
-            </div>
+            <span class="offer-pillar-tag build">⚙️ Build · Core Systems</span>
             <span class="offer-speed-pill">
               <span class="c-emoji c-emoji-bolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#flame-grad)" stroke="#FF8A5B" stroke-width="1.2"/></svg></span>
-              10&ndash;14 Days
+              4–6 Weeks
             </span>
           </div>
-          <h3>Internal Tools &amp; Portals</h3>
-          <p>Bespoke administrative dashboards, approval workflows, inventory trackers, and CRM synchronizations that eliminate spreadsheet chaos.</p>
+          <h3>Spreadsheet-to-Software Migration</h3>
+          <div class="offer-promise-text">"Replace fragile Excel and WhatsApp workflows with real software"</div>
+          <p>Replace broken Excel files, formula errors, and chaotic WhatsApp groups with custom, mobile-friendly web software: logins, roles, forms, approvals, and real databases.</p>
         </div>
-        <div class="offer-deliverables">
-          <span class="offer-chip">Admin CRUD</span>
-          <span class="offer-chip">Payment Sync</span>
-          <span class="offer-chip">Webhook Pipelines</span>
+        <div>
+          <div class="offer-deliverables">
+            <span class="offer-chip">PostgreSQL &bull; Auth</span>
+            <span class="offer-chip">Approval Chains</span>
+            <span class="offer-chip">100% Data Migration</span>
+          </div>
+          <div class="offer-cta-link">View Full Scope &rarr;</div>
         </div>
+      </a>
+
+      <!-- 5. Document Intelligence -->
+      <a href="services/document-intelligence.html" class="offer-card">
+        <div>
+          <div class="offer-top-strip">
+            <span class="offer-pillar-tag build">⚙️ Build · Automation</span>
+            <span class="offer-speed-pill">
+              <span class="c-emoji c-emoji-bolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#flame-grad)" stroke="#FF8A5B" stroke-width="1.2"/></svg></span>
+              3–4 Weeks
+            </span>
+          </div>
+          <h3>Document Intelligence</h3>
+          <div class="offer-promise-text">"Stop typing data from invoices and forms by hand"</div>
+          <p>Automate data extraction from GST invoices, bills, and KYC forms via WhatsApp or email directly into Tally, ERPs, or SQL databases with human review consoles.</p>
+        </div>
+        <div>
+          <div class="offer-deliverables">
+            <span class="offer-chip">GST &amp; OCR Vision</span>
+            <span class="offer-chip">Split Review Screen</span>
+            <span class="offer-chip">Tally &amp; SQL Sync</span>
+          </div>
+          <div class="offer-cta-link">View Full Scope &rarr;</div>
+        </div>
+      </a>
+
+      <!-- 6. Fractional Tech Team -->
+      <a href="services/fractional-tech-team.html" class="offer-card">
+        <div>
+          <div class="offer-top-strip">
+            <span class="offer-pillar-tag build">⚙️ Build · Full Tech Team</span>
+            <span class="offer-speed-pill">
+              <span class="c-emoji c-emoji-bolt"><svg viewBox="0 0 24 24" fill="none"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" fill="url(#flame-grad)" stroke="#FF8A5B" stroke-width="1.2"/></svg></span>
+              Monthly
+            </span>
+          </div>
+          <h3>Fractional Tech Team</h3>
+          <div class="offer-promise-text">"A full tech department on a monthly retainer"</div>
+          <p>A trained student software builder squad guided by senior engineering reviewers, working on your product roadmap for a fraction of the cost of one full-time hire.</p>
+        </div>
+        <div>
+          <div class="offer-deliverables">
+            <span class="offer-chip">Dedicated Squad</span>
+            <span class="offer-chip">Senior Code Audit</span>
+            <span class="offer-chip">Full IP Transfer</span>
+          </div>
+          <div class="offer-cta-link">View Full Scope &rarr;</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Home Lead Magnets Banner -->
+    <div style="max-width:1200px;margin:3rem auto 0;background:linear-gradient(135deg,rgba(255,110,46,0.06),rgba(255,59,86,0.04));border:1.5px dashed rgba(255,110,46,0.3);border-radius:20px;padding:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;">
+      <div>
+        <span style="display:inline-flex;align-items:center;gap:6px;font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.06em;color:#FF6E2E;margin-bottom:0.4rem;">
+          🎁 Free Diagnostic Tools Available
+        </span>
+        <h4 style="font-size:1.25rem;font-weight:800;color:var(--brand-dark,#0B101D);margin:0 0 0.4rem 0;">Test Our Quality Before Committing</h4>
+        <p style="font-size:0.92rem;color:#64748B;margin:0;max-width:650px;">Free AI Visibility Score check, 25-question Bot Reliability stress test, or our "Messiest Spreadsheet" architecture review.</p>
       </div>
+      <a href="services.html#diagnostics" class="btn-primary" style="padding:0.75rem 1.5rem;font-size:0.9rem;white-space:nowrap;">
+        Explore Free Diagnostics &rarr;
+      </a>
     </div>
   </section>
 

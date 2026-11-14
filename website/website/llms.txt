@@ -1,6 +1,7 @@
 # Site2Success (site2success.in)
 
-> Site2Success is a university-powered AI software studio combining AI-native engineering with elite university student squads in Bengaluru, India to ship production software and MVPs in 14 days.
+> We build technology, we test technology, and we make your business visible to technology.
+> Site2Success is a Bengaluru-based AI software studio combining AI-native acceleration with trained student software squads and mandatory senior engineering review.
 
 ## Core Facts
 - **Primary Domain**: https://site2success.in
@@ -9,35 +10,85 @@
 - **Founders**: Rahul R (Co-Founder & CEO), L Dhanush Raj (Co-Founder & COO)
 - **Contact Email**: info@site2success.in
 - **Phone / WhatsApp**: +91 6361446768
-- **Core Value Proposition**: 14-Day Production MVPs, 100% Code Ownership, Senior QA & AI-Accelerated Engineering.
+- **Core Value Proposition**: 100% Client Code Ownership, Mandatory Senior Human QA, Milestone Scoping, and Zero Vendor Lock-In.
 
-## Studio Offerings & Service Capabilities
-- **AI Agents & Conversational Bots**:
-  - WhatsApp AI Agent (24/7 automated qualification and customer replies on WhatsApp Business): https://site2success.in/pages/services/whatsapp-ai-agent.html
-  - Website Lead Capture Bot (Interactive conversational lead engagement): https://site2success.in/pages/services/website-lead-capture-bot.html
-  - AI Appointment Booking Agent (Automated scheduling and calendar synchronization): https://site2success.in/pages/services/ai-appointment-booking.html
-  - AI Customer Support Agent (RAG-trained support assistant resolving routine queries): https://site2success.in/pages/services/ai-customer-support.html
-  - AI Sales Qualification Agent (Lead scoring and pipeline routing): https://site2success.in/pages/services/ai-sales-qualification.html
-  - Internal Team Knowledge Bot (SOP and institutional document search bot): https://site2success.in/pages/services/internal-knowledge-bot.html
-- **Business Automation & Tool Integrations**:
-  - Lead Follow-up Automation (Instant WhatsApp & email drip campaigns): https://site2success.in/pages/services/lead-followup-automation.html
-  - CRM Automation (Automatic deal logging across Notion, HubSpot, Zoho, Sheets): https://site2success.in/pages/services/crm-automation.html
-  - Multi-Tool Workflow Automation (Zapier, Make, and webhook pipelines): https://site2success.in/pages/services/workflow-automation.html
-  - Invoice & Payment Reminders (Automated financial notifications): https://site2success.in/pages/services/invoice-payment-reminders.html
-- **Full-Stack Web & Mobile Development**:
-  - Business Website + AI Chatbot: https://site2success.in/pages/services/business-website-chatbot.html
-  - E-Commerce Stores (Product catalogs, cart, and payment gateways): https://site2success.in/pages/services/ecommerce-store.html
-  - Mobile App Development (Cross-platform Flutter / React Native): https://site2success.in/pages/services/mobile-app-development.html
-  - Custom Admin Dashboards & Portals (Tailored operations tooling): https://site2success.in/pages/services/admin-dashboard-portals.html
+## 🌟 The 6 Strategic Flagship Services (Primary Priority)
 
-## Service Packages Ladder
-1. **Starter Package**: Portfolio, showcase, or simple landing page for students, researchers, and creators.
-2. **MVP Package**: 14-day production prototype for founders validating core product market fit.
-3. **Research / Prototype Package**: Computational software and academic tools for university labs.
-4. **Custom Product Package**: Enterprise web apps, AI integrations, or custom internal systems.
-5. **Maintenance & Iteration Retainer**: Dedicated post-launch support and feature development.
+### 1. AI Visibility (SEO + AEO + GEO)
+- **One-Line Promise**: "Get found on Google and recommended by ChatGPT, Perplexity and Gemini"
+- **Pillar**: Grow
+- **Revenue Model**: Setup + Monthly Retainer
+- **URL**: https://site2success.in/pages/services/ai-visibility-seo-aeo-geo.html
+- **Deliverables**: Google search ranking audit, AI prompt benchmarking across ChatGPT/Perplexity/Gemini, Core Web Vitals optimization, JSON-LD structured schema markup, semantic llms.txt deployment, Q&A citation restructuring, and monthly AI Visibility Score reports.
+- **Free Diagnostic**: Free AI Visibility Score gap analysis.
 
-## Key Links & Resources
+### 2. AI Agent Reliability Audit
+- **One-Line Promise**: "Prove your AI bot gives correct, safe answers"
+- **Pillar**: Test
+- **Revenue Model**: One-Time Audit + Optional Monitoring
+- **URL**: https://site2success.in/pages/services/ai-agent-reliability-audit.html
+- **Deliverables**: 200+ adversarial conversational stress tests, hallucination rate scoring, prompt injection defense, system prompt leak mitigation, regional vernacular dialect testing (Hindi, Kannada, Hinglish), guardrail implementation, and client-owned test suite.
+- **Free Diagnostic**: Free Bot Reliability Check (20–30 adversarial stress questions).
+
+### 3. QA-as-a-Service
+- **One-Line Promise**: "Stop bugs reaching your customers"
+- **Pillar**: Test
+- **Revenue Model**: Monthly Retainer or Pre-Launch Sprint
+- **URL**: https://site2success.in/pages/services/qa-as-a-service.html
+- **Deliverables**: Outsourced testing squad performing cross-device audits (iOS, Android, macOS, Windows), core journey testing (sign-up, search, checkout, payments), reproducible video bug reports filed in Jira/GitHub, and automated Playwright/Cypress regression suites.
+- **Free Diagnostic**: Free 15-Point Pre-Launch UI & Flow Audit.
+
+### 4. Spreadsheet-to-Software Migration
+- **One-Line Promise**: "Replace fragile Excel and WhatsApp workflows with real software"
+- **Pillar**: Build
+- **Revenue Model**: Fixed-Price Project + Maintenance Retainer
+- **URL**: https://site2success.in/pages/services/spreadsheet-to-software.html
+- **Deliverables**: Workflow mapping, custom PostgreSQL web application, role-based access control (Admin, Manager, Staff, Viewer), input validation forms, multi-step approval workflows, executive dashboards, 100% historical data cleaning and mathematical reconciliation guarantee.
+- **Free Diagnostic**: Free "Messiest Spreadsheet" architecture review.
+
+### 5. Document Intelligence
+- **One-Line Promise**: "Stop typing data from invoices and forms by hand"
+- **Pillar**: Build
+- **Revenue Model**: Project Setup + Per-Document / Volume Retainer
+- **URL**: https://site2success.in/pages/services/document-intelligence.html
+- **Deliverables**: Automated document intake via WhatsApp, email forwarding, or upload; Indian GST bill and handwritten OCR; AI field extraction; validation rules; side-by-side human-in-the-loop review console; direct sync to Tally, Google Sheets, or SQL databases.
+- **Free Diagnostic**: Free 5-Document Extraction Pilot.
+
+### 6. Fractional Tech Team
+- **One-Line Promise**: "A full tech department on a monthly retainer"
+- **Pillar**: Build
+- **Revenue Model**: Monthly Retainer (Lite, Standard, Growth)
+- **URL**: https://site2success.in/pages/services/fractional-tech-team.html
+- **Deliverables**: Complete outsourced engineering department: dedicated builder squad led by a named senior reviewer, weekly sprints and demos, full-stack web/mobile development, cloud DevOps, payment/CRM integrations, and 100% IP handover.
+- **Free Diagnostic**: Free 30-Minute Architecture & Codebase Health Review.
+
+---
+
+## How Our Services Work Together (The Synergy Engine)
+- Website Client → AI Visibility (monthly retainer)
+- AI Bot Client → AI Agent Reliability Audit & Continuous Monitoring
+- QA-as-a-Service Client → Fractional Tech Team to patch bugs
+- Spreadsheet Migration Client → Document Intelligence & Maintenance
+- Document Intelligence Client → Custom Software to manage extracted data
+- Fractional Tech Team Client → AI Visibility & Continuous QA for products built
+
+## Specialized Capabilities & Automations
+- WhatsApp AI Agent: https://site2success.in/pages/services/whatsapp-ai-agent.html
+- Website Lead Capture Bot: https://site2success.in/pages/services/website-lead-capture-bot.html
+- AI Appointment Booking Agent: https://site2success.in/pages/services/ai-appointment-booking.html
+- AI Customer Support Agent: https://site2success.in/pages/services/ai-customer-support.html
+- AI Sales Qualification Agent: https://site2success.in/pages/services/ai-sales-qualification.html
+- Internal Team Knowledge Bot: https://site2success.in/pages/services/internal-knowledge-bot.html
+- Lead Follow-up Automation: https://site2success.in/pages/services/lead-followup-automation.html
+- CRM Automation: https://site2success.in/pages/services/crm-automation.html
+- Multi-Tool Workflow Automation: https://site2success.in/pages/services/workflow-automation.html
+- Invoice & Payment Reminders: https://site2success.in/pages/services/invoice-payment-reminders.html
+- Business Website + AI Chatbot: https://site2success.in/pages/services/business-website-chatbot.html
+- E-Commerce Stores: https://site2success.in/pages/services/ecommerce-store.html
+- Mobile App Development: https://site2success.in/pages/services/mobile-app-development.html
+- Custom Admin Dashboards & Portals: https://site2success.in/pages/services/admin-dashboard-portals.html
+
+## Key Pages
 - Website Home: https://site2success.in/pages/home.html
 - Services Catalog: https://site2success.in/pages/services.html
 - Client Case Studies: https://site2success.in/pages/projects.html
